@@ -9,19 +9,24 @@ description: Find untranslated strings for your language and translate them.
   src="/screenshots/zm-admin/translations/list.png"
   alt="Translations list with locale filter and table"
   markers={[
-    { x: 30, y: 8, label: 'Locale picker — the language you are translating into (e.g. Nyanja)' },
-    { x: 55, y: 8, label: 'Include translated toggle and search — hide finished rows or find specific text' },
+    { x: 30, y: 8, label: 'Language picker — the language you are translating into (e.g. Nyanja)' },
+    { x: 90, y: 17, label: 'Show All toggle — untick to hide already-translated rows' },
+    { x: 28, y: 25, label: 'Search — find specific source text' },
     { x: 50, y: 40, label: 'Translation table — tool, context, English source and your translation; click a row to edit' },
-    { x: 25, y: 90, label: 'Export JSON — download the current translations for the app bundle' },
   ]}
   caption="Translations list for Nyanja (Zambia)"
 />
+
+<Callout type="info">
+  **Export JSON** sits below the table — scroll down to download the current
+  translations for the app bundle.
+</Callout>
 
 ## Workflow
 
 1. Select the **locale** — the list refreshes automatically.
 2. Work through rows with an empty translation cell. The **Tool** and **Context** columns tell you where the string appears.
 3. Click a row to open the editor dialog, enter the translation and save.
-4. Tick **Include translated** when you want to review or fix already-translated rows.
+4. Untick **Show All** when you want to focus only on rows still missing a translation.
 
 A progress indicator tracks how much of the locale is complete.

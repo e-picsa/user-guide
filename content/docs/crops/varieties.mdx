@@ -9,8 +9,7 @@ description: Browse the master list of crop varieties and their downscaling cove
   src="/screenshots/zm-admin/crop/variety.png"
   alt="Crop variety list with search and table"
   markers={[
-    { x: 87, y: 3, label: 'Add Variety (crop.admin) — create a new variety record' },
-    { x: 30, y: 10, label: 'Search — filter by crop, variety or maturity period' },
+    { x: 30, y: 16, label: 'Search — filter by crop, variety or maturity period' },
     { x: 50, y: 35, label: 'Variety table — click a row to open its details and water requirements' },
     { x: 82, y: 28, label: 'Downscaled locations — how many locations define water needs for this variety' },
   ]}
@@ -21,6 +20,11 @@ description: Browse the master list of crop varieties and their downscaling cove
 
 - **Search and sort** to find a variety.
 - **Open a variety** by clicking its row — see [Variety details](./variety-details).
-- **Add a variety** (admin) to create the base record; water requirements per location are added afterwards on the details page.
+
+<Callout type="info">
+  **Add Variety** (`crop.admin`) sits at the top of the page above the visible
+  area — scroll up to create a new base record, then add its per-location
+  water requirements on the details page.
+</Callout>
 
 Each variety records its crop, maturity period (early/medium/late) and days-to-maturity range, which feed the [probability tables](./probability-tables).

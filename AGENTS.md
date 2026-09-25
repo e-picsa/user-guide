@@ -57,6 +57,42 @@ PICSA Dashboard Angular app, not from this repo.
   (`SHOTS_META=off` to disable). `extract.ts` functions run in-page and must
   stay self-contained; `bun run shots:verify` guards them offline.
 
+## Annotation marker alignment
+
+Guide pages annotate screenshots with `<Screenshot>` (`src/components/screenshot.tsx`,
+fuchsia numbered badges positioned by percentage + auto key). Badges must sit
+on their target element at every viewport width. There is no global offset to
+apply — misalignment always comes from bad coordinates, so follow this process:
+
+- **Derive, never eyeball.** Sidecar bboxes are viewport-relative CSS px
+  extracted *after* scroll + capture, 1:1 with png pixels at 1280x720
+  (`deviceScaleFactor: 1`). Marker centre = bbox centre:
+  `x = (bbox.x + bbox.width / 2) / 12.8`, `y = (bbox.y + bbox.height / 2) / 7.2`.
+  Query the `.json` sidecar for the target element (buttons, tabs
+  `[role="tab"]`, inputs, headers all carry bboxes).
+- **Only mark what is in frame.** Auto-scroll routinely pushes the `h1`/`h2`
+  and top action buttons (`Add *`, `Refresh Data`) above the viewport
+  (negative bbox `y`), and controls like `Export JSON`, `Save Profile`,
+  Copy/Export sit below the fold (`y > 720`). Check every target's bbox first;
+  describe off-screen controls in body text or a `<Callout>` instead of marking
+  them. Keep badges clear of edges (badge is 28px; avoid `y > ~95`).
+- **Know the bbox gaps.** Tables, maps, search fields and home-page cards
+  expose no element bboxes (cards aren't `button`/`a`; tables record headers
+  and rows as text only). For these, estimate from the png (sidebar is
+  `0–203px`, i.e. `0–16%`), then verify with the overlay step — never ship an
+  estimate unverified.
+- **Verify with composites.** `bun run overlay:check`
+  (`scripts/screenshots/overlay-check.ts`) parses markers out of the MDX and
+  draws crosshaired badges onto the pngs under `$TMPDIR/shots-overlay/`
+  (`legend.json` maps badge colour order to labels). Review every composite,
+  adjust MDX coordinates, re-run until each badge centre sits on its element,
+  then `bun run build` + `bun run lint`.
+- **Re-verify after any recapture.** Layout, scroll position or seed-data
+  changes silently move elements; `overlay:check` is the gate before
+  committing marker or screenshot updates. Convention is badge centred *on*
+  the target (small controls get covered); do not nudge centres off-element
+  for aesthetics.
+
 <!-- BEGIN:nextjs-agent-rules -->
 
 # This is NOT the Next.js you know

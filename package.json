@@ -4,14 +4,14 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "dev": "next dev",
-    "start": "next start",
+    "start": "next dev",
     "types:check": "next typegen && tsc --noEmit",
     "lint": "eslint",
     "shots": "bun scripts/screenshots/run.ts",
     "shots:zm-admin": "SHOTS_ID=zm-admin SHOTS_EMAIL=admin@picsa.app SHOTS_DEPLOYMENT=zm SHOTS_DEPLOYMENT_LABEL='Zambia App' bun scripts/screenshots/run.ts",
     "shots:mw-user": "SHOTS_ID=mw-user SHOTS_EMAIL=user@picsa.app SHOTS_DEPLOYMENT=mw SHOTS_DEPLOYMENT_LABEL='Malawi App' bun scripts/screenshots/run.ts",
     "shots:verify": "bun scripts/screenshots/verify.ts",
+    "overlay:check": "bun scripts/screenshots/overlay-check.ts",
     "pdf": "bun scripts/pdf/export.ts && bun scripts/pdf/combine.ts"
   },
   "dependencies": {
