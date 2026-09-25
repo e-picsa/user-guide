@@ -31,7 +31,7 @@ search index and `llms.txt`). `scripts/pdf/pages.ts` derives its routes from
 that same constant, so the site and the PDF exporter cannot drift.
 
 - `docsImageRoute` (`/og/docs`) and `docsContentRoute` (`/llms.mdx/docs`) are
-  deliberately *not* at the root — they are the OG image and markdown-source
+  deliberately _not_ at the root — they are the OG image and markdown-source
   routes, and are unrelated to `docsRoute`.
 - There is no `proxy.ts`: Proxy is unsupported with `output: 'export'`, so the
   markdown-content negotiation it provided never ran in production. The
@@ -141,7 +141,7 @@ bun run build` + `bun run pdf:serve` + `PDF_ONLY=<route> bun run pdf` flow (see
 ## PDF publishing
 
 - The guide PDF is generated in CI on every push to `main` and published twice:
-  copied into `public/` (served at `/picsa-user-guide.pdf`, linked from
+  copied into `public/` (served at `/picsa-dashboard-guide.pdf`, linked from
   `content/docs/index.mdx`) and attached to the GitHub release tagged
   `v<package.json version>`. Bump the version to publish a new release; an
   existing tag's asset is refreshed. Release assets download without sign-in,

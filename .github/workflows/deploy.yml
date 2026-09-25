@@ -1,5 +1,5 @@
 # Deploy the static export (`out/`) to GitHub Pages, and publish the combined
-# guide PDF (`pdfs/picsa-user-guide.pdf`).
+# guide PDF (`pdfs/picsa-dashboard-guide.pdf`).
 #
 # The site is built for root `/` (no `basePath` in next.config.mjs) so the
 # custom domain https://guide.picsa.app serves it directly. Once the custom
@@ -13,7 +13,7 @@
 #      expanded), so we build twice: once with `PDF_PRINT=1` into a separate
 #      dist dir to capture from, then the normal build for Pages.
 #   2. The PDF is copied into `public/` so the guide serves it at
-#      /picsa-user-guide.pdf (versioned copy alongside for the archive).
+#      /picsa-dashboard-guide.pdf (versioned copy alongside for the archive).
 #   3. The same file is attached to the GitHub release for `package.json`'s
 #      version. The repo is public, so release assets download with no sign-in
 #      (Actions artifacts do not, and expire).
@@ -90,7 +90,7 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: guide-pdf
-          path: pdfs/picsa-user-guide.pdf
+          path: pdfs/picsa-dashboard-guide.pdf
           retention-days: 7
 
   build:
@@ -111,9 +111,9 @@ jobs:
       - name: Stage PDF for the site
         run: |
           mkdir -p public
-          cp pdfs/picsa-user-guide.pdf public/picsa-user-guide.pdf
-          cp pdfs/picsa-user-guide.pdf "public/picsa-user-guide-v${{ needs.pdf.outputs.version }}.pdf"
-          ls -la public/picsa-user-guide*.pdf
+          cp pdfs/picsa-dashboard-guide.pdf public/picsa-dashboard-guide.pdf
+          cp pdfs/picsa-dashboard-guide.pdf "public/picsa-dashboard-guide-v${{ needs.pdf.outputs.version }}.pdf"
+          ls -la public/picsa-dashboard-guide*.pdf
 
       - name: Build static site
         run: bun run build
@@ -158,8 +158,8 @@ jobs:
         run: |
           VERSION="$(node -p "require('./package.json').version")"
           TAG="v$VERSION"
-          ASSET="pdfs/picsa-user-guide-v$VERSION.pdf"
-          mv pdfs/picsa-user-guide.pdf "$ASSET"
+          ASSET="pdfs/picsa-dashboard-guide-v$VERSION.pdf"
+          mv pdfs/picsa-dashboard-guide.pdf "$ASSET"
           # The guide's own version says nothing about the dashboard it
           # documents, so state the capture build the screenshots came from.
           BUILD="$(node -e '

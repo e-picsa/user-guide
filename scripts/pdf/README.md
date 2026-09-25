@@ -26,7 +26,7 @@ For quick local iteration `PDF_PRINT=1 bun run start` (dev server) in one
 terminal and `bun run pdf` in another works too.
 
 `bun run pdf` exports per-page PDFs then merges them into
-`pdfs/picsa-user-guide.pdf`, prepended with a cover sheet and a contents
+`pdfs/picsa-dashboard-guide.pdf`, prepended with a cover sheet and a contents
 page. Contents page numbers are exact: they are derived from the real page
 count of every section, so the contents sheet may grow to any length without
 renumbering anything. Each contents row is a clickable link to its section.
@@ -70,9 +70,9 @@ file server 404s. Env: `PDF_SERVE_DIR` (default `out`), `PDF_SERVE_PORT`
 
 ## Publishing
 
-CI copies `pdfs/picsa-user-guide.pdf` into `public/` as both
-`picsa-user-guide.pdf` (linked from the docs index) and
-`picsa-user-guide-v<version>.pdf`, then attaches the versioned file to the
+CI copies `pdfs/picsa-dashboard-guide.pdf` into `public/` as both
+`picsa-dashboard-guide.pdf` (linked from the docs index) and
+`picsa-dashboard-guide-v<version>.pdf`, then attaches the versioned file to the
 GitHub release tagged `v<version>` from `package.json`. Release assets download
 without a GitHub sign-in — Actions artifacts do not, and expire after 90 days.
 Bump `package.json`'s version to publish a new PDF; an existing tag's asset is
