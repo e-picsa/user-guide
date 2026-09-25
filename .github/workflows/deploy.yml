@@ -119,8 +119,20 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
+      # `pdfs/` is gitignored, so the guide PDF only exists in the artifact the
+      # `pdf` job uploaded — this job has to fetch it before staging it.
+      - name: Download PDF
+        uses: actions/download-artifact@v8
+        with:
+          name: guide-pdf
+          path: pdfs
+
       - name: Stage PDF for the site
         run: |
+          test -f pdfs/picsa-dashboard-guide.pdf || {
+            echo "::error::guide-pdf artifact missing or empty"
+            exit 1
+          }
           mkdir -p public
           cp pdfs/picsa-dashboard-guide.pdf public/picsa-dashboard-guide.pdf
           cp pdfs/picsa-dashboard-guide.pdf "public/picsa-dashboard-guide-v${{ needs.pdf.outputs.version }}.pdf"
