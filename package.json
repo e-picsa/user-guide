@@ -11,7 +11,8 @@
     "shots": "bun scripts/screenshots/run.ts",
     "shots:zm-admin": "SHOTS_ID=zm-admin SHOTS_EMAIL=admin@picsa.app SHOTS_DEPLOYMENT=zm SHOTS_DEPLOYMENT_LABEL='Zambia App' bun scripts/screenshots/run.ts",
     "shots:mw-user": "SHOTS_ID=mw-user SHOTS_EMAIL=user@picsa.app SHOTS_DEPLOYMENT=mw SHOTS_DEPLOYMENT_LABEL='Malawi App' bun scripts/screenshots/run.ts",
-    "shots:verify": "bun scripts/screenshots/verify.ts"
+    "shots:verify": "bun scripts/screenshots/verify.ts",
+    "pdf": "bun scripts/pdf/export.ts && bun scripts/pdf/combine.ts"
   },
   "dependencies": {
     "cnfast": "^0.1.0",
@@ -20,6 +21,7 @@
     "fumadocs-ui": "npm:@fumadocs/base-ui@16.14.5",
     "lucide-react": "^1.31.0",
     "next": "16.3.0",
+    "pdf-lib": "^1.17.1",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
