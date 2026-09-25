@@ -10,17 +10,19 @@
  *   terminal 2: bun run pdf
  *
  * Each page becomes one continuous sheet (see print.ts) — these PDFs are for
- * on-screen reading, nobody prints them.
+ * on-screen reading, nobody prints them. They are scratch input for the
+ * combine step (see combine.ts), not a deliverable, so they live in their own
+ * directory away from the published guide.
  *
  * Env: PDF_BASE_URL (default `http://localhost:3000`),
- * PDF_OUT_DIR (default `pdfs`), PDF_ONLY (comma filter on route prefixes,
- * e.g. `PDF_ONLY=climate,getting-started/signing-in`),
+ * PDF_PAGES_DIR (default `pdfs/pages`), PDF_ONLY (comma filter on route
+ * prefixes, e.g. `PDF_ONLY=climate,getting-started/signing-in`),
  * PDF_CONCURRENCY (pages captured in parallel, default 3),
  * CHROME_PATH (see scripts/screenshots/config.ts).
  *
  * Run: bun run pdf
  */
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import puppeteer from 'puppeteer-core';
 
@@ -50,9 +52,24 @@ async function waitForServer(url: string, timeoutMs = 30_000): Promise<void> {
   }
 }
 
+/**
+ * Delete per-page PDFs left behind by a previous run, so a page renamed or
+ * removed from `content/docs` can't linger and be merged into the guide as an
+ * orphan (combine.ts only warns about those).
+ *
+ * Unlinks the matching files rather than removing the directory: this dir is
+ * caller-supplied via `PDF_PAGES_DIR`, so the widest possible blast radius is
+ * the `*.pdf` files in it and nothing else.
+ */
+function clearStalePages(dir: string): number {
+  const stale = readdirSync(dir).filter((f) => f.endsWith('.pdf'));
+  for (const f of stale) rmSync(join(dir, f), { force: true });
+  return stale.length;
+}
+
 async function main(): Promise<void> {
   const baseUrl = env('PDF_BASE_URL', 'http://localhost:3000');
-  const outDir = resolve(process.cwd(), env('PDF_OUT_DIR', 'pdfs'));
+  const pagesDir = resolve(process.cwd(), env('PDF_PAGES_DIR', 'pdfs/pages'));
   const all = discoverPages();
   // Match on whole route segments, not raw substrings: routes sit at the site
   // root (`/climate`), so a substring filter would also catch unrelated pages
@@ -77,9 +94,15 @@ async function main(): Promise<void> {
     : all;
   if (!pages.length) throw new Error('No docs pages found to export');
 
-  mkdirSync(outDir, { recursive: true });
+  mkdirSync(pagesDir, { recursive: true });
+  // Only a full run makes every existing file stale; a `PDF_ONLY` run
+  // re-exports a subset and must leave the rest of the current output alone.
+  if (!only.length) {
+    const removed = clearStalePages(pagesDir);
+    if (removed) console.log(`Removed ${removed} stale per-page PDF(s) from a previous run`);
+  }
   await waitForServer(baseUrl);
-  console.log(`Exporting ${pages.length} page(s) from ${baseUrl} to ${outDir}`);
+  console.log(`Exporting ${pages.length} page(s) from ${baseUrl} to ${pagesDir}`);
 
   const browser = await puppeteer.launch({
     executablePath: resolveChromePath(),
@@ -101,7 +124,7 @@ async function main(): Promise<void> {
         try {
           await page.goto(`${baseUrl}${route}`, { waitUntil: 'networkidle0', timeout: 60_000 });
           const { buffer, height } = await renderTallSheet(page, { label: route });
-          writeFileSync(join(outDir, `${stem}.pdf`), buffer);
+          writeFileSync(join(pagesDir, `${stem}.pdf`), buffer);
           console.log(`OK ${route} -> ${stem}.pdf (${height}px tall)`);
         } finally {
           await page.close();

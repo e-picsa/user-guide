@@ -44,6 +44,23 @@ page. Contents page numbers are exact: they are derived from the real page
 count of every section, so the contents sheet may grow to any length without
 renumbering anything. Each contents row is a clickable link to its section.
 
+## Output layout
+
+Both outputs live under `pdfs/`, kept apart:
+
+- `pdfs/pages/<stem>.pdf` — the per-page exports. Scratch input for the combine
+  step, not a deliverable, so they get their own directory (override with
+  `PDF_PAGES_DIR`).
+- `pdfs/picsa-dashboard-guide.pdf` — the combined guide, the only published
+  artifact. CI copies it into `public/` and attaches it to the release, so
+  nothing in the pipeline should write anything else into `pdfs/` beside it.
+
+A full export clears the `*.pdf` files in the pages dir first, so a page
+renamed or removed from `content/docs` can't survive as a leftover and get
+merged in as an orphan. A `PDF_ONLY` run exports a subset and deliberately
+skips that clear, so iterating on one page leaves the rest of the directory
+intact. Deleting the whole `pdfs/` is always safe; it is fully regenerable.
+
 ## Order
 
 Pages are combined in page-tree order — the same order and grouping the
@@ -94,6 +111,11 @@ without a GitHub sign-in — Actions artifacts do not, and expire after 90 days.
 Bump `package.json`'s version to publish a new PDF; an existing tag's asset is
 refreshed rather than duplicated.
 
+The file name is baked into four places, so rename them together: `outFile` in
+`pdf.config.ts`, the three `cp`/`mv`/`upload-artifact` paths in `deploy.yml`,
+the download link in `content/docs/index.mdx`, and the ignore pattern in
+`.gitignore` (miss that last one and CI's staged copy becomes committable).
+
 Workflow jobs are `pdf` → `build` → (`deploy`, `release` in parallel). The
 `pdf` → `build` edge is strict: a capture failure fails the run rather than
 deploying a site whose download link 404s. `release` runs beside `deploy` so
@@ -112,8 +134,9 @@ to within PDF metadata noise.
 
 ## Config
 
-- `PDF_BASE_URL` (default `http://localhost:3000`), `PDF_OUT_DIR` (default
-  `pdfs`), `PDF_ONLY` (comma filter on route prefixes, matched on whole
+- `PDF_BASE_URL` (default `http://localhost:3000`), `PDF_PAGES_DIR` (default
+  `pdfs/pages`; the per-page exports, read by both `export.ts` and
+  `combine.ts`), `PDF_ONLY` (comma filter on route prefixes, matched on whole
   segments — e.g. `PDF_ONLY=climate` or
   `PDF_ONLY=getting-started/signing-in,translations`),
   `PDF_CONCURRENCY` (pages captured in parallel, default 3),
@@ -126,7 +149,9 @@ to within PDF metadata noise.
   `metadata` (author, subject). The cover screenshot is embedded as a data
   URI; if the file is missing the cover falls back to text-only with a
   warning, so the guide still builds before the capture has run.
-  The combine step alone can be re-run via `bun scripts/pdf/combine.ts`.
+  The combine step alone can be re-run via `bun scripts/pdf/combine.ts`. It
+  reads whatever is already in the pages dir, so re-run `bun run pdf` (or
+  `export.ts` alone) first if the pages are out of date.
 - Print chrome hiding lives in `src/app/global.css` (`@media print`); MDX
   printing overrides (Accordion/Tabs render expanded) in
   `src/components/mdx.tsx`, active only with `PDF_PRINT=1`.

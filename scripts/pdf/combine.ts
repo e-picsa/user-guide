@@ -7,7 +7,7 @@
  * prepended. Contents rows are linked to their sections, and document
  * properties are set on the combined guide.
  *
- * Env: PDF_OUT_DIR (default `pdfs`, must match the export step).
+ * Env: PDF_PAGES_DIR (default `pdfs/pages`, must match the export step).
  *
  * Run: bun run pdf (runs export + combine)
  */
@@ -198,16 +198,18 @@ async function renderSheet(
 }
 
 async function main(): Promise<void> {
-  const outDir = resolve(process.cwd(), env('PDF_OUT_DIR', 'pdfs'));
-  if (!existsSync(outDir)) {
-    throw new Error(`No per-page PDFs found in ${outDir}. Run \`bun run pdf\` first.`);
+  const pagesDir = resolve(process.cwd(), env('PDF_PAGES_DIR', 'pdfs/pages'));
+  if (!existsSync(pagesDir)) {
+    throw new Error(`No per-page PDFs found in ${pagesDir}. Run \`bun run pdf\` first.`);
   }
   const { omit = [], order = [], outFile, cover, metadata } = pdfCombineConfig;
   const outPath = resolve(process.cwd(), outFile);
   // Never merge the combined output (or sheet scratch files) back into itself.
+  // The pages dir is separate from `outFile` by default, so this only bites if
+  // `PDF_PAGES_DIR` has been pointed at the combined file's own directory.
   const outStem =
-    dirname(outPath) === outDir ? basename(outPath).slice(0, -'.pdf'.length) : null;
-  const onDisk = readdirSync(outDir)
+    dirname(outPath) === pagesDir ? basename(outPath).slice(0, -'.pdf'.length) : null;
+  const onDisk = readdirSync(pagesDir)
     .filter((f) => f.endsWith('.pdf'))
     .map((f) => f.slice(0, -'.pdf'.length))
     .filter((s) => s !== outStem && !s.startsWith('_'));
@@ -239,7 +241,7 @@ async function main(): Promise<void> {
   // counts. Cover is page 1; contents follows, so docs start after both.
   const docs: { stem: string; doc: PDFDocument }[] = [];
   for (const stem of ordered) {
-    const src = await PDFDocument.load(readFileSync(join(outDir, `${stem}.pdf`)));
+    const src = await PDFDocument.load(readFileSync(join(pagesDir, `${stem}.pdf`)));
     docs.push({ stem, doc: src });
     console.log(`+ ${stem}.pdf (${src.getPageCount()} page(s))`);
   }

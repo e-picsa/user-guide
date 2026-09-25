@@ -172,6 +172,14 @@ pages in the index.
 
 ## PDF publishing
 
+- `bun run pdf` = `export.ts` + `combine.ts`, and the two write to separate
+  places: per-page exports (scratch input, not a deliverable) go to
+  `pdfs/pages/` (`PDF_PAGES_DIR`), the combined guide to
+  `pdfs/picsa-dashboard-guide.pdf` (`outFile` in `scripts/pdf/pdf.config.ts`).
+  Keep it that way — sharing one directory is how a stale per-page PDF or an
+  older combined guide ended up merged into the guide as an orphan. A full
+  export clears `pdfs/pages/*.pdf` first; a `PDF_ONLY` run deliberately doesn't,
+  so a one-page iteration keeps the rest of the pages.
 - The guide PDF is generated in CI on every push to `main` and published twice:
   copied into `public/` (served at `/picsa-dashboard-guide.pdf`, linked from
   `content/docs/index.mdx`) and attached to the GitHub release tagged
