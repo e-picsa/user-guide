@@ -1,13 +1,46 @@
 ---
-title: Hello World
-description: Your first document
+title: PICSA Dashboard User Guide
+description: Learn how to manage climate data, crop information, resources and translations in the PICSA Dashboard.
 ---
 
-Welcome to the docs! You can start writing documents in `/content/docs`.
+The PICSA Dashboard is the web back-office behind the PICSA field apps. Country teams use it to curate weather station data, publish seasonal forecasts, maintain crop variety information, share resource files and translate app content.
 
-## What is Next?
+<Screenshot
+  src="/screenshots/zm-admin/home.png"
+  alt="PICSA Dashboard home page with navigation cards"
+  markers={[
+    { x: 21, y: 18, label: 'Latest Updates — the Permission Requests card shows tasks for your role' },
+    { x: 39, y: 57, label: 'Dashboard cards link to every section your role can access' },
+    { x: 8, y: 40, label: 'The sidebar mirrors the same sections and stays visible everywhere' },
+  ]}
+  caption="Dashboard home for an admin user (Zambia deployment)"
+/>
+
+## What you can do here
 
 <Cards>
-  <Card title="Learn more about Next.js" href="https://nextjs.org/docs" />
-  <Card title="Learn more about Fumadocs" href="https://fumadocs.dev" />
+  <Card title="Getting started" href="./getting-started/signing-in">
+    Sign in, pick a deployment and understand roles
+  </Card>
+  <Card title="Climate" href="./climate/stations">
+    Station data, forecasts and data quality checks
+  </Card>
+  <Card title="Crops" href="./crops/varieties">
+    Varieties, water requirements and probability tables
+  </Card>
+  <Card title="Resources" href="./resources/files">
+    Files, links, collections and farmer videos
+  </Card>
+  <Card title="Translations" href="./translations/translating">
+    Translate app text and import it in bulk
+  </Card>
+  <Card title="Managing access" href="./managing/deployments">
+    Deployments, user permissions and map boundaries
+  </Card>
 </Cards>
+
+<Callout type="info">
+  All screenshots in this guide come from the Zambia deployment logged in as an
+  admin. If your account has fewer permissions, some buttons and pages will be
+  hidden — see [Deployments and roles](./getting-started/deployments-and-roles).
+</Callout>

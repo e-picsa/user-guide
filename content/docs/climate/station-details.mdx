@@ -1,0 +1,34 @@
+---
+title: Station details
+description: Location, yearly data, charts and crop probabilities for one station.
+---
+
+Open any station from [Station data](./stations) to inspect its historical climate products. The page is organised into four tabs.
+
+<Screenshot
+  src="/screenshots/zm-admin/climate/station/chipata_met.png"
+  alt="Chipata Met station details showing the Charts tab"
+  markers={[
+    { x: 30, y: 5, label: 'Station name and Refresh Data — re-fetch this station from the climate API' },
+    { x: 30, y: 11, label: 'Location and Data tabs — coordinates summary and year-by-year table with CSV export' },
+    { x: 55, y: 11, label: 'Charts tab (shown) — pick a chart to render seasonal rainfall, season timing, extremes or temperatures' },
+    { x: 80, y: 11, label: 'Crop Probabilities tab — planting-date slider with grid and table views' },
+  ]}
+  caption="Station details for CHIPATA MET, Charts tab (Zambia)"
+/>
+
+## The four tabs
+
+1. **Location** — district, station name and coordinates summary.
+2. **Data** — one row per year (season start/end/length, rainfall totals) with pagination and a CSV download named after the station.
+3. **Charts** — visual summaries such as Seasonal Rainfall, Start/End/Length of Season, Extreme Rainfall and Min/Max Temperatures. These mirror what farmers see in the field app.
+4. **Crop Probabilities** — success probabilities per planting date, with a slider to pick the planting date and Grid/Table views.
+
+## Refreshing a station
+
+**Refresh Data** pulls the latest summaries (annual rainfall, crop probabilities, annual and monthly temperatures) from the climate API. A status dialog shows each product succeeding or failing, so a partial failure is visible rather than silent.
+
+<Callout type="tip">
+  Changed data only reaches the field app once the bundled app data is
+  regenerated — admins verify this in [Climate data admin](./data-admin).
+</Callout>

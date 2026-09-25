@@ -1,0 +1,39 @@
+---
+title: Probability tables
+description: Read, re-link and export the crop-success table extensionists share.
+---
+
+Each location's table shows, for every variety, the chance of receiving its water requirement when planting by a given date — the sheet extensionists share with farmers.
+
+<Screenshot
+  src="/screenshots/zm-admin/crop/probability/chadiza.png"
+  alt="Crop probability table for Chadiza"
+  markers={[
+    { x: 73, y: 3, label: 'Climate Data — jump to the linked station’s details' },
+    { x: 86, y: 3, label: 'Change Station — re-link the location to a different station' },
+    { x: 40, y: 55, label: 'Crop cards and probability table — varieties × planting dates, e.g. 9/10 seasons succeed' },
+    { x: 91, y: 90, label: 'Export — download a translated Word document, or copy the table to the clipboard' },
+  ]}
+  caption="Crop Probabilities for Chadiza, calculated from CHIPATA MET (Zambia)"
+/>
+
+## Reading the table
+
+- The header shows the location, the linked **climate station**, and season-start probabilities per date.
+- Each row is a variety with its days to maturity and water requirement; cells like `9/10` mean success in 9 of the last 10 seasons.
+- The crop icons above filter the table to one crop.
+
+## Re-linking a station
+
+If a location has no station — or the wrong one — **Change Station** opens a searchable station picker with a map. Updating re-links the location and recalculates the table.
+
+## Sharing
+
+- **Copy To Clipboard** for pasting into messages or documents.
+- **Export → Word** downloads a `.docx` in the language selected beside it, ready to print or share offline.
+- Warnings at the top point to missing station data or missing water requirements, with links to fix them.
+
+<Callout type="info">
+  The same tables are bundled into the field app, so corrections here flow to
+  farmers after the next app data release.
+</Callout>

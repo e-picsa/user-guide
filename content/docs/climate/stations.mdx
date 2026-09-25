@@ -1,0 +1,30 @@
+---
+title: Station data
+description: Browse weather stations for your deployment and open a station for detail.
+---
+
+**Climate → Station Data** lists every weather station in the active deployment's country. It is the entry point for all historical climate products.
+
+<Screenshot
+  src="/screenshots/zm-admin/climate/station.png"
+  alt="Station list with searchable table and map of Zambia"
+  markers={[
+    { x: 32, y: 6, label: 'Search Data — filter the table by district or station name' },
+    { x: 36, y: 19, label: 'Sortable table — Map number, District, Station Name; click a row to open it' },
+    { x: 78, y: 45, label: 'Map — numbered markers mirror the table; click one to open that station' },
+    { x: 97, y: 5, label: 'Refresh button (climate.admin) — re-sync station records from the climate API' },
+  ]}
+  caption="Station Data for Zambia — 42 stations (admin view)"
+/>
+
+## What you can do
+
+- **Search and sort** the table to find a station by district or name.
+- **Open a station** by clicking its table row or its numbered map marker. This takes you to [Station details](./station-details).
+- **Zoom the map** with the +/- controls to inspect station coverage.
+
+<Callout type="info">
+  The **Refresh** button in the top-right is only visible to `climate.admin`
+  users. It updates station records from the climate API and does not change
+  historical data — for that, see [Climate data admin](./data-admin).
+</Callout>

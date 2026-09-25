@@ -1,0 +1,39 @@
+---
+title: Deployments and roles
+description: How deployments scope your data, and how roles gate what you can do.
+---
+
+## Deployments
+
+A **deployment** is one country app — for example *Zambia App* (`zm`) or *Malawi App* (`mw`). The active deployment is remembered in your browser and scopes everything: stations, forecasts, crop data, resources and translations are all filtered to that deployment's country.
+
+Switch deployments from the header deployment picker or from the **Deployments** section of your [profile](../account/profile). The list of all deployments lives at **Deployments** (admin only) — see [Deployments](../managing/deployments).
+
+## Roles
+
+Access is controlled per deployment by roles. The main roles are:
+
+| Role | Manages |
+| ---- | ------- |
+| `admin` (global) | Everything |
+| `climate.admin` | Station data refresh, forecasts, climate data QC |
+| `crop.admin` | Adding varieties, bulk water-requirement imports |
+| `resources.admin` | Creating and editing files, links and collections |
+| `translations.admin` | Bulk translation import/export |
+| `deployments.admin` | Deployments list and user permissions |
+| `app.admin` | Map boundary data |
+
+Pages and buttons you lack the role for are hidden from navigation, and guarded routes redirect back to Home. Contribute-level (`editor`) roles exist for some features and allow editing without full admin rights.
+
+<Callout type="info">
+  If a page in this guide describes a button you cannot see, ask a
+  `deployments.admin` to grant the relevant role in
+  [User Permissions](../managing/user-permissions).
+</Callout>
+
+## What changes with your role
+
+- **Regular users** see Home, Station Data, Forecasts, Crop Variety, Probabilities, Resources, Translations list, Statistics and their Profile.
+- **Admins** additionally see Admin pages, create/edit buttons, the Deployments list, User Permissions and Map Boundaries.
+
+The sidebar only shows sections your roles permit, so it doubles as a quick check of your access.

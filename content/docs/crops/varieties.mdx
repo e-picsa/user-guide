@@ -1,0 +1,26 @@
+---
+title: Crop varieties
+description: Browse the master list of crop varieties and their downscaling coverage.
+---
+
+**Crop → Variety** is the master list of crop varieties for your deployment, with how many locations each one has water-requirement data for.
+
+<Screenshot
+  src="/screenshots/zm-admin/crop/variety.png"
+  alt="Crop variety list with search and table"
+  markers={[
+    { x: 87, y: 3, label: 'Add Variety (crop.admin) — create a new variety record' },
+    { x: 30, y: 10, label: 'Search — filter by crop, variety or maturity period' },
+    { x: 50, y: 35, label: 'Variety table — click a row to open its details and water requirements' },
+    { x: 82, y: 28, label: 'Downscaled locations — how many locations define water needs for this variety' },
+  ]}
+  caption="Crop Variety list, 255 varieties (Zambia)"
+/>
+
+## What you can do
+
+- **Search and sort** to find a variety.
+- **Open a variety** by clicking its row — see [Variety details](./variety-details).
+- **Add a variety** (admin) to create the base record; water requirements per location are added afterwards on the details page.
+
+Each variety records its crop, maturity period (early/medium/late) and days-to-maturity range, which feed the [probability tables](./probability-tables).

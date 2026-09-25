@@ -1,0 +1,31 @@
+---
+title: Variety details
+description: View and edit a variety, and manage its per-location water requirements.
+---
+
+A variety's page has two tabs: **Crop Details** (the base record) and **Water Requirements** (per-location data that powers probability tables).
+
+<Screenshot
+  src="/screenshots/zm-admin/crop/variety/zm/beans/CHAMBESHI.png"
+  alt="Variety details for beans CHAMBESHI"
+  markers={[
+    { x: 17, y: 51, label: 'Edit — unlock the form to change maturity, day range or notes' },
+    { x: 91, y: 51, label: 'Delete — remove the variety after confirmation' },
+    { x: 60, y: 15, label: 'Water Requirements tab — per-location table with a New Entry button' },
+    { x: 40, y: 45, label: 'Crop Details tab — crop, variety name, maturity band and day range' },
+  ]}
+  caption="Variety details for beans CHAMBESHI (Zambia)"
+/>
+
+## Crop details
+
+The base record holds the crop, variety name, maturity period and days-lower/upper range. After creation the crop and variety name are locked (they form the record's ID); other fields remain editable. Admins create new records from **Crop → Variety → Add Variety**.
+
+## Water requirements
+
+Each row maps the variety to one location with the millimetres of water it needs over its growing period. Adding an entry is a two-step dialog: pick the location, then enter the water requirement. These values feed the [probability tables](./probability-tables), so a variety with no water requirements will show a coverage warning there.
+
+<Callout type="tip">
+  Bulk-editing many water requirements at once is easier with CSV import —
+  see [Crop data admin](./data-admin).
+</Callout>

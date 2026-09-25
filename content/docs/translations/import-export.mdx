@@ -1,0 +1,28 @@
+---
+title: Import and export translations
+description: Bulk-load translations from spreadsheets or app JSON (admin).
+---
+
+**Translations → Import** (requires `translations.admin`) moves translations in bulk instead of one row at a time.
+
+<Screenshot
+  src="/screenshots/zm-admin/translations/import.png"
+  alt="Import Translations with XLSX and App JSON tabs"
+  markers={[
+    { x: 40, y: 15, label: 'XLSX Translations tab — spreadsheet-based import' },
+    { x: 60, y: 15, label: 'App JSON tab — raw app-format import and full export' },
+    { x: 30, y: 50, label: 'Drop zone — drop a file or browse to upload' },
+    { x: 25, y: 71, label: 'Download Template — the correctly-shaped spreadsheet to fill in' },
+  ]}
+  caption="Import Translations (Zambia)"
+/>
+
+## XLSX workflow
+
+1. **Download Template** to get the expected columns.
+2. Fill in translations offline and **drop the file** (or browse to it).
+3. Review and confirm the import; strings then appear in the [translations list](./translating).
+
+## App JSON workflow
+
+Drop app-format JSON files to import them directly, or use **Export All** to download everything — useful for backups or moving content between environments.

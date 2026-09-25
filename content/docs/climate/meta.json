@@ -1,0 +1,4 @@
+{
+  "title": "Climate",
+  "pages": ["stations", "station-details", "forecasts", "data-admin"]
+}
