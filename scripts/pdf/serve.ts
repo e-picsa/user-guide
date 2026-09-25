@@ -3,7 +3,7 @@
  *
  * `next build` with `output: 'export'` cannot be served by `next start`, and a
  * plain file server 404s every route: the export uses clean URLs
- * (`out/docs/climate/stations.html`), never extensionless files. This resolves
+ * (`out/climate/stations.html`), never extensionless files. This resolves
  * `/a/b` -> `a/b`, `a/b.html`, `a/b/index.html`.
  *
  * Env: PDF_SERVE_DIR (default `out`), PDF_SERVE_PORT (default `3000`),

@@ -21,6 +21,25 @@ than written by us — do not "fix" them:
 - Bare "PICSA" is still correct for the org, the field apps ("the PICSA field
   apps") and PDF metadata `author: 'PICSA'`.
 
+## Site structure
+
+The guide is served from the **site root** — there is no `/docs` prefix. The
+docs catch-all is `src/app/[[...slug]]/page.tsx` and `docsRoute` in
+`src/lib/shared.ts` is `/`, which is the single source of truth for the
+`loader()` `baseUrl` (and so for the sidebar, `createRelativeLink` links, the
+search index and `llms.txt`). `scripts/pdf/pages.ts` derives its routes from
+that same constant, so the site and the PDF exporter cannot drift.
+
+- `docsImageRoute` (`/og/docs`) and `docsContentRoute` (`/llms.mdx/docs`) are
+  deliberately *not* at the root — they are the OG image and markdown-source
+  routes, and are unrelated to `docsRoute`.
+- There is no `proxy.ts`: Proxy is unsupported with `output: 'export'`, so the
+  markdown-content negotiation it provided never ran in production. The
+  `MarkdownCopyButton` / `ViewOptionsPopover` link straight at
+  `docsContentRoute` instead.
+- `next.config.mjs` keeps `basePath` unset — see the note there before adding
+  one.
+
 ## Relation to dashboard app
 
 - Dashboard source: `../picsa-apps/apps/picsa-apps/dashboard/src/app/`

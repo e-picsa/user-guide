@@ -13,7 +13,8 @@
  * on-screen reading, nobody prints them.
  *
  * Env: PDF_BASE_URL (default `http://localhost:3000`),
- * PDF_OUT_DIR (default `pdfs`), PDF_ONLY (comma filter on routes),
+ * PDF_OUT_DIR (default `pdfs`), PDF_ONLY (comma filter on route prefixes,
+ * e.g. `PDF_ONLY=climate,getting-started/signing-in`),
  * PDF_CONCURRENCY (pages captured in parallel, default 3),
  * CHROME_PATH (see scripts/screenshots/config.ts).
  *
@@ -52,13 +53,28 @@ async function waitForServer(url: string, timeoutMs = 30_000): Promise<void> {
 async function main(): Promise<void> {
   const baseUrl = env('PDF_BASE_URL', 'http://localhost:3000');
   const outDir = resolve(process.cwd(), env('PDF_OUT_DIR', 'pdfs'));
+  const all = discoverPages();
+  // Match on whole route segments, not raw substrings: routes sit at the site
+  // root (`/climate`), so a substring filter would also catch unrelated pages
+  // (`/resources/files` matching a filter of `files` is intended, but `climate`
+  // must not match a hypothetical `/x/climate/...`, nor vice versa).
   const only = (process.env.PDF_ONLY ?? '')
     .split(',')
-    .map((s) => s.trim())
+    .map((s) => s.trim().replace(/^\/+|\/+$/g, ''))
     .filter(Boolean);
-
-  const all = discoverPages();
-  const pages = only.length ? all.filter((p) => only.some((f) => p.route.includes(f))) : all;
+  const pages = only.length
+    ? all.filter((p) => {
+        const segments = p.route.split('/').filter(Boolean);
+        return only.some((f) => {
+          const want = f.split('/').filter(Boolean);
+          return (
+            want.length > 0 &&
+            want.length <= segments.length &&
+            want.every((seg, i) => segments[i] === seg)
+          );
+        });
+      })
+    : all;
   if (!pages.length) throw new Error('No docs pages found to export');
 
   mkdirSync(outDir, { recursive: true });

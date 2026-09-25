@@ -1,5 +1,6 @@
 export const appName = "E-PICSA Guide";
-export const docsRoute = "/docs";
+// The guide is served from the site root, not a `/docs` prefix.
+export const docsRoute = "/";
 export const docsImageRoute = "/og/docs";
 export const docsContentRoute = "/llms.mdx/docs";
 

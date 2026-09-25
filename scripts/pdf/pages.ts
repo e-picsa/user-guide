@@ -1,15 +1,16 @@
 /**
  * Discover docs pages by walking `content/docs`, honouring the same
- * `meta.json` page ordering the website sidebar uses, so the PDF reads in
- * the same order and grouping as the site.
+ * `meta.json` page ordering the website sidebar uses, so the PDF reads in the
+ * same order and grouping as the site.
  */
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative, resolve, sep } from 'node:path';
+import { docsRoute } from '../../src/lib/shared';
 
 export interface PdfPage {
-  /** Docs route, e.g. `/docs` or `/docs/getting-started`. */
+  /** Docs route, e.g. `/` or `/getting-started`. */
   route: string;
-  /** Output file stem, e.g. `docs` or `docs-getting-started`. */
+  /** Output file stem, e.g. `index` or `getting-started`. */
   stem: string;
   /** Frontmatter `title`, falling back to a humanised file name. */
   title: string;
@@ -18,6 +19,7 @@ export interface PdfPage {
   /** Enclosing folder slug, e.g. `getting-started`. Undefined at the root. */
   sectionSlug?: string;
 }
+
 
 interface DirMeta {
   title?: string;
@@ -95,8 +97,9 @@ function walk(dir: string, contentRoot: string, section?: { title: string; slug:
 
 /**
  * Map a content file to its docs route. `index.mdx` maps to the folder route,
- * e.g. `index.mdx` -> `/docs`, `foo/index.mdx` -> `/docs/foo`,
- * `foo/bar.mdx` -> `/docs/foo/bar`.
+ * e.g. `index.mdx` -> `/`, `foo/index.mdx` -> `/foo`, `foo/bar.mdx` -> `/foo/bar`.
+ *
+ * Built from the same `docsRoute` the site uses, so the two can't drift.
  */
 export function fileToRoute(contentRoot: string, file: string): string {
   const rel = relative(contentRoot, file)
@@ -104,12 +107,19 @@ export function fileToRoute(contentRoot: string, file: string): string {
     .split(sep)
     .join('/');
   const parts = rel.split('/').filter((p) => p !== 'index');
-  return `/docs${parts.length ? `/${parts.join('/')}` : ''}`;
+  // Trailing slashes go, so `docsRoute` of `/` yields an empty prefix (the
+  // guide root) and `/docs` would yield `/docs`.
+  const base = docsRoute.replace(/\/+$/, '');
+  return `${base}${parts.length ? `/${parts.join('/')}` : ''}`;
 }
 
-/** Route `/docs/a/b` -> stem `docs-a-b`. */
+/**
+ * Route `/a/b` -> stem `a-b`. The guide index has the route `/`, whose stem
+ * would otherwise be empty — and an empty stem writes `.pdf`, which
+ * `combine.ts` cannot load.
+ */
 export function routeToStem(route: string): string {
-  return route.replace(/^\//, '').replaceAll('/', '-');
+  return route.replace(/^\//, '').replaceAll('/', '-') || 'index';
 }
 
 export function discoverPages(contentDir = 'content/docs'): PdfPage[] {

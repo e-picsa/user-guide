@@ -3,12 +3,13 @@
  * single combined guide, and in what order.
  *
  * Stems are per-page file names without the extension, e.g. route
- * `/docs/getting-started` -> `docs-getting-started.pdf`.
+ * `/getting-started` -> `getting-started.pdf` (the guide index is `/` ->
+ * `index.pdf`).
  */
 export const pdfCombineConfig = {
   /** Combined output file (relative to repo root). */
   outFile: 'pdfs/picsa-user-guide.pdf',
-  /** Stems to leave out of the combined guide, e.g. `['docs-test']`. */
+  /** Stems to leave out of the combined guide, e.g. `['test']`. */
   omit: [] as string[],
   /**
    * Explicit ordering of stems. Stems not listed here are appended

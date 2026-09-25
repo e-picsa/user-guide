@@ -64,7 +64,7 @@ to a text-only cover.
 ## Serving the export
 
 `serve.ts` exists because `output: 'export'` cannot be served by `next start`,
-and the export uses clean URLs (`out/docs/climate/stations.html`) that a plain
+and the export uses clean URLs (`out/climate/stations.html`) that a plain
 file server 404s. Env: `PDF_SERVE_DIR` (default `out`), `PDF_SERVE_PORT`
 (default `3000`), `PDF_SERVE_HOST` (default `127.0.0.1`).
 
@@ -97,7 +97,9 @@ to within PDF metadata noise.
 ## Config
 
 - `PDF_BASE_URL` (default `http://localhost:3000`), `PDF_OUT_DIR` (default
-  `pdfs`), `PDF_ONLY` (comma filter on routes, e.g. `PDF_ONLY=test bun run pdf`),
+  `pdfs`), `PDF_ONLY` (comma filter on route prefixes, matched on whole
+  segments — e.g. `PDF_ONLY=climate` or
+  `PDF_ONLY=getting-started/signing-in,translations`),
   `PDF_CONCURRENCY` (pages captured in parallel, default 3),
   `CHROME_PATH` (shared with `scripts/screenshots/config.ts`; CI installs a
   Linux Chrome and sets this, since the built-in candidates are macOS-only).
