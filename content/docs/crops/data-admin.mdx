@@ -1,0 +1,33 @@
+---
+title: Crop data admin
+description: Bulk-import water requirements from CSV and export tables for the app.
+---
+
+**Crop → Admin** (requires `crop.admin`) bulk-manages the per-location water requirements behind every probability table.
+
+<Screenshot
+  src="/screenshots/zm-admin/crop/admin.png"
+  alt="Crop Admin with template, export and import controls"
+  markers={[
+    { x: 88, y: 12, label: 'Template — download a CSV pre-filled with locations to complete' },
+    { x: 84, y: 21, label: 'Export App Data — bundle all probability tables for the field app' },
+    { x: 30, y: 27, label: 'Upload File or Paste Text — drop a CSV to preview changes before importing' },
+    { x: 40, y: 65, label: 'Quality Control — lists locations still missing entries, with an Add Placeholder action' },
+  ]}
+  caption="Crop Admin (Zambia)"
+/>
+
+## Import workflow
+
+1. **Template** downloads a CSV with one row per location, crop and variety.
+2. Fill in the water-requirement column and **Upload File** (or paste the text).
+3. Review the preview: **Rows** shows before/after values to be upserted, **Duplicates** flags repeated lines, **Errors** lists invalid rows with reasons.
+4. **Import** writes the valid rows. Values are rounded to the nearest 5 mm and matched to locations tolerantly (spacing and case ignored).
+
+## Quality control
+
+The **Quality Control** section lists locations with no entries at all versus locations with entries but no water requirements yet. **Add Placeholder** creates empty entries so gaps are explicit rather than missing.
+
+## Export for the app
+
+**Export App Data** generates the per-location probability tables as JSON and downloads them as a zip — the artefact bundled into the field app release.

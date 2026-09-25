@@ -1,0 +1,30 @@
+---
+title: Your profile
+description: Switch deployments, review permissions and manage your account.
+---
+
+**Profile** (from the avatar menu) gathers everything about you: which deployments you belong to, what you may do, your personal details and account actions.
+
+<Screenshot
+  src="/screenshots/zm-admin/profile.png"
+  alt="User profile page"
+  markers={[
+    { x: 35, y: 8, label: 'Deployments — every app you belong to; click one to switch context' },
+    { x: 35, y: 35, label: 'Permissions — read-only matrix of your roles per feature' },
+    { x: 35, y: 70, label: 'Profile Settings — name, country, organisation and email verification' },
+    { x: 60, y: 95, label: 'Account Management — data request and account deletion via support' },
+  ]}
+  caption="Profile (admin user)"
+/>
+
+## Sections
+
+1. **Deployments** — all deployments you can access. Selecting one switches context (same as the header picker).
+2. **Permissions** — your roles per feature, shown as disabled checkboxes. To change them, ask a `deployments.admin` — see [User Permissions](../managing/user-permissions).
+3. **Profile Settings** — full name, country and organisation, saved with **Save Profile**. Unverified emails show a **Verify** action that resends the verification mail. A **password-reset** page lives alongside for changing your password.
+4. **Account Management** — request a GDPR data export or account deletion through support.
+
+<Callout type="tip">
+  New to a second country? Once an admin adds you to that deployment it
+  appears in section 1 — no new account needed.
+</Callout>

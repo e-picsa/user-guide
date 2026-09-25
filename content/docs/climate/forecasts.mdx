@@ -1,0 +1,33 @@
+---
+title: Forecasts
+description: View, filter and publish seasonal, downscaled, weekly and daily forecast files.
+---
+
+**Climate → Forecasts** holds the forecast PDFs synced from the climate API. Everyone can view and download them; `climate.admin` users can also publish new ones.
+
+<Screenshot
+  src="/screenshots/zm-admin/climate/forecast.png"
+  alt="Forecasts page with month picker and seasonal forecast table"
+  markers={[
+    { x: 40, y: 5, label: 'Month picker — scopes the list to forecasts issued in that month' },
+    { x: 77, y: 5, label: 'Add Forecast (climate.admin) — upload a new PDF for the selected type' },
+    { x: 50, y: 11, label: 'Type tabs — Seasonal, Downscaled, Weekly and Daily' },
+    { x: 50, y: 30, label: 'Forecast table — issued date, label, language and file link' },
+  ]}
+  caption="Forecasts for September 2026, Seasonal tab (Zambia)"
+/>
+
+## Browsing forecasts
+
+- Pick a **month** to list only forecasts issued in that month.
+- Switch between **Seasonal, Downscaled, Weekly and Daily** tabs.
+- Click a row's file icon to open or download the PDF. Missing files are fetched automatically from the climate API.
+
+## Publishing a forecast (admin)
+
+**Add Forecast** opens a form where you upload the PDF, set its label (usually the season or date range), choose the language, and — for downscaled forecasts — pick the location it applies to. The file is stored in your deployment's country storage bucket and recorded in the forecasts table.
+
+<Callout type="info">
+  Downscaled forecasts require a location; seasonal, weekly and daily
+  forecasts do not. The form guesses the location from the filename when it can.
+</Callout>

@@ -1,0 +1,36 @@
+---
+title: Climate data admin
+description: Quality-check station data and compare it with the data bundled in the app.
+---
+
+**Climate → Admin** (requires `climate.admin`) is the quality-control desk for climate data. It answers two questions: *is the data-system data healthy?* and *does the field app have the same data?*
+
+<Screenshot
+  src="/screenshots/zm-admin/climate/admin.png"
+  alt="Climate Data Admin with data system table"
+  markers={[
+    { x: 74, y: 13, label: 'Download All — export every station summary as a zip of CSVs' },
+    { x: 87, y: 13, label: 'Refresh All — re-fetch all stations from the climate API' },
+    { x: 50, y: 45, label: 'Per-station products — ticks show which of the four summaries exist; click to refresh one station' },
+    { x: 88, y: 33, label: 'Rainfall issues and export flags highlight stations needing attention' },
+  ]}
+  caption="Climate Data Admin, Data System tab (Zambia)"
+/>
+
+## The three tabs
+
+1. **Data System** — every station with its data products (annual rainfall, crop probabilities, annual and monthly temperatures), rainfall issue flags (for example very short records) and per-row download. `Refresh All` re-fetches everything with a progress counter.
+2. **App Data** — what is currently bundled with the field app (`Bundled`/`Missing` per station, year ranges, available products). This is what farmers actually see.
+3. **Data Comparison (Diff)** — compares the two: totals in sync vs divergent, stations only on one side, added/missing years and value differences. Open a row's preview to see exactly what changed before releasing a new app bundle.
+
+## Typical workflow
+
+1. `Refresh All` (or refresh a single station) in **Data System**.
+2. Check rainfall issues and failed product icons.
+3. Open **Data Comparison** and resolve divergences until stations show *In Sync*.
+4. Regenerate the app bundle so the field app picks up the verified data.
+
+<Callout type="warning">
+  Refreshing re-fetches summaries from the climate API and can take a while
+  for large station lists — the counter shows progress.
+</Callout>

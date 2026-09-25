@@ -1,0 +1,29 @@
+---
+title: Map boundaries
+description: Manage administrative boundary data per country (global admin).
+---
+
+**Map Boundaries** (requires `app.admin`, the strictest role) manages the TopoJSON administrative boundaries that power every map in the dashboard — station maps, location labels and the station picker.
+
+<Screenshot
+  src="/screenshots/zm-admin/map-admin.png"
+  alt="Map Boundaries admin with level cards and map"
+  markers={[
+    { x: 28, y: 12, label: 'Admin level cards — one per boundary level, with Available/Missing status' },
+    { x: 27, y: 17, label: 'View renders the level on the map; Generate re-syncs it from the backend' },
+    { x: 60, y: 55, label: 'Map preview — the selected boundary level drawn over OpenStreetMap' },
+    { x: 42, y: 6, label: 'Level labels are editable so they match local terminology' },
+  ]}
+  caption="Map Boundaries (Zambia)"
+/>
+
+## Workflow
+
+1. **View** a level to render its boundaries on the map and check coverage.
+2. If a level is **Missing** or stale, **Generate** re-syncs it from the backend (a spinner shows progress).
+3. Rename level labels with the edit action so they match local terms (for example Province vs District).
+
+<Callout type="warning">
+  Boundary data underpins location names across Crop and Climate pages —
+  regenerate carefully and verify maps afterwards.
+</Callout>

@@ -1,0 +1,26 @@
+---
+title: Probability locations
+description: Pick a location to see its downscaled crop probability table.
+---
+
+**Crop → Probability** lists every location with downscaled crop data: which climate station it is linked to, and how many crops and varieties have water requirements there.
+
+<Screenshot
+  src="/screenshots/zm-admin/crop/probability.png"
+  alt="Probability location list"
+  markers={[
+    { x: 32, y: 18, label: 'Location table — province, location, linked station and coverage counts' },
+    { x: 50, y: 45, label: 'Click a row to open that location’s probability table' },
+  ]}
+  caption="Probability locations, 116 locations (Zambia)"
+/>
+
+## Understanding the columns
+
+| Column | Meaning |
+| ------ | ------- |
+| Location (and Province) | The administrative area, labelled from boundary data |
+| Station | The climate station whose rainfall history powers the calculations |
+| Total Crops / Varieties | How many crops and varieties have water requirements for this location |
+
+Locations with low counts will show coverage warnings on their table — fix them by adding [water requirements](./variety-details) or importing data in [Crop data admin](./data-admin).

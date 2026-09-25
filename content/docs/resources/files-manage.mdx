@@ -1,0 +1,38 @@
+---
+title: Managing files
+description: Upload, describe and publish a file resource (admin).
+---
+
+Creating and editing files requires the `resources.admin` role. Both actions share the same form: **Resources → Files → Add Resource**, or click any row to edit it.
+
+<Screenshot
+  src="/screenshots/zm-admin/resources/files/create.png"
+  alt="Edit Resource form for a new file"
+  markers={[
+    { x: 40, y: 20, label: 'Resource upload — drop a file or pick an existing one from storage' },
+    { x: 40, y: 35, label: 'Cover image — thumbnail shown in lists (jpg, png or svg)' },
+    { x: 40, y: 55, label: 'Title, description and language — how the file appears in the app' },
+    { x: 25, y: 90, label: 'Save Resource — validates required fields, then publishes' },
+  ]}
+  caption="New file form (Zambia)"
+/>
+
+## Steps
+
+1. **Upload the file** (PDF, MP4, MP3 or image) or select an existing file from country storage. File details — name, type and size — fill in automatically.
+2. **Add a cover image** so the file is recognisable in lists.
+3. Enter a **Title** and optional **Description**, and choose the **Language**.
+4. **Save Resource**. The file is upserted and appears in the list and in linked collections immediately.
+
+Editing an existing file (shown here for completeness) offers the same fields plus **Delete Resource** and, for externally-hosted files, a **View Resource** link.
+
+<Screenshot
+  src="/screenshots/zm-admin/resources/files/dff5c161-3541-44a4-8326-0affafd26812.png"
+  alt="Edit Resource form for an existing file"
+  caption="Editing an existing file — same form, with delete available"
+/>
+
+<Callout type="warning">
+  Deleting a resource removes it from the dashboard and from future app data
+  releases. Already-downloaded copies on devices are unaffected.
+</Callout>

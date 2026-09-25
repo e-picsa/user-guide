@@ -1,0 +1,33 @@
+---
+title: User permissions
+description: Manage who can access your deployment and what they may do (admin).
+---
+
+**User Permissions** (requires `deployments.admin`, found under *User Permissions* in the sidebar) manages users for the active deployment: roles, access requests and membership.
+
+<Screenshot
+  src="/screenshots/zm-admin/deployment/permissions.png"
+  alt="User Permissions matrix"
+  markers={[
+    { x: 30, y: 15, label: 'Search — find a user by name or email' },
+    { x: 55, y: 30, label: 'Role matrix — one column per feature; each toggle cycles no access → admin → editor' },
+    { x: 88, y: 30, label: 'Row menu — global-admin toggle, profile edits and removal' },
+    { x: 30, y: 48, label: 'Add User — invite someone to this deployment' },
+  ]}
+  caption="User Permissions (Zambia deployment)"
+/>
+
+## Managing roles
+
+- Each cell toggles that user's role for one feature: empty (no access) → **admin** → **editor** → empty again.
+- **Global Admin** is granted only from the row menu, never by accident from the matrix.
+- You cannot change your own permissions.
+
+## Access requests and membership
+
+Pending access requests appear for approval with accept/reject actions and an optional response message. **Add User** invites a new member; the row menu removes members or edits their profile.
+
+<Callout type="info">
+  Permissions are per deployment — someone who administers Zambia has no
+  access to Malawi until added there too.
+</Callout>
