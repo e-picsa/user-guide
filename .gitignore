@@ -19,6 +19,10 @@
 
 # generated pdfs (bun run pdf / pdf:combine)
 /pdfs
+# PDF staged into public/ by CI for the download link (see deploy.yml)
+/public/picsa-user-guide*.pdf
+.next-print
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

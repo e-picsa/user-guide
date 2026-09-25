@@ -1,7 +1,7 @@
 # Agent Guide for PICSA User Guide
 
 Fumadocs (Next.js) documentation site. Screenshots are captured from the live
-PICSA Dashboard Angular app, not from this repo.
+E-PICSA Dashboard Angular app, not from this repo.
 
 ## Relation to dashboard app
 
@@ -65,7 +65,7 @@ on their target element at every viewport width. There is no global offset to
 apply — misalignment always comes from bad coordinates, so follow this process:
 
 - **Derive, never eyeball.** Sidecar bboxes are viewport-relative CSS px
-  extracted *after* scroll + capture, 1:1 with png pixels at 1280x720
+  extracted _after_ scroll + capture, 1:1 with png pixels at 1280x720
   (`deviceScaleFactor: 1`). Marker centre = bbox centre:
   `x = (bbox.x + bbox.width / 2) / 12.8`, `y = (bbox.y + bbox.height / 2) / 7.2`.
   Query the `.json` sidecar for the target element (buttons, tabs
@@ -89,7 +89,7 @@ apply — misalignment always comes from bad coordinates, so follow this process
   then `bun run build` + `bun run lint`.
 - **Re-verify after any recapture.** Layout, scroll position or seed-data
   changes silently move elements; `overlay:check` is the gate before
-  committing marker or screenshot updates. Convention is badge centred *on*
+  committing marker or screenshot updates. Convention is badge centred _on_
   the target (small controls get covered); do not nudge centres off-element
   for aesthetics.
 - **Never style a marker with `box-shadow`/`shadow-*` or `ring-*`.** Chrome
@@ -97,9 +97,24 @@ apply — misalignment always comes from bad coordinates, so follow this process
   `border-radius` clip, printing a grey box around each badge. The white ring
   must be a real `border`; any screen-only depth goes in the
   `@media screen` block in `src/app/global.css` (`.screenshot-marker-badge`),
-  which print never sees. Verify with `PDF_PRINT=1 bun run start` +
-  `PDF_ONLY=<route> bun run pdf` (see `scripts/pdf/README.md`) before changing
-  badge styling.
+  which print never sees. Verify with the `PDF_PRINT=1 NEXT_DIST_DIR=.next-print
+bun run build` + `bun run pdf:serve` + `PDF_ONLY=<route> bun run pdf` flow (see
+  `scripts/pdf/README.md`) before changing badge styling.
+
+## PDF publishing
+
+- The guide PDF is generated in CI on every push to `main` and published twice:
+  copied into `public/` (served at `/picsa-user-guide.pdf`, linked from
+  `content/docs/index.mdx`) and attached to the GitHub release tagged
+  `v<package.json version>`. Bump the version to publish a new release; an
+  existing tag's asset is refreshed. Release assets download without sign-in,
+  Actions artifacts don't — never switch the site link to an artifact URL.
+- `PDF_PRINT` is build-time only (`src/components/mdx.tsx`), so the PDF needs
+  its own build: `PDF_PRINT=1 NEXT_DIST_DIR=.next-print bun run build`, served
+  by `scripts/pdf/serve.ts` (the static export uses clean URLs, so
+  `next start` and plain file servers don't work). Never drop the
+  `NEXT_DIST_DIR` override — the print build's cache would leak expanded
+  accordions/tabs into the deployed site.
 
 <!-- BEGIN:nextjs-agent-rules -->
 

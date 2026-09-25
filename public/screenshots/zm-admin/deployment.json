@@ -1,7 +1,7 @@
 {
   "route": "deployment",
   "url": "http://localhost:4200/deployment",
-  "title": "PICSA Dashboard",
+  "title": "E-PICSA Dashboard",
   "identifier": "zm-admin",
   "dashboardVersion": "5.14.0",
   "capturedAt": "2026-09-25T01:19:27.442Z",
@@ -319,35 +319,11 @@
   ],
   "tables": [
     {
-      "headers": [
-        "Country Code",
-        "Label",
-        "Public",
-        "Restricted",
-        "Icon"
-      ],
+      "headers": ["Country Code", "Label", "Public", "Restricted", "Icon"],
       "rows": [
-        [
-          "mw",
-          "Malawi App",
-          "lock",
-          "horizontal_rule",
-          ""
-        ],
-        [
-          "tj",
-          "Testing",
-          "lock",
-          "horizontal_rule",
-          ""
-        ],
-        [
-          "zm",
-          "Zambia App",
-          "lock",
-          "horizontal_rule",
-          ""
-        ]
+        ["mw", "Malawi App", "lock", "horizontal_rule", ""],
+        ["tj", "Testing", "lock", "horizontal_rule", ""],
+        ["zm", "Zambia App", "lock", "horizontal_rule", ""]
       ],
       "rowCount": 4
     }

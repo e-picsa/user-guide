@@ -14,6 +14,7 @@
  *
  * Env: PDF_BASE_URL (default `http://localhost:3000`),
  * PDF_OUT_DIR (default `pdfs`), PDF_ONLY (comma filter on routes),
+ * PDF_CONCURRENCY (pages captured in parallel, default 3),
  * CHROME_PATH (see scripts/screenshots/config.ts).
  *
  * Run: bun run pdf
@@ -30,6 +31,24 @@ function env(name: string, fallback: string): string {
   return process.env[name] ?? fallback;
 }
 
+/** Wait for the docs server to answer, so a just-started server isn't a race. */
+async function waitForServer(url: string, timeoutMs = 30_000): Promise<void> {
+  const deadline = Date.now() + timeoutMs;
+  for (;;) {
+    try {
+      const res = await fetch(url, { redirect: 'follow' });
+      if (res.ok) {
+        await res.arrayBuffer();
+        return;
+      }
+    } catch {
+      // not up yet
+    }
+    if (Date.now() > deadline) throw new Error(`Timed out waiting for ${url}`);
+    await new Promise((r) => setTimeout(r, 500));
+  }
+}
+
 async function main(): Promise<void> {
   const baseUrl = env('PDF_BASE_URL', 'http://localhost:3000');
   const outDir = resolve(process.cwd(), env('PDF_OUT_DIR', 'pdfs'));
@@ -43,6 +62,7 @@ async function main(): Promise<void> {
   if (!pages.length) throw new Error('No docs pages found to export');
 
   mkdirSync(outDir, { recursive: true });
+  await waitForServer(baseUrl);
   console.log(`Exporting ${pages.length} page(s) from ${baseUrl} to ${outDir}`);
 
   const browser = await puppeteer.launch({
@@ -50,20 +70,29 @@ async function main(): Promise<void> {
     args: ['--no-sandbox', '--disable-dev-shm-usage'],
   });
   try {
-    for (const { route, stem } of pages) {
-      const page = await browser.newPage();
-      // Viewport width matches the sheet width so the measured content height
-      // is accurate.
-      await page.setViewport(SHEET_VIEWPORT);
-      try {
-        await page.goto(`${baseUrl}${route}`, { waitUntil: 'networkidle0', timeout: 60_000 });
-        const { buffer, height } = await renderTallSheet(page, { label: route });
-        writeFileSync(join(outDir, `${stem}.pdf`), buffer);
-        console.log(`OK ${route} -> ${stem}.pdf (${height}px tall)`);
-      } finally {
-        await page.close();
+    // Pages are captured concurrently: rendering is the slowest phase and each
+    // page is independent, so a small pool cuts the wall clock roughly in
+    // half. Keep it modest — a full-height sheet is a large buffer per page.
+    const concurrency = Math.max(1, Number(env('PDF_CONCURRENCY', '3')));
+    let next = 0;
+    const worker = async (): Promise<void> => {
+      for (let i = next++; i < pages.length; i = next++) {
+        const { route, stem } = pages[i];
+        const page = await browser.newPage();
+        // Viewport width matches the sheet width so the measured content height
+        // is accurate.
+        await page.setViewport(SHEET_VIEWPORT);
+        try {
+          await page.goto(`${baseUrl}${route}`, { waitUntil: 'networkidle0', timeout: 60_000 });
+          const { buffer, height } = await renderTallSheet(page, { label: route });
+          writeFileSync(join(outDir, `${stem}.pdf`), buffer);
+          console.log(`OK ${route} -> ${stem}.pdf (${height}px tall)`);
+        } finally {
+          await page.close();
+        }
       }
-    }
+    };
+    await Promise.all(Array.from({ length: Math.min(concurrency, pages.length) }, worker));
   } finally {
     await browser.close();
   }

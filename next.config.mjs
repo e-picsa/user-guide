@@ -13,6 +13,10 @@ const config = {
   // Setting `basePath: '/user-guide'` would fix the project URL but break
   // the custom domain, so don't.
   output: 'export',
+  // Overrideable so the PDF export build (`PDF_PRINT=1`) can use a separate
+  // dist dir. Without this the second `next build` in CI reuses `.next` caches
+  // from the print build and can ship print-mode (fully expanded) HTML.
+  distDir: process.env.NEXT_DIST_DIR ?? '.next',
   images: {
     unoptimized: true,
   },

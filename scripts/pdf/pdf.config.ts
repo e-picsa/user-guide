@@ -22,11 +22,15 @@ export const pdfCombineConfig = {
     siteUrl: 'https://guide.picsa.app',
     /**
      * Dashboard screenshot shown on the cover. Relative to repo root.
+     * Produced by `bun run cover-shot`, which keeps the app header and footer
+     * visible so the cover shows which deployment/role it was captured in.
      * Leave empty for a text-only cover; a missing file warns and is skipped
-     * so the guide still builds before `bun run shots:zm-admin` has run.
+     * so the guide still builds before the capture has run.
      */
-    screenshot: 'public/screenshots/zm-admin/home.png',
+    screenshot: 'public/screenshots/cover.png',
     screenshotAlt: 'The E-PICSA Dashboard home screen',
+    /** Names the configuration the cover screenshot was captured under. */
+    shotLabel: 'Zambia Admin',
   },
   /** Document properties written onto the combined guide. */
   metadata: {

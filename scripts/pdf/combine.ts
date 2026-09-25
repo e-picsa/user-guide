@@ -125,24 +125,20 @@ interface RenderedSheet {
 }
 
 /**
- * Render an HTML string to a PDF buffer. The cover uses a fixed A4 page; the
- * contents sheet is rendered tall (one continuous sheet, growing if the
- * screen measurement under-reports print height). When `rowSelector` is
- * given, the laid-out position of each match is returned so link annotations
- * can be attached afterwards.
+ * Render an HTML string to a PDF buffer, sized to its content (one
+ * continuous sheet, growing if the screen measurement under-reports print
+ * height). When `rowSelector` is given, the laid-out position of each match
+ * is returned so link annotations can be attached afterwards.
  */
 async function renderSheet(
   browser: Awaited<ReturnType<typeof puppeteer.launch>>,
   html: string,
-  opts: { fixedA4: boolean; label: string; rowSelector?: string },
+  opts: { label: string; rowSelector?: string },
 ): Promise<RenderedSheet> {
   const page = await browser.newPage();
   try {
     await page.setViewport(SHEET_VIEWPORT);
     await page.setContent(html, { waitUntil: 'domcontentloaded' });
-    if (opts.fixedA4) {
-      return { buffer: Buffer.from(await page.pdf({ format: 'A4', printBackground: true })) };
-    }
     // Measure after layout, in the same DOM the print pass renders from.
     const rects = opts.rowSelector
       ? await page.evaluate((sel) => {
@@ -227,10 +223,10 @@ async function main(): Promise<void> {
         siteUrl: cover.siteUrl,
         version: repoVersion(),
         date,
-        pageCount: ordered.length,
+        shotLabel: cover.shotLabel,
         screenshot: loadCoverScreenshot(cover.screenshot, cover.screenshotAlt),
       }),
-      { fixedA4: true, label: 'cover' },
+      { label: 'cover' },
     );
     // The contents sheet's own length shifts every page number it prints, so
     // render it twice: once to learn its length, once with real numbers.
@@ -238,12 +234,11 @@ async function main(): Promise<void> {
     // it ever isn't, fail rather than print wrong numbers.
     const coverDocFinal = await PDFDocument.load(coverSheet.buffer);
     const probe = await PDFDocument.load(
-      (await renderSheet(browser, contentsHtml(entriesFrom(0)), { fixedA4: false, label: 'contents' }))
+      (await renderSheet(browser, contentsHtml(entriesFrom(0)), { label: 'contents' }))
         .buffer,
     );
     contentsEntries = entriesFrom(coverDocFinal.getPageCount() + probe.getPageCount() + 1);
     const finalSheet = await renderSheet(browser, contentsHtml(contentsEntries), {
-      fixedA4: false,
       label: 'contents',
       rowSelector: CONTENTS_ROW_SELECTOR,
     });

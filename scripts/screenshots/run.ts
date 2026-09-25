@@ -117,7 +117,7 @@ async function clientNavigate(page: Page, route: string): Promise<void> {
 }
 
 /** Settle: network quiet + fixed delay for charts/maps + kill animations. */
-async function settle(page: Page): Promise<void> {
+export async function settle(page: Page): Promise<void> {
   await page.waitForNetworkIdle({ idleTime: 500, timeout: 15_000 }).catch(() => undefined);
   await sleep(1500);
   await page.addStyleTag({
@@ -282,7 +282,7 @@ async function runAction(page: Page, action: PageAction): Promise<void> {
   await sleep(1000);
 }
 
-async function login(page: Page, baseUrl: string, email: string, password: string): Promise<void> {
+export async function login(page: Page, baseUrl: string, email: string, password: string): Promise<void> {
   await page.goto(`${baseUrl}/`, { waitUntil: 'networkidle0', timeout: 60_000 });
   await sleep(2500);
   const emailInput = await page.$('input[type="email"]');
@@ -301,7 +301,7 @@ async function login(page: Page, baseUrl: string, email: string, password: strin
   await sleep(5000);
 }
 
-async function selectDeployment(page: Page, label: string, id: string): Promise<boolean> {
+export async function selectDeployment(page: Page, label: string, id: string): Promise<boolean> {
   const clicked = await page.evaluate((text) => {
     const m = [...document.querySelectorAll('button, a')].find((el) =>
       (el as HTMLElement).innerText.trim().startsWith(text),

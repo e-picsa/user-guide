@@ -15,6 +15,28 @@ const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 export const SHEET_WIDTH = '8.27in';
 export const SHEET_VIEWPORT = { width: 794, height: 600 };
 
+/**
+ * Resolve once every <img> has loaded or failed. The cover embeds its
+ * screenshot as a data URI, which decodes asynchronously — measuring before
+ * that reports a height that excludes the image and clips it.
+ */
+export async function awaitImages(page: Page): Promise<void> {
+  await page
+    .evaluate(() =>
+      Promise.all(
+        [...document.images].map((img) =>
+          img.complete
+            ? null
+            : new Promise((r) => {
+                img.addEventListener('load', r, { once: true });
+                img.addEventListener('error', r, { once: true });
+              }),
+        ),
+      ),
+    )
+    .catch(() => undefined);
+}
+
 export async function measureHeight(page: Page): Promise<number> {
   return page.evaluate(
     () =>
@@ -29,9 +51,37 @@ export async function measureHeight(page: Page): Promise<number> {
 }
 
 /**
- * Scroll through the page so lazily-loaded images expand, then measure until
- * the height is stable. Without this the measurement lags behind the printed
- * height and content spills onto a second sheet.
+ * Resolve once every <video> has at least metadata. A video with no metadata
+ * has no intrinsic size, so measuring before it loads under-reports height and
+ * the sheet clips.
+ */
+export async function awaitMedia(page: Page): Promise<void> {
+  await page
+    .evaluate(() =>
+      Promise.all(
+        [...document.querySelectorAll('video')].map(
+          (v) =>
+            (v as HTMLVideoElement).readyState >= 1
+              ? null
+              : new Promise((r) => {
+                  v.addEventListener('loadedmetadata', r, { once: true });
+                  v.addEventListener('error', r, { once: true });
+                }),
+        ),
+      ),
+    )
+    .catch(() => undefined);
+}
+
+/**
+ * Scroll through the page so lazily-loaded images expand, then wait for that
+ * content to land and measure until the height is stable. Without this the
+ * measurement lags behind the printed height and content spills onto a second
+ * sheet.
+ *
+ * Stability is checked by re-confirming the media above rather than by a fixed
+ * delay: with pages captured concurrently, a time-based guess loses the race
+ * and silently returns a short sheet that clips content.
  */
 export async function settleAndMeasure(page: Page): Promise<number> {
   await page.evaluate(async () => {
@@ -42,16 +92,25 @@ export async function settleAndMeasure(page: Page): Promise<number> {
     }
     window.scrollTo(0, 0);
   });
-  await page.waitForNetworkIdle({ idleTime: 500, timeout: 15_000 }).catch(() => undefined);
-  let height = await measureHeight(page);
-  for (let i = 0; i < 5; i++) {
-    await sleep(500);
+  await page.waitForNetworkIdle({ idleTime: 500, timeout: 30_000 }).catch(() => undefined);
+
+  let height = 0;
+  for (let i = 0; i < 20; i++) {
+    await awaitImages(page);
+    await awaitMedia(page);
     const next = await measureHeight(page);
-    if (next <= height) return height;
+    // Two consecutive identical measures means the lazy content has landed.
+    if (next === height) return height;
     height = next;
+    await sleep(500);
   }
   return height;
 }
+
+/** Fraction of headroom added to the measured height on the first attempt. */
+const HEADROOM = 1.04;
+/** Smallest headroom, for very short sheets where 4% is sub-pixel. */
+const MIN_HEADROOM_PX = 24;
 
 export interface SheetResult {
   buffer: Buffer;
@@ -63,12 +122,22 @@ export interface SheetResult {
  * Render the current page as a single continuous sheet, growing the height
  * and retrying while content still spills. `settle` scrolls lazy content in
  * first (needed for article pages, pointless for generated front sheets).
+ *
+ * Screen measurement sits within a hair of print layout height, so the first
+ * attempt already carries a little headroom: without it, a sub-pixel
+ * overflow paginates a second sheet and the retry has to guess, which
+ * overshoots badly and leaves the sheet mostly empty.
  */
 export async function renderTallSheet(
   page: Page,
   opts: { settle?: boolean; label?: string } = {},
 ): Promise<SheetResult> {
-  let height = Math.ceil(opts.settle === false ? await measureHeight(page) : await settleAndMeasure(page));
+  const measured = Math.ceil(
+    opts.settle === false
+      ? (await awaitImages(page), await measureHeight(page))
+      : await settleAndMeasure(page),
+  );
+  let height = Math.ceil(measured * HEADROOM) + MIN_HEADROOM_PX;
   for (let attempt = 0; attempt < 4; attempt++) {
     const pdf = await page.pdf({
       width: SHEET_WIDTH,
@@ -79,7 +148,8 @@ export async function renderTallSheet(
     if (doc.getPageCount() === 1) {
       return { buffer: Buffer.from(pdf), height, pages: 1 };
     }
-    const grown = Math.ceil(height * doc.getPageCount() * 1.05);
+    // Grow gently: the overshoot was almost never a full extra page's worth.
+    const grown = Math.ceil(Math.max(height * 1.15, height + 400));
     console.warn(
       `${opts.label ?? 'sheet'} spilled onto ${doc.getPageCount()} sheets at ${height}px, growing to ${grown}px`,
     );
