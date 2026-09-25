@@ -37,6 +37,40 @@ function repoVersion(): string {
   }
 }
 
+/**
+ * Dashboard build the screenshots were captured from, read from the capture
+ * manifests in `public/screenshots/<id>/manifest.json` (captures are
+ * version-keyed, see `scripts/screenshots/run.ts`).
+ *
+ * This is the build the screenshots came from, not necessarily a released
+ * dashboard tag — the guide says so on the cover so nobody reads it as "this
+ * guide is for dashboard X" when X was still in development.
+ */
+function screenshotBuild(): string | undefined {
+  const dir = resolve(process.cwd(), 'public/screenshots');
+  if (!existsSync(dir)) return undefined;
+
+  const versions = new Set<string>();
+  for (const name of readdirSync(dir)) {
+    const file = join(dir, name, 'manifest.json');
+    if (!existsSync(file)) continue;
+    try {
+      const { dashboardVersion } = JSON.parse(readFileSync(file, 'utf8')) as {
+        dashboardVersion?: string;
+      };
+      if (dashboardVersion) versions.add(dashboardVersion);
+    } catch {
+      // An unreadable manifest shouldn't fail the guide; the build is a note.
+    }
+  }
+
+  if (!versions.size) return undefined;
+  if (versions.size > 1) {
+    console.warn(`screenshots span multiple dashboard builds: ${[...versions].sort().join(', ')}`);
+  }
+  return [...versions].sort().join(', ');
+}
+
 const MIME: Record<string, string> = { '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp' };
 
 /**
@@ -64,14 +98,15 @@ function loadCoverScreenshot(path?: string, alt?: string): { dataUri: string; al
  * Make each contents row a clickable link to its section.
  *
  * pdf-lib has no API for link annotations, so the annotation dictionaries are
- * built directly. Rectangles come from the rendered layout in CSS px, which
- * convert to points at 72/96 dpi, flipped about the page's vertical centre
- * because PDF user space puts the origin at the bottom-left.
+ * built directly. Each row carries its target page in `data-page`, so the
+ * link follows the rendered row rather than assuming rows and entries line up
+ * one-to-one. Rectangles come from the rendered layout in CSS px, which convert
+ * to points at 72/96 dpi, flipped about the page's vertical centre because PDF
+ * user space puts the origin at the bottom-left.
  */
 function linkContentsRows(
   merged: PDFDocument,
   contentsPageIndex: number,
-  entries: ContentsEntry[],
   rects: RowRect[] | undefined,
   sheetHeightPx: number,
 ): number {
@@ -79,11 +114,10 @@ function linkContentsRows(
   const contentsPage = merged.getPage(contentsPageIndex);
   const annots: ReturnType<PDFDocument['context']['register']>[] = [];
 
-  entries.forEach((entry, i) => {
-    const r = rects[i];
-    // entry.page is a 1-based printed page number = 0-based index + 1.
-    const target = merged.getPage(entry.page - 1);
-    if (!r || !target) return;
+  for (const r of rects) {
+    // r.page is a 1-based printed page number = 0-based index + 1.
+    const target = merged.getPage(r.page - 1);
+    if (!target) continue;
     const toPt = (px: number) => Number((px * 0.75).toFixed(2));
     const x1 = toPt(r.left);
     const x2 = toPt(r.left + r.width);
@@ -100,7 +134,7 @@ function linkContentsRows(
       F: 4,
     });
     annots.push(merged.context.register(dict));
-  });
+  }
 
   if (annots.length) {
     contentsPage.node.set(PDFName.of('Annots'), merged.context.obj(annots));
@@ -108,8 +142,10 @@ function linkContentsRows(
   return annots.length;
 }
 
-/** A row's position on the rendered sheet, in CSS px. */
+/** A contents row's target page and position on the rendered sheet, in CSS px. */
 interface RowRect {
+  /** 1-based printed page number this row links to. */
+  page: number;
   left: number;
   top: number;
   width: number;
@@ -144,7 +180,13 @@ async function renderSheet(
       ? await page.evaluate((sel) => {
           return [...document.querySelectorAll(sel)].map((el) => {
             const r = el.getBoundingClientRect();
-            return { left: r.left, top: r.top, width: r.width, height: r.height };
+            return {
+              page: Number((el as HTMLElement).dataset.page ?? 0),
+              left: r.left,
+              top: r.top,
+              width: r.width,
+              height: r.height,
+            };
           });
         }, opts.rowSelector)
       : undefined;
@@ -165,26 +207,33 @@ async function main(): Promise<void> {
   // Never merge the combined output (or sheet scratch files) back into itself.
   const outStem =
     dirname(outPath) === outDir ? basename(outPath).slice(0, -'.pdf'.length) : null;
-  const stems = readdirSync(outDir)
+  const onDisk = readdirSync(outDir)
     .filter((f) => f.endsWith('.pdf'))
     .map((f) => f.slice(0, -'.pdf'.length))
-    .filter((s) => s !== outStem && !s.startsWith('_'))
-    .sort();
+    .filter((s) => s !== outStem && !s.startsWith('_'));
 
-  const catalog = new Map(discoverPages().map((p) => [p.stem, p]));
-  const unknown = stems.filter((s) => !catalog.has(s));
-  if (unknown.length) console.warn(`PDFs with no matching docs page: ${unknown.join(', ')}`);
+  // Page-tree order (from `meta.json`) rather than filename order, so the PDF
+  // matches the website sidebar. Files with no matching docs page are appended
+  // so a stray PDF is never silently dropped from the guide.
+  const allPages = discoverPages();
+  const catalog = new Map(allPages.map((p) => [p.stem, p]));
+  const treeStems = allPages.filter((p) => onDisk.includes(p.stem)).map((p) => p.stem);
+  const orphans = onDisk.filter((s) => !catalog.has(s));
+  if (orphans.length) console.warn(`PDFs with no matching docs page, appended last: ${orphans.join(', ')}`);
+
   const omitted = new Set(omit);
-  const unknownOmit = [...omitted].filter((s) => !stems.includes(s));
+  const unknownOmit = [...omitted].filter((s) => !onDisk.includes(s));
   if (unknownOmit.length) console.warn(`omit entries with no matching PDF: ${unknownOmit.join(', ')}`);
-  const included = stems.filter((s) => !omitted.has(s));
+  const included = new Set([...treeStems, ...orphans].filter((s) => !omitted.has(s)));
+  // `order` still pins stems to the front, e.g. to lead with a summary page.
   const ordered = [
-    ...order.filter((s) => included.includes(s)),
-    ...included.filter((s) => !order.includes(s)),
+    ...order.filter((s) => included.has(s)),
+    ...[...treeStems, ...orphans].filter((s) => included.has(s) && !order.includes(s)),
   ];
   if (!ordered.length) throw new Error('Nothing to combine: all per-page PDFs are omitted');
 
   const titleFor = (stem: string): string => catalog.get(stem)?.title ?? stem;
+  const sectionFor = (stem: string): string | undefined => catalog.get(stem)?.section;
 
   // Load doc PDFs first so contents page numbers derive from real page
   // counts. Cover is page 1; contents follows, so docs start after both.
@@ -198,7 +247,7 @@ async function main(): Promise<void> {
   const entriesFrom = (start: number) => {
     let page = start;
     return docs.map(({ stem, doc }) => {
-      const entry = { title: titleFor(stem), page };
+      const entry = { title: titleFor(stem), page, section: sectionFor(stem) };
       page += doc.getPageCount();
       return entry;
     });
@@ -223,6 +272,7 @@ async function main(): Promise<void> {
         siteUrl: cover.siteUrl,
         version: repoVersion(),
         date,
+        dashboardBuild: screenshotBuild(),
         shotLabel: cover.shotLabel,
         screenshot: loadCoverScreenshot(cover.screenshot, cover.screenshotAlt),
       }),
@@ -268,7 +318,6 @@ async function main(): Promise<void> {
   const linkCount = linkContentsRows(
     merged,
     coverDoc.getPageCount(),
-    contentsEntries,
     contentsRects,
     contentsHeightPx,
   );

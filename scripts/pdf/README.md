@@ -31,6 +31,17 @@ page. Contents page numbers are exact: they are derived from the real page
 count of every section, so the contents sheet may grow to any length without
 renumbering anything. Each contents row is a clickable link to its section.
 
+## Order
+
+Pages are combined in page-tree order — the same order and grouping the
+website sidebar shows — by walking `content/docs` and honouring each folder's
+`meta.json` `pages` array (`...` expands to the rest, sorted; unlisted files
+are appended last). So reordering the sidebar reorders the PDF and the
+contents page, with no changes to the scripts. A per-page PDF with no
+matching docs file is appended last with a warning rather than dropped.
+`order` in `pdf.config.ts` still pins stems to the front if you need an
+override.
+
 ## Cover screenshot
 
 `bun run cover-shot` captures a single dashboard screenshot for the cover,

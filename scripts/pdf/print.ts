@@ -6,7 +6,7 @@
  * mid-content). Screen measurement under-reports print layout height, so
  * every render is verified and grown until it genuinely fits one sheet.
  */
-import { PDFDocument } from 'pdf-lib';
+import { PDFDict, PDFDocument, PDFName, PDFObject, PDFRawStream } from 'pdf-lib';
 import type { Page } from 'puppeteer-core';
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
@@ -16,25 +16,62 @@ export const SHEET_WIDTH = '8.27in';
 export const SHEET_VIEWPORT = { width: 794, height: 600 };
 
 /**
- * Resolve once every <img> has loaded or failed. The cover embeds its
- * screenshot as a data URI, which decodes asynchronously — measuring before
- * that reports a height that excludes the image and clips it.
+ * Resolve once every <img> has loaded, and report any that never decoded.
+ *
+ * `complete` is also true for images that failed, so a 404 would otherwise
+ * pass unnoticed and print as a missing screenshot. Returns the sources that
+ * are still broken so callers can fail loudly instead of shipping a page with
+ * a hole in it. The cover embeds its screenshot as a data URI, which decodes
+ * asynchronously — measuring before that clips the sheet.
  */
-export async function awaitImages(page: Page): Promise<void> {
-  await page
+export async function awaitImages(page: Page): Promise<string[]> {
+  return page
     .evaluate(() =>
       Promise.all(
         [...document.images].map((img) =>
-          img.complete
+          img.complete && img.naturalWidth > 0
             ? null
-            : new Promise((r) => {
-                img.addEventListener('load', r, { once: true });
-                img.addEventListener('error', r, { once: true });
+            : new Promise<string>((r) => {
+                img.addEventListener(
+                  'load',
+                  () => r(img.naturalWidth > 0 ? '' : img.currentSrc || img.src),
+                  { once: true },
+                );
+                img.addEventListener('error', () => r(img.currentSrc || img.src), { once: true });
               }),
         ),
-      ),
+      ).then((results) => results.filter((s): s is string => typeof s === 'string' && s !== '')),
     )
-    .catch(() => undefined);
+    .catch(() => [] as string[]);
+}
+
+/**
+ * Count image XObjects in a document, descending into form XObjects. Used to
+ * assert that every image on the page actually reached the PDF.
+ */
+export function countImages(doc: PDFDocument): number {
+  const seen = new Set<string>();
+  let total = 0;
+
+  const visit = (node: PDFObject | undefined): void => {
+    if (!node) return;
+    const res = doc.context.lookup(node) as PDFDict | undefined;
+    const xobjects = res?.lookupMaybe(PDFName.of('XObject'), PDFDict);
+    if (!xobjects) return;
+    for (const [, ref] of xobjects.entries()) {
+      const id = ref.toString();
+      if (seen.has(id)) continue;
+      seen.add(id);
+      const obj = doc.context.lookup(ref);
+      if (!(obj instanceof PDFRawStream)) continue;
+      const subtype = String(obj.dict.get(PDFName.of('Subtype')));
+      if (subtype === '/Image') total += 1;
+      else if (subtype === '/Form') visit(obj.dict.get(PDFName.of('Resources')));
+    }
+  };
+
+  for (const page of doc.getPages()) visit(page.node.get(PDFName.of('Resources')));
+  return total;
 }
 
 export async function measureHeight(page: Page): Promise<number> {
@@ -95,14 +132,22 @@ export async function settleAndMeasure(page: Page): Promise<number> {
   await page.waitForNetworkIdle({ idleTime: 500, timeout: 30_000 }).catch(() => undefined);
 
   let height = 0;
+  let reported: string[] = [];
   for (let i = 0; i < 20; i++) {
-    await awaitImages(page);
+    reported = await awaitImages(page);
     await awaitMedia(page);
     const next = await measureHeight(page);
     // Two consecutive identical measures means the lazy content has landed.
-    if (next === height) return height;
+    if (next === height) break;
     height = next;
     await sleep(500);
+  }
+  // An image that never decoded prints as a hole in the sheet. Say so loudly:
+  // this is almost always a wrong path or a missing file in `public/`.
+  if (reported.length) {
+    console.warn(
+      `${reported.length} image(s) failed to load and will be missing from the PDF: ${[...new Set(reported)].join(', ')}`,
+    );
   }
   return height;
 }
@@ -132,12 +177,16 @@ export async function renderTallSheet(
   page: Page,
   opts: { settle?: boolean; label?: string } = {},
 ): Promise<SheetResult> {
+  const label = opts.label ?? 'sheet';
+  const expectedImages = await page.evaluate(() => document.images.length);
   const measured = Math.ceil(
     opts.settle === false
-      ? (await awaitImages(page), await measureHeight(page))
+      ? ((await awaitImages(page)).length, await measureHeight(page))
       : await settleAndMeasure(page),
   );
   let height = Math.ceil(measured * HEADROOM) + MIN_HEADROOM_PX;
+  let lastMissing = 0;
+
   for (let attempt = 0; attempt < 4; attempt++) {
     const pdf = await page.pdf({
       width: SHEET_WIDTH,
@@ -145,17 +194,38 @@ export async function renderTallSheet(
       printBackground: true,
     });
     const doc = await PDFDocument.load(pdf);
-    if (doc.getPageCount() === 1) {
-      return { buffer: Buffer.from(pdf), height, pages: 1 };
+    if (doc.getPageCount() > 1) {
+      // Grow gently: the overshoot was almost never a full extra page's worth.
+      const grown = Math.ceil(Math.max(height * 1.15, height + 400));
+      console.warn(
+        `${label} spilled onto ${doc.getPageCount()} sheets at ${height}px, growing to ${grown}px`,
+      );
+      height = grown;
+      continue;
     }
-    // Grow gently: the overshoot was almost never a full extra page's worth.
-    const grown = Math.ceil(Math.max(height * 1.15, height + 400));
-    console.warn(
-      `${opts.label ?? 'sheet'} spilled onto ${doc.getPageCount()} sheets at ${height}px, growing to ${grown}px`,
+    // A lazy image that has not painted prints as a hole in the page, so the
+    // sheet looks paginated-and-complete while silently losing content. Wait
+    // and re-render rather than shipping it.
+    const found = countImages(doc);
+    if (expectedImages > 0 && found < expectedImages) {
+      lastMissing = expectedImages - found;
+      console.warn(
+        `${label}: only ${found}/${expectedImages} images in the PDF, retrying after waiting for load`,
+      );
+      await awaitImages(page);
+      await page.waitForNetworkIdle({ idleTime: 500, timeout: 15_000 }).catch(() => undefined);
+      await sleep(1000);
+      continue;
+    }
+    return { buffer: Buffer.from(pdf), height, pages: 1 };
+  }
+
+  if (lastMissing > 0) {
+    throw new Error(
+      `${label}: ${lastMissing} image(s) never made it into the PDF after 4 attempts — check the image paths and that the server serves them`,
     );
-    height = grown;
   }
   throw new Error(
-    `${opts.label ?? 'sheet'} could not be fitted to a single sheet after 4 attempts (last height ${height}px)`,
+    `${label} could not be fitted to a single sheet after 4 attempts (last height ${height}px)`,
   );
 }

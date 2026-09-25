@@ -1,4 +1,8 @@
-/** Discover docs pages by scanning `content/docs` for `.mdx` files. */
+/**
+ * Discover docs pages by walking `content/docs`, honouring the same
+ * `meta.json` page ordering the website sidebar uses, so the PDF reads in
+ * the same order and grouping as the site.
+ */
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative, resolve, sep } from 'node:path';
 
@@ -7,20 +11,86 @@ export interface PdfPage {
   route: string;
   /** Output file stem, e.g. `docs` or `docs-getting-started`. */
   stem: string;
-  /** Frontmatter `title`, falling back to the stem. */
+  /** Frontmatter `title`, falling back to a humanised file name. */
   title: string;
+  /** Enclosing folder title from `meta.json`, e.g. `Getting started`. */
+  section?: string;
+  /** Enclosing folder slug, e.g. `getting-started`. Undefined at the root. */
+  sectionSlug?: string;
 }
 
-function walk(dir: string, out: string[] = []): string[] {
-  for (const name of readdirSync(dir).sort()) {
-    const full = join(dir, name);
-    if (statSync(full).isDirectory()) {
-      walk(full, out);
-    } else if (name.endsWith('.mdx') && !name.startsWith('_')) {
-      out.push(full);
+interface DirMeta {
+  title?: string;
+  pages?: string[];
+}
+
+function readMeta(dir: string): DirMeta | undefined {
+  try {
+    return JSON.parse(readFileSync(join(dir, 'meta.json'), 'utf8')) as DirMeta;
+  } catch {
+    return undefined;
+  }
+}
+
+/** Content children of a folder, ignoring metadata and partials. */
+function children(dir: string): string[] {
+  return readdirSync(dir).filter(
+    (name) => name !== 'meta.json' && !name.startsWith('_') && !name.startsWith('.'),
+  );
+}
+
+/**
+ * Order a folder's children the way the page tree does: entries named in
+ * `meta.json`'s `pages` in order, with `...` standing in for "everything
+ * else" (sorted), and unlisted children appended last (sorted).
+ *
+ * `pages` lists slugs, so match them against children by slug rather than by
+ * filename — comparing raw names would silently match nothing and fall back
+ * to alphabetical.
+ */
+function orderedChildren(dir: string, meta?: DirMeta): string[] {
+  const all = children(dir);
+  const byslug = new Map(all.map((name) => [name.replace(/\.mdx$/, ''), name]));
+  const remaining = new Set(all);
+  const out: string[] = [];
+  for (const slug of meta?.pages ?? []) {
+    if (slug === '...') {
+      for (const name of [...remaining].sort()) {
+        out.push(name);
+        remaining.delete(name);
+      }
+      continue;
+    }
+    const name = byslug.get(slug);
+    // Slugs with no matching file are skipped, as the page tree does.
+    if (name && remaining.has(name)) {
+      out.push(name);
+      remaining.delete(name);
     }
   }
+  for (const name of [...remaining].sort()) out.push(name);
   return out;
+}
+
+/** Walk a folder in page-tree order, tagging pages with their section. */
+function walk(dir: string, contentRoot: string, section?: { title: string; slug: string }): PdfPage[] {
+  const pages: PdfPage[] = [];
+  for (const name of orderedChildren(dir, readMeta(dir))) {
+    const full = join(dir, name);
+    if (statSync(full).isDirectory()) {
+      const meta = readMeta(full);
+      pages.push(...walk(full, contentRoot, { title: meta?.title ?? name, slug: name }));
+    } else if (name.endsWith('.mdx')) {
+      const route = fileToRoute(contentRoot, full);
+      pages.push({
+        route,
+        stem: routeToStem(route),
+        title: readTitle(full, name),
+        ...(section ? { section: section.title, sectionSlug: section.slug } : {}),
+      });
+    }
+  }
+  return pages;
 }
 
 /**
@@ -44,21 +114,20 @@ export function routeToStem(route: string): string {
 
 export function discoverPages(contentDir = 'content/docs'): PdfPage[] {
   const root = resolve(process.cwd(), contentDir);
-  return walk(root).map((file) => {
-    const route = fileToRoute(root, file);
-    return { route, stem: routeToStem(route), title: readTitle(file) };
-  });
+  return walk(root, root);
 }
 
-/** Frontmatter `title:` value, falling back to the file's route stem. */
-function readTitle(file: string): string {
+/** Frontmatter `title:`, falling back to a humanised file name. */
+function readTitle(file: string, fileName: string): string {
   try {
     const raw = readFileSync(file, 'utf8');
     const frontmatter = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/);
     const title = frontmatter?.[1].match(/^title:\s*(.+?)\s*$/m)?.[1];
     if (title) return title.replace(/^['"]|['"]$/g, '');
   } catch {
-    // fall through to stem fallback
+    // fall through to the file-name fallback
   }
-  return routeToStem(fileToRoute(resolve(process.cwd(), 'content/docs'), file));
+  const base = fileName.replace(/\.mdx$/, '');
+  const words = (base === 'index' ? 'overview' : base).replace(/[-_]+/g, ' ');
+  return words.charAt(0).toUpperCase() + words.slice(1);
 }
