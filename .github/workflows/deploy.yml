@@ -176,7 +176,7 @@ jobs:
             }
             console.log([...seen].sort().join(", ") || "unknown");
           ')"
-          NOTES="Combined PDF of the PICSA Dashboard user guide, version ${VERSION}.
+          NOTES="Combined PDF of the E-PICSA Dashboard user guide, version ${VERSION}.
 
             Screenshots captured from dashboard build ${BUILD} (the build the
             capture ran against — see the e-picsa/picsa-apps releases for

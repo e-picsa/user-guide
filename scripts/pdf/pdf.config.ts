@@ -35,6 +35,6 @@ export const pdfCombineConfig = {
   /** Document properties written onto the combined guide. */
   metadata: {
     author: 'PICSA',
-    subject: 'PICSA Dashboard user guide',
+    subject: 'E-PICSA Dashboard user guide',
   },
 };

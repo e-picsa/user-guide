@@ -3,6 +3,24 @@
 Fumadocs (Next.js) documentation site. Screenshots are captured from the live
 E-PICSA Dashboard Angular app, not from this repo.
 
+## Naming: "E-PICSA Dashboard"
+
+Always name the product **E-PICSA Dashboard** — never "PICSA Dashboard", "the
+PICSA dashboard", "E-PicSA" or "PicSA Dashboard". Applies to MDX frontmatter
+(`title`, `description`), page copy, `<Screenshot alt>` text, PDF metadata
+(`scripts/pdf/pdf.config.ts`) and release notes. Subsequent references on a page
+may use the lowercase generic "the dashboard" (e.g. "reloads the dashboard"),
+but the first mention on a page should be the full product name.
+
+Two deliberate exceptions, both derived from the dashboard app itself rather
+than written by us — do not "fix" them:
+
+- The app's `<title>`/browser title is `PICSA Dashboard`, so screenshot sidecar
+  `public/screenshots/**/*.json` record `"title": "PICSA Dashboard"` (asserted
+  by the fixture in `scripts/screenshots/verify.ts`).
+- Bare "PICSA" is still correct for the org, the field apps ("the PICSA field
+  apps") and PDF metadata `author: 'PICSA'`.
+
 ## Relation to dashboard app
 
 - Dashboard source: `../picsa-apps/apps/picsa-apps/dashboard/src/app/`
