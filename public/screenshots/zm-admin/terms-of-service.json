@@ -1,0 +1,126 @@
+{
+  "route": "terms-of-service",
+  "url": "http://localhost:4200/terms-of-service",
+  "title": "PICSA Dashboard",
+  "identifier": "zm-admin",
+  "dashboardVersion": "5.14.0",
+  "capturedAt": "2026-09-25T01:21:41.272Z",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "scrollTop": 122,
+  "space": "viewport-relative CSS px at capture viewport (1:1 with png at deviceScaleFactor 1)",
+  "headings": [
+    {
+      "tag": "h1",
+      "kind": "heading",
+      "text": "Terms of Service",
+      "bbox": {
+        "x": 224,
+        "y": -58,
+        "width": 832,
+        "height": 56
+      }
+    },
+    {
+      "tag": "h2",
+      "kind": "heading",
+      "text": "1. Acceptance of Terms",
+      "bbox": {
+        "x": 224,
+        "y": 104,
+        "width": 832,
+        "height": 28
+      }
+    },
+    {
+      "tag": "h2",
+      "kind": "heading",
+      "text": "2. Description of Service",
+      "bbox": {
+        "x": 224,
+        "y": 276.5,
+        "width": 832,
+        "height": 28
+      }
+    },
+    {
+      "tag": "h2",
+      "kind": "heading",
+      "text": "3. User Accounts",
+      "bbox": {
+        "x": 224,
+        "y": 449,
+        "width": 832,
+        "height": 28
+      }
+    },
+    {
+      "tag": "h2",
+      "kind": "heading",
+      "text": "4. Acceptable Use & Content Responsibility",
+      "bbox": {
+        "x": 224,
+        "y": 621.5,
+        "width": 832,
+        "height": 28
+      }
+    },
+    {
+      "tag": "h2",
+      "kind": "heading",
+      "text": "5. Intellectual Property",
+      "bbox": {
+        "x": 224,
+        "y": 869,
+        "width": 832,
+        "height": 28
+      }
+    },
+    {
+      "tag": "h2",
+      "kind": "heading",
+      "text": "6. Limitation of Liability",
+      "bbox": {
+        "x": 224,
+        "y": 1202.5,
+        "width": 832,
+        "height": 28
+      }
+    },
+    {
+      "tag": "h2",
+      "kind": "heading",
+      "text": "7. Contact Us",
+      "bbox": {
+        "x": 224,
+        "y": 1375,
+        "width": 832,
+        "height": 28
+      }
+    }
+  ],
+  "interactive": [
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "support@picsa.app",
+      "bbox": {
+        "x": 890.1,
+        "y": 1419,
+        "width": 144.9,
+        "height": 21.5
+      },
+      "href": "mailto:support@picsa.app"
+    }
+  ],
+  "tables": [],
+  "nav": [
+    {
+      "label": "support@picsa.app",
+      "href": "mailto:support@picsa.app"
+    }
+  ],
+  "dialogs": []
+}

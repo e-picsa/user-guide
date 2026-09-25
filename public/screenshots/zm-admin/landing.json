@@ -1,0 +1,117 @@
+{
+  "route": "(logged-out) home",
+  "url": "http://localhost:4200/home",
+  "title": "PICSA Dashboard",
+  "identifier": "zm-admin",
+  "dashboardVersion": "5.14.0",
+  "capturedAt": "2026-09-25T01:16:22.078Z",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "scrollTop": 0,
+  "space": "viewport-relative CSS px at capture viewport (1:1 with png at deviceScaleFactor 1)",
+  "headings": [
+    {
+      "tag": "h1",
+      "kind": "heading",
+      "text": "E-PICSA Dashboard",
+      "bbox": {
+        "x": 160,
+        "y": 135.5,
+        "width": 448,
+        "height": 68
+      }
+    }
+  ],
+  "interactive": [
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Learn More about PICSA",
+      "bbox": {
+        "x": 160,
+        "y": 479,
+        "width": 222.4,
+        "height": 36
+      },
+      "href": "https://research.reading.ac.uk/picsa/"
+    },
+    {
+      "tag": "div",
+      "kind": "tab",
+      "text": "Login",
+      "bbox": {
+        "x": 736,
+        "y": 179.5,
+        "width": 181.1,
+        "height": 48
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "tab",
+      "text": "Register",
+      "bbox": {
+        "x": 917.1,
+        "y": 179.5,
+        "width": 202.9,
+        "height": 48
+      }
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "email",
+      "bbox": {
+        "x": 768,
+        "y": 272.5,
+        "width": 324,
+        "height": 28
+      },
+      "label": "input:email"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "password",
+      "bbox": {
+        "x": 768,
+        "y": 366,
+        "width": 272,
+        "height": 41
+      },
+      "label": "input:password"
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Forgot Password?",
+      "bbox": {
+        "x": 941.5,
+        "y": 456.5,
+        "width": 154.5,
+        "height": 36
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Login",
+      "bbox": {
+        "x": 760,
+        "y": 512.5,
+        "width": 336,
+        "height": 48
+      }
+    }
+  ],
+  "tables": [],
+  "nav": [
+    {
+      "label": "Learn More about PICSA",
+      "href": "https://research.reading.ac.uk/picsa/"
+    }
+  ],
+  "dialogs": []
+}

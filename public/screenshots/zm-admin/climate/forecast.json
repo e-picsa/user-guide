@@ -1,0 +1,511 @@
+{
+  "route": "climate/forecast",
+  "url": "http://localhost:4200/climate/forecast",
+  "title": "PICSA Dashboard",
+  "identifier": "zm-admin",
+  "dashboardVersion": "5.14.0",
+  "capturedAt": "2026-09-25T01:16:55.149Z",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "scrollTop": 0,
+  "space": "viewport-relative CSS px at capture viewport (1:1 with png at deviceScaleFactor 1)",
+  "headings": [
+    {
+      "tag": "h2",
+      "kind": "heading",
+      "text": "Forecasts",
+      "bbox": {
+        "x": 220,
+        "y": 32,
+        "width": 106.6,
+        "height": 32
+      }
+    }
+  ],
+  "interactive": [
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "homeHome",
+      "bbox": {
+        "x": 0,
+        "y": 72,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/home"
+    },
+    {
+      "tag": "mat-expansion-panel-header",
+      "kind": "button",
+      "text": "filter_dramaClimate",
+      "bbox": {
+        "x": 0,
+        "y": 120,
+        "width": 203,
+        "height": 64
+      }
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Station Data",
+      "bbox": {
+        "x": 0,
+        "y": 184,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/climate/station"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Forecasts",
+      "bbox": {
+        "x": 0,
+        "y": 232,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/climate/forecast"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Admin",
+      "bbox": {
+        "x": 0,
+        "y": 280,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/climate/admin"
+    },
+    {
+      "tag": "mat-expansion-panel-header",
+      "kind": "button",
+      "text": "spaCrop",
+      "bbox": {
+        "x": 0,
+        "y": 328,
+        "width": 203,
+        "height": 48
+      }
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Variety",
+      "bbox": {
+        "x": 0,
+        "y": 376,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/crop/variety"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Probability",
+      "bbox": {
+        "x": 0,
+        "y": 424,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/crop/probability"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Admin",
+      "bbox": {
+        "x": 0,
+        "y": 472,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/crop/admin"
+    },
+    {
+      "tag": "mat-expansion-panel-header",
+      "kind": "button",
+      "text": "translateTranslations",
+      "bbox": {
+        "x": 0,
+        "y": 376,
+        "width": 203,
+        "height": 48
+      }
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "List",
+      "bbox": {
+        "x": 0,
+        "y": 424,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/translations/list"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Import",
+      "bbox": {
+        "x": 0,
+        "y": 472,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/translations/import"
+    },
+    {
+      "tag": "mat-expansion-panel-header",
+      "kind": "button",
+      "text": "library_booksResources",
+      "bbox": {
+        "x": 0,
+        "y": 424,
+        "width": 203,
+        "height": 48
+      }
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Files",
+      "bbox": {
+        "x": 0,
+        "y": 472,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/files"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Links",
+      "bbox": {
+        "x": 0,
+        "y": 520,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/links"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Collections",
+      "bbox": {
+        "x": 0,
+        "y": 568,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/collections"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Farmer Videos",
+      "bbox": {
+        "x": 0,
+        "y": 616,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/farmer-videos"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "query_statsStatistics",
+      "bbox": {
+        "x": 0,
+        "y": 519,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/stats"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "appsDeployments",
+      "bbox": {
+        "x": 0,
+        "y": 567,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/deployment"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "manage_accountsUser Permissions",
+      "bbox": {
+        "x": 0,
+        "y": 615,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/deployment/permissions"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "mapMap Boundaries",
+      "bbox": {
+        "x": 0,
+        "y": 663,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/map-admin"
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Sep 2026",
+      "bbox": {
+        "x": 334.6,
+        "y": 30,
+        "width": 102.1,
+        "height": 36
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "addAdd seasonal Forecast",
+      "bbox": {
+        "x": 979.6,
+        "y": 30,
+        "width": 236.4,
+        "height": 36
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "autorenew",
+      "bbox": {
+        "x": 1216,
+        "y": 24,
+        "width": 48,
+        "height": 48
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "tab",
+      "text": "Seasonal",
+      "bbox": {
+        "x": 220,
+        "y": 80,
+        "width": 266.2,
+        "height": 48
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "tab",
+      "text": "Downscaled",
+      "bbox": {
+        "x": 486.2,
+        "y": 80,
+        "width": 289.8,
+        "height": 48
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "tab",
+      "text": "Weekly",
+      "bbox": {
+        "x": 776,
+        "y": 80,
+        "width": 251.9,
+        "height": 48
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "tab",
+      "text": "Daily",
+      "bbox": {
+        "x": 1028,
+        "y": 80,
+        "width": 236.1,
+        "height": 48
+      }
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "input",
+      "bbox": {
+        "x": 276,
+        "y": 152,
+        "width": 972,
+        "height": 41
+      },
+      "label": "input:text"
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "Created At",
+      "bbox": {
+        "x": 236,
+        "y": 239,
+        "width": 190.8,
+        "height": 22
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "Label",
+      "bbox": {
+        "x": 458.8,
+        "y": 239,
+        "width": 338.4,
+        "height": 22
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "Language",
+      "bbox": {
+        "x": 829.2,
+        "y": 239,
+        "width": 181.7,
+        "height": 22
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "Storage File",
+      "bbox": {
+        "x": 1042.9,
+        "y": 239,
+        "width": 205.1,
+        "height": 22
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "open_in_new",
+      "bbox": {
+        "x": 1042.9,
+        "y": 280.5,
+        "width": 48,
+        "height": 48
+      }
+    }
+  ],
+  "tables": [
+    {
+      "headers": [
+        "Created At",
+        "Label",
+        "Language",
+        "Storage File"
+      ],
+      "rows": [
+        [
+          "Sep 22, 2026",
+          "Seasonal Climate Outlook",
+          "English",
+          "open_in_new"
+        ]
+      ],
+      "rowCount": 1
+    }
+  ],
+  "nav": [
+    {
+      "label": "homeHome",
+      "href": "/home"
+    },
+    {
+      "label": "Station Data",
+      "href": "/climate/station"
+    },
+    {
+      "label": "Forecasts",
+      "href": "/climate/forecast"
+    },
+    {
+      "label": "Admin",
+      "href": "/climate/admin"
+    },
+    {
+      "label": "Variety",
+      "href": "/crop/variety"
+    },
+    {
+      "label": "Probability",
+      "href": "/crop/probability"
+    },
+    {
+      "label": "Admin",
+      "href": "/crop/admin"
+    },
+    {
+      "label": "List",
+      "href": "/translations/list"
+    },
+    {
+      "label": "Import",
+      "href": "/translations/import"
+    },
+    {
+      "label": "Files",
+      "href": "/resources/files"
+    },
+    {
+      "label": "Links",
+      "href": "/resources/links"
+    },
+    {
+      "label": "Collections",
+      "href": "/resources/collections"
+    },
+    {
+      "label": "Farmer Videos",
+      "href": "/resources/farmer-videos"
+    },
+    {
+      "label": "query_statsStatistics",
+      "href": "/stats"
+    },
+    {
+      "label": "appsDeployments",
+      "href": "/deployment"
+    },
+    {
+      "label": "manage_accountsUser Permissions",
+      "href": "/deployment/permissions"
+    },
+    {
+      "label": "mapMap Boundaries",
+      "href": "/map-admin"
+    }
+  ],
+  "dialogs": []
+}

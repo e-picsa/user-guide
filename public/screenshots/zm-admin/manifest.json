@@ -1,0 +1,277 @@
+{
+  "identifier": "zm-admin",
+  "dashboardVersion": "5.14.0",
+  "generatedAt": "2026-09-25T04:31:11.695Z",
+  "results": [
+    {
+      "route": "(logged-out) home",
+      "file": "public/screenshots/zm-admin/landing.png",
+      "status": "unchanged",
+      "detail": "matches previous (0.00% changed)",
+      "version": "5.14.0",
+      "hash": "8f5756f2",
+      "capturedAt": "2026-09-25T01:16:22.078Z"
+    },
+    {
+      "route": "home",
+      "file": "public/screenshots/zm-admin/home.png",
+      "status": "reused",
+      "detail": "up to date at v5.14.0 (hash 3bbf5af7)",
+      "version": "5.14.0",
+      "hash": "3bbf5af7",
+      "capturedAt": "2026-09-25T01:16:37.265Z"
+    },
+    {
+      "route": "climate/station",
+      "file": "public/screenshots/zm-admin/climate/station.png",
+      "status": "reused",
+      "detail": "up to date at v5.14.0 (hash 00e91ce8)",
+      "version": "5.14.0",
+      "hash": "00e91ce8",
+      "capturedAt": "2026-09-25T01:16:42.664Z"
+    },
+    {
+      "route": "climate/station/chipata_met",
+      "file": "public/screenshots/zm-admin/climate/station/chipata_met.png",
+      "status": "captured",
+      "detail": "scrollTop=62, 7.24% changed",
+      "version": "5.14.0",
+      "hash": "0d0c4607",
+      "capturedAt": "2026-09-25T04:31:06.637Z"
+    },
+    {
+      "route": "climate/forecast",
+      "file": "public/screenshots/zm-admin/climate/forecast.png",
+      "status": "reused",
+      "detail": "up to date at v5.14.0 (hash 63b23add)",
+      "version": "5.14.0",
+      "hash": "63b23add",
+      "capturedAt": "2026-09-25T01:16:55.149Z"
+    },
+    {
+      "route": "climate/admin",
+      "file": "public/screenshots/zm-admin/climate/admin.png",
+      "status": "unchanged",
+      "detail": "matches previous (0.00% changed), scrollTop=66",
+      "version": "5.14.0",
+      "hash": "f83793a8",
+      "capturedAt": "2026-09-25T01:17:00.043Z"
+    },
+    {
+      "route": "crop/variety",
+      "file": "public/screenshots/zm-admin/crop/variety.png",
+      "status": "reused",
+      "detail": "up to date at v5.14.0 (hash f80f6c91)",
+      "version": "5.14.0",
+      "hash": "f80f6c91",
+      "capturedAt": "2026-09-25T01:17:04.518Z"
+    },
+    {
+      "route": "crop/variety/zm/beans/CHAMBESHI",
+      "file": "public/screenshots/zm-admin/crop/variety/zm/beans/CHAMBESHI.png",
+      "status": "reused",
+      "detail": "up to date at v5.14.0 (hash 3b81f975)",
+      "version": "5.14.0",
+      "hash": "3b81f975",
+      "capturedAt": "2026-09-25T01:17:08.962Z"
+    },
+    {
+      "route": "crop/variety/add",
+      "file": "public/screenshots/zm-admin/crop/variety/add.png",
+      "status": "reused",
+      "detail": "up to date at v5.14.0 (hash fcbbccd5)",
+      "version": "5.14.0",
+      "hash": "fcbbccd5",
+      "capturedAt": "2026-09-25T01:17:13.404Z"
+    },
+    {
+      "route": "crop/probability",
+      "file": "public/screenshots/zm-admin/crop/probability.png",
+      "status": "reused",
+      "detail": "up to date at v5.14.0 (hash d6bec020)",
+      "version": "5.14.0",
+      "hash": "d6bec020",
+      "capturedAt": "2026-09-25T01:17:17.877Z"
+    },
+    {
+      "route": "crop/probability/chadiza",
+      "file": "public/screenshots/zm-admin/crop/probability/chadiza.png",
+      "status": "reused",
+      "detail": "up to date at v5.14.0 (hash 0817e90d)",
+      "version": "5.14.0",
+      "hash": "0817e90d",
+      "capturedAt": "2026-09-25T01:17:22.412Z"
+    },
+    {
+      "route": "crop/admin",
+      "file": "public/screenshots/zm-admin/crop/admin.png",
+      "status": "reused",
+      "detail": "up to date at v5.14.0 (hash 0e79a890)",
+      "version": "5.14.0",
+      "hash": "0e79a890",
+      "capturedAt": "2026-09-25T01:17:26.874Z"
+    },
+    {
+      "route": "resources/files",
+      "file": "public/screenshots/zm-admin/resources/files.png",
+      "status": "reused",
+      "detail": "up to date at v5.14.0 (hash 4d3c9367)",
+      "version": "5.14.0",
+      "hash": "4d3c9367",
+      "capturedAt": "2026-09-25T01:17:31.377Z"
+    },
+    {
+      "route": "resources/files/dff5c161-3541-44a4-8326-0affafd26812",
+      "file": "public/screenshots/zm-admin/resources/files/dff5c161-3541-44a4-8326-0affafd26812.png",
+      "status": "reused",
+      "detail": "up to date at v5.14.0 (hash 8697883a)",
+      "version": "5.14.0",
+      "hash": "8697883a",
+      "capturedAt": "2026-09-25T01:17:35.843Z"
+    },
+    {
+      "route": "resources/files/create",
+      "file": "public/screenshots/zm-admin/resources/files/create.png",
+      "status": "reused",
+      "detail": "up to date at v5.14.0 (hash f89d655c)",
+      "version": "5.14.0",
+      "hash": "f89d655c",
+      "capturedAt": "2026-09-25T01:17:40.286Z"
+    },
+    {
+      "route": "resources/links",
+      "file": "public/screenshots/zm-admin/resources/links.png",
+      "status": "reused",
+      "detail": "up to date at v5.14.0 (hash d1b10781)",
+      "version": "5.14.0",
+      "hash": "d1b10781",
+      "capturedAt": "2026-09-25T01:17:44.762Z"
+    },
+    {
+      "route": "resources/links/zmdWhatsapp",
+      "file": "public/screenshots/zm-admin/resources/links/zmdWhatsapp.png",
+      "status": "reused",
+      "detail": "up to date at v5.14.0 (hash b8291be3)",
+      "version": "5.14.0",
+      "hash": "b8291be3",
+      "capturedAt": "2026-09-25T01:17:49.203Z"
+    },
+    {
+      "route": "resources/links/create",
+      "file": "public/screenshots/zm-admin/resources/links/create.png",
+      "status": "reused",
+      "detail": "up to date at v5.14.0 (hash 91d68f76)",
+      "version": "5.14.0",
+      "hash": "91d68f76",
+      "capturedAt": "2026-09-25T01:17:53.637Z"
+    },
+    {
+      "route": "resources/collections",
+      "file": "public/screenshots/zm-admin/resources/collections.png",
+      "status": "reused",
+      "detail": "up to date at v5.14.0 (hash 33dc1ead)",
+      "version": "5.14.0",
+      "hash": "33dc1ead",
+      "capturedAt": "2026-09-25T01:17:58.102Z"
+    },
+    {
+      "route": "resources/collections/create",
+      "file": "public/screenshots/zm-admin/resources/collections/create.png",
+      "status": "reused",
+      "detail": "up to date at v5.14.0 (hash b5bc827a)",
+      "version": "5.14.0",
+      "hash": "b5bc827a",
+      "capturedAt": "2026-09-25T01:18:02.557Z"
+    },
+    {
+      "route": "resources/farmer-videos",
+      "file": "public/screenshots/zm-admin/resources/farmer-videos.png",
+      "status": "reused",
+      "detail": "up to date at v5.14.0 (hash 967e10d4)",
+      "version": "5.14.0",
+      "hash": "967e10d4",
+      "capturedAt": "2026-09-25T01:18:07.044Z"
+    },
+    {
+      "route": "translations/list",
+      "file": "public/screenshots/zm-admin/translations/list.png",
+      "status": "reused",
+      "detail": "up to date at v5.14.0 (hash 3b6629d3)",
+      "version": "5.14.0",
+      "hash": "3b6629d3",
+      "capturedAt": "2026-09-25T01:18:11.530Z"
+    },
+    {
+      "route": "translations/import",
+      "file": "public/screenshots/zm-admin/translations/import.png",
+      "status": "reused",
+      "detail": "up to date at v5.14.0 (hash 68966b84)",
+      "version": "5.14.0",
+      "hash": "68966b84",
+      "capturedAt": "2026-09-25T01:18:15.983Z"
+    },
+    {
+      "route": "profile",
+      "file": "public/screenshots/zm-admin/profile.png",
+      "status": "reused",
+      "detail": "up to date at v5.14.0 (hash 1ba2f887)",
+      "version": "5.14.0",
+      "hash": "1ba2f887",
+      "capturedAt": "2026-09-25T01:18:20.459Z"
+    },
+    {
+      "route": "stats",
+      "file": "public/screenshots/zm-admin/stats.png",
+      "status": "reused",
+      "detail": "up to date at v5.14.0 (hash 9e7dd3fd)",
+      "version": "5.14.0",
+      "hash": "9e7dd3fd",
+      "capturedAt": "2026-09-25T01:18:53.976Z"
+    },
+    {
+      "route": "deployment",
+      "file": "public/screenshots/zm-admin/deployment.png",
+      "status": "reused",
+      "detail": "up to date at v5.14.0 (hash 0f6dc867)",
+      "version": "5.14.0",
+      "hash": "0f6dc867",
+      "capturedAt": "2026-09-25T01:19:27.442Z"
+    },
+    {
+      "route": "deployment/permissions",
+      "file": "public/screenshots/zm-admin/deployment/permissions.png",
+      "status": "reused",
+      "detail": "up to date at v5.14.0 (hash 019c6bbe)",
+      "version": "5.14.0",
+      "hash": "019c6bbe",
+      "capturedAt": "2026-09-25T01:20:00.902Z"
+    },
+    {
+      "route": "map-admin",
+      "file": "public/screenshots/zm-admin/map-admin.png",
+      "status": "reused",
+      "detail": "up to date at v5.14.0 (hash a8d152e4)",
+      "version": "5.14.0",
+      "hash": "a8d152e4",
+      "capturedAt": "2026-09-25T01:20:34.372Z"
+    },
+    {
+      "route": "privacy-policy",
+      "file": "public/screenshots/zm-admin/privacy-policy.png",
+      "status": "reused",
+      "detail": "up to date at v5.14.0 (hash 13e1e189)",
+      "version": "5.14.0",
+      "hash": "13e1e189",
+      "capturedAt": "2026-09-25T01:21:07.833Z"
+    },
+    {
+      "route": "terms-of-service",
+      "file": "public/screenshots/zm-admin/terms-of-service.png",
+      "status": "reused",
+      "detail": "up to date at v5.14.0 (hash 4a5d7299)",
+      "version": "5.14.0",
+      "hash": "4a5d7299",
+      "capturedAt": "2026-09-25T01:21:41.272Z"
+    }
+  ]
+}
