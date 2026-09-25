@@ -73,6 +73,12 @@ export const META_LIMITS: ExtractLimits = {
 };
 
 /**
+ * Bump when extraction output changes (fields, filtering, scoping).
+ * Included in the manifest entry hash so sidecars refresh.
+ */
+export const EXTRACT_VERSION = 2;
+
+/**
  * Collect documentation-oriented metadata for the current page.
  * Bboxes are viewport-relative CSS px (1:1 with png pixels at deviceScaleFactor 1).
  */
@@ -86,8 +92,29 @@ export function extractMeta(
   limits: ExtractLimits,
 ): ScreenshotMeta {
   function text(el: Element, max: number): string {
-    const t = (el.textContent || '').replace(/\s+/g, ' ').trim();
+    const t = innerText(el).replace(/\s+/g, ' ').trim();
     return t.length > max ? t.slice(0, max) + '…' : t;
+  }
+  /**
+   * Element text excluding icon ligatures (mat-icon text like "home" or
+   * "filter_drama" would otherwise concatenate with labels: "homeHome").
+   * Cells containing only icons resolve to ''.
+   */
+  function innerText(node: Node): string {
+    let out = '';
+    node.childNodes.forEach((child) => {
+      if (child.nodeType === 3) {
+        out += child.textContent + ' ';
+      } else if (child.nodeType === 1) {
+        const childEl = child as Element;
+        const cls = childEl.getAttribute('class') || '';
+        if (childEl.tagName === 'MAT-ICON') return;
+        if (/(^|\s)mat-icon(\s|$)/.test(cls)) return;
+        if (/(^|\s)material-(icons|symbols)/.test(cls)) return;
+        out += innerText(child) + ' ';
+      }
+    });
+    return out;
   }
   function bbox(el: Element): BBox {
     const r = el.getBoundingClientRect();
@@ -243,12 +270,20 @@ export function extractMeta(
 }
 
 /**
- * Serialize the page content area to cleaned HTML for agent reference.
- * Strips scripts/styles, Angular compiler attributes. Capped at 500KB.
+ * Serialize the routed page component to cleaned HTML for agent reference.
+ * The content root is the routed component (sibling after the router-outlet),
+ * not the app shell — falling back to the scroll container, which wraps the
+ * whole app including fixed sidebar/toolbar.
+ * Strips scripts/styles and Angular compiler attributes. Capped at 500KB.
  */
 export function extractContentHtml(): string {
-  const root =
-    document.querySelector('div.page') || document.querySelector('mat-sidenav-content') || document.body;
+  function findRoot(doc: Document): Element {
+    const outlet = doc.querySelector('mat-sidenav-content router-outlet');
+    const sibling = outlet ? outlet.nextElementSibling : null;
+    if (sibling) return sibling;
+    return doc.querySelector('div.page') || doc.querySelector('mat-sidenav-content') || doc.body;
+  }
+  const root = findRoot(document);
   // Round-trip through a fresh div (also detaches live component state)
   const holder = document.createElement('div');
   holder.innerHTML = root.innerHTML;

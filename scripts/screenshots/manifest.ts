@@ -5,6 +5,8 @@
  *   `climate/station/chipata_met` -> `<identifier>/climate/station/chipata_met.png`.
  * - Param routes use hardcoded exemplars (limited subset, verified against
  *   the local docker backend for the `zm` deployment). Do not crawl arbitrary IDs.
+ * - `EXTRACT_VERSION` (from `extract.ts`) is folded into hashes so extraction
+ *   changes refresh all sidecars.
  * - `actions` are ordered UI steps run after navigation, before capture.
  *   Omit for the default plain `goto` + capture. Includes scroll actions
  *   (`scrollTo` selector, `scrollBy` px) for explicit scroll control.
@@ -12,6 +14,8 @@
  *   omit (or `'auto'`) to scroll the page heading out of view, `false` to
  *   capture from the top, `<px>` for a fixed offset.
  */
+
+import { EXTRACT_VERSION } from './extract';
 
 export type PageAction =
   | { click: string }
@@ -41,8 +45,15 @@ function p(route: string, actions?: PageAction[], href?: string, scroll?: PageEn
 export const PAGES: PageEntry[] = [
   p('home'),
   p('climate/station'),
-  // Station details has tabbed content; capture the Charts tab as the exemplar state
-  p('climate/station/chipata_met', [{ waitFor: '[role="tab"]' }, { clickText: 'Charts' }, { wait: 2000 }]),
+  // Station details has tabbed content; capture the Charts tab with the first
+  // chart card selected so an actual chart renders
+  p('climate/station/chipata_met', [
+    { waitFor: '[role="tab"]' },
+    { clickText: 'Charts' },
+    { wait: 2000 },
+    { click: '.chart-list .chart-button' },
+    { wait: 2500 },
+  ]),
   p('climate/forecast'),
   p('climate/admin'),
   p('crop/variety'),
@@ -85,13 +96,14 @@ export function routeToFile(route: string): string {
   return `${parts.join('/')}.png`;
 }
 
-/** Stable short hash of a manifest entry (route + href + actions + scroll). */
+/** Stable short hash of a manifest entry (route + href + actions + scroll + extractor). */
 export function entryHash(entry: PageEntry): string {
   const src = JSON.stringify({
     route: entry.route,
     href: entry.href ?? null,
     actions: entry.actions ?? null,
     scroll: entry.scroll ?? null,
+    extract: EXTRACT_VERSION,
   });
   // fnv-1a 32-bit
   let h = 0x811c9dc5;
