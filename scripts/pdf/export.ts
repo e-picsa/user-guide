@@ -3,11 +3,14 @@
  * (per the official Fumadocs PDF guide, adapted to this repo's
  * `puppeteer-core` + shared Chrome resolution).
  *
- * The dev server must be running with printing overrides enabled so
+ * The server must be running with printing overrides enabled so
  * collapsible/tabbed content renders expanded:
  *
- *   terminal 1: PDF_PRINT=1 bun run dev
+ *   terminal 1: PDF_PRINT=1 bun run start
  *   terminal 2: bun run pdf
+ *
+ * Each page becomes one continuous sheet (see print.ts) — these PDFs are for
+ * on-screen reading, nobody prints them.
  *
  * Env: PDF_BASE_URL (default `http://localhost:3000`),
  * PDF_OUT_DIR (default `pdfs`), PDF_ONLY (comma filter on routes),
@@ -15,12 +18,13 @@
  *
  * Run: bun run pdf
  */
-import { mkdirSync } from 'node:fs';
+import { mkdirSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import puppeteer from 'puppeteer-core';
 
 import { resolveChromePath } from '../screenshots/config';
 import { discoverPages } from './pages';
+import { renderTallSheet, SHEET_VIEWPORT } from './print';
 
 function env(name: string, fallback: string): string {
   return process.env[name] ?? fallback;
@@ -48,31 +52,14 @@ async function main(): Promise<void> {
   try {
     for (const { route, stem } of pages) {
       const page = await browser.newPage();
-      // Match the PDF sheet width so the measured content height is accurate
-      // (A4 width at 96 CSS px per inch).
-      await page.setViewport({ width: 794, height: 600 });
+      // Viewport width matches the sheet width so the measured content height
+      // is accurate.
+      await page.setViewport(SHEET_VIEWPORT);
       try {
         await page.goto(`${baseUrl}${route}`, { waitUntil: 'networkidle0', timeout: 60_000 });
-        // Single continuous sheet at full article height: no pagination, so
-        // nothing is ever split or gapped mid-content. PDFs are for
-        // on-screen reading; nobody prints these.
-        const height = await page.evaluate(
-          () =>
-            Math.max(
-              document.body.scrollHeight,
-              document.body.offsetHeight,
-              document.documentElement.clientHeight,
-              document.documentElement.scrollHeight,
-              document.documentElement.offsetHeight,
-            ) + 2,
-        );
-        await page.pdf({
-          path: join(outDir, `${stem}.pdf`),
-          width: '8.27in',
-          height: `${Math.ceil(height)}px`,
-          printBackground: true,
-        });
-        console.log(`OK ${route} -> ${stem}.pdf (${Math.ceil(height)}px tall)`);
+        const { buffer, height } = await renderTallSheet(page, { label: route });
+        writeFileSync(join(outDir, `${stem}.pdf`), buffer);
+        console.log(`OK ${route} -> ${stem}.pdf (${height}px tall)`);
       } finally {
         await page.close();
       }

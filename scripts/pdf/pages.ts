@@ -1,5 +1,5 @@
 /** Discover docs pages by scanning `content/docs` for `.mdx` files. */
-import { readdirSync, statSync } from 'node:fs';
+import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative, resolve, sep } from 'node:path';
 
 export interface PdfPage {
@@ -7,6 +7,8 @@ export interface PdfPage {
   route: string;
   /** Output file stem, e.g. `docs` or `docs-getting-started`. */
   stem: string;
+  /** Frontmatter `title`, falling back to the stem. */
+  title: string;
 }
 
 function walk(dir: string, out: string[] = []): string[] {
@@ -44,6 +46,19 @@ export function discoverPages(contentDir = 'content/docs'): PdfPage[] {
   const root = resolve(process.cwd(), contentDir);
   return walk(root).map((file) => {
     const route = fileToRoute(root, file);
-    return { route, stem: routeToStem(route) };
+    return { route, stem: routeToStem(route), title: readTitle(file) };
   });
+}
+
+/** Frontmatter `title:` value, falling back to the file's route stem. */
+function readTitle(file: string): string {
+  try {
+    const raw = readFileSync(file, 'utf8');
+    const frontmatter = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+    const title = frontmatter?.[1].match(/^title:\s*(.+?)\s*$/m)?.[1];
+    if (title) return title.replace(/^['"]|['"]$/g, '');
+  } catch {
+    // fall through to stem fallback
+  }
+  return routeToStem(fileToRoute(resolve(process.cwd(), 'content/docs'), file));
 }
