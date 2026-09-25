@@ -1,0 +1,131 @@
+{
+  "route": "privacy-policy",
+  "url": "http://localhost:4200/privacy-policy",
+  "title": "PICSA Dashboard",
+  "identifier": "zm-admin",
+  "dashboardVersion": "5.14.0",
+  "capturedAt": "2026-09-25T01:21:07.833Z",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "scrollTop": 122,
+  "space": "viewport-relative CSS px at capture viewport (1:1 with png at deviceScaleFactor 1)",
+  "headings": [
+    {
+      "tag": "h1",
+      "kind": "heading",
+      "text": "Privacy Policy",
+      "bbox": {
+        "x": 224,
+        "y": -58,
+        "width": 832,
+        "height": 56
+      }
+    },
+    {
+      "tag": "h2",
+      "kind": "heading",
+      "text": "1. Introduction",
+      "bbox": {
+        "x": 224,
+        "y": 104,
+        "width": 832,
+        "height": 28
+      }
+    },
+    {
+      "tag": "h2",
+      "kind": "heading",
+      "text": "2. Information We Collect",
+      "bbox": {
+        "x": 224,
+        "y": 255,
+        "width": 832,
+        "height": 28
+      }
+    },
+    {
+      "tag": "h2",
+      "kind": "heading",
+      "text": "3. How We Use Your Information",
+      "bbox": {
+        "x": 224,
+        "y": 591,
+        "width": 832,
+        "height": 28
+      }
+    },
+    {
+      "tag": "h2",
+      "kind": "heading",
+      "text": "4. Data Storage and Security",
+      "bbox": {
+        "x": 224,
+        "y": 817,
+        "width": 832,
+        "height": 28
+      }
+    },
+    {
+      "tag": "h2",
+      "kind": "heading",
+      "text": "5. Your Rights (GDPR)",
+      "bbox": {
+        "x": 224,
+        "y": 1048.5,
+        "width": 832,
+        "height": 28
+      }
+    },
+    {
+      "tag": "h2",
+      "kind": "heading",
+      "text": "6. Contact Us",
+      "bbox": {
+        "x": 224,
+        "y": 1341.5,
+        "width": 832,
+        "height": 28
+      }
+    }
+  ],
+  "interactive": [
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Supabase Security Documentation",
+      "bbox": {
+        "x": 625.7,
+        "y": 963,
+        "width": 258.4,
+        "height": 21.5
+      },
+      "href": "https://supabase.com/security"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "support@picsa.app",
+      "bbox": {
+        "x": 335.1,
+        "y": 1407,
+        "width": 144.9,
+        "height": 21.5
+      },
+      "href": "mailto:support@picsa.app"
+    }
+  ],
+  "tables": [],
+  "nav": [
+    {
+      "label": "Supabase Security Documentation",
+      "href": "https://supabase.com/security"
+    },
+    {
+      "label": "support@picsa.app",
+      "href": "mailto:support@picsa.app"
+    }
+  ],
+  "dialogs": []
+}

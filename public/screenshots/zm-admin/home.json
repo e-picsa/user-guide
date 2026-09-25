@@ -1,0 +1,360 @@
+{
+  "route": "home",
+  "url": "http://localhost:4200/home",
+  "title": "PICSA Dashboard",
+  "identifier": "zm-admin",
+  "dashboardVersion": "5.14.0",
+  "capturedAt": "2026-09-25T01:16:37.265Z",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "scrollTop": 0,
+  "space": "viewport-relative CSS px at capture viewport (1:1 with png at deviceScaleFactor 1)",
+  "headings": [
+    {
+      "tag": "h2",
+      "kind": "heading",
+      "text": "Latest Updates",
+      "bbox": {
+        "x": 204,
+        "y": 16,
+        "width": 1076,
+        "height": 32
+      }
+    },
+    {
+      "tag": "h2",
+      "kind": "heading",
+      "text": "PICSA Dashboard",
+      "bbox": {
+        "x": 204,
+        "y": 246.5,
+        "width": 1076,
+        "height": 32
+      }
+    }
+  ],
+  "interactive": [
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "homeHome",
+      "bbox": {
+        "x": 0,
+        "y": 72,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/home"
+    },
+    {
+      "tag": "mat-expansion-panel-header",
+      "kind": "button",
+      "text": "filter_dramaClimate",
+      "bbox": {
+        "x": 0,
+        "y": 120,
+        "width": 203,
+        "height": 48
+      }
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Station Data",
+      "bbox": {
+        "x": 0,
+        "y": 168,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/climate/station"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Forecasts",
+      "bbox": {
+        "x": 0,
+        "y": 216,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/climate/forecast"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Admin",
+      "bbox": {
+        "x": 0,
+        "y": 264,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/climate/admin"
+    },
+    {
+      "tag": "mat-expansion-panel-header",
+      "kind": "button",
+      "text": "spaCrop",
+      "bbox": {
+        "x": 0,
+        "y": 168,
+        "width": 203,
+        "height": 48
+      }
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Variety",
+      "bbox": {
+        "x": 0,
+        "y": 216,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/crop/variety"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Probability",
+      "bbox": {
+        "x": 0,
+        "y": 264,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/crop/probability"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Admin",
+      "bbox": {
+        "x": 0,
+        "y": 312,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/crop/admin"
+    },
+    {
+      "tag": "mat-expansion-panel-header",
+      "kind": "button",
+      "text": "translateTranslations",
+      "bbox": {
+        "x": 0,
+        "y": 216,
+        "width": 203,
+        "height": 48
+      }
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "List",
+      "bbox": {
+        "x": 0,
+        "y": 264,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/translations/list"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Import",
+      "bbox": {
+        "x": 0,
+        "y": 312,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/translations/import"
+    },
+    {
+      "tag": "mat-expansion-panel-header",
+      "kind": "button",
+      "text": "library_booksResources",
+      "bbox": {
+        "x": 0,
+        "y": 264,
+        "width": 203,
+        "height": 48
+      }
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Files",
+      "bbox": {
+        "x": 0,
+        "y": 312,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/files"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Links",
+      "bbox": {
+        "x": 0,
+        "y": 360,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/links"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Collections",
+      "bbox": {
+        "x": 0,
+        "y": 408,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/collections"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Farmer Videos",
+      "bbox": {
+        "x": 0,
+        "y": 456,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/farmer-videos"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "query_statsStatistics",
+      "bbox": {
+        "x": 0,
+        "y": 519,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/stats"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "appsDeployments",
+      "bbox": {
+        "x": 0,
+        "y": 567,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/deployment"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "manage_accountsUser Permissions",
+      "bbox": {
+        "x": 0,
+        "y": 615,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/deployment/permissions"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "mapMap Boundaries",
+      "bbox": {
+        "x": 0,
+        "y": 663,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/map-admin"
+    }
+  ],
+  "tables": [],
+  "nav": [
+    {
+      "label": "homeHome",
+      "href": "/home"
+    },
+    {
+      "label": "Station Data",
+      "href": "/climate/station"
+    },
+    {
+      "label": "Forecasts",
+      "href": "/climate/forecast"
+    },
+    {
+      "label": "Admin",
+      "href": "/climate/admin"
+    },
+    {
+      "label": "Variety",
+      "href": "/crop/variety"
+    },
+    {
+      "label": "Probability",
+      "href": "/crop/probability"
+    },
+    {
+      "label": "Admin",
+      "href": "/crop/admin"
+    },
+    {
+      "label": "List",
+      "href": "/translations/list"
+    },
+    {
+      "label": "Import",
+      "href": "/translations/import"
+    },
+    {
+      "label": "Files",
+      "href": "/resources/files"
+    },
+    {
+      "label": "Links",
+      "href": "/resources/links"
+    },
+    {
+      "label": "Collections",
+      "href": "/resources/collections"
+    },
+    {
+      "label": "Farmer Videos",
+      "href": "/resources/farmer-videos"
+    },
+    {
+      "label": "query_statsStatistics",
+      "href": "/stats"
+    },
+    {
+      "label": "appsDeployments",
+      "href": "/deployment"
+    },
+    {
+      "label": "manage_accountsUser Permissions",
+      "href": "/deployment/permissions"
+    },
+    {
+      "label": "mapMap Boundaries",
+      "href": "/map-admin"
+    }
+  ],
+  "dialogs": []
+}
