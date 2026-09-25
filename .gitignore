@@ -1,6 +1,9 @@
 # deps
 /node_modules
 
+# husky internals (the .husky/pre-commit hook itself is committed)
+/.husky/_
+
 # generated content
 .source
 

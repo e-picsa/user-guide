@@ -138,6 +138,38 @@ apply — misalignment always comes from bad coordinates, so follow this process
   `bun run pdf:serve` + `PDF_ONLY=<route> bun run pdf` flow (see
   `scripts/pdf/README.md`) before changing badge styling.
 
+## Spelling
+
+cspell guards the guide copy. `bun run spellcheck` checks the whole
+spellchecked surface; `bun run spellcheck:staged` is the pre-commit hook
+(`.husky/pre-commit`, installed by the `prepare` script) and checks only the doc
+pages in the index.
+
+- **Surface:** `content/docs/**/*.mdx` — body prose, frontmatter `title`/
+  `description`, `<Card>` titles, `<Callout>` text, `<Screenshot>` `alt`/
+  `caption` and every `markers[].label`. Nothing else: the app's own strings,
+  the screenshot sidecars (`public/screenshots/**`, dashboard-derived) and the
+  developer markdown are out of scope, so widening the glob in the `spellcheck`
+  script means widening `IN_CONTENT` in `scripts/spellcheck/staged.ts` to match.
+- **Config:** `cspell.json`. Dictionaries are `en-GB,en-US` — the copy is
+  British (`organisation`, `organised`, `recognisable`), and en-US is kept
+  enabled so US spellings aren't flagged. `ignoreRegExpList` drops URLs, emails
+  and hex literals; cspell already skips MDX code spans, so route paths
+  (`climate.admin`), role names (`picsa_roles`) and JSX props are not treated
+  as prose.
+- **Route every finding, don't silence the run.** A real typo gets fixed in the
+  `.mdx`; a legitimate proper noun or domain term (station names, `PICSA`,
+  `upserted`) is added to `words` in `cspell.json`; a code/URL artefact means
+  the config is wrong, so fix `ignoreRegExpList`/`ignorePaths` instead of
+  adding the token. Never add a whole file to `ignorePaths` to make a run pass.
+- `spellcheck:fix` only applies cspell's own fixable cases (mostly dictionary
+  case variants) — it will not correct ordinary typos, so the manual pass is
+  still the real work.
+- Re-run `bun run spellcheck` after any bulk content edit, and expect a new
+  word in `cspell.json` when a page starts naming a new station, district or
+  external system. The hook only sees staged files, so an unstaged page's typo
+  survives until it is committed.
+
 ## PDF publishing
 
 - The guide PDF is generated in CI on every push to `main` and published twice:

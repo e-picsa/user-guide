@@ -1,0 +1,27 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "version": "0.2",
+  "language": "en-GB,en-US",
+  "ignorePaths": [
+    "node_modules/**",
+    ".next/**",
+    "out/**",
+    ".source/**",
+    "pdfs/**",
+    "public/**"
+  ],
+  "ignoreRegExpList": ["Urls", "HexValues", "EmailAddresses"],
+  "words": [
+    "CHAMBESHI",
+    "CHIPATA",
+    "Chadiza",
+    "Chipata",
+    "Nyanja",
+    "PICSA",
+    "Topo",
+    "Untick",
+    "extensionists",
+    "resends",
+    "upserted"
+  ]
+}

@@ -14,7 +14,11 @@
     "overlay:check": "bun scripts/screenshots/overlay-check.ts",
     "pdf": "bun scripts/pdf/export.ts && bun scripts/pdf/combine.ts",
     "pdf:serve": "bun scripts/pdf/serve.ts",
-    "cover-shot": "bun scripts/pdf/cover-shot.ts"
+    "cover-shot": "bun scripts/pdf/cover-shot.ts",
+    "spellcheck": "cspell --no-progress --no-summary \"content/**/*.mdx\"",
+    "spellcheck:fix": "cspell lint --no-progress --no-summary --fix \"content/**/*.mdx\"",
+    "spellcheck:staged": "bun scripts/spellcheck/staged.ts",
+    "prepare": "husky"
   },
   "dependencies": {
     "cnfast": "^0.1.0",
@@ -36,8 +40,10 @@
     "@types/pngjs": "^6.0.5",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
+    "cspell": "^10.3.4",
     "eslint": "^9.39.4",
     "eslint-config-next": "16.3.0",
+    "husky": "^9.1.7",
     "jsdom": "^30.1.1",
     "pixelmatch": "^7.2.0",
     "pngjs": "^7.0.0",
