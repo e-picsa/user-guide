@@ -1,0 +1,66 @@
+# Deploy the static export (`out/`) to GitHub Pages.
+#
+# The site is built for root `/` (no `basePath` in next.config.mjs) so the
+# custom domain https://guide.picsa.app serves it directly. Once the custom
+# domain is configured (Settings → Pages → Custom domain + DNS CNAME
+# guide.picsa.app → e-picsa.github.io), GitHub redirects the project URL
+# https://e-picsa.github.io/user-guide/ to the custom domain — so a single
+# build keeps both URLs working.
+#
+# One-time repo setup:
+#   1. Settings → Pages → Source: "GitHub Actions".
+#   2. Settings → Pages → Custom domain: guide.picsa.app (commits the CNAME;
+#      public/CNAME already ships it with the build, either way works).
+#   3. DNS: CNAME guide.picsa.app → e-picsa.github.io, then Enforce HTTPS.
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Build static site
+        run: bun run build
+
+      - name: Add .nojekyll (serve _next as-is)
+        run: touch out/.nojekyll
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: ./out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
