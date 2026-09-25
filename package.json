@@ -7,7 +7,10 @@
     "dev": "next dev",
     "start": "next start",
     "types:check": "next typegen && tsc --noEmit",
-    "lint": "eslint"
+    "lint": "eslint",
+    "shots": "bun scripts/screenshots/run.ts",
+    "shots:zm-admin": "SHOTS_ID=zm-admin SHOTS_EMAIL=admin@picsa.app SHOTS_DEPLOYMENT=zm SHOTS_DEPLOYMENT_LABEL='Zambia App' bun scripts/screenshots/run.ts",
+    "shots:mw-user": "SHOTS_ID=mw-user SHOTS_EMAIL=user@picsa.app SHOTS_DEPLOYMENT=mw SHOTS_DEPLOYMENT_LABEL='Malawi App' bun scripts/screenshots/run.ts"
   },
   "dependencies": {
     "cnfast": "^0.1.0",
@@ -25,10 +28,11 @@
     "@types/node": "^26.2.0",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
-    "postcss": "^8.5.26",
-    "tailwindcss": "^4.3.3",
-    "typescript": "^6.0.3",
     "eslint": "^9.39.4",
-    "eslint-config-next": "16.3.0"
+    "eslint-config-next": "16.3.0",
+    "postcss": "^8.5.26",
+    "puppeteer-core": "^25.12.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.3"
   }
 }
