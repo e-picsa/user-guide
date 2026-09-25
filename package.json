@@ -1,6 +1,6 @@
 {
   "name": "user-guide",
-  "version": "0.0.17",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "build": "next build",
@@ -12,7 +12,9 @@
     "shots:mw-user": "SHOTS_ID=mw-user SHOTS_EMAIL=user@picsa.app SHOTS_DEPLOYMENT=mw SHOTS_DEPLOYMENT_LABEL='Malawi App' bun scripts/screenshots/run.ts",
     "shots:verify": "bun scripts/screenshots/verify.ts",
     "overlay:check": "bun scripts/screenshots/overlay-check.ts",
-    "pdf": "bun scripts/pdf/export.ts && bun scripts/pdf/combine.ts"
+    "pdf": "bun scripts/pdf/export.ts && bun scripts/pdf/combine.ts",
+    "pdf:serve": "bun scripts/pdf/serve.ts",
+    "cover-shot": "bun scripts/pdf/cover-shot.ts"
   },
   "dependencies": {
     "cnfast": "^0.1.0",

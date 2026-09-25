@@ -115,6 +115,13 @@ bun run build` + `bun run pdf:serve` + `PDF_ONLY=<route> bun run pdf` flow (see
   `next start` and plain file servers don't work). Never drop the
   `NEXT_DIST_DIR` override — the print build's cache would leak expanded
   accordions/tabs into the deployed site.
+- CI jobs are `pdf` -> `build` -> (`deploy`, `release` in parallel); the
+  `pdf` -> `build` edge is strict so a capture failure never deploys a site
+  with a 404 download link.
+- Pages are captured concurrently (`PDF_CONCURRENCY`, default 3), which is only
+  safe while `settleAndMeasure` waits for content to land instead of for a
+  fixed delay. Re-verify a pooled run against `PDF_CONCURRENCY=1` (per-page
+  sizes should match) if you touch `scripts/pdf/print.ts`.
 
 <!-- BEGIN:nextjs-agent-rules -->
 

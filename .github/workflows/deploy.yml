@@ -1,4 +1,5 @@
-# Deploy the static export (`out/`) to GitHub Pages.
+# Deploy the static export (`out/`) to GitHub Pages, and publish the combined
+# guide PDF (`pdfs/picsa-user-guide.pdf`).
 #
 # The site is built for root `/` (no `basePath` in next.config.mjs) so the
 # custom domain https://guide.picsa.app serves it directly. Once the custom
@@ -6,6 +7,22 @@
 # guide.picsa.app → e-picsa.github.io), GitHub redirects the project URL
 # https://e-picsa.github.io/user-guide/ to the custom domain — so a single
 # build keeps both URLs working.
+#
+# PDF publishing:
+#   1. The PDF needs a served build with `PDF_PRINT=1` (accordions/tabs render
+#      expanded), so we build twice: once with `PDF_PRINT=1` into a separate
+#      dist dir to capture from, then the normal build for Pages.
+#   2. The PDF is copied into `public/` so the guide serves it at
+#      /picsa-user-guide.pdf (versioned copy alongside for the archive).
+#   3. The same file is attached to the GitHub release for `package.json`'s
+#      version. The repo is public, so release assets download with no sign-in
+#      (Actions artifacts do not, and expire).
+#
+# Job graph — `pdf` -> `build` -> (`deploy`, `release` in parallel):
+#   The site build needs the PDF, so that edge is strict: a capture failure
+#   fails the run rather than deploying a site whose download link 404s.
+#   `release` sits beside `deploy` so a release/asset failure can't block a
+#   docs deploy, and vice versa.
 #
 # One-time repo setup:
 #   1. Settings → Pages → Source: "GitHub Actions".
@@ -20,7 +37,8 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  # `contents: write` is only used by the release job to publish the PDF asset.
+  contents: write
   pages: write
   id-token: write
 
@@ -29,7 +47,54 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  pdf:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Read version
+        id: version
+        run: echo "version=$(node -p "require('./package.json').version")" >> "$GITHUB_OUTPUT"
+
+      # export.ts resolves Chrome via CHROME_PATH (the built-in candidates are
+      # macOS-only), so install a Linux Chrome and point it at the binary.
+      - name: Install Chrome
+        run: |
+          bunx @puppeteer/browsers install chrome@stable --path "$HOME/.cache/puppeteer"
+          CHROME="$(find "$HOME/.cache/puppeteer" -type f -name chrome -perm -u+x | head -1)"
+          if [ -z "$CHROME" ]; then echo "Chrome binary not found" >&2; exit 1; fi
+          echo "CHROME_PATH=$CHROME" >> "$GITHUB_ENV"
+
+      - name: Build printing export (PDF source)
+        run: PDF_PRINT=1 NEXT_DIST_DIR=.next-print bun run build
+
+      - name: Export PDF
+        run: |
+          bun scripts/pdf/serve.ts > /tmp/serve.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID' EXIT
+          PDF_BASE_URL=http://127.0.0.1:3000 bun run pdf
+
+      - name: Upload PDF
+        uses: actions/upload-artifact@v7
+        with:
+          name: guide-pdf
+          path: pdfs/picsa-user-guide.pdf
+          retention-days: 7
+
   build:
+    needs: pdf
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -42,6 +107,13 @@ jobs:
 
       - name: Install dependencies
         run: bun install --frozen-lockfile
+
+      - name: Stage PDF for the site
+        run: |
+          mkdir -p public
+          cp pdfs/picsa-user-guide.pdf public/picsa-user-guide.pdf
+          cp pdfs/picsa-user-guide.pdf "public/picsa-user-guide-v${{ needs.pdf.outputs.version }}.pdf"
+          ls -la public/picsa-user-guide*.pdf
 
       - name: Build static site
         run: bun run build
@@ -64,3 +136,58 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Download PDF
+        uses: actions/download-artifact@v8
+        with:
+          name: guide-pdf
+          path: pdfs
+
+      - name: Publish release asset
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION="$(node -p "require('./package.json').version")"
+          TAG="v$VERSION"
+          ASSET="pdfs/picsa-user-guide-v$VERSION.pdf"
+          mv pdfs/picsa-user-guide.pdf "$ASSET"
+          # The guide's own version says nothing about the dashboard it
+          # documents, so state the capture build the screenshots came from.
+          BUILD="$(node -e '
+            const { existsSync, readdirSync, readFileSync } = require("node:fs");
+            const dir = "public/screenshots";
+            const seen = new Set();
+            if (existsSync(dir)) {
+              for (const id of readdirSync(dir)) {
+                const file = dir + "/" + id + "/manifest.json";
+                if (!existsSync(file)) continue;
+                const { dashboardVersion } = JSON.parse(readFileSync(file, "utf8"));
+                if (dashboardVersion) seen.add(dashboardVersion);
+              }
+            }
+            console.log([...seen].sort().join(", ") || "unknown");
+          ')"
+          NOTES="Combined PDF of the PICSA Dashboard user guide, version ${VERSION}.
+
+            Screenshots captured from dashboard build ${BUILD} (the build the
+            capture ran against — see the e-picsa/picsa-apps releases for
+            published tags). Live guide: https://guide.picsa.app"
+          if gh release view "$TAG" > /dev/null 2>&1; then
+            echo "Release $TAG exists; refreshing its asset."
+            gh release upload "$TAG" "$ASSET" --clobber
+          else
+            gh release create "$TAG" "$ASSET" \
+              --target "$GITHUB_SHA" \
+              --title "User Guide v$VERSION" \
+              --notes "$NOTES" \
+              --generate-notes
+          fi

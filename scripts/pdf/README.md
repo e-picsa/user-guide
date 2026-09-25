@@ -67,10 +67,27 @@ without a GitHub sign-in — Actions artifacts do not, and expire after 90 days.
 Bump `package.json`'s version to publish a new PDF; an existing tag's asset is
 refreshed rather than duplicated.
 
+Workflow jobs are `pdf` → `build` → (`deploy`, `release` in parallel). The
+`pdf` → `build` edge is strict: a capture failure fails the run rather than
+deploying a site whose download link 404s. `release` runs beside `deploy` so
+the two can't block each other.
+
+## Concurrency
+
+`export.ts` captures pages through a small pool (`PDF_CONCURRENCY`, default 3)
+over one browser. This is only safe because `settleAndMeasure` waits for
+content to land (images resolved, video metadata loaded, height stable across
+two consecutive measures) rather than for a fixed delay — under concurrency a
+delay-based guess loses the race and returns a sheet that silently clips the
+article. If you change the settle logic, compare a pooled run against a
+serial one (`PDF_CONCURRENCY=1`) page by page; per-page byte sizes should match
+to within PDF metadata noise.
+
 ## Config
 
 - `PDF_BASE_URL` (default `http://localhost:3000`), `PDF_OUT_DIR` (default
   `pdfs`), `PDF_ONLY` (comma filter on routes, e.g. `PDF_ONLY=test bun run pdf`),
+  `PDF_CONCURRENCY` (pages captured in parallel, default 3),
   `CHROME_PATH` (shared with `scripts/screenshots/config.ts`; CI installs a
   Linux Chrome and sets this, since the built-in candidates are macOS-only).
 - `scripts/pdf/pdf.config.ts`: `outFile`, `omit` (stems to exclude),
