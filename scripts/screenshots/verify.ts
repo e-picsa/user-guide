@@ -87,7 +87,8 @@ const FIXTURE = `<!doctype html><html><head><title>PICSA Dashboard</title>
 <div class="page">
   <h2 _ngcontent-abc="x" ng-reflect-title="y">Climate Data Admin</h2>
   <h2>Climate Data Admin</h2>
-  <button>Refresh All</button>
+  <button><mat-icon>refresh</mat-icon>Refresh All</button>
+  <a href="/home"><mat-icon>home</mat-icon><span>Home</span></a>
   <button aria-label="Close dialog">X</button>
   <button style="display:none">Invisible</button>
   <a href="/climate/station/chipata_met">CHIPATA MET</a>
@@ -133,10 +134,12 @@ check('meta headings deduped', meta.headings.length === 1 && meta.headings[0].te
 check(
   'interactive finds button, link, input, tab',
   meta.interactive.some((e) => e.text === 'Refresh All') &&
+    meta.interactive.some((e) => e.text === 'Home' && e.kind === 'link') &&
     meta.interactive.some((e) => e.kind === 'link' && e.href === '/climate/station/chipata_met') &&
     meta.interactive.some((e) => e.kind === 'input' && (e.label ?? '').startsWith('input:email')) &&
     meta.interactive.some((e) => e.kind === 'tab' && e.text === 'Charts'),
 );
+check('icon ligatures excluded from labels', !meta.interactive.some((e) => /refreshHome|homeHome/.test(e.text)));
 check(
   'hidden elements excluded',
   !meta.interactive.some((e) => /Invisible|Ghost|secret/.test(e.text)),
@@ -166,6 +169,20 @@ check('html strips script/style', !html.includes('<script') && !html.includes('<
 check(
   'html strips angular attrs, keeps classes',
   !html.includes('_ngcontent') && !html.includes('ng-reflect') && html.includes('class="data-table"'),
+);
+
+// --- content html scoped to routed component, not app shell ------------------
+const SHELL_FIXTURE = `<body><mat-toolbar>App Header</mat-toolbar>
+<mat-sidenav-content><mat-sidenav><a href="/home">Home</a></mat-sidenav>
+<div><router-outlet></router-outlet><section class="routed-page"><h2>Routed</h2></section></div>
+</mat-sidenav-content></body>`;
+const shellDom = new JSDOM(SHELL_FIXTURE, { url: 'http://localhost:4200/home' });
+(globalThis as any).document = shellDom.window.document;
+(globalThis as any).window = shellDom.window;
+const shellHtml = runSerialized<string>(extractContentHtml);
+check(
+  'html scoped to routed component',
+  shellHtml.includes('Routed') && !shellHtml.includes('App Header') && !shellHtml.includes('mat-sidenav'),
 );
 
 if (failures) {

@@ -68,6 +68,8 @@ shows exactly what is stale:
   full runs prune results for routes removed from the manifest.
 - Manifest changes (new route, edited actions/scroll, new exemplar) change the
   hash, so only affected pages are recaptured.
+- Extraction changes are versioned (`EXTRACT_VERSION` in `extract.ts`, folded
+  into every entry hash) so sidecar logic fixes refresh all metadata.
 - A dashboard version bump recaptures everything for that identifier.
 
 Even when a recapture happens, the png is only rewritten when it reasonably
@@ -86,10 +88,12 @@ Every capture writes two sidecars next to the png (same stem):
 - `<route>.json` — documentation metadata: title/url/version/viewport/scroll,
   `headings`, `interactive` (buttons, links, inputs, tabs — each with text and a
   viewport-relative bbox that maps 1:1 onto png pixels, so an agent can locate
-  e.g. the Register button and draw annotations), `tables` (headers + first 3
+  e.g. the Register button and draw annotations; `mat-icon` ligatures are
+  excluded so labels read `Home`, not `homeHome`), `tables` (headers + first 3
   rows + total row count, so agents can cite real row content), `nav`
   (sidebar links), `dialogs` (open dialogs).
-- `<route>.html` — cleaned `div.page` markup (scripts/styles removed, Angular
+- `<route>.html` — cleaned markup of the routed page component (sibling after
+  the router-outlet, not the app shell; scripts/styles removed, Angular
   compiler attributes stripped, capped at 500KB) for anything the JSON doesn't
   cover.
 
