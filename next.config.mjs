@@ -13,10 +13,14 @@ const config = {
   // Setting `basePath: '/user-guide'` would fix the project URL but break
   // the custom domain, so don't.
   output: 'export',
-  // Overrideable so the PDF export build (`PDF_PRINT=1`) can use a separate
-  // dist dir. Without this the second `next build` in CI reuses `.next` caches
-  // from the print build and can ship print-mode (fully expanded) HTML.
-  distDir: process.env.NEXT_DIST_DIR ?? '.next',
+  // NOTE: keep `distDir` unset (default `.next`). With `output: 'export'`, a
+  // custom distDir is not a private build cache — Next relocates the *export
+  // output* to it and forces build artifacts back to `.next`, so setting one
+  // would move the print build's `out/` somewhere the PDF server doesn't look
+  // without isolating anything. The PDF print build (`PDF_PRINT=1`) therefore
+  // writes to the default `out/`, and CI builds it in its own job/checkout so
+  // print-mode (fully expanded) HTML can never reach the Pages build. Locally,
+  // `rm -rf .next out` between a print build and a site build.
   images: {
     unoptimized: true,
   },

@@ -9,6 +9,9 @@
  * Env: PDF_SERVE_DIR (default `out`), PDF_SERVE_PORT (default `3000`),
  * PDF_SERVE_HOST (default `127.0.0.1`).
  *
+ * Exits immediately if the directory holds no `index.html`, so a wrong
+ * PDF_SERVE_DIR fails at start instead of looking like a hung capture.
+ *
  * Run: bun scripts/pdf/serve.ts
  */
 import { createReadStream, statSync } from 'node:fs';
@@ -55,14 +58,36 @@ function resolveFile(root: string, pathname: string): string | null {
   return null;
 }
 
+/** Existing regular file, or null — `existsSync` can't tell directories from files. */
+function existingFile(path: string): string | null {
+  try {
+    return statSync(path).isFile() ? path : null;
+  } catch {
+    return null;
+  }
+}
+
 function main(): void {
   const root = resolve(process.cwd(), process.env.PDF_SERVE_DIR ?? 'out');
   const port = Number(process.env.PDF_SERVE_PORT ?? 3000);
   const host = process.env.PDF_SERVE_HOST ?? '127.0.0.1';
 
+  // Fail loudly instead of accepting connections that 404 everything: the
+  // usual cause is building the wrong directory (a custom `distDir` relocates
+  // the whole `output: 'export'` directory, see next.config.mjs).
+  if (!existingFile(resolve(root, 'index.html'))) {
+    console.error(
+      `No index.html in ${root}. Build the export first (PDF_PRINT=1 bun run build), ` +
+        `or point PDF_SERVE_DIR at it.`
+    );
+    process.exit(1);
+  }
+
+  const notFound = existingFile(resolve(root, '404.html'));
+
   const server = createServer((req, res) => {
     const { pathname } = new URL(req.url ?? '/', `http://${host}:${port}`);
-    const file = resolveFile(root, pathname) ?? resolve(root, '404.html');
+    const file = resolveFile(root, pathname) ?? notFound;
 
     if (!file) {
       res.writeHead(404, { 'content-type': 'text/plain' });
@@ -75,7 +100,15 @@ function main(): void {
       // The export is regenerated per run; never let a stale sheet be captured.
       'cache-control': 'no-store',
     });
-    createReadStream(file).pipe(res);
+    // Without this handler an unreadable file (race with a rebuild, vanished
+    // route) throws out of the request handler and takes the whole server
+    // down, so the next capture silently times out instead of failing.
+    const stream = createReadStream(file);
+    stream.on('error', (e) => {
+      console.error(`Failed reading ${file}: ${e.message}`);
+      res.destroy();
+    });
+    stream.pipe(res);
   });
 
   server.listen(port, host, () => {

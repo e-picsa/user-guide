@@ -10,8 +10,9 @@
 #
 # PDF publishing:
 #   1. The PDF needs a served build with `PDF_PRINT=1` (accordions/tabs render
-#      expanded), so we build twice: once with `PDF_PRINT=1` into a separate
-#      dist dir to capture from, then the normal build for Pages.
+#      expanded), so we build twice: once with `PDF_PRINT=1` in its own job to
+#      capture from, then the normal build for Pages. Both write to `out/`;
+#      the separate job/checkout is what keeps print-mode HTML out of Pages.
 #   2. The PDF is copied into `public/` so the guide serves it at
 #      /picsa-dashboard-guide.pdf (versioned copy alongside for the archive).
 #   3. The same file is attached to the GitHub release for `package.json`'s
@@ -77,14 +78,24 @@ jobs:
           echo "CHROME_PATH=$CHROME" >> "$GITHUB_ENV"
 
       - name: Build printing export (PDF source)
-        run: PDF_PRINT=1 NEXT_DIST_DIR=.next-print bun run build
+        run: |
+          PDF_PRINT=1 bun run build
+          # Fail here, not as a 30s capture timeout: `serve.ts` serves `out/`,
+          # and a build that exports anywhere else can't be captured.
+          test -f out/index.html || { echo "::error::print export missing out/index.html"; exit 1; }
 
       - name: Export PDF
         run: |
           bun scripts/pdf/serve.ts > /tmp/serve.log 2>&1 &
           SERVER_PID=$!
-          trap 'kill $SERVER_PID' EXIT
-          PDF_BASE_URL=http://127.0.0.1:3000 bun run pdf
+          trap 'kill $SERVER_PID 2>/dev/null || true' EXIT
+          # The server log is where a start-up failure lands; never swallow it.
+          PDF_BASE_URL=http://127.0.0.1:3000 bun run pdf || {
+            echo "::group::PDF capture failed; /tmp/serve.log follows"
+            cat /tmp/serve.log
+            echo "::endgroup::"
+            exit 1
+          }
 
       - name: Upload PDF
         uses: actions/upload-artifact@v7

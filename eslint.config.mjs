@@ -5,8 +5,6 @@ const eslintConfig = defineConfig([
   ...nextVitals,
   globalIgnores([
     '.next/**',
-    // PDF print build (NEXT_DIST_DIR, see next.config.mjs).
-    '.next-print/**',
     'out/**',
     'build/**',
     'next-env.d.ts',

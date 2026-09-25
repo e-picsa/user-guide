@@ -13,14 +13,27 @@ Two processes, as in CI (`.github/workflows/deploy.yml`):
 
 ```bash
 # 1. build the static export with printing overrides (expanded
-#    accordions/tabs). NEXT_DIST_DIR keeps this build's cache out of the
-#    normal `.next`, otherwise the next build can reuse print-mode HTML.
-PDF_PRINT=1 NEXT_DIST_DIR=.next-print bun run build
+#    accordions/tabs)
+PDF_PRINT=1 bun run build
 
 # 2. serve `out/` and capture it
 bun run pdf:serve &
 PDF_BASE_URL=http://127.0.0.1:3000 bun run pdf
 ```
+
+Both the print build and the normal site build export to `out/`, so build them
+in separate working copies (CI uses separate jobs) or clear the previous build
+first — Next's `.next` cache is shared and a print build can otherwise leak
+expanded HTML into a site build:
+
+```bash
+rm -rf .next out && bun run build
+```
+
+Do not point `distDir` somewhere else to keep the two apart: with
+`output: 'export'` a custom `distDir` relocates the *whole export* to that
+directory (and Next still writes build artifacts to `.next`), so `serve.ts`
+would find no `out/` at all.
 
 For quick local iteration `PDF_PRINT=1 bun run start` (dev server) in one
 terminal and `bun run pdf` in another works too.
@@ -66,7 +79,10 @@ to a text-only cover.
 `serve.ts` exists because `output: 'export'` cannot be served by `next start`,
 and the export uses clean URLs (`out/climate/stations.html`) that a plain
 file server 404s. Env: `PDF_SERVE_DIR` (default `out`), `PDF_SERVE_PORT`
-(default `3000`), `PDF_SERVE_HOST` (default `127.0.0.1`).
+(default `3000`), `PDF_SERVE_HOST` (default `127.0.0.1`). It exits immediately
+if that directory has no `index.html`, and answers a missing file with the
+export's `404.html` (or a plain 404) rather than crashing — either way the
+capture sees it immediately instead of timing out.
 
 ## Publishing
 

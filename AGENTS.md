@@ -134,8 +134,8 @@ apply — misalignment always comes from bad coordinates, so follow this process
   `border-radius` clip, printing a grey box around each badge. The white ring
   must be a real `border`; any screen-only depth goes in the
   `@media screen` block in `src/app/global.css` (`.screenshot-marker-badge`),
-  which print never sees. Verify with the `PDF_PRINT=1 NEXT_DIST_DIR=.next-print
-bun run build` + `bun run pdf:serve` + `PDF_ONLY=<route> bun run pdf` flow (see
+  which print never sees. Verify with the `PDF_PRINT=1 bun run build` +
+  `bun run pdf:serve` + `PDF_ONLY=<route> bun run pdf` flow (see
   `scripts/pdf/README.md`) before changing badge styling.
 
 ## PDF publishing
@@ -147,11 +147,14 @@ bun run build` + `bun run pdf:serve` + `PDF_ONLY=<route> bun run pdf` flow (see
   existing tag's asset is refreshed. Release assets download without sign-in,
   Actions artifacts don't — never switch the site link to an artifact URL.
 - `PDF_PRINT` is build-time only (`src/components/mdx.tsx`), so the PDF needs
-  its own build: `PDF_PRINT=1 NEXT_DIST_DIR=.next-print bun run build`, served
-  by `scripts/pdf/serve.ts` (the static export uses clean URLs, so
-  `next start` and plain file servers don't work). Never drop the
-  `NEXT_DIST_DIR` override — the print build's cache would leak expanded
-  accordions/tabs into the deployed site.
+  its own build: `PDF_PRINT=1 bun run build`, served by `scripts/pdf/serve.ts`
+  (the static export uses clean URLs, so `next start` and plain file servers
+  don't work). Both builds export to `out/`, so keep `distDir` unset — with
+  `output: 'export'` a custom `distDir` relocates the whole export *and* Next
+  still writes artifacts to `.next`, so it hides nothing while breaking
+  `serve.ts`. CI isolates the two builds with separate jobs/checkouts; locally
+  `rm -rf .next out` between them so the print build's cache can't leak
+  expanded accordions/tabs into a site build.
 - CI jobs are `pdf` -> `build` -> (`deploy`, `release` in parallel); the
   `pdf` -> `build` edge is strict so a capture failure never deploys a site
   with a 404 download link.
