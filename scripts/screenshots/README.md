@@ -20,7 +20,9 @@ SHOTS_ONLY=climate/station bun run shots:zm-admin
 Credentials default to the local docker seeds (`admin@picsa.app`,
 `user@picsa.app`, password = email). Override via env:
 `SHOTS_EMAIL`, `SHOTS_PASSWORD`, `SHOTS_DEPLOYMENT` (id), `SHOTS_DEPLOYMENT_LABEL`
-(picker label), `SHOTS_ID` (output identifier), `SHOTS_BASE_URL`, `SHOTS_OUT_DIR`.
+(picker label), `SHOTS_ID` (output identifier), `SHOTS_BASE_URL`, `SHOTS_OUT_DIR`,
+`SHOTS_HIDE_CHROME`, `SHOTS_DIFF_THRESHOLD`, `SHOTS_META` (`off` disables the
+sidecar files below).
 
 > NOTE: `user@picsa.app` currently has no deployment memberships in the local
 > backend, so `shots:mw-user` records a `no-access.png` (request-access state)
@@ -29,6 +31,14 @@ Credentials default to the local docker seeds (`admin@picsa.app`,
 
 Chrome resolution: `CHROME_PATH` (or `PUPPETEER_EXECUTABLE_PATH`), else the
 puppeteer browser cache, else `/Applications/Google Chrome.app`.
+
+## App chrome
+
+Fixed header/footer (`mat-toolbar`, `dashboard-footer`) are identical across
+pages and can't be scrolled away, so they are hidden (`display: none`) before
+every capture. Configure with `SHOTS_HIDE_CHROME` (comma-separated selectors,
+default `mat-toolbar,dashboard-footer`; `off` keeps everything). The sidebar is
+kept as it shows page context.
 
 ## Scroll
 
@@ -60,7 +70,37 @@ shows exactly what is stale:
   hash, so only affected pages are recaptured.
 - A dashboard version bump recaptures everything for that identifier.
 
-Statuses in `manifest.json`: `captured` | `reused` | `skipped` | `failed`.
+Even when a recapture happens, the png is only rewritten when it reasonably
+changed: the fresh capture is pixel-compared (`pixelmatch`) against the stored
+file and kept as `unchanged` when within `SHOTS_DIFF_THRESHOLD` (changed-pixel
+ratio, default `0.01`; `off` always rewrites). This keeps git history free of
+noise-only updates. Missing files, dimension changes and undecodable pngs count
+as changed.
+
+Statuses in `manifest.json`: `captured` | `reused` | `unchanged` | `skipped` | `failed`.
+
+## Metadata + content HTML (for doc agents)
+
+Every capture writes two sidecars next to the png (same stem):
+
+- `<route>.json` — documentation metadata: title/url/version/viewport/scroll,
+  `headings`, `interactive` (buttons, links, inputs, tabs — each with text and a
+  viewport-relative bbox that maps 1:1 onto png pixels, so an agent can locate
+  e.g. the Register button and draw annotations), `tables` (headers + first 3
+  rows + total row count, so agents can cite real row content), `nav`
+  (sidebar links), `dialogs` (open dialogs).
+- `<route>.html` — cleaned `div.page` markup (scripts/styles removed, Angular
+  compiler attributes stripped, capped at 500KB) for anything the JSON doesn't
+  cover.
+
+Sidecars refresh whenever the page is visited (`captured` or `unchanged`) and
+are left alone on `reused`. Hidden elements (`hidden`, `aria-hidden`,
+`display: none`, incl. via ancestors) are excluded from the JSON.
+
+`extract.ts` functions run inside the dashboard page (transpiled to plain JS by
+`buildEvalCall` in `run.ts`), so they must stay self-contained with no module
+references. `bun run shots:verify` checks hashing, diffing and the extraction
+round-trip offline (jsdom fixture, no dashboard server needed).
 
 ## Files
 
@@ -69,6 +109,9 @@ Statuses in `manifest.json`: `captured` | `reused` | `skipped` | `failed`.
   `actions` (ordered UI steps before capture). `routeToFile` maps route -> png path.
 - `run.ts` — login -> deployment select -> client-side navigate each page ->
   viewport screenshot. Writes `manifest.json` summary next to pngs.
+- `extract.ts` — browser-side metadata + content-HTML extraction (see above).
+- `diff.ts` — pixel comparison gate.
+- `verify.ts` — offline checks (`bun run shots:verify`).
 
 ## Conventions (see `AGENTS.md`)
 

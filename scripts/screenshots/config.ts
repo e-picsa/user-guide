@@ -21,6 +21,12 @@ export interface ShotsConfig {
   viewport: { width: number; height: number };
   /** Page scroll before capture. `auto` scrolls the page heading out of view. */
   scroll: ScrollDefault;
+  /** App chrome selectors hidden before capture (fixed header/footer add no per-page value). */
+  hideChrome: string[];
+  /** Max changed-pixel ratio to still count a recapture as unchanged. Null disables diffing. */
+  diffThreshold: number | null;
+  /** Write sibling .json metadata + .html content snapshot per screenshot. */
+  meta: boolean;
 }
 
 function env(name: string, fallback: string): string {
@@ -38,7 +44,34 @@ export function loadConfig(): ShotsConfig {
     outDir: env('SHOTS_OUT_DIR', 'public/screenshots'),
     viewport: { width: 1280, height: 720 },
     scroll: parseScrollDefault(env('SHOTS_SCROLL', 'auto')),
+    hideChrome: parseHideChrome(env('SHOTS_HIDE_CHROME', 'mat-toolbar,dashboard-footer')),
+    diffThreshold: parseDiffThreshold(env('SHOTS_DIFF_THRESHOLD', '0.01')),
+    meta: parseToggle(env('SHOTS_META', 'on')),
   };
+}
+
+function parseToggle(raw: string): boolean {
+  const v = raw.trim().toLowerCase();
+  return !(v === '' || v === 'off' || v === 'false' || v === '0' || v === 'no');
+}
+
+/** Comma-separated selectors to hide, or `off`/empty to keep all chrome. */
+function parseHideChrome(raw: string): string[] {
+  const v = raw.trim().toLowerCase();
+  if (v === '' || v === 'off' || v === 'false') return [];
+  return raw
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean);
+}
+
+/** Changed-pixel ratio (0..1) below which a recapture keeps the old png, or `off`. */
+function parseDiffThreshold(raw: string): number | null {
+  const v = raw.trim().toLowerCase();
+  if (v === '' || v === 'off' || v === 'false') return null;
+  const n = Number(v);
+  if (Number.isFinite(n) && n >= 0 && n <= 1) return n;
+  throw new Error(`Invalid SHOTS_DIFF_THRESHOLD="${raw}", expected 0..1 or off`);
 }
 
 /**

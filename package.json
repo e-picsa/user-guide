@@ -10,7 +10,8 @@
     "lint": "eslint",
     "shots": "bun scripts/screenshots/run.ts",
     "shots:zm-admin": "SHOTS_ID=zm-admin SHOTS_EMAIL=admin@picsa.app SHOTS_DEPLOYMENT=zm SHOTS_DEPLOYMENT_LABEL='Zambia App' bun scripts/screenshots/run.ts",
-    "shots:mw-user": "SHOTS_ID=mw-user SHOTS_EMAIL=user@picsa.app SHOTS_DEPLOYMENT=mw SHOTS_DEPLOYMENT_LABEL='Malawi App' bun scripts/screenshots/run.ts"
+    "shots:mw-user": "SHOTS_ID=mw-user SHOTS_EMAIL=user@picsa.app SHOTS_DEPLOYMENT=mw SHOTS_DEPLOYMENT_LABEL='Malawi App' bun scripts/screenshots/run.ts",
+    "shots:verify": "bun scripts/screenshots/verify.ts"
   },
   "dependencies": {
     "cnfast": "^0.1.0",
@@ -24,12 +25,18 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.3",
+    "@types/jsdom": "^30.0.0",
     "@types/mdx": "^2.0.14",
     "@types/node": "^26.2.0",
+    "@types/pixelmatch": "^7.1.0",
+    "@types/pngjs": "^6.0.5",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
     "eslint": "^9.39.4",
     "eslint-config-next": "16.3.0",
+    "jsdom": "^30.1.1",
+    "pixelmatch": "^7.2.0",
+    "pngjs": "^7.0.0",
     "postcss": "^8.5.26",
     "puppeteer-core": "^25.12.0",
     "tailwindcss": "^4.3.3",

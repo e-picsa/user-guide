@@ -13,12 +13,46 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import puppeteer, { type Page } from 'puppeteer-core';
+import { ModuleKind, ScriptTarget, transpileModule } from 'typescript';
 
 import { loadConfig, resolveChromePath, type ScrollDefault } from './config';
+import { diffAgainstFile } from './diff';
+import {
+  extractContentHtml,
+  extractMeta,
+  META_LIMITS,
+  type ScreenshotMeta,
+} from './extract';
 import { entryHash, PAGES, routeToFile, type PageAction, type PageEntry } from './manifest';
 
+/**
+ * Evaluate a serializable extraction function inside the page.
+ * `extract.ts` functions are written in TypeScript but run in the dashboard's
+ * plain-JS context, so they are transpiled (types stripped) and invoked via a
+ * self-contained call string. All args must be JSON-serializable, and the
+ * function must not reference module scope (guarded by `shots:verify`).
+ */
+export function buildEvalCall(fn: (...args: any[]) => unknown, ...args: unknown[]): string {
+  const js = transpileModule(fn.toString(), {
+    compilerOptions: { target: ScriptTarget.ES2020, module: ModuleKind.None },
+  })
+    .outputText.replace(/^\s*export\s+/, '')
+    // transpile prologue cannot sit inside the parenthesised call below
+    .replace(/^(\s*['"]use strict['"];\s*)+/, '');
+  return `(${js})(${args.map((a) => JSON.stringify(a) ?? 'undefined').join(',')})`;
+}
+
+export async function evaluateInPage<R>(
+  page: Page,
+  fn: (...args: any[]) => R,
+  ...args: unknown[]
+): Promise<R> {
+  return (await page.evaluate(buildEvalCall(fn, ...args))) as R;
+}
+
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
-type Status = 'captured' | 'reused' | 'skipped' | 'failed';
+type Status = 'captured' | 'reused' | 'unchanged' | 'skipped' | 'failed';
+
 interface Result {
   route: string;
   file: string;
@@ -89,6 +123,37 @@ async function settle(page: Page): Promise<void> {
   await page.addStyleTag({
     content: '*,*::before,*::after{animation-duration:0s!important;transition-duration:0s!important}',
   });
+}
+
+/** Hide fixed app chrome (toolbar/footer) — identical across pages, adds no per-page value. */
+async function hideChrome(page: Page, selectors: string[]): Promise<void> {
+  if (!selectors.length) return;
+  await page.addStyleTag({ content: selectors.map((s) => `${s}{display:none!important}`).join('\n') });
+  await sleep(300);
+}
+
+interface CaptureOutcome {
+  /** True when the png was (re)written, false when the previous file was kept. */
+  wrote: boolean;
+  /** Changed-pixel ratio vs previous file, null when no baseline existed. */
+  ratio: number | null;
+}
+
+/**
+ * Screenshot to `file`, keeping the previous png when the diff is within
+ * `threshold` so unchanged pages don't bloat git history.
+ */
+async function capture(page: Page, file: string, threshold: number | null): Promise<CaptureOutcome> {
+  const buffer = await page.screenshot();
+  let ratio: number | null = null;
+  if (threshold !== null) {
+    const diff = diffAgainstFile(file, buffer);
+    ratio = diff?.ratio ?? null;
+    if (diff && diff.ratio <= threshold) return { wrote: false, ratio };
+  }
+  mkdirSync(dirname(file), { recursive: true });
+  writeFileSync(file, buffer);
+  return { wrote: true, ratio };
 }
 
 /** Dashboard page scroll container (the only element with meaningful overflow). */
@@ -270,13 +335,14 @@ async function main(): Promise<void> {
   const landingRoute = '(logged-out) home';
   let dashboardVersion = prev?.dashboardVersion ?? 'unknown';
 
-  /** Reuse a previous png when version + entry hash match and the file exists. */
+  /** Reuse a previous png when version + entry hash match and the files exist. */
   function reused(route: string, file: string, hash: string): Result | null {
     if (force || only.length || dashboardVersion === 'unknown') return null;
     const p = prevByRoute.get(route);
-    if (!p || (p.status !== 'captured' && p.status !== 'reused')) return null;
+    if (!p || (p.status !== 'captured' && p.status !== 'reused' && p.status !== 'unchanged')) return null;
     if (p.version !== dashboardVersion || p.hash !== hash) return null;
     if (!existsSync(p.file ? resolve(p.file) : file)) return null;
+    if (config.meta && !metaFilesExist(file)) return null;
     return {
       route,
       file: p.file || file,
@@ -286,6 +352,50 @@ async function main(): Promise<void> {
       hash: p.hash,
       capturedAt: p.capturedAt,
     };
+  }
+
+  /** Sibling metadata paths for a png file. */
+  function metaPaths(pngFile: string): { json: string; html: string } {
+    const stem = pngFile.replace(/\.png$/, '');
+    return { json: `${stem}.json`, html: `${stem}.html` };
+  }
+
+  function metaFilesExist(pngFile: string): boolean {
+    const { json, html } = metaPaths(pngFile);
+    return existsSync(json) && existsSync(html);
+  }
+
+  /**
+   * Collect + write the .json metadata and .html content snapshot siblings.
+   * Failures never fail the capture itself.
+   */
+  async function writeMeta(
+    page: Page,
+    routeKey: string,
+    pngFile: string,
+    capturedAt: string,
+  ): Promise<void> {
+    if (!config.meta) return;
+    try {
+      const meta: ScreenshotMeta = await evaluateInPage(
+        page,
+        extractMeta,
+        routeKey,
+        config.identifier,
+        dashboardVersion,
+        capturedAt,
+        config.viewport.width,
+        config.viewport.height,
+        META_LIMITS,
+      );
+      const html = await evaluateInPage(page, extractContentHtml);
+      const { json, html: htmlPath } = metaPaths(pngFile);
+      mkdirSync(dirname(json), { recursive: true });
+      writeFileSync(json, `${JSON.stringify(meta, null, 2)}\n`);
+      writeFileSync(htmlPath, html);
+    } catch (e) {
+      console.warn(`meta failed for ${routeKey}: ${e instanceof Error ? e.message : String(e)}`);
+    }
   }
 
   const browser = await puppeteer.launch({
@@ -307,15 +417,18 @@ async function main(): Promise<void> {
       if (hit) {
         results.push(hit);
       } else {
-        mkdirSync(dirname(landingFile), { recursive: true });
-        await landingPage.screenshot({ path: landingFile });
+        await hideChrome(landingPage, config.hideChrome);
+        const { wrote, ratio } = await capture(landingPage, landingFile, config.diffThreshold);
+        const at = wrote ? new Date().toISOString() : (prevByRoute.get(landingRoute)?.capturedAt ?? new Date().toISOString());
+        await writeMeta(landingPage, landingRoute, landingFile, at);
         results.push({
           route: landingRoute,
           file: landingFile,
-          status: 'captured',
+          status: wrote ? 'captured' : 'unchanged',
+          detail: wrote ? undefined : `matches previous (${((ratio ?? 0) * 100).toFixed(2)}% changed)`,
           version: dashboardVersion,
           hash: landingHash,
-          capturedAt: new Date().toISOString(),
+          capturedAt: at,
         });
       }
     } catch (e) {
@@ -331,10 +444,11 @@ async function main(): Promise<void> {
       // No membership for this deployment: capture the request-access state and skip the rest.
       // Grant access (as admin via /deployment/permissions, or join a public deployment) then re-run.
       await settle(page);
+      await hideChrome(page, config.hideChrome);
       const file = join(outRoot, 'no-access.png');
-      mkdirSync(dirname(file), { recursive: true });
-      await page.screenshot({ path: file });
-      results.push({ route: '(deployment select)', file, status: 'captured', detail: 'user has no access, request-access state', version: dashboardVersion });
+      const { wrote } = await capture(page, file, config.diffThreshold);
+      await writeMeta(page, '(deployment select)', file, new Date().toISOString());
+      results.push({ route: '(deployment select)', file, status: wrote ? 'captured' : 'unchanged', detail: 'user has no access, request-access state', version: dashboardVersion });
       for (const entry of pages) {
         results.push({ route: entry.route, file: '', status: 'skipped', detail: 'no deployment access for user' });
       }
@@ -363,18 +477,32 @@ async function main(): Promise<void> {
           }
           for (const action of entry.actions ?? []) await runAction(page, action);
           await settle(page);
+          await hideChrome(page, config.hideChrome);
           const scrolled = await applyScroll(page, entry, config.scroll);
-          mkdirSync(dirname(file), { recursive: true });
-          await page.screenshot({ path: file });
-          results.push({
-            route: entry.route,
-            file,
-            status: 'captured',
-            detail: `scrollTop=${scrolled}`,
-            version: dashboardVersion,
-            hash,
-            capturedAt: new Date().toISOString(),
-          });
+          const { wrote, ratio } = await capture(page, file, config.diffThreshold);
+          const at = wrote ? new Date().toISOString() : (prevByRoute.get(entry.route)?.capturedAt ?? new Date().toISOString());
+          await writeMeta(page, entry.route, file, at);
+          if (wrote) {
+            results.push({
+              route: entry.route,
+              file,
+              status: 'captured',
+              detail: `scrollTop=${scrolled}${ratio !== null ? `, ${(ratio * 100).toFixed(2)}% changed` : ''}`,
+              version: dashboardVersion,
+              hash,
+              capturedAt: at,
+            });
+          } else {
+            results.push({
+              route: entry.route,
+              file,
+              status: 'unchanged',
+              detail: `matches previous (${((ratio ?? 0) * 100).toFixed(2)}% changed), scrollTop=${scrolled}`,
+              version: dashboardVersion,
+              hash,
+              capturedAt: at,
+            });
+          }
         } catch (e) {
           results.push({ route: entry.route, file, status: 'failed', detail: e instanceof Error ? e.message : String(e) });
         }
@@ -404,7 +532,7 @@ async function main(): Promise<void> {
     `${JSON.stringify({ identifier: config.identifier, dashboardVersion, generatedAt: new Date().toISOString(), results: finalResults }, null, 2)}\n`,
   );
   const counts = (s: Status) => results.filter((r) => r.status === s).length;
-  console.log(`dashboard v${dashboardVersion} | ${counts('captured')} captured, ${counts('reused')} reused, ${counts('skipped')} skipped, ${counts('failed')} failed`);
+  console.log(`dashboard v${dashboardVersion} | ${counts('captured')} captured, ${counts('reused')} reused, ${counts('unchanged')} unchanged, ${counts('skipped')} skipped, ${counts('failed')} failed`);
   for (const r of results) console.log(`${r.status.toUpperCase().padEnd(9)} ${r.route}${r.detail ? ` (${r.detail})` : ''}`);
   const failed = results.filter((r) => r.status === 'failed');
   if (failed.length) {
@@ -413,7 +541,9 @@ async function main(): Promise<void> {
   }
 }
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+if (import.meta.main) {
+  main().catch((e) => {
+    console.error(e);
+    process.exit(1);
+  });
+}

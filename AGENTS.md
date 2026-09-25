@@ -47,3 +47,12 @@ PICSA Dashboard Angular app, not from this repo.
 - Captures are version-keyed: each identifier's `manifest.json` records the
   dashboard version + per-page entry hash. Repeat runs `reuse` up-to-date
   pngs and recapture only stale ones (`SHOTS_FORCE=1` recaptures all).
+- Fixed app chrome (`mat-toolbar`, `dashboard-footer`) is hidden before capture;
+  only the sidebar is kept for context (`SHOTS_HIDE_CHROME=off` to keep all).
+- Recaptured pngs are pixel-compared and only rewritten when reasonably
+  different (`SHOTS_DIFF_THRESHOLD`, default 1%), keeping git history clean.
+- Each screenshot ships with agent-readable sidecars (same stem): `.json`
+  metadata (headings, interactive elements with viewport bboxes, table
+  headers + first rows, nav, dialogs) and cleaned `.html` content
+  (`SHOTS_META=off` to disable). `extract.ts` functions run in-page and must
+  stay self-contained; `bun run shots:verify` guards them offline.
