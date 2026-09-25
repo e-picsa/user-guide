@@ -21,3 +21,18 @@ html > body[data-scroll-locked] {
     display: none;
   }
 }
+
+/*
+ * Screen-only depth for annotated screenshot markers
+ * (`src/components/screenshot.tsx`). The badge deliberately carries no
+ * box-shadow in print: Chrome rasterises blurred shadows without the
+ * border-radius clip, printing a grey box around each marker. The white
+ * `border` on the badge itself prints reliably via print backgrounds.
+ */
+@media screen {
+  .screenshot-marker-badge {
+    box-shadow:
+      0 0 0 1px rgb(0 0 0 / 0.45),
+      0 4px 10px rgb(0 0 0 / 0.4);
+  }
+}

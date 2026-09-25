@@ -58,7 +58,12 @@ export function Screenshot({
             key={`${marker.x}-${marker.y}-${i}`}
             title={marker.label}
             aria-label={`Marker ${i + 1}: ${marker.label}`}
-            className="absolute flex size-7 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-amber-600 text-sm font-extrabold text-white ring-2 ring-white [box-shadow:0_0_0_1px_rgb(0_0_0/0.45),0_4px_10px_rgb(0_0_0/0.4)]"
+            // NB: the white ring is a real `border`, not `ring`/shadow —
+            // Chrome's print pipeline rasterises blurred box-shadows without
+            // the border-radius clip, which prints a grey box around the badge.
+            // Screen-only depth lives on `.screenshot-marker-badge` in
+            // global.css (print never sees a box-shadow).
+            className="screenshot-marker-badge absolute flex size-7 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white bg-amber-600 text-sm font-extrabold text-white"
             style={{ left: `${marker.x}%`, top: `${marker.y}%` }}
           >
             {i + 1}

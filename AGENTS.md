@@ -92,6 +92,14 @@ apply — misalignment always comes from bad coordinates, so follow this process
   committing marker or screenshot updates. Convention is badge centred *on*
   the target (small controls get covered); do not nudge centres off-element
   for aesthetics.
+- **Never style a marker with `box-shadow`/`shadow-*` or `ring-*`.** Chrome
+  rasterises blurred shadows in the PDF pipeline without the
+  `border-radius` clip, printing a grey box around each badge. The white ring
+  must be a real `border`; any screen-only depth goes in the
+  `@media screen` block in `src/app/global.css` (`.screenshot-marker-badge`),
+  which print never sees. Verify with `PDF_PRINT=1 bun run start` +
+  `PDF_ONLY=<route> bun run pdf` (see `scripts/pdf/README.md`) before changing
+  badge styling.
 
 <!-- BEGIN:nextjs-agent-rules -->
 
