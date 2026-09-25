@@ -4,6 +4,9 @@ Per-page PDFs via headless Chrome (Puppeteer), plus an optional combine step
 for a single guide PDF. Follows the official Fumadocs PDF guide, adapted to
 this repo's `puppeteer-core` setup.
 
+Each docs page renders as one continuous sheet at full article height (no
+pagination), intended for on-screen reading — nobody prints these.
+
 ## Usage
 
 ```bash
