@@ -3,7 +3,7 @@
   "url": "http://localhost:4200/home",
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
-  "dashboardVersion": "5.14.0",
+  "dashboardVersion": "5.16.0",
   "capturedAt": "2026-09-25T01:16:22.078Z",
   "viewport": {
     "width": 1280,
@@ -28,11 +28,23 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "Learn More about PICSA",
+      "text": "Dashboard User Guide",
       "bbox": {
         "x": 160,
         "y": 479,
-        "width": 222.4,
+        "width": 238.3,
+        "height": 36
+      },
+      "href": "https://guide.picsa.app"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "University of Reading - PICSA",
+      "bbox": {
+        "x": 160,
+        "y": 527,
+        "width": 284.6,
         "height": 36
       },
       "href": "https://research.reading.ac.uk/picsa/"
@@ -109,7 +121,11 @@
   "tables": [],
   "nav": [
     {
-      "label": "Learn More about PICSA",
+      "label": "Dashboard User Guide",
+      "href": "https://guide.picsa.app"
+    },
+    {
+      "label": "University of Reading - PICSA",
       "href": "https://research.reading.ac.uk/picsa/"
     }
   ],
