@@ -46,10 +46,15 @@ function globMdx(dir: string, out: string[] = []): string[] {
 function parseScreenshots(mdx: string): Array<{ src: string; markers: Marker[] }> {
   const found: Array<{ src: string; markers: Marker[] }> = [];
   const tagRe = /<Screenshot([\s\S]*?)\/>/g;
+  // `OVERLAY_SHOTS_ID` (default `zm-admin`) resolves `name="…"` screenshots,
+  // which pick their directory per country guide at render time.
+  const shotsId = process.env.OVERLAY_SHOTS_ID ?? process.env.SHOTS_ID ?? 'zm-admin';
   let m: RegExpExecArray | null;
   while ((m = tagRe.exec(mdx))) {
     const body = m[1];
-    const src = /src="([^"]+)"/.exec(body)?.[1];
+    const explicit = /src="([^"]+)"/.exec(body)?.[1];
+    const name = /name="([^"]+)"/.exec(body)?.[1];
+    const src = explicit ?? (name ? `/screenshots/${shotsId}/${name}` : undefined);
     if (!src) continue;
     const markers: Marker[] = [];
     const markerRe = /\{\s*x:\s*([\d.]+)\s*,\s*y:\s*([\d.]+)\s*,\s*label:\s*'((?:[^'\\]|\\.)*)'/g;

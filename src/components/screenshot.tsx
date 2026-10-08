@@ -1,4 +1,6 @@
+'use client';
 import { cn } from "@/lib/cn";
+import { useCountry } from "./country-context";
 
 export interface ScreenshotMarker {
   /** Horizontal position as % of image width (0–100) */
@@ -10,7 +12,14 @@ export interface ScreenshotMarker {
 }
 
 interface ScreenshotProps {
-  src: string;
+  /**
+   * Route-mirrored png path, e.g. `climate/station.png`. Preferred over
+   * `src`: it resolves to `/screenshots/{countryShotsId}/{name}` so each
+   * country guide shows its own captures with no MDX fork.
+   */
+  name?: string;
+  /** Legacy explicit src (country-specific). Prefer `name`. */
+  src?: string;
   alt: string;
   markers?: ScreenshotMarker[];
   caption?: string;
@@ -42,17 +51,20 @@ interface ScreenshotProps {
  * `bun run overlay:check` composites the markers onto the pngs for review.
  */
 export function Screenshot({
+  name,
   src,
   alt,
   markers = [],
   caption,
   className,
 }: ScreenshotProps) {
+  const { country } = useCountry();
+  const resolvedSrc = src ?? (name ? `/screenshots/${country.shotsId}/${name}` : '');
   return (
     <figure className={cn("my-6", className)}>
       <div className="relative overflow-hidden rounded-lg border border-fd-border shadow-sm">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={src} alt={alt} className="block w-full" loading="lazy" />
+        <img src={resolvedSrc} alt={alt} className="block w-full" loading="lazy" />
         {markers.map((marker, i) => (
           <span
             key={`${marker.x}-${marker.y}-${i}`}
