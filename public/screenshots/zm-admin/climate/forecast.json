@@ -3,7 +3,7 @@
   "url": "http://localhost:4200/climate/forecast",
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
-  "dashboardVersion": "5.14.0",
+  "dashboardVersion": "5.16.0",
   "capturedAt": "2026-09-25T01:16:55.149Z",
   "viewport": {
     "width": 1280,
@@ -28,7 +28,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "homeHome",
+      "text": "Home",
       "bbox": {
         "x": 0,
         "y": 72,
@@ -40,7 +40,7 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "filter_dramaClimate",
+      "text": "Climate",
       "bbox": {
         "x": 0,
         "y": 120,
@@ -87,7 +87,7 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "spaCrop",
+      "text": "Crop",
       "bbox": {
         "x": 0,
         "y": 328,
@@ -134,7 +134,7 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "translateTranslations",
+      "text": "Translations",
       "bbox": {
         "x": 0,
         "y": 376,
@@ -169,7 +169,7 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "library_booksResources",
+      "text": "Resources",
       "bbox": {
         "x": 0,
         "y": 424,
@@ -228,7 +228,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "query_statsStatistics",
+      "text": "Statistics",
       "bbox": {
         "x": 0,
         "y": 519,
@@ -240,7 +240,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "appsDeployments",
+      "text": "Deployments",
       "bbox": {
         "x": 0,
         "y": 567,
@@ -252,7 +252,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "manage_accountsUser Permissions",
+      "text": "User Permissions",
       "bbox": {
         "x": 0,
         "y": 615,
@@ -264,7 +264,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "mapMap Boundaries",
+      "text": "Map Boundaries",
       "bbox": {
         "x": 0,
         "y": 663,
@@ -276,34 +276,23 @@
     {
       "tag": "button",
       "kind": "button",
-      "text": "Sep 2026",
+      "text": "Oct 2026",
       "bbox": {
         "x": 334.6,
         "y": 30,
-        "width": 102.1,
+        "width": 100.9,
         "height": 36
       }
     },
     {
       "tag": "button",
       "kind": "button",
-      "text": "addAdd seasonal Forecast",
+      "text": "Add seasonal Forecast",
       "bbox": {
         "x": 979.6,
         "y": 30,
         "width": 236.4,
         "height": 36
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "autorenew",
-      "bbox": {
-        "x": 1216,
-        "y": 24,
-        "width": 48,
-        "height": 48
       }
     },
     {
@@ -369,7 +358,7 @@
       "bbox": {
         "x": 236,
         "y": 239,
-        "width": 190.8,
+        "width": 248,
         "height": 22
       }
     },
@@ -378,9 +367,9 @@
       "kind": "button",
       "text": "Label",
       "bbox": {
-        "x": 458.8,
+        "x": 516,
         "y": 239,
-        "width": 338.4,
+        "width": 165.7,
         "height": 22
       }
     },
@@ -389,9 +378,9 @@
       "kind": "button",
       "text": "Language",
       "bbox": {
-        "x": 829.2,
+        "x": 713.6,
         "y": 239,
-        "width": 181.7,
+        "width": 236.5,
         "height": 22
       }
     },
@@ -400,21 +389,10 @@
       "kind": "button",
       "text": "Storage File",
       "bbox": {
-        "x": 1042.9,
+        "x": 982.1,
         "y": 239,
-        "width": 205.1,
+        "width": 265.9,
         "height": 22
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "open_in_new",
-      "bbox": {
-        "x": 1042.9,
-        "y": 280.5,
-        "width": 48,
-        "height": 48
       }
     }
   ],
@@ -426,20 +404,13 @@
         "Language",
         "Storage File"
       ],
-      "rows": [
-        [
-          "Sep 22, 2026",
-          "Seasonal Climate Outlook",
-          "English",
-          "open_in_new"
-        ]
-      ],
-      "rowCount": 1
+      "rows": [],
+      "rowCount": 0
     }
   ],
   "nav": [
     {
-      "label": "homeHome",
+      "label": "Home",
       "href": "/home"
     },
     {
@@ -491,19 +462,19 @@
       "href": "/resources/farmer-videos"
     },
     {
-      "label": "query_statsStatistics",
+      "label": "Statistics",
       "href": "/stats"
     },
     {
-      "label": "appsDeployments",
+      "label": "Deployments",
       "href": "/deployment"
     },
     {
-      "label": "manage_accountsUser Permissions",
+      "label": "User Permissions",
       "href": "/deployment/permissions"
     },
     {
-      "label": "mapMap Boundaries",
+      "label": "Map Boundaries",
       "href": "/map-admin"
     }
   ],

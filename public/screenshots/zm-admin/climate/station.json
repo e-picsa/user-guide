@@ -3,7 +3,7 @@
   "url": "http://localhost:4200/climate/station",
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
-  "dashboardVersion": "5.14.0",
+  "dashboardVersion": "5.16.0",
   "capturedAt": "2026-09-25T01:16:42.664Z",
   "viewport": {
     "width": 1280,
@@ -16,7 +16,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "homeHome",
+      "text": "Home",
       "bbox": {
         "x": 0,
         "y": 72,
@@ -28,7 +28,7 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "filter_dramaClimate",
+      "text": "Climate",
       "bbox": {
         "x": 0,
         "y": 120,
@@ -75,7 +75,7 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "spaCrop",
+      "text": "Crop",
       "bbox": {
         "x": 0,
         "y": 328,
@@ -122,7 +122,7 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "translateTranslations",
+      "text": "Translations",
       "bbox": {
         "x": 0,
         "y": 376,
@@ -157,7 +157,7 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "library_booksResources",
+      "text": "Resources",
       "bbox": {
         "x": 0,
         "y": 424,
@@ -216,7 +216,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "query_statsStatistics",
+      "text": "Statistics",
       "bbox": {
         "x": 0,
         "y": 519,
@@ -228,7 +228,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "appsDeployments",
+      "text": "Deployments",
       "bbox": {
         "x": 0,
         "y": 567,
@@ -240,7 +240,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "manage_accountsUser Permissions",
+      "text": "User Permissions",
       "bbox": {
         "x": 0,
         "y": 615,
@@ -252,7 +252,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "mapMap Boundaries",
+      "text": "Map Boundaries",
       "bbox": {
         "x": 0,
         "y": 663,
@@ -260,17 +260,6 @@
         "height": 48
       },
       "href": "/map-admin"
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "refresh",
-      "bbox": {
-        "x": 1223,
-        "y": 9,
-        "width": 48,
-        "height": 48
-      }
     },
     {
       "tag": "input",
@@ -322,8 +311,8 @@
       "kind": "button",
       "text": "1",
       "bbox": {
-        "x": 1170,
-        "y": 175,
+        "x": 959,
+        "y": 451,
         "width": 48,
         "height": 48
       }
@@ -333,8 +322,8 @@
       "kind": "button",
       "text": "2",
       "bbox": {
-        "x": 1194,
-        "y": 315,
+        "x": 1164,
+        "y": 175,
         "width": 48,
         "height": 48
       }
@@ -344,8 +333,8 @@
       "kind": "button",
       "text": "3",
       "bbox": {
-        "x": 1003,
-        "y": 493,
+        "x": 1188,
+        "y": 315,
         "width": 48,
         "height": 48
       }
@@ -355,8 +344,8 @@
       "kind": "button",
       "text": "4",
       "bbox": {
-        "x": 943,
-        "y": 470,
+        "x": 986,
+        "y": 420,
         "width": 48,
         "height": 48
       }
@@ -366,8 +355,8 @@
       "kind": "button",
       "text": "5",
       "bbox": {
-        "x": 1196,
-        "y": 157,
+        "x": 937,
+        "y": 470,
         "width": 48,
         "height": 48
       }
@@ -377,8 +366,8 @@
       "kind": "button",
       "text": "6",
       "bbox": {
-        "x": 812,
-        "y": 317,
+        "x": 1190,
+        "y": 157,
         "width": 48,
         "height": 48
       }
@@ -388,8 +377,8 @@
       "kind": "button",
       "text": "7",
       "bbox": {
-        "x": 1006,
-        "y": 356,
+        "x": 806,
+        "y": 317,
         "width": 48,
         "height": 48
       }
@@ -399,8 +388,8 @@
       "kind": "button",
       "text": "8",
       "bbox": {
-        "x": 1007,
-        "y": 355,
+        "x": 1000,
+        "y": 356,
         "width": 48,
         "height": 48
       }
@@ -410,8 +399,8 @@
       "kind": "button",
       "text": "9",
       "bbox": {
-        "x": 990,
-        "y": 270,
+        "x": 1001,
+        "y": 355,
         "width": 48,
         "height": 48
       }
@@ -421,8 +410,8 @@
       "kind": "button",
       "text": "10",
       "bbox": {
-        "x": 981,
-        "y": 418,
+        "x": 984,
+        "y": 270,
         "width": 48,
         "height": 48
       }
@@ -432,8 +421,8 @@
       "kind": "button",
       "text": "11",
       "bbox": {
-        "x": 744,
-        "y": 380,
+        "x": 975,
+        "y": 418,
         "width": 48,
         "height": 48
       }
@@ -443,8 +432,8 @@
       "kind": "button",
       "text": "12",
       "bbox": {
-        "x": 840,
-        "y": 373,
+        "x": 738,
+        "y": 380,
         "width": 48,
         "height": 48
       }
@@ -454,8 +443,8 @@
       "kind": "button",
       "text": "13",
       "bbox": {
-        "x": 1128,
-        "y": 159,
+        "x": 834,
+        "y": 373,
         "width": 48,
         "height": 48
       }
@@ -465,8 +454,8 @@
       "kind": "button",
       "text": "14",
       "bbox": {
-        "x": 887,
-        "y": 314,
+        "x": 1122,
+        "y": 159,
         "width": 48,
         "height": 48
       }
@@ -476,8 +465,8 @@
       "kind": "button",
       "text": "15",
       "bbox": {
-        "x": 1034,
-        "y": 140,
+        "x": 881,
+        "y": 314,
         "width": 48,
         "height": 48
       }
@@ -487,8 +476,8 @@
       "kind": "button",
       "text": "16",
       "bbox": {
-        "x": 886,
-        "y": 516,
+        "x": 950,
+        "y": 461,
         "width": 48,
         "height": 48
       }
@@ -498,8 +487,8 @@
       "kind": "button",
       "text": "17",
       "bbox": {
-        "x": 1222,
-        "y": 255,
+        "x": 1028,
+        "y": 140,
         "width": 48,
         "height": 48
       }
@@ -509,8 +498,8 @@
       "kind": "button",
       "text": "18",
       "bbox": {
-        "x": 999,
-        "y": 402,
+        "x": 880,
+        "y": 516,
         "width": 48,
         "height": 48
       }
@@ -520,8 +509,8 @@
       "kind": "button",
       "text": "19",
       "bbox": {
-        "x": 1006,
-        "y": 397,
+        "x": 1216,
+        "y": 255,
         "width": 48,
         "height": 48
       }
@@ -531,8 +520,8 @@
       "kind": "button",
       "text": "20",
       "bbox": {
-        "x": 968,
-        "y": 436,
+        "x": 993,
+        "y": 402,
         "width": 48,
         "height": 48
       }
@@ -542,8 +531,8 @@
       "kind": "button",
       "text": "21",
       "bbox": {
-        "x": 1029,
-        "y": 207,
+        "x": 1000,
+        "y": 397,
         "width": 48,
         "height": 48
       }
@@ -553,8 +542,8 @@
       "kind": "button",
       "text": "22",
       "bbox": {
-        "x": 1024,
-        "y": 200,
+        "x": 1000,
+        "y": 397,
         "width": 48,
         "height": 48
       }
@@ -564,8 +553,8 @@
       "kind": "button",
       "text": "23",
       "bbox": {
-        "x": 1137,
-        "y": 96,
+        "x": 1017,
+        "y": 438,
         "width": 48,
         "height": 48
       }
@@ -575,8 +564,8 @@
       "kind": "button",
       "text": "24",
       "bbox": {
-        "x": 1164,
-        "y": 301,
+        "x": 943,
+        "y": 493,
         "width": 48,
         "height": 48
       }
@@ -586,8 +575,8 @@
       "kind": "button",
       "text": "25",
       "bbox": {
-        "x": 1131,
-        "y": 158,
+        "x": 962,
+        "y": 436,
         "width": 48,
         "height": 48
       }
@@ -597,8 +586,8 @@
       "kind": "button",
       "text": "26",
       "bbox": {
-        "x": 1091,
-        "y": 336,
+        "x": 1023,
+        "y": 207,
         "width": 48,
         "height": 48
       }
@@ -608,8 +597,8 @@
       "kind": "button",
       "text": "27",
       "bbox": {
-        "x": 765,
-        "y": 394,
+        "x": 1018,
+        "y": 200,
         "width": 48,
         "height": 48
       }
@@ -619,8 +608,8 @@
       "kind": "button",
       "text": "28",
       "bbox": {
-        "x": 1141,
-        "y": 231,
+        "x": 1131,
+        "y": 96,
         "width": 48,
         "height": 48
       }
@@ -630,8 +619,8 @@
       "kind": "button",
       "text": "29",
       "bbox": {
-        "x": 1126,
-        "y": 92,
+        "x": 1158,
+        "y": 301,
         "width": 48,
         "height": 48
       }
@@ -641,8 +630,8 @@
       "kind": "button",
       "text": "30",
       "bbox": {
-        "x": 1193,
-        "y": 319,
+        "x": 1125,
+        "y": 158,
         "width": 48,
         "height": 48
       }
@@ -652,8 +641,8 @@
       "kind": "button",
       "text": "31",
       "bbox": {
-        "x": 997,
-        "y": 409,
+        "x": 1085,
+        "y": 336,
         "width": 48,
         "height": 48
       }
@@ -663,8 +652,8 @@
       "kind": "button",
       "text": "32",
       "bbox": {
-        "x": 943,
-        "y": 382,
+        "x": 759,
+        "y": 394,
         "width": 48,
         "height": 48
       }
@@ -674,8 +663,8 @@
       "kind": "button",
       "text": "33",
       "bbox": {
-        "x": 823,
-        "y": 231,
+        "x": 949,
+        "y": 436,
         "width": 48,
         "height": 48
       }
@@ -685,8 +674,8 @@
       "kind": "button",
       "text": "34",
       "bbox": {
-        "x": 1015,
-        "y": 289,
+        "x": 1135,
+        "y": 231,
         "width": 48,
         "height": 48
       }
@@ -696,8 +685,8 @@
       "kind": "button",
       "text": "35",
       "bbox": {
-        "x": 1135,
-        "y": 347,
+        "x": 1120,
+        "y": 92,
         "width": 48,
         "height": 48
       }
@@ -707,8 +696,8 @@
       "kind": "button",
       "text": "36",
       "bbox": {
-        "x": 1055,
-        "y": 212,
+        "x": 1187,
+        "y": 319,
         "width": 48,
         "height": 48
       }
@@ -718,8 +707,8 @@
       "kind": "button",
       "text": "37",
       "bbox": {
-        "x": 770,
-        "y": 435,
+        "x": 991,
+        "y": 409,
         "width": 48,
         "height": 48
       }
@@ -729,8 +718,8 @@
       "kind": "button",
       "text": "38",
       "bbox": {
-        "x": 1086,
-        "y": 300,
+        "x": 937,
+        "y": 382,
         "width": 48,
         "height": 48
       }
@@ -740,8 +729,8 @@
       "kind": "button",
       "text": "39",
       "bbox": {
-        "x": 817,
-        "y": 499,
+        "x": 1228,
+        "y": 177,
         "width": 48,
         "height": 48
       }
@@ -751,8 +740,8 @@
       "kind": "button",
       "text": "40",
       "bbox": {
-        "x": 1009,
-        "y": 287,
+        "x": 817,
+        "y": 231,
         "width": 48,
         "height": 48
       }
@@ -762,8 +751,8 @@
       "kind": "button",
       "text": "41",
       "bbox": {
-        "x": 912,
-        "y": 251,
+        "x": 949,
+        "y": 457,
         "width": 48,
         "height": 48
       }
@@ -773,7 +762,95 @@
       "kind": "button",
       "text": "42",
       "bbox": {
-        "x": 763,
+        "x": 1009,
+        "y": 289,
+        "width": 48,
+        "height": 48
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "43",
+      "bbox": {
+        "x": 1129,
+        "y": 347,
+        "width": 48,
+        "height": 48
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "44",
+      "bbox": {
+        "x": 1049,
+        "y": 212,
+        "width": 48,
+        "height": 48
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "45",
+      "bbox": {
+        "x": 764,
+        "y": 435,
+        "width": 48,
+        "height": 48
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "46",
+      "bbox": {
+        "x": 1080,
+        "y": 300,
+        "width": 48,
+        "height": 48
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "47",
+      "bbox": {
+        "x": 811,
+        "y": 499,
+        "width": 48,
+        "height": 48
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "48",
+      "bbox": {
+        "x": 1003,
+        "y": 287,
+        "width": 48,
+        "height": 48
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "49",
+      "bbox": {
+        "x": 906,
+        "y": 251,
+        "width": 48,
+        "height": 48
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "50",
+      "bbox": {
+        "x": 757,
         "y": 314,
         "width": 48,
         "height": 48
@@ -825,27 +902,27 @@
       ],
       "rows": [
         [
-          "31",
+          "38",
           "CHILANGA",
-          "MT. MAKULU AGROME"
+          "MT MAKULU AGROME"
         ],
         [
-          "1",
+          "2",
           "CHINSALI",
           "CHINSALI FTC"
         ],
         [
-          "2",
+          "3",
           "CHIPATA",
           "CHIPATA MET"
         ]
       ],
-      "rowCount": 42
+      "rowCount": 51
     }
   ],
   "nav": [
     {
-      "label": "homeHome",
+      "label": "Home",
       "href": "/home"
     },
     {
@@ -897,19 +974,19 @@
       "href": "/resources/farmer-videos"
     },
     {
-      "label": "query_statsStatistics",
+      "label": "Statistics",
       "href": "/stats"
     },
     {
-      "label": "appsDeployments",
+      "label": "Deployments",
       "href": "/deployment"
     },
     {
-      "label": "manage_accountsUser Permissions",
+      "label": "User Permissions",
       "href": "/deployment/permissions"
     },
     {
-      "label": "mapMap Boundaries",
+      "label": "Map Boundaries",
       "href": "/map-admin"
     }
   ],
