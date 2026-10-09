@@ -23,7 +23,11 @@ export default function Layout({ children }: LayoutProps<'/'>) {
       <body className="flex flex-col min-h-screen">
         <Provider>
           <CountryProvider>
-            <div className="flex items-center justify-end gap-4 border-b border-fd-border px-4 py-2">
+            {/* Interactive picker: hidden in print so the PDF doesn't pay 46px
+                on every page — worse, `#nd-docs-layout` is `min-height: 100dvh`
+                and in print `dvh` is the paper height, so an offset layout box
+                can never fit one sheet no matter how tall it grows. */}
+            <div className="flex items-center justify-end gap-4 border-b border-fd-border px-4 py-2 print:hidden">
               <CountrySwitcher />
             </div>
             <DocsLayout tree={source.getPageTree()} {...baseOptions()}>
