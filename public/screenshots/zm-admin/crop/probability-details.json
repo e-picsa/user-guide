@@ -4,12 +4,12 @@
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
   "dashboardVersion": "5.16.0",
-  "capturedAt": "2026-10-08T21:57:09.523Z",
+  "capturedAt": "2026-10-09T04:46:19.625Z",
   "viewport": {
     "width": 1280,
     "height": 720
   },
-  "scrollTop": 0,
+  "scrollTop": 66,
   "space": "viewport-relative CSS px at capture viewport (1:1 with png at deviceScaleFactor 1)",
   "headings": [
     {
@@ -18,9 +18,9 @@
       "text": "Chadiza",
       "bbox": {
         "x": 220,
-        "y": 35.3,
+        "y": -30.5,
         "width": 73.5,
-        "height": 25.5
+        "height": 25
       }
     },
     {
@@ -29,9 +29,20 @@
       "text": "Crop Probabilities",
       "bbox": {
         "x": 309.5,
-        "y": 32,
+        "y": -34,
         "width": 954.5,
         "height": 32
+      }
+    },
+    {
+      "tag": "h2",
+      "kind": "heading",
+      "text": "Crop Information Chadiza",
+      "bbox": {
+        "x": 245,
+        "y": 329,
+        "width": 449.9,
+        "height": 64
       }
     }
   ],
@@ -290,7 +301,7 @@
       "text": "Climate Data",
       "bbox": {
         "x": 930.6,
-        "y": 88.8,
+        "y": 23,
         "width": 149.5,
         "height": 36
       }
@@ -300,14 +311,84 @@
       "kind": "button",
       "text": "Change Station",
       "bbox": {
-        "x": 1096.1,
-        "y": 88.8,
-        "width": 167.9,
+        "x": 1096,
+        "y": 23,
+        "width": 168,
+        "height": 36
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Copy To Clipboard",
+      "bbox": {
+        "x": 220,
+        "y": 2585.5,
+        "width": 208,
+        "height": 36
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Export",
+      "bbox": {
+        "x": 1164.6,
+        "y": 2585.5,
+        "width": 99.4,
         "height": 36
       }
     }
   ],
-  "tables": [],
+  "tables": [
+    {
+      "headers": [
+        "Crop",
+        "Variety",
+        "Days to maturity",
+        "Crop Water Requirement* (mm)",
+        "31-Oct",
+        "15-Nov",
+        "30-Nov",
+        "15-Dec",
+        "30-Dec"
+      ],
+      "rows": [
+        [
+          "Maize",
+          "ZMS-405",
+          "100 - 105",
+          "400 mm",
+          "10/10",
+          "10/10",
+          "10/10",
+          "9/10",
+          "6/10"
+        ],
+        [
+          "ETG-401",
+          "100 - 110",
+          "405 mm",
+          "10/10",
+          "10/10",
+          "10/10",
+          "8/10",
+          "5/10"
+        ],
+        [
+          "DKC80-33",
+          "110 - 115",
+          "425 mm",
+          "10/10",
+          "10/10",
+          "9/10",
+          "7/10",
+          "4/10"
+        ]
+      ],
+      "rowCount": 34
+    }
+  ],
   "nav": [
     {
       "label": "Home",

@@ -1,13 +1,13 @@
 {
   "identifier": "zm-admin",
   "dashboardVersion": "5.16.0",
-  "generatedAt": "2026-10-09T04:44:10.961Z",
+  "generatedAt": "2026-10-09T04:46:19.750Z",
   "results": [
     {
       "route": "(logged-out) home",
       "file": "public/screenshots/zm-admin/landing.png",
-      "status": "reused",
-      "detail": "up to date at v5.16.0 (hash f6e3eebd)",
+      "status": "unchanged",
+      "detail": "matches previous (0.68% changed)",
       "version": "5.16.0",
       "hash": "f6e3eebd",
       "capturedAt": "2026-09-25T01:16:22.078Z"
@@ -87,8 +87,8 @@
     {
       "route": "crop/probability",
       "file": "public/screenshots/zm-admin/crop/probability.png",
-      "status": "reused",
-      "detail": "up to date at v5.16.0 (hash 50134a3c)",
+      "status": "unchanged",
+      "detail": "matches previous (0.97% changed), scrollTop=0",
       "version": "5.16.0",
       "hash": "50134a3c",
       "capturedAt": "2026-09-25T01:17:17.877Z"
@@ -96,11 +96,11 @@
     {
       "route": "crop/probability/chadiza",
       "file": "public/screenshots/zm-admin/crop/probability-details.png",
-      "status": "reused",
-      "detail": "up to date at v5.16.0 (hash 9cf105e6)",
+      "status": "captured",
+      "detail": "scrollTop=66, 2.48% changed",
       "version": "5.16.0",
       "hash": "9cf105e6",
-      "capturedAt": "2026-10-08T21:57:09.523Z"
+      "capturedAt": "2026-10-09T04:46:19.625Z"
     },
     {
       "route": "crop/admin",
