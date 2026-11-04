@@ -3,7 +3,7 @@
  *
  * Compares dashboard routes (parsed statically from the dashboard Angular
  * source) with guide coverage (content/docs MDX pages + screenshot manifest
- * PAGES) and reports:
+ * exemplars from `pagesFor()`) and reports:
  *
  * - ADD candidates: dashboard routes with no screenshot exemplar and/or no
  *   guide page mentioning them.
@@ -31,10 +31,38 @@ import { execSync } from 'node:child_process';
 import { existsSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative, resolve } from 'node:path';
 
-import { PAGES } from '../screenshots/manifest';
+import { EXEMPLARS, entryToFile, pagesFor } from '../screenshots/manifest';
 
 const GUIDE_ROOT = resolve(dirname(new URL(import.meta.url).pathname), '../..');
 const DOCS_DIR = join(GUIDE_ROOT, 'content/docs');
+
+/**
+ * One manifest exemplar: the dashboard route captured plus the png stem it
+ * lands on (`out` pin when set, else route-mirrored) and which deployments
+ * capture it. Unioned across every deployment in EXEMPLARS so the audit
+ * covers all exemplars, not just one country's.
+ */
+interface ManifestExemplar {
+  route: string;
+  /** Png stem relative to the identifier dir, without `.png`. */
+  file: string;
+  deployments: string[];
+}
+
+function loadManifest(): ManifestExemplar[] {
+  const byRoute = new Map<string, ManifestExemplar>();
+  for (const dep of Object.keys(EXEMPLARS)) {
+    for (const entry of pagesFor(dep)) {
+      const ex = byRoute.get(entry.route);
+      if (ex) {
+        if (!ex.deployments.includes(dep)) ex.deployments.push(dep);
+      } else {
+        byRoute.set(entry.route, { route: entry.route, file: entryToFile(entry), deployments: [dep] });
+      }
+    }
+  }
+  return [...byRoute.values()].sort((a, b) => (a.route < b.route ? -1 : 1));
+}
 
 interface DashboardRoute {
   route: string;
@@ -55,7 +83,7 @@ interface GuidePage {
   routeRefs: string[];
 }
 
-/** Captures that exist outside manifest PAGES (see `screenshots/run.ts` flow). */
+/** Captures that exist outside the manifest exemplars (see `screenshots/run.ts` flow). */
 const EXTRA_CAPTURES = new Set(['landing']);
 
 interface Args {
@@ -432,12 +460,16 @@ interface Finding {
 function audit(
   routes: DashboardRoute[],
   pages: GuidePage[],
-  manifestRoutes: string[],
+  exemplars: ManifestExemplar[],
   changes: GitChange[],
   repoRoot: string,
 ): { findings: Finding[]; covered: Map<string, string[]> } {
   const findings: Finding[] = [];
   const covered = new Map<string, string[]>();
+  const manifestRoutes = exemplars.map((e) => e.route);
+  // Pinned `out` pngs (e.g. `climate/station-details.png`) don't mirror their
+  // route — map the file stem back to the entry route for coverage matching.
+  const fileToRoute = new Map(exemplars.map((e) => [e.file, e.route] as const));
 
   // Invert guide coverage: dashboard route pattern -> MDX files.
   const livePatterns = routes.filter((r) => !r.redirectTo && r.route !== '**').map((r) => r.route);
@@ -445,7 +477,7 @@ function audit(
     const refs: string[] = [];
     for (const p of pages) {
       const hitShot = p.screenshots.some((s) => {
-        const r = shotToRoute(s);
+        const r = fileToRoute.get(shotToRoute(s)) ?? shotToRoute(s);
         return patternMatches(pattern, r) || r === pattern;
       });
       const hitRef = p.routeRefs.some((ref) => patternMatches(pattern, ref) || ref === pattern);
@@ -465,7 +497,7 @@ function audit(
       findings.push({
         kind: 'ADD',
         route: r.route,
-        detail: `no screenshot exemplar in manifest PAGES${guideRefs.length ? '' : ' and no guide page mentions it'}`,
+        detail: `no screenshot exemplar in the manifest${guideRefs.length ? '' : ' and no guide page mentions it'}`,
         guideFiles: guideRefs,
       });
     } else if (guideRefs.length === 0) {
@@ -491,13 +523,14 @@ function audit(
   for (const m of manifestSet) {
     const known = livePatterns.some((p) => patternMatches(p, m) || p === m);
     if (!known) {
-      findings.push({ kind: 'REMOVE', route: m, detail: 'manifest PAGES entry has no matching dashboard route — route may have been removed' });
+      findings.push({ kind: 'REMOVE', route: m, detail: 'manifest exemplar has no matching dashboard route — route may have been removed' });
     }
   }
 
   // STALE_REF: guide prose/screenshots pointing at dead routes or missing files.
   const knownRef = (ref: string): boolean =>
     EXTRA_CAPTURES.has(ref) ||
+    fileToRoute.has(ref) ||
     livePatterns.some((pt) => patternMatches(pt, ref) || pt === ref) ||
     manifestRoutes.some((m) => m === ref || patternMatches(m, ref));
   for (const p of pages) {
@@ -603,10 +636,11 @@ function main(): void {
   const args = parseArgs(process.argv.slice(2));
   const { appDir, repoRoot } = resolveDashboardSrc(args.dashboard);
   const routes = parseDashboard(appDir);
-  const manifestRoutes = PAGES.map((p) => p.route);
+  const exemplars = loadManifest();
+  const manifestRoutes = exemplars.map((e) => e.route);
   const pages = listMdxFiles(DOCS_DIR).map(parseGuidePage);
   const changes = gitChanges(repoRoot, appDir, args.since, args.commits);
-  const { findings } = audit(routes, pages, manifestRoutes, changes, repoRoot);
+  const { findings } = audit(routes, pages, exemplars, changes, repoRoot);
 
   if (args.snapshotOut) {
     const snap = {
