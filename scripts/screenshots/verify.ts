@@ -11,7 +11,7 @@ import { PNG } from 'pngjs';
 
 import { diffAgainstFile } from './diff';
 import { extractContentHtml, extractMeta, META_LIMITS, type ScreenshotMeta } from './extract';
-import { entryHash, PAGES } from './manifest';
+import { entryHash, EXEMPLARS, pagesFor } from './manifest';
 import { buildEvalCall } from './run';
 
 let failures = 0;
@@ -31,10 +31,16 @@ check(
   entryHash({ route: 'x', scroll: false }) !== entryHash({ route: 'x', scroll: 10 }),
 );
 check('hash sensitive to href', entryHash({ route: 'x', href: 'y' }) !== entryHash({ route: 'x' }));
-check(
-  `all ${PAGES.length} page hashes unique`,
-  new Set(PAGES.map(entryHash)).size === PAGES.length,
-);
+check('hash sensitive to out', entryHash({ route: 'x', out: 'y.png' }) !== entryHash({ route: 'x' }));
+// Hashes must be unique within each deployment's page list (routes differ per
+// deployment, so check every configured set, not a single global list).
+for (const deploymentId of Object.keys(EXEMPLARS)) {
+  const pages = pagesFor(deploymentId);
+  check(
+    `all ${pages.length} ${deploymentId} page hashes unique`,
+    new Set(pages.map(entryHash)).size === pages.length,
+  );
+}
 
 // --- pixel diff (synthetic) --------------------------------------------------
 function solid(w: number, h: number, r: number, g: number, b: number): Buffer {

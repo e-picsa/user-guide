@@ -3,7 +3,7 @@
   "url": "http://localhost:4200/crop/probability",
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
-  "dashboardVersion": "5.14.0",
+  "dashboardVersion": "5.16.0",
   "capturedAt": "2026-09-25T01:17:17.877Z",
   "viewport": {
     "width": 1280,
@@ -16,7 +16,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "homeHome",
+      "text": "Home",
       "bbox": {
         "x": 0,
         "y": 72,
@@ -28,7 +28,7 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "filter_dramaClimate",
+      "text": "Climate",
       "bbox": {
         "x": 0,
         "y": 120,
@@ -75,7 +75,7 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "spaCrop",
+      "text": "Crop",
       "bbox": {
         "x": 0,
         "y": 168,
@@ -122,7 +122,7 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "translateTranslations",
+      "text": "Translations",
       "bbox": {
         "x": 0,
         "y": 376,
@@ -157,7 +157,7 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "library_booksResources",
+      "text": "Resources",
       "bbox": {
         "x": 0,
         "y": 424,
@@ -216,7 +216,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "query_statsStatistics",
+      "text": "Statistics",
       "bbox": {
         "x": 0,
         "y": 519,
@@ -228,7 +228,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "appsDeployments",
+      "text": "Deployments",
       "bbox": {
         "x": 0,
         "y": 567,
@@ -240,7 +240,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "manage_accountsUser Permissions",
+      "text": "User Permissions",
       "bbox": {
         "x": 0,
         "y": 615,
@@ -252,7 +252,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "mapMap Boundaries",
+      "text": "Map Boundaries",
       "bbox": {
         "x": 0,
         "y": 663,
@@ -279,7 +279,7 @@
       "text": "Province",
       "bbox": {
         "x": 236,
-        "y": 127,
+        "y": 127.5,
         "width": 144.6,
         "height": 22
       }
@@ -290,7 +290,7 @@
       "text": "Location",
       "bbox": {
         "x": 412.6,
-        "y": 127,
+        "y": 127.5,
         "width": 163.3,
         "height": 22
       }
@@ -301,7 +301,7 @@
       "text": "Station",
       "bbox": {
         "x": 607.9,
-        "y": 127,
+        "y": 127.5,
         "width": 271.6,
         "height": 22
       }
@@ -312,7 +312,7 @@
       "text": "Total Crops",
       "bbox": {
         "x": 911.5,
-        "y": 127,
+        "y": 127.5,
         "width": 137.5,
         "height": 22
       }
@@ -323,7 +323,7 @@
       "text": "Total Varieties",
       "bbox": {
         "x": 1080.9,
-        "y": 127,
+        "y": 127.5,
         "width": 167.1,
         "height": 22
       }
@@ -340,25 +340,25 @@
       ],
       "rows": [
         [
+          "Luapula",
+          "Chifunabuli",
+          "SAMFYA MET",
+          "0",
+          "0"
+        ],
+        [
+          "Southern",
+          "Chikankata",
+          "CHIPEPO MET",
+          "0",
+          "0"
+        ],
+        [
           "Eastern",
           "Chadiza",
           "CHIPATA MET",
           "7",
           "42"
-        ],
-        [
-          "Eastern",
-          "Chama",
-          "ISOKA MET",
-          "5",
-          "40"
-        ],
-        [
-          "Eastern",
-          "Chasefu",
-          "LUNDAZI MET",
-          "6",
-          "21"
         ]
       ],
       "rowCount": 116
@@ -366,7 +366,7 @@
   ],
   "nav": [
     {
-      "label": "homeHome",
+      "label": "Home",
       "href": "/home"
     },
     {
@@ -418,19 +418,19 @@
       "href": "/resources/farmer-videos"
     },
     {
-      "label": "query_statsStatistics",
+      "label": "Statistics",
       "href": "/stats"
     },
     {
-      "label": "appsDeployments",
+      "label": "Deployments",
       "href": "/deployment"
     },
     {
-      "label": "manage_accountsUser Permissions",
+      "label": "User Permissions",
       "href": "/deployment/permissions"
     },
     {
-      "label": "mapMap Boundaries",
+      "label": "Map Boundaries",
       "href": "/map-admin"
     }
   ],

@@ -1,0 +1,277 @@
+{
+  "identifier": "zw-admin",
+  "dashboardVersion": "5.16.0",
+  "generatedAt": "2026-10-09T04:42:08.688Z",
+  "results": [
+    {
+      "route": "(logged-out) home",
+      "file": "public/screenshots/zw-admin/landing.png",
+      "status": "reused",
+      "detail": "up to date at v5.16.0 (hash f6e3eebd)",
+      "version": "5.16.0",
+      "hash": "f6e3eebd",
+      "capturedAt": "2026-10-08T21:28:43.424Z"
+    },
+    {
+      "route": "home",
+      "file": "public/screenshots/zw-admin/home.png",
+      "status": "reused",
+      "detail": "up to date at v5.16.0 (hash 0d7ee891)",
+      "version": "5.16.0",
+      "hash": "0d7ee891",
+      "capturedAt": "2026-10-08T21:28:58.593Z"
+    },
+    {
+      "route": "climate/station",
+      "file": "public/screenshots/zw-admin/climate/station.png",
+      "status": "reused",
+      "detail": "up to date at v5.16.0 (hash 15841c04)",
+      "version": "5.16.0",
+      "hash": "15841c04",
+      "capturedAt": "2026-10-08T21:29:03.967Z"
+    },
+    {
+      "route": "climate/forecast",
+      "file": "public/screenshots/zw-admin/climate/forecast.png",
+      "status": "reused",
+      "detail": "up to date at v5.16.0 (hash 17c42b6f)",
+      "version": "5.16.0",
+      "hash": "17c42b6f",
+      "capturedAt": "2026-10-08T21:29:18.526Z"
+    },
+    {
+      "route": "climate/admin",
+      "file": "public/screenshots/zw-admin/climate/admin.png",
+      "status": "reused",
+      "detail": "up to date at v5.16.0 (hash 49707023)",
+      "version": "5.16.0",
+      "hash": "49707023",
+      "capturedAt": "2026-10-08T21:29:23.094Z"
+    },
+    {
+      "route": "crop/variety",
+      "file": "public/screenshots/zw-admin/crop/variety.png",
+      "status": "reused",
+      "detail": "up to date at v5.16.0 (hash aa09bf7b)",
+      "version": "5.16.0",
+      "hash": "aa09bf7b",
+      "capturedAt": "2026-10-08T21:49:04.413Z"
+    },
+    {
+      "route": "crop/variety/add",
+      "file": "public/screenshots/zw-admin/crop/variety/add.png",
+      "status": "reused",
+      "detail": "up to date at v5.16.0 (hash 919c05c7)",
+      "version": "5.16.0",
+      "hash": "919c05c7",
+      "capturedAt": "2026-10-08T21:29:42.094Z"
+    },
+    {
+      "route": "crop/probability",
+      "file": "public/screenshots/zw-admin/crop/probability.png",
+      "status": "reused",
+      "detail": "up to date at v5.16.0 (hash 50134a3c)",
+      "version": "5.16.0",
+      "hash": "50134a3c",
+      "capturedAt": "2026-10-08T21:29:46.531Z"
+    },
+    {
+      "route": "crop/admin",
+      "file": "public/screenshots/zw-admin/crop/admin.png",
+      "status": "reused",
+      "detail": "up to date at v5.16.0 (hash f5d1754c)",
+      "version": "5.16.0",
+      "hash": "f5d1754c",
+      "capturedAt": "2026-10-08T21:49:26.833Z"
+    },
+    {
+      "route": "resources/files",
+      "file": "public/screenshots/zw-admin/resources/files.png",
+      "status": "reused",
+      "detail": "up to date at v5.16.0 (hash bb3bb5a1)",
+      "version": "5.16.0",
+      "hash": "bb3bb5a1",
+      "capturedAt": "2026-10-08T21:49:31.351Z"
+    },
+    {
+      "route": "resources/files/dff5c161-3541-44a4-8326-0affafd26812",
+      "file": "public/screenshots/zw-admin/resources/files/dff5c161-3541-44a4-8326-0affafd26812.png",
+      "status": "reused",
+      "detail": "up to date at v5.16.0 (hash 689c2d1e)",
+      "version": "5.16.0",
+      "hash": "689c2d1e",
+      "capturedAt": "2026-10-08T21:30:04.400Z"
+    },
+    {
+      "route": "resources/files/create",
+      "file": "public/screenshots/zw-admin/resources/files/create.png",
+      "status": "reused",
+      "detail": "up to date at v5.16.0 (hash c5a7a790)",
+      "version": "5.16.0",
+      "hash": "c5a7a790",
+      "capturedAt": "2026-10-08T21:30:08.844Z"
+    },
+    {
+      "route": "resources/links",
+      "file": "public/screenshots/zw-admin/resources/links.png",
+      "status": "reused",
+      "detail": "up to date at v5.16.0 (hash b3f59e4b)",
+      "version": "5.16.0",
+      "hash": "b3f59e4b",
+      "capturedAt": "2026-10-08T21:49:44.833Z"
+    },
+    {
+      "route": "resources/links/zmdWhatsapp",
+      "file": "public/screenshots/zw-admin/resources/links/zmdWhatsapp.png",
+      "status": "reused",
+      "detail": "up to date at v5.16.0 (hash e09a7745)",
+      "version": "5.16.0",
+      "hash": "e09a7745",
+      "capturedAt": "2026-10-08T21:30:17.720Z"
+    },
+    {
+      "route": "resources/links/create",
+      "file": "public/screenshots/zw-admin/resources/links/create.png",
+      "status": "reused",
+      "detail": "up to date at v5.16.0 (hash d8381462)",
+      "version": "5.16.0",
+      "hash": "d8381462",
+      "capturedAt": "2026-10-08T21:30:22.170Z"
+    },
+    {
+      "route": "resources/collections",
+      "file": "public/screenshots/zw-admin/resources/collections.png",
+      "status": "reused",
+      "detail": "up to date at v5.16.0 (hash ca87805f)",
+      "version": "5.16.0",
+      "hash": "ca87805f",
+      "capturedAt": "2026-10-08T21:49:58.278Z"
+    },
+    {
+      "route": "resources/collections/create",
+      "file": "public/screenshots/zw-admin/resources/collections/create.png",
+      "status": "reused",
+      "detail": "up to date at v5.16.0 (hash 9c64adde)",
+      "version": "5.16.0",
+      "hash": "9c64adde",
+      "capturedAt": "2026-10-08T21:30:31.045Z"
+    },
+    {
+      "route": "resources/farmer-videos",
+      "file": "public/screenshots/zw-admin/resources/farmer-videos.png",
+      "status": "reused",
+      "detail": "up to date at v5.16.0 (hash 5d0812a8)",
+      "version": "5.16.0",
+      "hash": "5d0812a8",
+      "capturedAt": "2026-10-08T21:30:35.493Z"
+    },
+    {
+      "route": "translations/list",
+      "file": "public/screenshots/zw-admin/translations/list.png",
+      "status": "reused",
+      "detail": "up to date at v5.16.0 (hash fc2936d5)",
+      "version": "5.16.0",
+      "hash": "fc2936d5",
+      "capturedAt": "2026-10-08T21:50:11.833Z"
+    },
+    {
+      "route": "translations/import",
+      "file": "public/screenshots/zw-admin/translations/import.png",
+      "status": "reused",
+      "detail": "up to date at v5.16.0 (hash 6faddd78)",
+      "version": "5.16.0",
+      "hash": "6faddd78",
+      "capturedAt": "2026-10-08T21:30:44.463Z"
+    },
+    {
+      "route": "profile",
+      "file": "public/screenshots/zw-admin/profile.png",
+      "status": "reused",
+      "detail": "up to date at v5.16.0 (hash 793165c1)",
+      "version": "5.16.0",
+      "hash": "793165c1",
+      "capturedAt": "2026-10-08T21:30:48.943Z"
+    },
+    {
+      "route": "stats",
+      "file": "public/screenshots/zw-admin/stats.png",
+      "status": "reused",
+      "detail": "up to date at v5.16.0 (hash 355e850f)",
+      "version": "5.16.0",
+      "hash": "355e850f",
+      "capturedAt": "2026-10-08T21:50:54.340Z"
+    },
+    {
+      "route": "deployment",
+      "file": "public/screenshots/zw-admin/deployment.png",
+      "status": "reused",
+      "detail": "up to date at v5.16.0 (hash dab26ca1)",
+      "version": "5.16.0",
+      "hash": "dab26ca1",
+      "capturedAt": "2026-10-08T21:31:55.929Z"
+    },
+    {
+      "route": "deployment/permissions",
+      "file": "public/screenshots/zw-admin/deployment/permissions.png",
+      "status": "reused",
+      "detail": "up to date at v5.16.0 (hash 7d0924ea)",
+      "version": "5.16.0",
+      "hash": "7d0924ea",
+      "capturedAt": "2026-10-08T21:52:01.319Z"
+    },
+    {
+      "route": "map-admin",
+      "file": "public/screenshots/zw-admin/map-admin.png",
+      "status": "reused",
+      "detail": "up to date at v5.16.0 (hash 49f9d458)",
+      "version": "5.16.0",
+      "hash": "49f9d458",
+      "capturedAt": "2026-10-08T21:33:02.826Z"
+    },
+    {
+      "route": "privacy-policy",
+      "file": "public/screenshots/zw-admin/privacy-policy.png",
+      "status": "reused",
+      "detail": "up to date at v5.16.0 (hash 14226c93)",
+      "version": "5.16.0",
+      "hash": "14226c93",
+      "capturedAt": "2026-10-08T21:53:08.309Z"
+    },
+    {
+      "route": "terms-of-service",
+      "file": "public/screenshots/zw-admin/terms-of-service.png",
+      "status": "reused",
+      "detail": "up to date at v5.16.0 (hash 6f83ca43)",
+      "version": "5.16.0",
+      "hash": "6f83ca43",
+      "capturedAt": "2026-10-08T21:53:41.799Z"
+    },
+    {
+      "route": "climate/station/masvingo_airport_met",
+      "file": "public/screenshots/zw-admin/climate/station-details.png",
+      "status": "reused",
+      "detail": "up to date at v5.16.0 (hash 6b0844bb)",
+      "version": "5.16.0",
+      "hash": "6b0844bb",
+      "capturedAt": "2026-10-08T21:48:50.741Z"
+    },
+    {
+      "route": "crop/variety/zw/maize/SC-555",
+      "file": "public/screenshots/zw-admin/crop/variety-details.png",
+      "status": "reused",
+      "detail": "up to date at v5.16.0 (hash 0ac724d1)",
+      "version": "5.16.0",
+      "hash": "0ac724d1",
+      "capturedAt": "2026-10-08T21:49:08.887Z"
+    },
+    {
+      "route": "crop/probability/masvingo",
+      "file": "public/screenshots/zw-admin/crop/probability-details.png",
+      "status": "captured",
+      "detail": "scrollTop=66",
+      "version": "5.16.0",
+      "hash": "247e1310",
+      "capturedAt": "2026-10-09T04:42:08.550Z"
+    }
+  ]
+}

@@ -23,7 +23,7 @@ import {
   META_LIMITS,
   type ScreenshotMeta,
 } from './extract';
-import { entryHash, PAGES, routeToFile, type PageAction, type PageEntry } from './manifest';
+import { entryHash, entryToFile, pagesFor, type PageAction, type PageEntry } from './manifest';
 
 /**
  * Evaluate a serializable extraction function inside the page.
@@ -327,7 +327,11 @@ async function main(): Promise<void> {
   const config = loadConfig();
   const only = (process.env.SHOTS_ONLY ?? '').split(',').map((s) => s.trim()).filter(Boolean);
   const force = ['1', 'true', 'yes'].includes((process.env.SHOTS_FORCE ?? '').toLowerCase());
-  const pages = only.length ? PAGES.filter((p) => only.some((f) => p.route.includes(f))) : PAGES;
+  // Param-route exemplars (station, variety, probability location) differ per
+  // deployment; the manifest bakes in this run's set. Unknown deployments
+  // throw here with instructions rather than capturing 404s.
+  const allPages = pagesFor(config.deploymentId);
+  const pages = only.length ? allPages.filter((p) => only.some((f) => p.route.includes(f))) : allPages;
   const outRoot = join(config.outDir, config.identifier);
   const prev = force ? null : loadPrevManifest(outRoot);
   const prevByRoute = new Map((prev?.results ?? []).map((r) => [r.route, r]));
@@ -454,7 +458,7 @@ async function main(): Promise<void> {
       }
     } else {
       for (const entry of pages) {
-        const file = join(outRoot, routeToFile(entry.route));
+        const file = join(outRoot, entryToFile(entry));
         const hash = entryHash(entry);
         const hit = reused(entry.route, file, hash);
         if (hit) {
@@ -515,7 +519,7 @@ async function main(): Promise<void> {
 
   // Merge with previous manifest so SHOTS_ONLY subset runs preserve other pages.
   // Full runs prune results for routes no longer in the manifest.
-  const knownRoutes = new Set([landingRoute, '(deployment select)', ...PAGES.map((p) => p.route)]);
+  const knownRoutes = new Set([landingRoute, '(deployment select)', ...allPages.map((p) => p.route)]);
   const merged = new Map<string, Result>();
   if (prev && only.length) {
     for (const r of prev.results) merged.set(r.route, r);

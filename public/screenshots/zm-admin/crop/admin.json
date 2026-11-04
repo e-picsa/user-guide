@@ -3,13 +3,13 @@
   "url": "http://localhost:4200/crop/admin",
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
-  "dashboardVersion": "5.14.0",
+  "dashboardVersion": "5.16.0",
   "capturedAt": "2026-09-25T01:17:26.874Z",
   "viewport": {
     "width": 1280,
     "height": 720
   },
-  "scrollTop": 0,
+  "scrollTop": 66,
   "space": "viewport-relative CSS px at capture viewport (1:1 with png at deviceScaleFactor 1)",
   "headings": [
     {
@@ -18,18 +18,7 @@
       "text": "Crop Admin",
       "bbox": {
         "x": 220,
-        "y": 32,
-        "width": 1044,
-        "height": 32
-      }
-    },
-    {
-      "tag": "h2",
-      "kind": "heading",
-      "text": "Quality Control",
-      "bbox": {
-        "x": 220,
-        "y": 467,
+        "y": -34,
         "width": 1044,
         "height": 32
       }
@@ -39,7 +28,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "homeHome",
+      "text": "Home",
       "bbox": {
         "x": 0,
         "y": 72,
@@ -51,7 +40,7 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "filter_dramaClimate",
+      "text": "Climate",
       "bbox": {
         "x": 0,
         "y": 120,
@@ -98,7 +87,7 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "spaCrop",
+      "text": "Crop",
       "bbox": {
         "x": 0,
         "y": 168,
@@ -145,7 +134,7 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "translateTranslations",
+      "text": "Translations",
       "bbox": {
         "x": 0,
         "y": 376,
@@ -180,7 +169,7 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "library_booksResources",
+      "text": "Resources",
       "bbox": {
         "x": 0,
         "y": 424,
@@ -239,7 +228,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "query_statsStatistics",
+      "text": "Statistics",
       "bbox": {
         "x": 0,
         "y": 519,
@@ -251,7 +240,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "appsDeployments",
+      "text": "Deployments",
       "bbox": {
         "x": 0,
         "y": 567,
@@ -263,7 +252,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "manage_accountsUser Permissions",
+      "text": "User Permissions",
       "bbox": {
         "x": 0,
         "y": 615,
@@ -275,7 +264,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "mapMap Boundaries",
+      "text": "Map Boundaries",
       "bbox": {
         "x": 0,
         "y": 663,
@@ -285,65 +274,255 @@
       "href": "/map-admin"
     },
     {
-      "tag": "button",
-      "kind": "button",
-      "text": "downloadTemplate",
-      "bbox": {
-        "x": 1131.9,
-        "y": 88.8,
-        "width": 132.1,
-        "height": 36
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "downloadExport App Data",
-      "bbox": {
-        "x": 1075.8,
-        "y": 150.3,
-        "width": 188.2,
-        "height": 36
-      }
-    },
-    {
       "tag": "div",
       "kind": "tab",
-      "text": "Upload File",
+      "text": "App Diff",
       "bbox": {
         "x": 220,
-        "y": 195,
-        "width": 136.5,
+        "y": 22,
+        "width": 171.7,
         "height": 48
       }
     },
     {
       "tag": "div",
       "kind": "tab",
-      "text": "Paste Text",
+      "text": "Locations",
       "bbox": {
-        "x": 356.5,
-        "y": 195,
-        "width": 128.5,
+        "x": 391.7,
+        "y": 22,
+        "width": 183,
+        "height": 48
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "tab",
+      "text": "Stations",
+      "bbox": {
+        "x": 574.7,
+        "y": 22,
+        "width": 171.9,
+        "height": 48
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "tab",
+      "text": "Pairing",
+      "bbox": {
+        "x": 746.6,
+        "y": 22,
+        "width": 163.9,
+        "height": 48
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "tab",
+      "text": "Duplicates",
+      "bbox": {
+        "x": 910.5,
+        "y": 22,
+        "width": 190.4,
+        "height": 48
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "tab",
+      "text": "Upload",
+      "bbox": {
+        "x": 1100.9,
+        "y": 22,
+        "width": 163.1,
+        "height": 48
+      }
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "input",
+      "bbox": {
+        "x": 292,
+        "y": 308,
+        "width": 806.8,
+        "height": 41
+      },
+      "label": "input:text"
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Export CSV",
+      "bbox": {
+        "x": 1114.8,
+        "y": 313.3,
+        "width": 133.2,
+        "height": 36
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "Location",
+      "bbox": {
+        "x": 252,
+        "y": 400.5,
+        "width": 78.4,
+        "height": 22
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "Location ID",
+      "bbox": {
+        "x": 362.4,
+        "y": 389.5,
+        "width": 95.6,
+        "height": 44
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "App vs DB Status",
+      "bbox": {
+        "x": 490,
+        "y": 378.5,
+        "width": 62.5,
+        "height": 66
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "App Varieties",
+      "bbox": {
+        "x": 584.5,
+        "y": 389.5,
+        "width": 79.8,
+        "height": 44
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "DB Varieties",
+      "bbox": {
+        "x": 696.2,
+        "y": 389.5,
+        "width": 79.8,
+        "height": 44
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "App Station",
+      "bbox": {
+        "x": 808,
+        "y": 389.5,
+        "width": 68.5,
+        "height": 44
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "DB Station",
+      "bbox": {
+        "x": 908.4,
+        "y": 400.5,
+        "width": 208.8,
+        "height": 22
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "Detail",
+      "bbox": {
+        "x": 1149.2,
+        "y": 400.5,
+        "width": 208.8,
+        "height": 22
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Previous page",
+      "bbox": {
+        "x": 1144,
+        "y": 1045.5,
+        "width": 48,
         "height": 48
       }
     },
     {
       "tag": "button",
       "kind": "button",
-      "text": "Drop here or browseAccepts CSV or JSON Data",
+      "text": "Next page",
       "bbox": {
-        "x": 220,
-        "y": 243,
-        "width": 1044,
-        "height": 192
+        "x": 1192,
+        "y": 1045.5,
+        "width": 48,
+        "height": 48
       }
     }
   ],
-  "tables": [],
+  "tables": [
+    {
+      "headers": [
+        "Location",
+        "Location ID",
+        "App vs DB Status",
+        "App Varieties",
+        "DB Varieties",
+        "App Station",
+        "DB Station",
+        "Detail"
+      ],
+      "rows": [
+        [
+          "Chilanga",
+          "chilanga",
+          "No Source Data",
+          "0",
+          "0",
+          "",
+          "",
+          "Data-system record has no linked station"
+        ],
+        [
+          "Kafue",
+          "kafue",
+          "No Source Data",
+          "0",
+          "0",
+          "",
+          "",
+          "Data-system record has no linked station"
+        ],
+        [
+          "Mpongwe",
+          "mpongwe",
+          "No Source Data",
+          "0",
+          "0",
+          "",
+          "zm/simon_mwansa_kapwepwe",
+          "Station zm/simon_mwansa_kapwepwe lacks rainfall or crop probability data"
+        ]
+      ],
+      "rowCount": 10
+    }
+  ],
   "nav": [
     {
-      "label": "homeHome",
+      "label": "Home",
       "href": "/home"
     },
     {
@@ -395,19 +574,19 @@
       "href": "/resources/farmer-videos"
     },
     {
-      "label": "query_statsStatistics",
+      "label": "Statistics",
       "href": "/stats"
     },
     {
-      "label": "appsDeployments",
+      "label": "Deployments",
       "href": "/deployment"
     },
     {
-      "label": "manage_accountsUser Permissions",
+      "label": "User Permissions",
       "href": "/deployment/permissions"
     },
     {
-      "label": "mapMap Boundaries",
+      "label": "Map Boundaries",
       "href": "/map-admin"
     }
   ],

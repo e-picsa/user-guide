@@ -66,14 +66,19 @@ that same constant, so the site and the PDF exporter cannot drift.
   `div.page`, the app scroll container); per-route `scroll` override or
   `scrollTo`/`scrollBy` actions when needed (`SHOTS_SCROLL=off` to disable).
 - Output path mirrors the dashboard route, including resolved params, e.g.
-  route `/climate/station/chipata_met` -> `<identifier>/climate/station/chipata_met.png`.
-  Never use abstract labels like `station-details.png`.
+  route `/climate/station` -> `<identifier>/climate/station.png`.
+  Param routes whose exemplar IDs differ per deployment pin a stable `out`
+  instead (e.g. `climate/station-details.png`), so every country's capture
+  lands on the file the shared guide references.
 - Top-level identifier is `<deployment>-<role>`, e.g.
   `screenshots/zm-admin/...` (login as `admin@picsa.app`) or
   `screenshots/mw-user/...` (login as `user@picsa.app`).
   One identifier per run; future credentials get new identifiers, no shared folders.
-- `:id`-style routes use a hardcoded exemplar list (limited subset only), e.g.
-  a known station ID per deployment. Do not crawl arbitrary IDs.
+- `:id`-style routes use a per-deployment exemplar list (`EXEMPLARS` in
+  `scripts/screenshots/manifest.ts`, limited subset only, verified against the
+  seed CSVs), e.g. station `chipata_met` for `zm` but `masvingo_airport_met`
+  for `zw`. Do not crawl arbitrary IDs. `pagesFor(deploymentId)` throws for
+  unconfigured deployments.
 - Routes may declare custom `actions` (ordered UI steps before capture, e.g.
   click a tab/button). Only for explicitly listed routes; default is plain
   `goto` + capture.
