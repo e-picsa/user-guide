@@ -1,10 +1,10 @@
 {
   "route": "translations/list",
-  "url": "http://localhost:4200/translations/list",
+  "url": "http://localhost:3000/translations/list",
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
-  "dashboardVersion": "5.16.0",
-  "capturedAt": "2026-10-08T21:50:11.833Z",
+  "dashboardVersion": "5.20.0",
+  "capturedAt": "2026-11-04T20:54:42.641Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -262,16 +262,48 @@
       "href": "/map-admin"
     },
     {
-      "tag": "input",
-      "kind": "input",
-      "text": "checkbox",
+      "tag": "button",
+      "kind": "button",
+      "text": "Download Template",
       "bbox": {
-        "x": 1162.7,
-        "y": 107.5,
-        "width": 40,
-        "height": 40
-      },
-      "label": "input:checkbox"
+        "x": 452,
+        "y": 43.8,
+        "width": 186.6,
+        "height": 36
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Total: 598",
+      "bbox": {
+        "x": 220,
+        "y": 111.5,
+        "width": 117.7,
+        "height": 32
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Translated: 0",
+      "bbox": {
+        "x": 345.7,
+        "y": 111.5,
+        "width": 139.5,
+        "height": 32
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Needs Translation: 598",
+      "bbox": {
+        "x": 493.2,
+        "y": 111.5,
+        "width": 207.4,
+        "height": 32
+      }
     },
     {
       "tag": "input",
@@ -279,7 +311,7 @@
       "text": "input",
       "bbox": {
         "x": 276,
-        "y": 171.5,
+        "y": 187.5,
         "width": 972,
         "height": 41
       },
@@ -291,9 +323,20 @@
       "text": "Tool",
       "bbox": {
         "x": 236,
-        "y": 258.5,
-        "width": 48.9,
-        "height": 22
+        "y": 273.5,
+        "width": 72.7,
+        "height": 24
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Filter by Tool",
+      "bbox": {
+        "x": 266.7,
+        "y": 273.5,
+        "width": 24,
+        "height": 24
       }
     },
     {
@@ -301,8 +344,8 @@
       "kind": "button",
       "text": "Context",
       "bbox": {
-        "x": 316.9,
-        "y": 258.5,
+        "x": 340.7,
+        "y": 274.5,
         "width": 73,
         "height": 22
       }
@@ -312,9 +355,9 @@
       "kind": "button",
       "text": "English",
       "bbox": {
-        "x": 422,
-        "y": 258.5,
-        "width": 614.9,
+        "x": 445.8,
+        "y": 274.5,
+        "width": 591.6,
         "height": 22
       }
     },
@@ -323,8 +366,8 @@
       "kind": "button",
       "text": "Shona",
       "bbox": {
-        "x": 1068.8,
-        "y": 258.5,
+        "x": 1069.4,
+        "y": 274.5,
         "width": 61.2,
         "height": 22
       }
@@ -334,9 +377,9 @@
       "kind": "button",
       "text": "Created At",
       "bbox": {
-        "x": 1162,
-        "y": 247.5,
-        "width": 86,
+        "x": 1162.6,
+        "y": 263.5,
+        "width": 85.4,
         "height": 44
       }
     },
@@ -346,7 +389,7 @@
       "text": "Previous page",
       "bbox": {
         "x": 1160,
-        "y": 822,
+        "y": 838,
         "width": 48,
         "height": 48
       }
@@ -357,20 +400,9 @@
       "text": "Next page",
       "bbox": {
         "x": 1208,
-        "y": 822,
+        "y": 838,
         "width": 48,
         "height": 48
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "Export JSON",
-      "bbox": {
-        "x": 220,
-        "y": 906,
-        "width": 200,
-        "height": 36
       }
     }
   ],
@@ -389,21 +421,21 @@
           "",
           "Activities",
           "",
-          "Oct 8, 2026"
+          "Nov 4, 2026"
         ],
         [
           "budget",
           "",
           "Add Card",
           "",
-          "Oct 8, 2026"
+          "Nov 4, 2026"
         ],
         [
           "budget",
           "",
           "Add Female Member",
           "",
-          "Oct 8, 2026"
+          "Nov 4, 2026"
         ]
       ],
       "rowCount": 10

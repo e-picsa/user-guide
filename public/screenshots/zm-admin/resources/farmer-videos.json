@@ -1,9 +1,9 @@
 {
   "route": "resources/farmer-videos",
-  "url": "http://localhost:4200/resources/farmer-videos",
+  "url": "http://localhost:3000/resources/farmer-videos",
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
-  "dashboardVersion": "5.14.0",
+  "dashboardVersion": "5.20.0",
   "capturedAt": "2026-09-25T01:18:07.044Z",
   "viewport": {
     "width": 1280,
@@ -28,10 +28,10 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "homeHome",
+      "text": "Home",
       "bbox": {
         "x": 0,
-        "y": 72,
+        "y": 14,
         "width": 203,
         "height": 48
       },
@@ -40,10 +40,10 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "filter_dramaClimate",
+      "text": "Climate",
       "bbox": {
         "x": 0,
-        "y": 120,
+        "y": 62,
         "width": 203,
         "height": 48
       }
@@ -54,7 +54,7 @@
       "text": "Station Data",
       "bbox": {
         "x": 0,
-        "y": 168,
+        "y": 110,
         "width": 203,
         "height": 48
       },
@@ -66,7 +66,7 @@
       "text": "Forecasts",
       "bbox": {
         "x": 0,
-        "y": 216,
+        "y": 158,
         "width": 203,
         "height": 48
       },
@@ -78,7 +78,7 @@
       "text": "Admin",
       "bbox": {
         "x": 0,
-        "y": 264,
+        "y": 206,
         "width": 203,
         "height": 48
       },
@@ -87,10 +87,10 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "spaCrop",
+      "text": "Crop",
       "bbox": {
         "x": 0,
-        "y": 168,
+        "y": 110,
         "width": 203,
         "height": 48
       }
@@ -101,7 +101,7 @@
       "text": "Variety",
       "bbox": {
         "x": 0,
-        "y": 216,
+        "y": 158,
         "width": 203,
         "height": 48
       },
@@ -113,7 +113,7 @@
       "text": "Probability",
       "bbox": {
         "x": 0,
-        "y": 264,
+        "y": 206,
         "width": 203,
         "height": 48
       },
@@ -125,7 +125,7 @@
       "text": "Admin",
       "bbox": {
         "x": 0,
-        "y": 312,
+        "y": 254,
         "width": 203,
         "height": 48
       },
@@ -134,10 +134,10 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "translateTranslations",
+      "text": "Translations",
       "bbox": {
         "x": 0,
-        "y": 216,
+        "y": 158,
         "width": 203,
         "height": 48
       }
@@ -148,7 +148,7 @@
       "text": "List",
       "bbox": {
         "x": 0,
-        "y": 264,
+        "y": 206,
         "width": 203,
         "height": 48
       },
@@ -160,7 +160,7 @@
       "text": "Import",
       "bbox": {
         "x": 0,
-        "y": 312,
+        "y": 254,
         "width": 203,
         "height": 48
       },
@@ -169,10 +169,10 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "library_booksResources",
+      "text": "Resources",
       "bbox": {
         "x": 0,
-        "y": 264,
+        "y": 206,
         "width": 203,
         "height": 64
       }
@@ -183,7 +183,7 @@
       "text": "Files",
       "bbox": {
         "x": 0,
-        "y": 328,
+        "y": 270,
         "width": 203,
         "height": 48
       },
@@ -195,7 +195,7 @@
       "text": "Links",
       "bbox": {
         "x": 0,
-        "y": 376,
+        "y": 318,
         "width": 203,
         "height": 48
       },
@@ -207,7 +207,7 @@
       "text": "Collections",
       "bbox": {
         "x": 0,
-        "y": 424,
+        "y": 366,
         "width": 203,
         "height": 48
       },
@@ -219,7 +219,7 @@
       "text": "Farmer Videos",
       "bbox": {
         "x": 0,
-        "y": 472,
+        "y": 414,
         "width": 203,
         "height": 48
       },
@@ -228,10 +228,10 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "query_statsStatistics",
+      "text": "Statistics",
       "bbox": {
         "x": 0,
-        "y": 550,
+        "y": 519,
         "width": 203,
         "height": 48
       },
@@ -240,10 +240,10 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "appsDeployments",
+      "text": "Deployments",
       "bbox": {
         "x": 0,
-        "y": 598,
+        "y": 567,
         "width": 203,
         "height": 48
       },
@@ -252,10 +252,10 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "manage_accountsUser Permissions",
+      "text": "User Permissions",
       "bbox": {
         "x": 0,
-        "y": 646,
+        "y": 615,
         "width": 203,
         "height": 48
       },
@@ -264,10 +264,10 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "mapMap Boundaries",
+      "text": "Map Boundaries",
       "bbox": {
         "x": 0,
-        "y": 694,
+        "y": 663,
         "width": 203,
         "height": 48
       },
@@ -288,7 +288,7 @@
     {
       "tag": "div",
       "kind": "tab",
-      "text": "grid_on Translation Matrix",
+      "text": "Translation Matrix",
       "bbox": {
         "x": 228,
         "y": 107,
@@ -299,7 +299,7 @@
     {
       "tag": "div",
       "kind": "tab",
-      "text": "list_alt Video Files Catalog (11 Videos)",
+      "text": "Video Files Catalog (12 Videos)",
       "bbox": {
         "x": 693.7,
         "y": 107,
@@ -310,7 +310,7 @@
     {
       "tag": "button",
       "kind": "button",
-      "text": "closed_captionCC",
+      "text": "CC",
       "bbox": {
         "x": 637.3,
         "y": 282.6,
@@ -321,876 +321,7 @@
     {
       "tag": "button",
       "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 899,
-        "y": 282.6,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1023,
-        "y": 282.6,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1147,
-        "y": 282.6,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1271,
-        "y": 282.6,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1395,
-        "y": 282.6,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1519,
-        "y": 282.6,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1643,
-        "y": 282.6,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 651,
-        "y": 345.9,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 899,
-        "y": 345.9,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1023,
-        "y": 345.9,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1147,
-        "y": 345.9,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1271,
-        "y": 345.9,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1395,
-        "y": 345.9,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1519,
-        "y": 345.9,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1643,
-        "y": 345.9,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 651,
-        "y": 409.1,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 899,
-        "y": 409.1,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1023,
-        "y": 409.1,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1147,
-        "y": 409.1,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1271,
-        "y": 409.1,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1395,
-        "y": 409.1,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1519,
-        "y": 409.1,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1643,
-        "y": 409.1,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 651,
-        "y": 472.4,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 899,
-        "y": 472.4,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1023,
-        "y": 472.4,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1147,
-        "y": 472.4,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1271,
-        "y": 472.4,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1395,
-        "y": 472.4,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1519,
-        "y": 472.4,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1643,
-        "y": 472.4,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 651,
-        "y": 535.6,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 899,
-        "y": 535.6,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1023,
-        "y": 535.6,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1147,
-        "y": 535.6,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1271,
-        "y": 535.6,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1395,
-        "y": 535.6,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1519,
-        "y": 535.6,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1643,
-        "y": 535.6,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 651,
-        "y": 608.5,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 899,
-        "y": 608.5,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1023,
-        "y": 608.5,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1147,
-        "y": 608.5,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1271,
-        "y": 608.5,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1395,
-        "y": 608.5,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1519,
-        "y": 608.5,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1643,
-        "y": 608.5,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 651,
-        "y": 681.4,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 899,
-        "y": 681.4,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1023,
-        "y": 681.4,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1147,
-        "y": 681.4,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1271,
-        "y": 681.4,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1395,
-        "y": 681.4,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1519,
-        "y": 681.4,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1643,
-        "y": 681.4,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 775,
-        "y": 744.6,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 899,
-        "y": 744.6,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1023,
-        "y": 744.6,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1147,
-        "y": 744.6,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1271,
-        "y": 744.6,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1395,
-        "y": 744.6,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1519,
-        "y": 744.6,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1643,
-        "y": 744.6,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 775,
-        "y": 807.9,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 899,
-        "y": 807.9,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1023,
-        "y": 807.9,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1147,
-        "y": 807.9,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1271,
-        "y": 807.9,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1395,
-        "y": 807.9,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1519,
-        "y": 807.9,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1643,
-        "y": 807.9,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "closed_captionCC",
-      "bbox": {
-        "x": 761.3,
-        "y": 871.1,
-        "width": 69.4,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 899,
-        "y": 871.1,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1023,
-        "y": 871.1,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1147,
-        "y": 871.1,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1271,
-        "y": 871.1,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1395,
-        "y": 871.1,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1519,
-        "y": 871.1,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1643,
-        "y": 871.1,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "closed_captionCC",
+      "text": "CC",
       "bbox": {
         "x": 761.3,
         "y": 934.4,
@@ -1201,77 +332,11 @@
     {
       "tag": "button",
       "kind": "button",
-      "text": "check_circle",
+      "text": "CC",
       "bbox": {
-        "x": 899,
-        "y": 934.4,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1023,
-        "y": 934.4,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1147,
-        "y": 934.4,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1271,
-        "y": 934.4,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1395,
-        "y": 934.4,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1519,
-        "y": 934.4,
-        "width": 42,
-        "height": 34
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "check_circle",
-      "bbox": {
-        "x": 1643,
-        "y": 934.4,
-        "width": 42,
+        "x": 761.3,
+        "y": 997.6,
+        "width": 69.4,
         "height": 34
       }
     }
@@ -1281,67 +346,67 @@
       "headers": [
         "Category",
         "Farmer Video",
-        "GLOBAL Englishglobal_en",
-        "ZM Englishzm_en",
-        "ZM Nyanjazm_ny",
-        "ZM Bembazm_bem",
-        "ZM Tongazm_toi",
-        "ZM Lozizm_loz",
-        "ZM Lundazm_lun",
-        "ZM Kaondezm_kqn",
-        "ZM Luvalezm_lue",
+        "GLOBAL English global_en",
+        "ZM English zm_en",
+        "ZM Nyanja zm_ny",
+        "ZM Bemba zm_bem",
+        "ZM Tonga zm_toi",
+        "ZM Lozi zm_loz",
+        "ZM Lunda zm_lun",
+        "ZM Kaonde zm_kqn",
+        "ZM Luvale zm_lue",
         "Total"
       ],
       "rows": [
         [
           "Introduction",
-          "What is PICSA? (Introduction)intro",
-          "closed_captionCC",
+          "What is PICSA? (Introduction) intro",
+          "CC",
           "N/A",
-          "check_circle",
-          "check_circle",
-          "check_circle",
-          "check_circle",
-          "check_circle",
-          "check_circle",
-          "check_circle",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
           "8 / 8"
         ],
         [
           "Step 1",
-          "Resource Allocation Mapram",
-          "check_circle",
+          "Resource Allocation Map ram",
+          "",
           "N/A",
-          "check_circle",
-          "check_circle",
-          "check_circle",
-          "check_circle",
-          "check_circle",
-          "check_circle",
-          "check_circle",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
           "8 / 8"
         ],
         [
           "Step 2",
-          "Seasonal Calendarseasonal_calendar",
-          "check_circle",
+          "Seasonal Calendar seasonal_calendar",
+          "",
           "N/A",
-          "check_circle",
-          "check_circle",
-          "check_circle",
-          "check_circle",
-          "check_circle",
-          "check_circle",
-          "check_circle",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
           "8 / 8"
         ]
       ],
-      "rowCount": 11
+      "rowCount": 12
     }
   ],
   "nav": [
     {
-      "label": "homeHome",
+      "label": "Home",
       "href": "/home"
     },
     {
@@ -1393,19 +458,19 @@
       "href": "/resources/farmer-videos"
     },
     {
-      "label": "query_statsStatistics",
+      "label": "Statistics",
       "href": "/stats"
     },
     {
-      "label": "appsDeployments",
+      "label": "Deployments",
       "href": "/deployment"
     },
     {
-      "label": "manage_accountsUser Permissions",
+      "label": "User Permissions",
       "href": "/deployment/permissions"
     },
     {
-      "label": "mapMap Boundaries",
+      "label": "Map Boundaries",
       "href": "/map-admin"
     }
   ],

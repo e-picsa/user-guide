@@ -1,9 +1,9 @@
 {
   "route": "privacy-policy",
-  "url": "http://localhost:4200/privacy-policy",
+  "url": "http://localhost:3000/privacy-policy",
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
-  "dashboardVersion": "5.14.0",
+  "dashboardVersion": "5.20.0",
   "capturedAt": "2026-09-25T01:21:07.833Z",
   "viewport": {
     "width": 1280,

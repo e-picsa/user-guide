@@ -1,15 +1,15 @@
 {
   "route": "crop/admin",
-  "url": "http://localhost:4200/crop/admin",
+  "url": "http://localhost:3000/crop/admin",
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
-  "dashboardVersion": "5.16.0",
-  "capturedAt": "2026-10-08T21:49:26.833Z",
+  "dashboardVersion": "5.20.0",
+  "capturedAt": "2026-11-04T21:03:42.695Z",
   "viewport": {
     "width": 1280,
     "height": 720
   },
-  "scrollTop": 66,
+  "scrollTop": 0,
   "space": "viewport-relative CSS px at capture viewport (1:1 with png at deviceScaleFactor 1)",
   "headings": [
     {
@@ -18,7 +18,7 @@
       "text": "Crop Admin",
       "bbox": {
         "x": 220,
-        "y": -34,
+        "y": 32,
         "width": 1044,
         "height": 32
       }
@@ -276,22 +276,11 @@
     {
       "tag": "div",
       "kind": "tab",
-      "text": "App Diff",
-      "bbox": {
-        "x": 220,
-        "y": 22,
-        "width": 171.7,
-        "height": 48
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "tab",
       "text": "Locations",
       "bbox": {
-        "x": 391.7,
-        "y": 22,
-        "width": 183,
+        "x": 220,
+        "y": 88,
+        "width": 215.8,
         "height": 48
       }
     },
@@ -300,20 +289,20 @@
       "kind": "tab",
       "text": "Stations",
       "bbox": {
-        "x": 574.7,
-        "y": 22,
-        "width": 171.9,
+        "x": 435.8,
+        "y": 88,
+        "width": 204.7,
         "height": 48
       }
     },
     {
       "tag": "div",
       "kind": "tab",
-      "text": "Pairing",
+      "text": "App Diff",
       "bbox": {
-        "x": 746.6,
-        "y": 22,
-        "width": 163.9,
+        "x": 640.4,
+        "y": 88,
+        "width": 204.5,
         "height": 48
       }
     },
@@ -322,9 +311,9 @@
       "kind": "tab",
       "text": "Duplicates",
       "bbox": {
-        "x": 910.5,
-        "y": 22,
-        "width": 190.4,
+        "x": 844.9,
+        "y": 88,
+        "width": 223.2,
         "height": 48
       }
     },
@@ -333,193 +322,69 @@
       "kind": "tab",
       "text": "Upload",
       "bbox": {
-        "x": 1100.9,
-        "y": 22,
-        "width": 163.1,
+        "x": 1068.1,
+        "y": 88,
+        "width": 195.9,
         "height": 48
       }
     },
     {
-      "tag": "input",
-      "kind": "input",
-      "text": "input",
+      "tag": "button",
+      "kind": "button",
+      "text": "Template",
       "bbox": {
-        "x": 292,
-        "y": 308,
-        "width": 806.8,
-        "height": 41
-      },
-      "label": "input:text"
+        "x": 1115.9,
+        "y": 160.8,
+        "width": 132.1,
+        "height": 36
+      }
     },
     {
       "tag": "button",
       "kind": "button",
-      "text": "Export CSV",
+      "text": "Export App Data",
       "bbox": {
-        "x": 1114.8,
-        "y": 313.3,
-        "width": 133.2,
+        "x": 1059.8,
+        "y": 230.3,
+        "width": 188.2,
         "height": 36
       }
     },
     {
       "tag": "div",
-      "kind": "button",
-      "text": "Location",
+      "kind": "tab",
+      "text": "Upload File",
       "bbox": {
-        "x": 252,
-        "y": 395,
-        "width": 78.4,
-        "height": 22
+        "x": 236,
+        "y": 291,
+        "width": 136.5,
+        "height": 48
       }
     },
     {
       "tag": "div",
-      "kind": "button",
-      "text": "Location ID",
+      "kind": "tab",
+      "text": "Paste Text",
       "bbox": {
-        "x": 362.4,
-        "y": 384,
-        "width": 86,
-        "height": 44
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "button",
-      "text": "App vs DB Status",
-      "bbox": {
-        "x": 480.4,
-        "y": 384,
-        "width": 90.7,
-        "height": 44
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "button",
-      "text": "App Varieties",
-      "bbox": {
-        "x": 603.1,
-        "y": 384,
-        "width": 91.8,
-        "height": 44
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "button",
-      "text": "DB Varieties",
-      "bbox": {
-        "x": 726.9,
-        "y": 384,
-        "width": 88.8,
-        "height": 44
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "button",
-      "text": "App Station",
-      "bbox": {
-        "x": 847.7,
-        "y": 395,
-        "width": 130.3,
-        "height": 22
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "button",
-      "text": "DB Station",
-      "bbox": {
-        "x": 1010,
-        "y": 395,
-        "width": 130.3,
-        "height": 22
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "button",
-      "text": "Detail",
-      "bbox": {
-        "x": 1172.3,
-        "y": 395,
-        "width": 59.7,
-        "height": 22
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "Previous page",
-      "bbox": {
-        "x": 1144,
-        "y": 698.5,
-        "width": 48,
+        "x": 372.5,
+        "y": 291,
+        "width": 128.5,
         "height": 48
       }
     },
     {
       "tag": "button",
       "kind": "button",
-      "text": "Next page",
+      "text": "Drop here or browse Accepts CSV or JSON Data",
       "bbox": {
-        "x": 1192,
-        "y": 698.5,
-        "width": 48,
-        "height": 48
+        "x": 236,
+        "y": 339,
+        "width": 1012,
+        "height": 192
       }
     }
   ],
-  "tables": [
-    {
-      "headers": [
-        "Location",
-        "Location ID",
-        "App vs DB Status",
-        "App Varieties",
-        "DB Varieties",
-        "App Station",
-        "DB Station",
-        "Detail"
-      ],
-      "rows": [
-        [
-          "Masvingo",
-          "masvingo",
-          "In Sync",
-          "14",
-          "14",
-          "MASVINGO AIRPORT (MET)",
-          "MASVINGO AIRPORT (MET)",
-          ""
-        ],
-        [
-          "Mangwe",
-          "mangwe",
-          "In Sync",
-          "13",
-          "13",
-          "PLUMTREE (MET)",
-          "PLUMTREE (MET)",
-          ""
-        ],
-        [
-          "Mwenezi",
-          "mwenezi",
-          "In Sync",
-          "17",
-          "17",
-          "BUFFALO RANGE (MET)",
-          "BUFFALO RANGE (MET)",
-          ""
-        ]
-      ],
-      "rowCount": 5
-    }
-  ],
+  "tables": [],
   "nav": [
     {
       "label": "Home",

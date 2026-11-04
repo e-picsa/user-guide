@@ -1,9 +1,9 @@
 {
   "route": "crop/probability",
-  "url": "http://localhost:4200/crop/probability",
+  "url": "http://localhost:3000/crop/probability",
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
-  "dashboardVersion": "5.16.0",
+  "dashboardVersion": "5.20.0",
   "capturedAt": "2026-09-25T01:17:17.877Z",
   "viewport": {
     "width": 1280,
@@ -279,7 +279,7 @@
       "text": "Province",
       "bbox": {
         "x": 236,
-        "y": 127.5,
+        "y": 127,
         "width": 144.6,
         "height": 22
       }
@@ -290,7 +290,7 @@
       "text": "Location",
       "bbox": {
         "x": 412.6,
-        "y": 127.5,
+        "y": 127,
         "width": 163.3,
         "height": 22
       }
@@ -301,7 +301,7 @@
       "text": "Station",
       "bbox": {
         "x": 607.9,
-        "y": 127.5,
+        "y": 127,
         "width": 271.6,
         "height": 22
       }
@@ -312,7 +312,7 @@
       "text": "Total Crops",
       "bbox": {
         "x": 911.5,
-        "y": 127.5,
+        "y": 127,
         "width": 137.5,
         "height": 22
       }
@@ -323,7 +323,7 @@
       "text": "Total Varieties",
       "bbox": {
         "x": 1080.9,
-        "y": 127.5,
+        "y": 127,
         "width": 167.1,
         "height": 22
       }
@@ -340,25 +340,25 @@
       ],
       "rows": [
         [
-          "Luapula",
-          "Chifunabuli",
-          "SAMFYA MET",
-          "0",
-          "0"
-        ],
-        [
-          "Southern",
-          "Chikankata",
-          "CHIPEPO MET",
-          "0",
-          "0"
-        ],
-        [
           "Eastern",
           "Chadiza",
           "CHIPATA MET",
           "7",
           "42"
+        ],
+        [
+          "Eastern",
+          "Chama",
+          "ISOKA MET",
+          "5",
+          "40"
+        ],
+        [
+          "Eastern",
+          "Chasefu",
+          "LUNDAZI MET",
+          "6",
+          "21"
         ]
       ],
       "rowCount": 116

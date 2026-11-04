@@ -1,10 +1,10 @@
 {
   "route": "profile",
-  "url": "http://localhost:4200/profile",
+  "url": "http://localhost:3000/profile",
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
-  "dashboardVersion": "5.16.0",
-  "capturedAt": "2026-10-08T21:30:48.943Z",
+  "dashboardVersion": "5.20.0",
+  "capturedAt": "2026-11-04T20:54:51.628Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -40,7 +40,7 @@
       "text": "Profile Settings",
       "bbox": {
         "x": 220,
-        "y": 681.5,
+        "y": 639.5,
         "width": 1044,
         "height": 32
       }
@@ -51,7 +51,7 @@
       "text": "Account Management",
       "bbox": {
         "x": 220,
-        "y": 1219,
+        "y": 1287.5,
         "width": 1044,
         "height": 32
       }
@@ -64,7 +64,7 @@
       "text": "Home",
       "bbox": {
         "x": 0,
-        "y": 72,
+        "y": 8,
         "width": 203,
         "height": 48
       },
@@ -76,7 +76,7 @@
       "text": "Climate",
       "bbox": {
         "x": 0,
-        "y": 120,
+        "y": 56,
         "width": 203,
         "height": 48
       }
@@ -87,7 +87,7 @@
       "text": "Station Data",
       "bbox": {
         "x": 0,
-        "y": 168,
+        "y": 104,
         "width": 203,
         "height": 48
       },
@@ -99,7 +99,7 @@
       "text": "Forecasts",
       "bbox": {
         "x": 0,
-        "y": 216,
+        "y": 152,
         "width": 203,
         "height": 48
       },
@@ -111,7 +111,7 @@
       "text": "Admin",
       "bbox": {
         "x": 0,
-        "y": 264,
+        "y": 200,
         "width": 203,
         "height": 48
       },
@@ -123,7 +123,7 @@
       "text": "Crop",
       "bbox": {
         "x": 0,
-        "y": 168,
+        "y": 104,
         "width": 203,
         "height": 48
       }
@@ -134,7 +134,7 @@
       "text": "Variety",
       "bbox": {
         "x": 0,
-        "y": 216,
+        "y": 152,
         "width": 203,
         "height": 48
       },
@@ -146,7 +146,7 @@
       "text": "Probability",
       "bbox": {
         "x": 0,
-        "y": 264,
+        "y": 200,
         "width": 203,
         "height": 48
       },
@@ -158,7 +158,7 @@
       "text": "Admin",
       "bbox": {
         "x": 0,
-        "y": 312,
+        "y": 248,
         "width": 203,
         "height": 48
       },
@@ -170,7 +170,7 @@
       "text": "Translations",
       "bbox": {
         "x": 0,
-        "y": 216,
+        "y": 152,
         "width": 203,
         "height": 48
       }
@@ -181,7 +181,7 @@
       "text": "List",
       "bbox": {
         "x": 0,
-        "y": 264,
+        "y": 200,
         "width": 203,
         "height": 48
       },
@@ -193,7 +193,7 @@
       "text": "Import",
       "bbox": {
         "x": 0,
-        "y": 312,
+        "y": 248,
         "width": 203,
         "height": 48
       },
@@ -205,7 +205,7 @@
       "text": "Resources",
       "bbox": {
         "x": 0,
-        "y": 264,
+        "y": 200,
         "width": 203,
         "height": 48
       }
@@ -216,7 +216,7 @@
       "text": "Files",
       "bbox": {
         "x": 0,
-        "y": 312,
+        "y": 248,
         "width": 203,
         "height": 48
       },
@@ -228,7 +228,7 @@
       "text": "Links",
       "bbox": {
         "x": 0,
-        "y": 360,
+        "y": 296,
         "width": 203,
         "height": 48
       },
@@ -240,7 +240,7 @@
       "text": "Collections",
       "bbox": {
         "x": 0,
-        "y": 408,
+        "y": 344,
         "width": 203,
         "height": 48
       },
@@ -252,7 +252,7 @@
       "text": "Farmer Videos",
       "bbox": {
         "x": 0,
-        "y": 456,
+        "y": 392,
         "width": 203,
         "height": 48
       },
@@ -311,8 +311,32 @@
       "kind": "input",
       "text": "checkbox",
       "bbox": {
+        "x": 428.5,
+        "y": 323.5,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
         "x": 541.5,
         "y": 323.5,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 428.5,
+        "y": 365.5,
         "width": 40,
         "height": 40
       },
@@ -337,6 +361,18 @@
       "bbox": {
         "x": 541.5,
         "y": 407.5,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 428.5,
+        "y": 449.5,
         "width": 40,
         "height": 40
       },
@@ -383,32 +419,8 @@
       "kind": "input",
       "text": "checkbox",
       "bbox": {
-        "x": 428.5,
-        "y": 533.5,
-        "width": 40,
-        "height": 40
-      },
-      "label": "input:checkbox"
-    },
-    {
-      "tag": "input",
-      "kind": "input",
-      "text": "checkbox",
-      "bbox": {
         "x": 541.5,
         "y": 533.5,
-        "width": 40,
-        "height": 40
-      },
-      "label": "input:checkbox"
-    },
-    {
-      "tag": "input",
-      "kind": "input",
-      "text": "checkbox",
-      "bbox": {
-        "x": 541.5,
-        "y": 575.5,
         "width": 40,
         "height": 40
       },
@@ -420,7 +432,19 @@
       "text": "input",
       "bbox": {
         "x": 228,
-        "y": 809.5,
+        "y": 767.5,
+        "width": 436,
+        "height": 41
+      },
+      "label": "input:text"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "input",
+      "bbox": {
+        "x": 228,
+        "y": 1093,
         "width": 436,
         "height": 41
       },
@@ -432,7 +456,7 @@
       "text": "Save Profile",
       "bbox": {
         "x": 220,
-        "y": 1119,
+        "y": 1187.5,
         "width": 448,
         "height": 36
       }
@@ -443,7 +467,7 @@
       "text": "Request Data",
       "bbox": {
         "x": 1092.2,
-        "y": 1294.8,
+        "y": 1363.3,
         "width": 146.8,
         "height": 36
       },
@@ -455,7 +479,7 @@
       "text": "Delete Account",
       "bbox": {
         "x": 1078,
-        "y": 1369.3,
+        "y": 1437.8,
         "width": 161,
         "height": 36
       },

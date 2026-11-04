@@ -1,9 +1,9 @@
 {
   "route": "resources/links/create",
-  "url": "http://localhost:4200/resources/links/create",
+  "url": "http://localhost:3000/resources/links/create",
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
-  "dashboardVersion": "5.16.0",
+  "dashboardVersion": "5.20.0",
   "capturedAt": "2026-10-08T21:30:22.170Z",
   "viewport": {
     "width": 1280,
@@ -15,7 +15,7 @@
     {
       "tag": "h2",
       "kind": "heading",
-      "text": "Edit Resource",
+      "text": "Create Resource",
       "bbox": {
         "x": 220,
         "y": 32,

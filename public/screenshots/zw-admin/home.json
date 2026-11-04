@@ -1,9 +1,9 @@
 {
   "route": "home",
-  "url": "http://localhost:4200/home",
+  "url": "http://localhost:3000/home",
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
-  "dashboardVersion": "5.16.0",
+  "dashboardVersion": "5.20.0",
   "capturedAt": "2026-10-08T21:28:58.593Z",
   "viewport": {
     "width": 1280,

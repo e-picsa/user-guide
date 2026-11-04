@@ -1,9 +1,9 @@
 {
   "route": "crop/variety/zm/beans/CHAMBESHI",
-  "url": "http://localhost:4200/crop/variety/zm%2Fbeans%2FCHAMBESHI",
+  "url": "http://localhost:3000/crop/variety/zm%2Fbeans%2FCHAMBESHI",
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
-  "dashboardVersion": "5.16.0",
+  "dashboardVersion": "5.20.0",
   "capturedAt": "2026-09-25T01:17:08.962Z",
   "viewport": {
     "width": 1280,

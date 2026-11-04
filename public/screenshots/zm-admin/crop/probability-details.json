@@ -1,9 +1,9 @@
 {
   "route": "crop/probability/chadiza",
-  "url": "http://localhost:4200/crop/probability/chadiza",
+  "url": "http://localhost:3000/crop/probability/chadiza",
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
-  "dashboardVersion": "5.16.0",
+  "dashboardVersion": "5.20.0",
   "capturedAt": "2026-10-09T04:46:19.625Z",
   "viewport": {
     "width": 1280,
@@ -18,9 +18,9 @@
       "text": "Chadiza",
       "bbox": {
         "x": 220,
-        "y": -30.5,
+        "y": -30.7,
         "width": 73.5,
-        "height": 25
+        "height": 25.5
       }
     },
     {
@@ -40,7 +40,7 @@
       "text": "Crop Information Chadiza",
       "bbox": {
         "x": 245,
-        "y": 329,
+        "y": 328.5,
         "width": 449.9,
         "height": 64
       }
@@ -53,7 +53,7 @@
       "text": "Home",
       "bbox": {
         "x": 0,
-        "y": 72,
+        "y": 8,
         "width": 203,
         "height": 48
       },
@@ -65,7 +65,7 @@
       "text": "Climate",
       "bbox": {
         "x": 0,
-        "y": 120,
+        "y": 56,
         "width": 203,
         "height": 48
       }
@@ -76,7 +76,7 @@
       "text": "Station Data",
       "bbox": {
         "x": 0,
-        "y": 168,
+        "y": 104,
         "width": 203,
         "height": 48
       },
@@ -88,7 +88,7 @@
       "text": "Forecasts",
       "bbox": {
         "x": 0,
-        "y": 216,
+        "y": 152,
         "width": 203,
         "height": 48
       },
@@ -100,7 +100,7 @@
       "text": "Admin",
       "bbox": {
         "x": 0,
-        "y": 264,
+        "y": 200,
         "width": 203,
         "height": 48
       },
@@ -112,7 +112,7 @@
       "text": "Crop",
       "bbox": {
         "x": 0,
-        "y": 168,
+        "y": 104,
         "width": 203,
         "height": 64
       }
@@ -123,7 +123,7 @@
       "text": "Variety",
       "bbox": {
         "x": 0,
-        "y": 232,
+        "y": 168,
         "width": 203,
         "height": 48
       },
@@ -135,7 +135,7 @@
       "text": "Probability",
       "bbox": {
         "x": 0,
-        "y": 280,
+        "y": 216,
         "width": 203,
         "height": 48
       },
@@ -147,7 +147,7 @@
       "text": "Admin",
       "bbox": {
         "x": 0,
-        "y": 328,
+        "y": 264,
         "width": 203,
         "height": 48
       },
@@ -159,7 +159,7 @@
       "text": "Translations",
       "bbox": {
         "x": 0,
-        "y": 376,
+        "y": 312,
         "width": 203,
         "height": 48
       }
@@ -170,7 +170,7 @@
       "text": "List",
       "bbox": {
         "x": 0,
-        "y": 424,
+        "y": 360,
         "width": 203,
         "height": 48
       },
@@ -182,7 +182,7 @@
       "text": "Import",
       "bbox": {
         "x": 0,
-        "y": 472,
+        "y": 408,
         "width": 203,
         "height": 48
       },
@@ -194,7 +194,7 @@
       "text": "Resources",
       "bbox": {
         "x": 0,
-        "y": 424,
+        "y": 360,
         "width": 203,
         "height": 48
       }
@@ -205,7 +205,7 @@
       "text": "Files",
       "bbox": {
         "x": 0,
-        "y": 472,
+        "y": 408,
         "width": 203,
         "height": 48
       },
@@ -217,7 +217,7 @@
       "text": "Links",
       "bbox": {
         "x": 0,
-        "y": 520,
+        "y": 456,
         "width": 203,
         "height": 48
       },
@@ -229,7 +229,7 @@
       "text": "Collections",
       "bbox": {
         "x": 0,
-        "y": 568,
+        "y": 504,
         "width": 203,
         "height": 48
       },
@@ -241,7 +241,7 @@
       "text": "Farmer Videos",
       "bbox": {
         "x": 0,
-        "y": 616,
+        "y": 552,
         "width": 203,
         "height": 48
       },
@@ -301,7 +301,7 @@
       "text": "Climate Data",
       "bbox": {
         "x": 930.6,
-        "y": 23,
+        "y": 22.8,
         "width": 149.5,
         "height": 36
       }
@@ -311,9 +311,9 @@
       "kind": "button",
       "text": "Change Station",
       "bbox": {
-        "x": 1096,
-        "y": 23,
-        "width": 168,
+        "x": 1096.1,
+        "y": 22.8,
+        "width": 167.9,
         "height": 36
       }
     },
@@ -323,7 +323,7 @@
       "text": "Copy To Clipboard",
       "bbox": {
         "x": 220,
-        "y": 2585.5,
+        "y": 2585,
         "width": 208,
         "height": 36
       }
@@ -334,7 +334,7 @@
       "text": "Export",
       "bbox": {
         "x": 1164.6,
-        "y": 2585.5,
+        "y": 2585,
         "width": 99.4,
         "height": 36
       }

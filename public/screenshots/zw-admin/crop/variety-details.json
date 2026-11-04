@@ -1,9 +1,9 @@
 {
   "route": "crop/variety/zw/maize/SC-555",
-  "url": "http://localhost:4200/crop/variety/zw%2Fmaize%2FSC-555",
+  "url": "http://localhost:3000/crop/variety/zw%2Fmaize%2FSC-555",
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
-  "dashboardVersion": "5.16.0",
+  "dashboardVersion": "5.20.0",
   "capturedAt": "2026-10-08T21:49:08.887Z",
   "viewport": {
     "width": 1280,

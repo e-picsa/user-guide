@@ -97,6 +97,14 @@ const STATION_DETAILS_ACTIONS: PageAction[] = [
   { wait: 2500 },
 ];
 
+// Crop Admin's import workflow (Template/Export/Upload) lives on the Upload tab,
+// so capture it explicitly instead of the default Locations tab.
+const CROP_ADMIN_UPLOAD_ACTIONS: PageAction[] = [
+  { waitFor: '[role="tab"]' },
+  { clickText: 'Upload' },
+  { wait: 2000 },
+];
+
 /** Manifest pages for a deployment, with its exemplars baked into param routes. */
 export function pagesFor(deploymentId: string): PageEntry[] {
   const ex = EXEMPLARS[deploymentId];
@@ -124,7 +132,7 @@ export function pagesFor(deploymentId: string): PageEntry[] {
     p('crop/variety/add'),
     p('crop/probability'),
     p(`crop/probability/${ex.probabilityLocation}`, undefined, undefined, undefined, 'crop/probability-details.png'),
-    p('crop/admin'),
+    p('crop/admin', CROP_ADMIN_UPLOAD_ACTIONS),
     p('resources/files'),
     p('resources/files/dff5c161-3541-44a4-8326-0affafd26812'),
     p('resources/files/create'),

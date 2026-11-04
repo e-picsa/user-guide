@@ -1,10 +1,10 @@
 {
   "route": "climate/station",
-  "url": "http://localhost:4200/climate/station",
+  "url": "http://localhost:3000/climate/station",
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
-  "dashboardVersion": "5.16.0",
-  "capturedAt": "2026-10-08T21:29:03.967Z",
+  "dashboardVersion": "5.20.0",
+  "capturedAt": "2026-11-04T20:53:10.511Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -309,412 +309,189 @@
     {
       "tag": "div",
       "kind": "button",
-      "text": "1",
+      "text": "Map marker",
       "bbox": {
-        "x": 952,
-        "y": 567,
-        "width": 48,
-        "height": 48
+        "x": 964,
+        "y": 578,
+        "width": 24,
+        "height": 24
       }
     },
     {
       "tag": "div",
       "kind": "button",
-      "text": "2",
+      "text": "Map marker",
       "bbox": {
-        "x": 1096,
-        "y": 449,
-        "width": 48,
-        "height": 48
+        "x": 1108,
+        "y": 461,
+        "width": 24,
+        "height": 24
       }
     },
     {
       "tag": "div",
       "kind": "button",
-      "text": "3",
+      "text": "Map marker",
       "bbox": {
-        "x": 1082,
-        "y": 285,
-        "width": 48,
-        "height": 48
+        "x": 1094,
+        "y": 296,
+        "width": 24,
+        "height": 24
       }
     },
     {
       "tag": "div",
       "kind": "button",
-      "text": "4",
-      "bbox": {
-        "x": 1190,
-        "y": 370,
-        "width": 48,
-        "height": 48
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "button",
-      "text": "5",
-      "bbox": {
-        "x": 1214,
-        "y": 339,
-        "width": 48,
-        "height": 48
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "button",
-      "text": "6",
-      "bbox": {
-        "x": 1155,
-        "y": 428,
-        "width": 48,
-        "height": 48
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "button",
-      "text": "7",
-      "bbox": {
-        "x": 811,
-        "y": 440,
-        "width": 48,
-        "height": 48
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "button",
-      "text": "8",
-      "bbox": {
-        "x": 1023,
-        "y": 334,
-        "width": 48,
-        "height": 48
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "button",
-      "text": "9",
-      "bbox": {
-        "x": 1031,
-        "y": 357,
-        "width": 48,
-        "height": 48
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "button",
-      "text": "10",
-      "bbox": {
-        "x": 812,
-        "y": 389,
-        "width": 48,
-        "height": 48
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "button",
-      "text": "11",
-      "bbox": {
-        "x": 1096,
-        "y": 42,
-        "width": 48,
-        "height": 48
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "button",
-      "text": "12",
+      "text": "Map marker",
       "bbox": {
         "x": 1202,
-        "y": 185,
-        "width": 48,
-        "height": 48
+        "y": 382,
+        "width": 24,
+        "height": 24
       }
     },
     {
       "tag": "div",
       "kind": "button",
-      "text": "13",
+      "text": "Map marker",
       "bbox": {
-        "x": 751,
-        "y": 397,
-        "width": 48,
-        "height": 48
+        "x": 1226,
+        "y": 351,
+        "width": 24,
+        "height": 24
       }
     },
     {
       "tag": "div",
       "kind": "button",
-      "text": "14",
+      "text": "Map marker",
       "bbox": {
-        "x": 1050,
-        "y": 404,
-        "width": 48,
-        "height": 48
+        "x": 1167,
+        "y": 440,
+        "width": 24,
+        "height": 24
       }
     },
     {
       "tag": "div",
       "kind": "button",
-      "text": "15",
+      "text": "Map marker",
       "bbox": {
-        "x": 1146,
-        "y": 209,
-        "width": 48,
-        "height": 48
+        "x": 823,
+        "y": 452,
+        "width": 24,
+        "height": 24
       }
     },
     {
       "tag": "div",
       "kind": "button",
-      "text": "16",
+      "text": "Map marker",
       "bbox": {
-        "x": 894,
-        "y": 453,
-        "width": 48,
-        "height": 48
+        "x": 1035,
+        "y": 346,
+        "width": 24,
+        "height": 24
       }
     },
     {
       "tag": "div",
       "kind": "button",
-      "text": "17",
+      "text": "Map marker",
       "bbox": {
-        "x": 1085,
-        "y": 383,
-        "width": 48,
-        "height": 48
+        "x": 1043,
+        "y": 369,
+        "width": 24,
+        "height": 24
       }
     },
     {
       "tag": "div",
       "kind": "button",
-      "text": "1",
+      "text": "Map marker",
       "bbox": {
-        "x": 952,
-        "y": 567,
-        "width": 48,
-        "height": 48
+        "x": 824,
+        "y": 401,
+        "width": 24,
+        "height": 24
       }
     },
     {
       "tag": "div",
       "kind": "button",
-      "text": "2",
+      "text": "Map marker",
       "bbox": {
-        "x": 1096,
-        "y": 449,
-        "width": 48,
-        "height": 48
+        "x": 1108,
+        "y": 54,
+        "width": 24,
+        "height": 24
       }
     },
     {
       "tag": "div",
       "kind": "button",
-      "text": "3",
-      "bbox": {
-        "x": 1082,
-        "y": 285,
-        "width": 48,
-        "height": 48
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "button",
-      "text": "4",
-      "bbox": {
-        "x": 1190,
-        "y": 370,
-        "width": 48,
-        "height": 48
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "button",
-      "text": "5",
+      "text": "Map marker",
       "bbox": {
         "x": 1214,
-        "y": 339,
-        "width": 48,
-        "height": 48
+        "y": 197,
+        "width": 24,
+        "height": 24
       }
     },
     {
       "tag": "div",
       "kind": "button",
-      "text": "6",
+      "text": "Map marker",
       "bbox": {
-        "x": 1155,
-        "y": 428,
-        "width": 48,
-        "height": 48
+        "x": 764,
+        "y": 409,
+        "width": 24,
+        "height": 24
       }
     },
     {
       "tag": "div",
       "kind": "button",
-      "text": "7",
+      "text": "Map marker",
       "bbox": {
-        "x": 811,
-        "y": 440,
-        "width": 48,
-        "height": 48
+        "x": 1062,
+        "y": 416,
+        "width": 24,
+        "height": 24
       }
     },
     {
       "tag": "div",
       "kind": "button",
-      "text": "8",
+      "text": "Map marker",
       "bbox": {
-        "x": 1023,
-        "y": 334,
-        "width": 48,
-        "height": 48
+        "x": 1158,
+        "y": 221,
+        "width": 24,
+        "height": 24
       }
     },
     {
       "tag": "div",
       "kind": "button",
-      "text": "9",
+      "text": "Map marker",
       "bbox": {
-        "x": 1031,
-        "y": 357,
-        "width": 48,
-        "height": 48
+        "x": 906,
+        "y": 464,
+        "width": 24,
+        "height": 24
       }
     },
     {
       "tag": "div",
       "kind": "button",
-      "text": "10",
+      "text": "Map marker",
       "bbox": {
-        "x": 812,
-        "y": 389,
-        "width": 48,
-        "height": 48
+        "x": 1097,
+        "y": 394,
+        "width": 24,
+        "height": 24
       }
-    },
-    {
-      "tag": "div",
-      "kind": "button",
-      "text": "11",
-      "bbox": {
-        "x": 1096,
-        "y": 42,
-        "width": 48,
-        "height": 48
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "button",
-      "text": "12",
-      "bbox": {
-        "x": 1202,
-        "y": 185,
-        "width": 48,
-        "height": 48
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "button",
-      "text": "13",
-      "bbox": {
-        "x": 751,
-        "y": 397,
-        "width": 48,
-        "height": 48
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "button",
-      "text": "14",
-      "bbox": {
-        "x": 1050,
-        "y": 404,
-        "width": 48,
-        "height": 48
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "button",
-      "text": "15",
-      "bbox": {
-        "x": 1146,
-        "y": 209,
-        "width": 48,
-        "height": 48
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "button",
-      "text": "16",
-      "bbox": {
-        "x": 894,
-        "y": 453,
-        "width": 48,
-        "height": 48
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "button",
-      "text": "17",
-      "bbox": {
-        "x": 1085,
-        "y": 383,
-        "width": 48,
-        "height": 48
-      }
-    },
-    {
-      "tag": "a",
-      "kind": "link",
-      "text": "Zoom in",
-      "bbox": {
-        "x": 762,
-        "y": 28,
-        "width": 30,
-        "height": 31
-      },
-      "href": "#"
-    },
-    {
-      "tag": "a",
-      "kind": "link",
-      "text": "Zoom out",
-      "bbox": {
-        "x": 762,
-        "y": 59,
-        "width": 30,
-        "height": 30
-      },
-      "href": "#"
-    },
-    {
-      "tag": "a",
-      "kind": "link",
-      "text": "Leaflet",
-      "bbox": {
-        "x": 977.3,
-        "y": 624.2,
-        "width": 51.3,
-        "height": 14
-      },
-      "href": "https://leafletjs.com"
     }
   ],
   "tables": [
@@ -726,19 +503,19 @@
       ],
       "rows": [
         [
-          "3",
-          "Manicaland",
-          "BUHERA (MET)"
+          "1",
+          "Matabeleland South",
+          "BEITBRIDGE (MET)"
         ],
         [
-          "4",
-          "Manicaland",
-          "CHIPINGE (MET)"
+          "7",
+          "Matabeleland South",
+          "KEZI (MET)"
         ],
         [
-          "5",
-          "Manicaland",
-          "CHISENGU (MET)"
+          "10",
+          "Matabeleland South",
+          "MATOPOS RES. STN. (MET)"
         ]
       ],
       "rowCount": 17

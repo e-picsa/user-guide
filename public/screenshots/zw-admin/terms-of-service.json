@@ -1,9 +1,9 @@
 {
   "route": "terms-of-service",
-  "url": "http://localhost:4200/terms-of-service",
+  "url": "http://localhost:3000/terms-of-service",
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
-  "dashboardVersion": "5.16.0",
+  "dashboardVersion": "5.20.0",
   "capturedAt": "2026-10-08T21:53:41.799Z",
   "viewport": {
     "width": 1280,

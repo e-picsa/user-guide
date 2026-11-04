@@ -1,9 +1,9 @@
 {
   "route": "deployment",
-  "url": "http://localhost:4200/deployment",
+  "url": "http://localhost:3000/deployment",
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
-  "dashboardVersion": "5.16.0",
+  "dashboardVersion": "5.20.0",
   "capturedAt": "2026-10-08T21:31:55.929Z",
   "viewport": {
     "width": 1280,

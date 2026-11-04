@@ -1,10 +1,10 @@
 {
   "route": "resources/farmer-videos",
-  "url": "http://localhost:4200/resources/farmer-videos",
+  "url": "http://localhost:3000/resources/farmer-videos",
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
-  "dashboardVersion": "5.16.0",
-  "capturedAt": "2026-10-08T21:30:35.493Z",
+  "dashboardVersion": "5.20.0",
+  "capturedAt": "2026-11-04T20:54:38.066Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -31,7 +31,7 @@
       "text": "Home",
       "bbox": {
         "x": 0,
-        "y": 72,
+        "y": 14,
         "width": 203,
         "height": 48
       },
@@ -43,7 +43,7 @@
       "text": "Climate",
       "bbox": {
         "x": 0,
-        "y": 120,
+        "y": 62,
         "width": 203,
         "height": 48
       }
@@ -54,7 +54,7 @@
       "text": "Station Data",
       "bbox": {
         "x": 0,
-        "y": 168,
+        "y": 110,
         "width": 203,
         "height": 48
       },
@@ -66,7 +66,7 @@
       "text": "Forecasts",
       "bbox": {
         "x": 0,
-        "y": 216,
+        "y": 158,
         "width": 203,
         "height": 48
       },
@@ -78,7 +78,7 @@
       "text": "Admin",
       "bbox": {
         "x": 0,
-        "y": 264,
+        "y": 206,
         "width": 203,
         "height": 48
       },
@@ -90,7 +90,7 @@
       "text": "Crop",
       "bbox": {
         "x": 0,
-        "y": 168,
+        "y": 110,
         "width": 203,
         "height": 48
       }
@@ -101,7 +101,7 @@
       "text": "Variety",
       "bbox": {
         "x": 0,
-        "y": 216,
+        "y": 158,
         "width": 203,
         "height": 48
       },
@@ -113,7 +113,7 @@
       "text": "Probability",
       "bbox": {
         "x": 0,
-        "y": 264,
+        "y": 206,
         "width": 203,
         "height": 48
       },
@@ -125,7 +125,7 @@
       "text": "Admin",
       "bbox": {
         "x": 0,
-        "y": 312,
+        "y": 254,
         "width": 203,
         "height": 48
       },
@@ -137,7 +137,7 @@
       "text": "Translations",
       "bbox": {
         "x": 0,
-        "y": 216,
+        "y": 158,
         "width": 203,
         "height": 48
       }
@@ -148,7 +148,7 @@
       "text": "List",
       "bbox": {
         "x": 0,
-        "y": 264,
+        "y": 206,
         "width": 203,
         "height": 48
       },
@@ -160,7 +160,7 @@
       "text": "Import",
       "bbox": {
         "x": 0,
-        "y": 312,
+        "y": 254,
         "width": 203,
         "height": 48
       },
@@ -172,7 +172,7 @@
       "text": "Resources",
       "bbox": {
         "x": 0,
-        "y": 264,
+        "y": 206,
         "width": 203,
         "height": 64
       }
@@ -183,7 +183,7 @@
       "text": "Files",
       "bbox": {
         "x": 0,
-        "y": 328,
+        "y": 270,
         "width": 203,
         "height": 48
       },
@@ -195,7 +195,7 @@
       "text": "Links",
       "bbox": {
         "x": 0,
-        "y": 376,
+        "y": 318,
         "width": 203,
         "height": 48
       },
@@ -207,7 +207,7 @@
       "text": "Collections",
       "bbox": {
         "x": 0,
-        "y": 424,
+        "y": 366,
         "width": 203,
         "height": 48
       },
@@ -219,7 +219,7 @@
       "text": "Farmer Videos",
       "bbox": {
         "x": 0,
-        "y": 472,
+        "y": 414,
         "width": 203,
         "height": 48
       },
@@ -231,7 +231,7 @@
       "text": "Statistics",
       "bbox": {
         "x": 0,
-        "y": 550,
+        "y": 519,
         "width": 203,
         "height": 48
       },
@@ -243,7 +243,7 @@
       "text": "Deployments",
       "bbox": {
         "x": 0,
-        "y": 598,
+        "y": 567,
         "width": 203,
         "height": 48
       },
@@ -255,7 +255,7 @@
       "text": "User Permissions",
       "bbox": {
         "x": 0,
-        "y": 646,
+        "y": 615,
         "width": 203,
         "height": 48
       },
@@ -267,7 +267,7 @@
       "text": "Map Boundaries",
       "bbox": {
         "x": 0,
-        "y": 694,
+        "y": 663,
         "width": 203,
         "height": 48
       },

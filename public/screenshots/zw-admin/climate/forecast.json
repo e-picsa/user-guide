@@ -1,9 +1,9 @@
 {
   "route": "climate/forecast",
-  "url": "http://localhost:4200/climate/forecast",
+  "url": "http://localhost:3000/climate/forecast",
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
-  "dashboardVersion": "5.16.0",
+  "dashboardVersion": "5.20.0",
   "capturedAt": "2026-10-08T21:29:18.526Z",
   "viewport": {
     "width": 1280,
@@ -276,11 +276,11 @@
     {
       "tag": "button",
       "kind": "button",
-      "text": "Oct 2026",
+      "text": "Nov 2026",
       "bbox": {
         "x": 334.6,
         "y": 30,
-        "width": 100.9,
+        "width": 104.1,
         "height": 36
       }
     },
@@ -358,7 +358,7 @@
       "bbox": {
         "x": 236,
         "y": 239,
-        "width": 248,
+        "width": 234.8,
         "height": 22
       }
     },
@@ -367,9 +367,9 @@
       "kind": "button",
       "text": "Label",
       "bbox": {
-        "x": 516,
+        "x": 502.8,
         "y": 239,
-        "width": 165.7,
+        "width": 205.4,
         "height": 22
       }
     },
@@ -378,9 +378,9 @@
       "kind": "button",
       "text": "Language",
       "bbox": {
-        "x": 713.6,
+        "x": 740.2,
         "y": 239,
-        "width": 236.5,
+        "width": 223.9,
         "height": 22
       }
     },
@@ -389,9 +389,9 @@
       "kind": "button",
       "text": "Storage File",
       "bbox": {
-        "x": 982.1,
+        "x": 996.1,
         "y": 239,
-        "width": 265.9,
+        "width": 251.9,
         "height": 22
       }
     }
@@ -404,8 +404,15 @@
         "Language",
         "Storage File"
       ],
-      "rows": [],
-      "rowCount": 0
+      "rows": [
+        [
+          "Nov 4, 2026",
+          "2026 - 2027",
+          "English",
+          ""
+        ]
+      ],
+      "rowCount": 1
     }
   ],
   "nav": [

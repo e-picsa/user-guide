@@ -1,10 +1,10 @@
 {
   "route": "map-admin",
-  "url": "http://localhost:4200/map-admin",
+  "url": "http://localhost:3000/map-admin",
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
-  "dashboardVersion": "5.14.0",
-  "capturedAt": "2026-09-25T01:20:34.372Z",
+  "dashboardVersion": "5.20.0",
+  "capturedAt": "2026-11-04T20:51:34.246Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -18,7 +18,7 @@
       "text": "Admin Level 2",
       "bbox": {
         "x": 236,
-        "y": 42,
+        "y": 178,
         "width": 122.5,
         "height": 28
       }
@@ -29,7 +29,7 @@
       "text": "Admin Level 3",
       "bbox": {
         "x": 534,
-        "y": 42,
+        "y": 178,
         "width": 122.5,
         "height": 28
       }
@@ -40,7 +40,7 @@
       "text": "Admin Level 4",
       "bbox": {
         "x": 832,
-        "y": 42,
+        "y": 178,
         "width": 122.5,
         "height": 28
       }
@@ -51,7 +51,18 @@
       "text": "Admin Level 5",
       "bbox": {
         "x": 236,
-        "y": 218,
+        "y": 354,
+        "width": 122.5,
+        "height": 28
+      }
+    },
+    {
+      "tag": "h3",
+      "kind": "heading",
+      "text": "Admin Level 6",
+      "bbox": {
+        "x": 534,
+        "y": 354,
         "width": 122.5,
         "height": 28
       }
@@ -61,7 +72,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "homeHome",
+      "text": "Home",
       "bbox": {
         "x": 0,
         "y": 72,
@@ -73,7 +84,7 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "filter_dramaClimate",
+      "text": "Climate",
       "bbox": {
         "x": 0,
         "y": 120,
@@ -120,7 +131,7 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "spaCrop",
+      "text": "Crop",
       "bbox": {
         "x": 0,
         "y": 168,
@@ -167,7 +178,7 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "translateTranslations",
+      "text": "Translations",
       "bbox": {
         "x": 0,
         "y": 216,
@@ -202,7 +213,7 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "library_booksResources",
+      "text": "Resources",
       "bbox": {
         "x": 0,
         "y": 264,
@@ -261,7 +272,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "query_statsStatistics",
+      "text": "Statistics",
       "bbox": {
         "x": 0,
         "y": 519,
@@ -273,7 +284,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "appsDeployments",
+      "text": "Deployments",
       "bbox": {
         "x": 0,
         "y": 567,
@@ -285,7 +296,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "manage_accountsUser Permissions",
+      "text": "User Permissions",
       "bbox": {
         "x": 0,
         "y": 615,
@@ -297,7 +308,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "mapMap Boundaries",
+      "text": "Map Boundaries",
       "bbox": {
         "x": 0,
         "y": 663,
@@ -307,23 +318,24 @@
       "href": "/map-admin"
     },
     {
-      "tag": "button",
-      "kind": "button",
-      "text": "edit",
+      "tag": "a",
+      "kind": "link",
+      "text": "Export tiles and TopoJSON at geo-data.picsa.app",
       "bbox": {
-        "x": 366.5,
-        "y": 32,
-        "width": 48,
-        "height": 48
-      }
+        "x": 268,
+        "y": 100,
+        "width": 1012,
+        "height": 20
+      },
+      "href": "https://geo-data.picsa.app/"
     },
     {
       "tag": "button",
       "kind": "button",
-      "text": "visibility View",
+      "text": "View",
       "bbox": {
         "x": 236,
-        "y": 124,
+        "y": 260,
         "width": 96.4,
         "height": 36
       }
@@ -331,10 +343,10 @@
     {
       "tag": "button",
       "kind": "button",
-      "text": "refresh Generate",
+      "text": "Generate",
       "bbox": {
         "x": 340.4,
-        "y": 124,
+        "y": 260,
         "width": 145.6,
         "height": 36
       }
@@ -342,21 +354,10 @@
     {
       "tag": "button",
       "kind": "button",
-      "text": "edit",
-      "bbox": {
-        "x": 664.5,
-        "y": 32,
-        "width": 48,
-        "height": 48
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "visibility View",
+      "text": "View",
       "bbox": {
         "x": 534,
-        "y": 124,
+        "y": 260,
         "width": 96.4,
         "height": 36
       }
@@ -364,10 +365,10 @@
     {
       "tag": "button",
       "kind": "button",
-      "text": "refresh Generate",
+      "text": "Generate",
       "bbox": {
         "x": 638.4,
-        "y": 124,
+        "y": 260,
         "width": 145.6,
         "height": 36
       }
@@ -375,21 +376,10 @@
     {
       "tag": "button",
       "kind": "button",
-      "text": "edit",
-      "bbox": {
-        "x": 962.5,
-        "y": 32,
-        "width": 48,
-        "height": 48
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "visibility View",
+      "text": "View",
       "bbox": {
         "x": 832,
-        "y": 124,
+        "y": 260,
         "width": 96.4,
         "height": 36
       }
@@ -397,10 +387,10 @@
     {
       "tag": "button",
       "kind": "button",
-      "text": "refresh Generate",
+      "text": "Generate",
       "bbox": {
         "x": 936.4,
-        "y": 124,
+        "y": 260,
         "width": 145.6,
         "height": 36
       }
@@ -408,21 +398,10 @@
     {
       "tag": "button",
       "kind": "button",
-      "text": "edit",
-      "bbox": {
-        "x": 366.5,
-        "y": 208,
-        "width": 48,
-        "height": 48
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "visibility View",
+      "text": "View",
       "bbox": {
         "x": 236,
-        "y": 300,
+        "y": 436,
         "width": 96.4,
         "height": 36
       }
@@ -430,55 +409,41 @@
     {
       "tag": "button",
       "kind": "button",
-      "text": "refresh Generate",
+      "text": "Generate",
       "bbox": {
         "x": 340.4,
-        "y": 300,
+        "y": 436,
         "width": 145.6,
         "height": 36
       }
     },
     {
-      "tag": "a",
-      "kind": "link",
-      "text": "Zoom in",
+      "tag": "button",
+      "kind": "button",
+      "text": "View",
       "bbox": {
-        "x": 232,
-        "y": 380,
-        "width": 30,
-        "height": 31
-      },
-      "href": "#"
+        "x": 534,
+        "y": 436,
+        "width": 96.4,
+        "height": 36
+      }
     },
     {
-      "tag": "a",
-      "kind": "link",
-      "text": "Zoom out",
+      "tag": "button",
+      "kind": "button",
+      "text": "Generate",
       "bbox": {
-        "x": 232,
-        "y": 411,
-        "width": 30,
-        "height": 30
-      },
-      "href": "#"
-    },
-    {
-      "tag": "a",
-      "kind": "link",
-      "text": "Leaflet",
-      "bbox": {
-        "x": 1063.8,
-        "y": 884.2,
-        "width": 51.3,
-        "height": 14
-      },
-      "href": "https://leafletjs.com"
+        "x": 638.4,
+        "y": 436,
+        "width": 145.6,
+        "height": 36
+      }
     }
   ],
   "tables": [],
   "nav": [
     {
-      "label": "homeHome",
+      "label": "Home",
       "href": "/home"
     },
     {
@@ -530,19 +495,19 @@
       "href": "/resources/farmer-videos"
     },
     {
-      "label": "query_statsStatistics",
+      "label": "Statistics",
       "href": "/stats"
     },
     {
-      "label": "appsDeployments",
+      "label": "Deployments",
       "href": "/deployment"
     },
     {
-      "label": "manage_accountsUser Permissions",
+      "label": "User Permissions",
       "href": "/deployment/permissions"
     },
     {
-      "label": "mapMap Boundaries",
+      "label": "Map Boundaries",
       "href": "/map-admin"
     }
   ],

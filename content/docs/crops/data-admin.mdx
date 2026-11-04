@@ -7,14 +7,14 @@ description: Bulk-import water requirements from CSV and export tables for the a
 
 <Screenshot
   name="crop/admin.png"
-  alt="Crop Admin with template, export and import controls"
+  alt="Crop Admin Upload tab with template, export and import controls"
   markers={[
-    { x: 94, y: 15, label: 'Template — download a CSV pre-filled with locations to complete' },
-    { x: 91, y: 23, label: 'Export App Data — bundle all probability tables for the field app' },
-    { x: 27, y: 30, label: 'Upload File or Paste Text — drop a CSV to preview changes before importing' },
-    { x: 39, y: 74, label: 'Quality Control — warning lines list locations still missing entries' },
+    { x: 92, y: 25, label: 'Template — download a CSV pre-filled with locations to complete' },
+    { x: 90, y: 35, label: 'Export App Data — bundle all probability tables for the field app' },
+    { x: 29, y: 44, label: 'Upload File or Paste Text — drop a CSV to preview changes before importing' },
+    { x: 58, y: 60, label: 'Drop zone — accepts CSV or JSON data for the preview below' },
   ]}
-  caption="Crop Admin (Zambia)"
+  caption="Crop Admin Upload tab (Zambia)"
 />
 
 ## Import workflow
@@ -23,10 +23,6 @@ description: Bulk-import water requirements from CSV and export tables for the a
 2. Fill in the water-requirement column and **Upload File** (or paste the text).
 3. Review the preview: **Rows** shows before/after values to be upserted, **Duplicates** flags repeated lines, **Errors** lists invalid rows with reasons.
 4. **Import** writes the valid rows. Values are rounded to the nearest 5 mm and matched to locations tolerantly (spacing and case ignored).
-
-## Quality control
-
-The **Quality Control** section lists locations with no entries at all versus locations with entries but no water requirements yet. **Add Placeholder** creates empty entries so gaps are explicit rather than missing.
 
 ## Export for the app
 
