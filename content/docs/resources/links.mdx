@@ -27,7 +27,19 @@ The type icon tells farmers what to expect: social (groups and pages), web (site
 
 ## Adding or editing a link
 
-**Add Link** (or click a row) opens the link editor, which currently asks only for the **URL** (validated as a web address) alongside the country. Save to publish it to the list.
+**Add Link** (or click a row) opens the link editor (`resources/links/create`
+for new links, `resources/links/:id` when editing an existing row), which
+currently asks only for the **URL** (validated as a web address) alongside the
+country. Save to publish it to the list.
+
+<Screenshot
+  name="resources/links/create.png"
+  alt="Link editor with URL field"
+  markers={[
+    { x: 25.8, y: 17.3, label: 'URL — the destination address (validated as a web address)' },
+  ]}
+  caption="Link editor"
+/>
 
 <Callout type="info">
   Links point outward — unlike files, they need connectivity to open. Prefer

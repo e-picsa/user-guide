@@ -115,7 +115,7 @@ const FIXTURE = `<!doctype html><html><head><title>PICSA Dashboard</title>
 <div role="dialog" aria-label="Request Access"><h3>Request Access</h3></div>
 </body></html>`;
 
-const dom = new JSDOM(FIXTURE, { url: 'http://localhost:4200/climate/admin' });
+const dom = new JSDOM(FIXTURE, { url: 'http://localhost:3000/climate/admin' });
 (globalThis as any).document = dom.window.document;
 (globalThis as any).window = dom.window;
 
@@ -182,7 +182,7 @@ const SHELL_FIXTURE = `<body><mat-toolbar>App Header</mat-toolbar>
 <mat-sidenav-content><mat-sidenav><a href="/home">Home</a></mat-sidenav>
 <div><router-outlet></router-outlet><section class="routed-page"><h2>Routed</h2></section></div>
 </mat-sidenav-content></body>`;
-const shellDom = new JSDOM(SHELL_FIXTURE, { url: 'http://localhost:4200/home' });
+const shellDom = new JSDOM(SHELL_FIXTURE, { url: 'http://localhost:3000/home' });
 (globalThis as any).document = shellDom.window.document;
 (globalThis as any).window = shellDom.window;
 const shellHtml = runSerialized<string>(extractContentHtml);

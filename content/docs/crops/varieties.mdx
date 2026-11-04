@@ -22,9 +22,20 @@ description: Browse the master list of crop varieties and their downscaling cove
 - **Open a variety** by clicking its row — see [Variety details](./variety-details).
 
 <Callout type="info">
-  **Add Variety** (`crop.admin`) sits at the top of the page above the visible
-  area — scroll up to create a new base record, then add its per-location
-  water requirements on the details page.
+  **Add Variety** (`crop/variety/add`, `crop.admin`) sits at the top of the
+  page above the visible area — scroll up to create a new base record, then add
+  its per-location water requirements on the details page.
 </Callout>
+
+<Screenshot
+  name="crop/variety/add.png"
+  alt="Add Variety editor with crop, variety and maturity fields"
+  markers={[
+    { x: 78.5, y: 16.2, label: 'Variety — name the new variety (crop picked alongside)' },
+    { x: 58.1, y: 29.3, label: 'Maturity — period plus days-to-maturity range' },
+    { x: 20.6, y: 54, label: 'Submit — create the base record' },
+  ]}
+  caption="Add Variety editor"
+/>
 
 Each variety records its crop, maturity period (early/medium/late) and days-to-maturity range, which feed the [probability tables](./probability-tables).
