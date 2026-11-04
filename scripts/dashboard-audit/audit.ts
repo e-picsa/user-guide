@@ -27,7 +27,7 @@
  * then the sibling checkouts used by this repo (`../picsa-apps/...` per
  * AGENTS.md, plus the local `e-picsa` and `.t3` worktree layouts).
  */
-import { execSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 import { existsSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative, resolve } from 'node:path';
 
@@ -143,7 +143,7 @@ function resolveDashboardSrc(explicit?: string): { appDir: string; repoRoot: str
     if (existsSync(join(abs, 'app.routes.ts'))) {
       let repoRoot = abs;
       try {
-        repoRoot = execSync('git rev-parse --show-toplevel', { cwd: abs, encoding: 'utf8' }).trim();
+        repoRoot = execFileSync('git', ['rev-parse', '--show-toplevel'], { cwd: abs, encoding: 'utf8' }).trim();
       } catch {
         repoRoot = abs;
       }
@@ -421,11 +421,14 @@ function gitChanges(repoRoot: string, appDir: string, since: string | undefined,
   const range = since ? `${since}..HEAD` : `HEAD~${n}..HEAD`;
   let raw: string;
   try {
-    raw =
-      execSync(
-        `git log --date=short --pretty=format:'@@@ %h %ad %s' --name-only ${range} -- ${relApp}`,
-        { cwd: repoRoot, encoding: 'utf8', maxBuffer: 10 * 1024 * 1024 },
-      );
+    // Shell-less argv invocation: `--since`/`--commits` input travels as a
+    // literal git argument, so metacharacters can't escape into a shell.
+    // An invalid ref just makes git fail, which maps to "no changes" below.
+    raw = execFileSync(
+      'git',
+      ['log', '--date=short', '--pretty=format:@@@ %h %ad %s', '--name-only', range, '--', relApp],
+      { cwd: repoRoot, encoding: 'utf8', maxBuffer: 10 * 1024 * 1024 },
+    );
   } catch {
     return [];
   }

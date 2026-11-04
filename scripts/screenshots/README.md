@@ -1,6 +1,6 @@
 # Dashboard screenshots (720p)
 
-Captures `http://localhost:4200` (dashboard dev server, `yarn start:dashboard`
+Captures `http://localhost:3000` (dashboard dev server, `yarn start:dashboard`
 from `../picsa-apps`) into `public/screenshots/<identifier>/`, with output
 paths mirroring dashboard routes.
 
