@@ -17,7 +17,7 @@ description: Curate external websites, apps and social media links for the field
 />
 
 <Callout type="info">
-  **Add Link** (`resources.admin`) sits at the top of the page above the
+  **Add Link** (`resources.editor`) sits at the top of the page above the
   visible area — scroll up to register a new URL.
 </Callout>
 
@@ -30,7 +30,9 @@ The type icon tells farmers what to expect: social (groups and pages), web (site
 **Add Link** (or click a row) opens the link editor (`resources/links/create`
 for new links, `resources/links/:id` when editing an existing row), which
 currently asks only for the **URL** (validated as a web address) alongside the
-country. Save to publish it to the list.
+country. Creating links requires `resources.editor`; editing is limited to
+`resources.admin` users and the link's owner (anyone else gets a read-only
+view). Save to publish it to the list.
 
 <Screenshot
   name="resources/links/create.png"

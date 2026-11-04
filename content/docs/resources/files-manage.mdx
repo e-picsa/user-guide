@@ -1,9 +1,9 @@
 ---
 title: Managing files
-description: Upload, describe and publish a file resource (admin).
+description: Upload, describe and publish a file resource (editor).
 ---
 
-Creating and editing files requires the `resources.admin` role. Both actions share the same form: **Resources → Files → Add Resource**, or click any row to edit it.
+Creating new files requires the `resources.editor` role. Editing is limited to `resources.admin` users and the file's owner — anyone else opening a row gets a read-only **View Resource** form. Both actions share the same form: **Resources → Files → Add Resource**, or click any row to open it.
 
 <Screenshot
   name="resources/files/create.png"
@@ -24,7 +24,7 @@ Creating and editing files requires the `resources.admin` role. Both actions sha
 3. Enter a **Title** and optional **Description**, and choose the **Language**.
 4. **Save Resource**. The file is upserted and appears in the list and in linked collections immediately.
 
-Editing an existing file (shown here for completeness) offers the same fields plus **Delete Resource** and, for externally-hosted files, a **View Resource** link.
+Editing an existing file (shown here for completeness) offers the same fields plus **Delete Resource** for files you can edit and, for externally-hosted files, a **View Resource** link.
 
 <Screenshot
   name="resources/files/dff5c161-3541-44a4-8326-0affafd26812.png"

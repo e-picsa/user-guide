@@ -17,16 +17,11 @@ description: Find untranslated strings for your language and translate them.
   caption="Translations list for Nyanja (Zambia)"
 />
 
-<Callout type="info">
-  **Export JSON** sits below the table — scroll down to download the current
-  translations for the app bundle.
-</Callout>
-
 ## Workflow
 
 1. Select the **locale** — the list refreshes automatically.
-2. Work through rows with an empty translation cell. The **Tool** and **Context** columns tell you where the string appears.
-3. Click a row to open the editor dialog (`translations/edit/:id`), enter the translation and save.
+2. Work through rows with an empty translation cell. The **Tool** and **Context** columns tell you where the string appears; the funnel filter in the **Tool** header narrows the table to one tool.
+3. Click a row to open the editor dialog (`translations/edit/:id`, requires `translations.editor`), enter the translation and save.
 4. Pick the **Needs Translation** chip when you want to focus only on rows still missing a translation.
 
 A progress indicator tracks how much of the locale is complete.
