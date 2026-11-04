@@ -26,11 +26,11 @@ guide reference.
 
 - **Genuinely new page** (`no screenshot exemplar … and no guide page
   mentions it`): add a manifest entry in
-  `scripts/screenshots/manifest.ts` (hardcoded exemplar for `:id` routes,
-  verified against the local docker backend), capture with
+  `scripts/screenshots/manifest.ts` (per-deployment exemplar in `EXEMPLARS`
+  for `:id` routes, verified against the seed CSVs; pin a stable `out`
+  when exemplar IDs differ per deployment), capture with
   `bun run shots:zm-admin` (and `shots:mw-user` where role coverage matters),
-  then write or extend the MDX page. One identifier per run; never use
-  abstract labels like `station-details.png` — output mirrors the route.
+  then write or extend the MDX page. One identifier per run.
 - **Likely described in parent page** (`likely described in … covers
   <parent>`): read the named MDX, add an explicit route mention and embed the
   existing editor screenshot. Do not create a new page.

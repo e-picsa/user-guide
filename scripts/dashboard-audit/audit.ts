@@ -57,7 +57,7 @@ function loadManifest(): ManifestExemplar[] {
       if (ex) {
         if (!ex.deployments.includes(dep)) ex.deployments.push(dep);
       } else {
-        byRoute.set(entry.route, { route: entry.route, file: entryToFile(entry), deployments: [dep] });
+        byRoute.set(entry.route, { route: entry.route, file: entryToFile(entry).replace(/\.png$/, ''), deployments: [dep] });
       }
     }
   }
@@ -370,6 +370,10 @@ function listMdxFiles(dir: string): string[] {
 }
 
 const SHOT_RE = /\/screenshots\/(([A-Za-z0-9_-]+)\/([A-Za-z0-9_\-./%]+))\.png/g;
+/** Preferred `<Screenshot name="climate/station.png">`: route-mirrored stem, no identifier. */
+const SHOT_NAME_RE = /<Screenshot[^>]*\bname="([^"]+\.png)"/g;
+/** Screenshot identifier dirs (`zm-admin`, `mw-user`, …). */
+const SHOT_ID_RE = /^[a-z]{2}-(admin|user)$/;
 /**
  * Bare dashboard route mentions in prose. The lookbehind excludes
  * guide-internal relative links (`./climate/stations`, `../...`) and
@@ -381,17 +385,28 @@ const ROUTE_RE = /(?<![.\w/])(climate|crop|resources|translations|deployment|pro
 function parseGuidePage(file: string): GuidePage {
   const body = read(file);
   const title = body.match(/^title:\s*(.+)$/m)?.[1]?.trim() ?? file;
-  // Screenshots keep the identifier prefix (`zm-admin/climate/station`) so the
-  // png can be checked on disk; route matching strips the first segment.
-  const screenshots = [...body.matchAll(SHOT_RE)].map((m) => decodeURIComponent(m[1]));
-  const prose = body.replace(SHOT_RE, '');
+  // Screenshots keep the identifier prefix when present (`zm-admin/climate/station`
+  // from legacy `src`); preferred `name=` values are already bare route-mirrored
+  // stems (`climate/station`), resolved to the png on disk in `audit()`.
+  const screenshots = [
+    ...[...body.matchAll(SHOT_RE)].map((m) => decodeURIComponent(m[1])),
+    ...[...body.matchAll(SHOT_NAME_RE)].map((m) => decodeURIComponent(m[1].replace(/\.png$/, ''))),
+  ];
+  const prose = body.replace(SHOT_RE, '').replace(SHOT_NAME_RE, '');
   const routeRefs = [...new Set([...prose.matchAll(ROUTE_RE)].map((m) => m[0].replace(/[.,);:]+$/, '')))];
   return { file: relative(GUIDE_ROOT, file), title, screenshots, routeRefs };
 }
 
-/** Screenshot subpath `zm-admin/climate/station` -> dashboard route `climate/station`. */
+/**
+ * Screenshot ref -> dashboard route. Strips the identifier prefix only when it
+ * matches a shots id (`zm-admin/climate/station`); bare `name=` stems
+ * (`climate/station`, `crop/variety-details`) pass through for manifest
+ * `out`-file resolution in `audit()`.
+ */
 function shotToRoute(shot: string): string {
-  return decodeURIComponent(shot.split('/').slice(1).join('/'));
+  const parts = decodeURIComponent(shot).split('/');
+  if (parts.length > 1 && SHOT_ID_RE.test(parts[0])) return parts.slice(1).join('/');
+  return decodeURIComponent(shot);
 }
 
 interface GitChange {
@@ -533,6 +548,22 @@ function audit(
     fileToRoute.has(ref) ||
     livePatterns.some((pt) => patternMatches(pt, ref) || pt === ref) ||
     manifestRoutes.some((m) => m === ref || patternMatches(m, ref));
+  // Bare `name=` stems resolve under every identifier dir on disk.
+  const shotsDir = join(GUIDE_ROOT, 'public/screenshots');
+  const shotIds = existsSync(shotsDir)
+    ? readdirSync(shotsDir).filter((d) => {
+        try {
+          return statSync(join(shotsDir, d)).isDirectory();
+        } catch {
+          return false;
+        }
+      })
+    : [];
+  const shotOnDisk = (shot: string): boolean => {
+    const parts = shot.split('/');
+    if (parts.length > 1 && SHOT_ID_RE.test(parts[0])) return existsSync(join(shotsDir, `${shot}.png`));
+    return shotIds.some((id) => existsSync(join(shotsDir, id, `${shot}.png`)));
+  };
   for (const p of pages) {
     for (const ref of p.routeRefs) {
       if (!knownRef(ref)) {
@@ -544,9 +575,12 @@ function audit(
       if (!knownRef(ref)) {
         findings.push({ kind: 'STALE_REF', route: ref, detail: `screenshot in ${p.file} matches no dashboard route or manifest exemplar`, guideFiles: [p.file] });
       }
-      const diskPath = join(GUIDE_ROOT, 'public/screenshots', `${shot}.png`);
-      if (!existsSync(diskPath)) {
-        findings.push({ kind: 'STALE_REF', route: ref, detail: `screenshot in ${p.file} has no png on disk (${relative(GUIDE_ROOT, diskPath)} missing — recapture needed)`, guideFiles: [p.file] });
+      const diskLabel = (() => {
+        const parts = shot.split('/');
+        return parts.length > 1 && SHOT_ID_RE.test(parts[0]) ? `${shot}.png` : `<id>/${shot}.png`;
+      })();
+      if (!shotOnDisk(shot)) {
+        findings.push({ kind: 'STALE_REF', route: ref, detail: `screenshot in ${p.file} has no png on disk (public/screenshots/${diskLabel} missing — recapture needed)`, guideFiles: [p.file] });
       }
     }
   }
