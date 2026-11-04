@@ -175,6 +175,29 @@ pages in the index.
   external system. The hook only sees staged files, so an unstaged page's typo
   survives until it is committed.
 
+## Quality checks
+
+`.github/workflows/quality.yml` runs on every pull request. It is advisory for
+now (`continue-on-error: true`) and does not affect `deploy.yml`, so a failure
+never stops a deployment. The pre-commit hook is a fast subset: spelling and markdownlint on staged doc pages. Everything else
+only runs in CI, or locally with these commands:
+
+- `bun run lint:md` — markdownlint on `content/docs/**/*.mdx`. Config is
+  `.markdownlint-cli2.jsonc`.
+- `bun run lint:prose` — Vale on `content/docs`. Run `bun run prose:sync` once
+  first; it downloads the Google style into `styles/`, which is not committed.
+  Vale is a separate binary (`brew install vale`), pinned for CI by
+  `VALE_VERSION` in `quality.yml`.
+- `bun run links:check` — internal links, anchors and images in `out/`, so run
+  `bun run build` first. Also checks each `<Screenshot name>` against every
+  country in `src/lib/countries.ts`, because the prerender only includes the
+  default country. Screenshot sidecar pages under `out/screenshots/` are skipped.
+
+**Only errors fail Vale.** `PICSA.ProductName` enforces the naming rule above and
+is the only error-level rule, but it reads prose only, not `<Screenshot>` or
+other JSX props. `PICSA.Readability` and the Google rules are warnings: review
+them, and raise a rule to an error only once the existing pages pass it.
+
 ## PDF publishing
 
 - `bun run pdf` = `export.ts` + `combine.ts`, and the two write to separate

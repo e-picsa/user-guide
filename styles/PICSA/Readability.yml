@@ -1,0 +1,6 @@
+# Flesch-Kincaid grade level for each page. Advisory, and aimed at field staff.
+extends: metric
+message: "Try to keep the reading level (grade %s) below 10."
+level: warning
+formula: (0.39 * (words / sentences)) + (11.8 * (syllables / words)) - 15.59
+condition: "> 10"

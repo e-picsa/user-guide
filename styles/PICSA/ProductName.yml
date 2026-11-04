@@ -1,0 +1,10 @@
+# Product naming rule from AGENTS.md.
+extends: existence
+message: "Name the product 'E-PICSA Dashboard', not '%s'."
+level: error
+ignorecase: false
+nonword: true
+tokens:
+  - '(?<!E-)\bPICSA [Dd]ashboard\b'
+  - '\bPicSA [Dd]ashboard\b'
+  - '\b[Ee]-[Pp]ic[Ss][Aa]\b'
