@@ -282,6 +282,53 @@ async function runAction(page: Page, action: PageAction): Promise<void> {
   await sleep(1000);
 }
 
+/** A failed local Supabase edge-function call seen during the run. */
+interface FunctionFailure {
+  route: string;
+  url: string;
+  status: number | string;
+}
+
+/**
+ * Watch a page for Supabase edge-function failures. Pages like User
+ * Permissions render from local edge functions (e.g.
+ * `dashboard/admin/list-users`); when the functions server is not running
+ * Kong answers 503 ("Worker failed to boot") and captures come out empty.
+ * Recorded failures are thrown by `assertFunctionsHealthy` before any png
+ * is written, so a dead backend fails the run instead of the screenshots.
+ */
+function watchSupabaseFunctions(page: Page, failures: FunctionFailure[], current: { route: string }): void {
+  page.on('response', (res) => {
+    const url = res.url();
+    if (!url.includes('/functions/v1/')) return;
+    if (res.status() >= 500) failures.push({ route: current.route, url, status: res.status() });
+  });
+  page.on('requestfailed', (req) => {
+    const url = req.url();
+    if (!url.includes('/functions/v1/')) return;
+    failures.push({ route: current.route, url, status: req.failure()?.errorText ?? 'failed' });
+  });
+}
+
+/**
+ * Throw a remediation error if any edge-function call has failed so far.
+ * 503 means Kong is up but no function worker booted (`functions serve`
+ * missing); anything else (e.g. connection refused) means the backend
+ * itself is down (`supabase start` missing).
+ */
+function assertFunctionsHealthy(failures: FunctionFailure[]): void {
+  if (!failures.length) return;
+  const seen = [...new Map(failures.map((f) => [`${f.status} ${f.url}`, f])).values()];
+  const lines = seen.map((f) => `  - ${f.status} ${f.url} (while capturing ${f.route})`).join('\n');
+  const backendDown = seen.some((f) => typeof f.status === 'string');
+  throw new Error(
+    `Local Supabase edge functions are not serving, captures would show empty/error states:\n${lines}\n` +
+      (backendDown
+        ? 'Is the backend running? From ../picsa-apps: `yarn start:server`, then `yarn start:server:functions`, alongside `yarn start:dashboard` (:3000).'
+        : 'Kong is up but no function worker booted. From ../picsa-apps run `yarn start:server:functions`, alongside `yarn start:dashboard` (:3000).'),
+  );
+}
+
 export async function login(page: Page, baseUrl: string, email: string, password: string): Promise<void> {
   await page.goto(`${baseUrl}/`, { waitUntil: 'networkidle0', timeout: 60_000 });
   await sleep(2500);
@@ -333,7 +380,10 @@ async function main(): Promise<void> {
   const allPages = pagesFor(config.deploymentId);
   const pages = only.length ? allPages.filter((p) => only.some((f) => p.route.includes(f))) : allPages;
   const outRoot = join(config.outDir, config.identifier);
-  const prev = force ? null : loadPrevManifest(outRoot);
+  // Always load the previous manifest as the merge base: `force` only disables
+  // capture reuse below, it must not discard other pages' history on a
+  // SHOTS_ONLY subset run (a truncated manifest would drop their entries).
+  const prev = loadPrevManifest(outRoot);
   const prevByRoute = new Map((prev?.results ?? []).map((r) => [r.route, r]));
   const results: Result[] = [];
   const landingRoute = '(logged-out) home';
@@ -407,9 +457,15 @@ async function main(): Promise<void> {
     args: ['--no-sandbox', '--disable-dev-shm-usage', '--window-size=1280,720'],
   });
   try {
+    // Failures of local Supabase edge functions (503s / refused connections
+    // to /functions/v1/*) mean captures would show empty states — abort
+    // before writing anything (see assertFunctionsHealthy).
+    const functionFailures: FunctionFailure[] = [];
+    const currentRoute = { route: landingRoute };
     // Logged-out landing state (fresh context, no auth)
     const landingCtx = await browser.createBrowserContext();
     const landingPage = await landingCtx.newPage();
+    watchSupabaseFunctions(landingPage, functionFailures, currentRoute);
     await landingPage.setViewport({ ...config.viewport, deviceScaleFactor: 1 });
     const landingFile = join(outRoot, 'landing.png');
     const landingHash = entryHash({ route: landingRoute });
@@ -441,9 +497,11 @@ async function main(): Promise<void> {
     await landingCtx.close();
 
     const page = await browser.newPage();
+    watchSupabaseFunctions(page, functionFailures, currentRoute);
     await page.setViewport({ ...config.viewport, deviceScaleFactor: 1 });
     await login(page, config.baseUrl, config.email, config.password);
     const hasDeployment = await selectDeployment(page, config.deploymentLabel, config.deploymentId);
+    assertFunctionsHealthy(functionFailures);
     if (!hasDeployment) {
       // No membership for this deployment: capture the request-access state and skip the rest.
       // Grant access (as admin via /deployment/permissions, or join a public deployment) then re-run.
@@ -466,6 +524,8 @@ async function main(): Promise<void> {
           continue;
         }
         const href = entry.href ?? entry.route;
+        // Attribute any edge-function failures to this route from here on.
+        currentRoute.route = entry.route;
         try {
           await clientNavigate(page, href);
           await settle(page);
@@ -481,6 +541,8 @@ async function main(): Promise<void> {
           }
           for (const action of entry.actions ?? []) await runAction(page, action);
           await settle(page);
+          // Fail before capturing an empty state.
+          assertFunctionsHealthy(functionFailures);
           await hideChrome(page, config.hideChrome);
           const scrolled = await applyScroll(page, entry, config.scroll);
           const { wrote, ratio } = await capture(page, file, config.diffThreshold);
@@ -508,6 +570,9 @@ async function main(): Promise<void> {
             });
           }
         } catch (e) {
+          // A dead functions backend fails every page — abort the run rather
+          // than capturing 30 empty states (also skips the manifest write).
+          if (e instanceof Error && e.message.startsWith('Local Supabase edge functions')) throw e;
           results.push({ route: entry.route, file, status: 'failed', detail: e instanceof Error ? e.message : String(e) });
         }
       }
