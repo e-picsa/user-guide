@@ -9,10 +9,9 @@ description: Quality-check station data and compare it with the data bundled in 
   name="climate/admin.png"
   alt="Climate Data Admin with data system table"
   markers={[
-    { x: 80, y: 16, label: 'Download All — export every station summary as a zip of CSVs' },
-    { x: 93, y: 16, label: 'Refresh All — re-fetch all stations from the climate API' },
-    { x: 80, y: 46, label: 'Per-station products — ticks show which of the four summaries exist; click to refresh one station' },
-    { x: 64, y: 46, label: 'Rainfall issues flag stations with very short or patchy records' },
+    { x: 92, y: 24, label: 'Refresh All — re-fetch all stations from the climate API' },
+    { x: 77, y: 46, label: 'Per-station products — ticks show which of the four summaries exist; click to refresh one station' },
+    { x: 68, y: 46, label: 'Rainfall issues flag stations with very short or patchy records' },
   ]}
   caption="Climate Data Admin, Data System tab (Zambia)"
 />
@@ -20,7 +19,7 @@ description: Quality-check station data and compare it with the data bundled in 
 ## The three tabs
 
 1. **Data System** — every station with its data products (annual rainfall, crop probabilities, annual and monthly temperatures), rainfall issue flags (for example very short records) and per-row download. `Refresh All` re-fetches everything with a progress counter.
-2. **App Data** — what is currently bundled with the field app (`Bundled`/`Missing` per station, year ranges, available products). This is what farmers actually see.
+2. **App Data** — what is currently bundled with the field app (`Bundled`/`Missing` per station, year ranges, available products). `Download All App CSVs` exports every bundled summary as a zip of CSVs. This is what farmers actually see.
 3. **Data Comparison (Diff)** — compares the two: totals in sync vs divergent, stations only on one side, added/missing years and value differences. Open a row's preview to see exactly what changed before releasing a new app bundle.
 
 ## Typical workflow

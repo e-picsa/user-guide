@@ -10,23 +10,18 @@ description: Find untranslated strings for your language and translate them.
   alt="Translations list with locale filter and table"
   markers={[
     { x: 30, y: 8, label: 'Language picker — the language you are translating into (e.g. Nyanja)' },
-    { x: 90, y: 17, label: 'Show All toggle — untick to hide already-translated rows' },
-    { x: 28, y: 25, label: 'Search — find specific source text' },
+    { x: 48, y: 18, label: 'Filter chips — Total, Translated or Needs Translation; pick one to narrow the table' },
+    { x: 60, y: 29, label: 'Search — find specific source text' },
     { x: 50, y: 40, label: 'Translation table — tool, context, English source and your translation; click a row to edit' },
   ]}
   caption="Translations list for Nyanja (Zambia)"
 />
 
-<Callout type="info">
-  **Export JSON** sits below the table — scroll down to download the current
-  translations for the app bundle.
-</Callout>
-
 ## Workflow
 
 1. Select the **locale** — the list refreshes automatically.
-2. Work through rows with an empty translation cell. The **Tool** and **Context** columns tell you where the string appears.
-3. Click a row to open the editor dialog (`translations/edit/:id`), enter the translation and save.
-4. Untick **Show All** when you want to focus only on rows still missing a translation.
+2. Work through rows with an empty translation cell. The **Tool** and **Context** columns tell you where the string appears; the funnel filter in the **Tool** header narrows the table to one tool.
+3. Click a row to open the editor dialog (`translations/edit/:id`, requires `translations.editor`), enter the translation and save.
+4. Pick the **Needs Translation** chip when you want to focus only on rows still missing a translation.
 
 A progress indicator tracks how much of the locale is complete.
