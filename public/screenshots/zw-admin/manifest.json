@@ -1,16 +1,15 @@
 {
   "identifier": "zw-admin",
   "dashboardVersion": "5.20.0",
-  "generatedAt": "2026-11-05T00:14:53.405Z",
+  "generatedAt": "2026-11-05T03:15:40.503Z",
   "results": [
     {
       "route": "(logged-out) home",
       "file": "public/screenshots/zw-admin/landing.png",
-      "status": "unchanged",
-      "detail": "matches previous (0.00% changed)",
+      "status": "captured",
       "version": "5.20.0",
       "hash": "f6e3eebd",
-      "capturedAt": "2026-11-04T21:35:09.365Z"
+      "capturedAt": "2026-11-05T03:15:25.133Z"
     },
     {
       "route": "translations/import",
@@ -240,11 +239,11 @@
     {
       "route": "deployment/permissions",
       "file": "public/screenshots/zw-admin/deployment/permissions.png",
-      "status": "unchanged",
-      "detail": "matches previous (0.00% changed), scrollTop=0",
+      "status": "captured",
+      "detail": "scrollTop=0",
       "version": "5.20.0",
-      "hash": "fe862ae5",
-      "capturedAt": "2026-11-04T23:59:41.411Z"
+      "hash": "7d0924ea",
+      "capturedAt": "2026-11-05T03:15:40.385Z"
     },
     {
       "route": "map-admin",

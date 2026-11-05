@@ -1,13 +1,13 @@
 {
   "identifier": "zm-admin",
   "dashboardVersion": "5.20.0",
-  "generatedAt": "2026-11-05T00:14:22.487Z",
+  "generatedAt": "2026-11-05T03:14:51.208Z",
   "results": [
     {
       "route": "(logged-out) home",
       "file": "public/screenshots/zm-admin/landing.png",
       "status": "unchanged",
-      "detail": "matches previous (0.68% changed)",
+      "detail": "matches previous (0.00% changed)",
       "version": "5.20.0",
       "hash": "f6e3eebd",
       "capturedAt": "2026-11-04T21:34:14.877Z"
@@ -240,11 +240,11 @@
     {
       "route": "deployment/permissions",
       "file": "public/screenshots/zm-admin/deployment/permissions.png",
-      "status": "unchanged",
-      "detail": "matches previous (0.00% changed), scrollTop=0",
+      "status": "captured",
+      "detail": "scrollTop=0, 1.56% changed",
       "version": "5.20.0",
-      "hash": "fe862ae5",
-      "capturedAt": "2026-11-04T23:53:51.235Z"
+      "hash": "7d0924ea",
+      "capturedAt": "2026-11-05T03:14:51.096Z"
     },
     {
       "route": "map-admin",
