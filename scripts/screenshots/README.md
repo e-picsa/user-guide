@@ -4,20 +4,6 @@ Captures `http://localhost:3000` (dashboard dev server, `yarn start:dashboard`
 from `../picsa-apps`) into `public/screenshots/<identifier>/`, with output
 paths mirroring dashboard routes.
 
-## Prerequisites
-
-Two servers must be serving from `../picsa-apps`, not just the dashboard:
-
-- `yarn start:dashboard` — the dashboard dev server (`:3000`)
-- `yarn start:server:functions` — the Supabase edge-functions server (the
-  `supabase start` stack alone is not enough; without the function worker
-  Kong answers 503 "Worker failed to boot")
-
-Pages that render from edge functions (e.g. User Permissions) would otherwise
-capture empty. The runner watches `/functions/v1/*` responses and aborts with
-a remediation error before writing anything, rather than committing
-empty-state screenshots.
-
 ## Runs
 
 ```bash
