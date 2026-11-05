@@ -1,10 +1,10 @@
 {
   "route": "(logged-out) home",
-  "url": "http://localhost:4200/home",
+  "url": "http://localhost:3000/home",
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
-  "dashboardVersion": "5.16.0",
-  "capturedAt": "2026-09-25T01:16:22.078Z",
+  "dashboardVersion": "5.20.0",
+  "capturedAt": "2026-11-04T21:34:14.877Z",
   "viewport": {
     "width": 1280,
     "height": 720

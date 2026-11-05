@@ -1,10 +1,10 @@
 {
   "route": "privacy-policy",
-  "url": "http://localhost:4200/privacy-policy",
+  "url": "http://localhost:3000/privacy-policy",
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
-  "dashboardVersion": "5.16.0",
-  "capturedAt": "2026-10-08T21:53:08.309Z",
+  "dashboardVersion": "5.20.0",
+  "capturedAt": "2026-11-05T00:00:48.352Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -40,7 +40,7 @@
       "text": "2. Information We Collect",
       "bbox": {
         "x": 224,
-        "y": 255,
+        "y": 256,
         "width": 832,
         "height": 28
       }
@@ -51,7 +51,7 @@
       "text": "3. How We Use Your Information",
       "bbox": {
         "x": 224,
-        "y": 591,
+        "y": 596,
         "width": 832,
         "height": 28
       }
@@ -62,7 +62,7 @@
       "text": "4. Data Storage and Security",
       "bbox": {
         "x": 224,
-        "y": 817,
+        "y": 824,
         "width": 832,
         "height": 28
       }
@@ -73,7 +73,7 @@
       "text": "5. Your Rights (GDPR)",
       "bbox": {
         "x": 224,
-        "y": 1048.5,
+        "y": 1058,
         "width": 832,
         "height": 28
       }
@@ -84,7 +84,7 @@
       "text": "6. Contact Us",
       "bbox": {
         "x": 224,
-        "y": 1341.5,
+        "y": 1354,
         "width": 832,
         "height": 28
       }
@@ -97,9 +97,9 @@
       "text": "Supabase Security Documentation",
       "bbox": {
         "x": 625.7,
-        "y": 963,
+        "y": 972,
         "width": 258.4,
-        "height": 21.5
+        "height": 22
       },
       "href": "https://supabase.com/security"
     },
@@ -109,9 +109,9 @@
       "text": "support@picsa.app",
       "bbox": {
         "x": 335.1,
-        "y": 1407,
+        "y": 1420,
         "width": 144.9,
-        "height": 21.5
+        "height": 22
       },
       "href": "mailto:support@picsa.app"
     }
