@@ -1,10 +1,10 @@
 {
   "route": "translations/import",
-  "url": "http://localhost:4200/translations/import",
+  "url": "http://localhost:3000/translations/import",
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
-  "dashboardVersion": "5.16.0",
-  "capturedAt": "2026-10-08T21:30:44.463Z",
+  "dashboardVersion": "5.20.0",
+  "capturedAt": "2026-11-04T21:35:24.633Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -301,20 +301,9 @@
       "text": "Drop here or browse Accepts XLSX Translations list",
       "bbox": {
         "x": 220,
-        "y": 181.5,
+        "y": 182,
         "width": 1044,
-        "height": 299.6
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "Download Template",
-      "bbox": {
-        "x": 220,
-        "y": 513.1,
-        "width": 186.6,
-        "height": 36
+        "height": 299.5
       }
     }
   ],

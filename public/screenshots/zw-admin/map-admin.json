@@ -1,10 +1,10 @@
 {
   "route": "map-admin",
-  "url": "http://localhost:4200/map-admin",
+  "url": "http://localhost:3000/map-admin",
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
-  "dashboardVersion": "5.16.0",
-  "capturedAt": "2026-10-08T21:33:02.826Z",
+  "dashboardVersion": "5.20.0",
+  "capturedAt": "2026-11-05T00:00:14.903Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -18,7 +18,7 @@
       "text": "Admin Level 2",
       "bbox": {
         "x": 236,
-        "y": 42,
+        "y": 178,
         "width": 122.5,
         "height": 28
       }
@@ -29,7 +29,7 @@
       "text": "Admin Level 3",
       "bbox": {
         "x": 534,
-        "y": 42,
+        "y": 178,
         "width": 122.5,
         "height": 28
       }
@@ -40,7 +40,7 @@
       "text": "Admin Level 4",
       "bbox": {
         "x": 832,
-        "y": 42,
+        "y": 178,
         "width": 122.5,
         "height": 28
       }
@@ -51,7 +51,18 @@
       "text": "Admin Level 5",
       "bbox": {
         "x": 236,
-        "y": 218,
+        "y": 354,
+        "width": 122.5,
+        "height": 28
+      }
+    },
+    {
+      "tag": "h3",
+      "kind": "heading",
+      "text": "Admin Level 6",
+      "bbox": {
+        "x": 534,
+        "y": 354,
         "width": 122.5,
         "height": 28
       }
@@ -307,12 +318,24 @@
       "href": "/map-admin"
     },
     {
+      "tag": "a",
+      "kind": "link",
+      "text": "Export tiles and TopoJSON at geo-data.picsa.app",
+      "bbox": {
+        "x": 268,
+        "y": 100,
+        "width": 1012,
+        "height": 20
+      },
+      "href": "https://geo-data.picsa.app/"
+    },
+    {
       "tag": "button",
       "kind": "button",
       "text": "View",
       "bbox": {
         "x": 236,
-        "y": 124,
+        "y": 260,
         "width": 96.4,
         "height": 36
       }
@@ -323,7 +346,7 @@
       "text": "Generate",
       "bbox": {
         "x": 340.4,
-        "y": 124,
+        "y": 260,
         "width": 145.6,
         "height": 36
       }
@@ -334,7 +357,7 @@
       "text": "View",
       "bbox": {
         "x": 534,
-        "y": 124,
+        "y": 260,
         "width": 96.4,
         "height": 36
       }
@@ -345,7 +368,7 @@
       "text": "Generate",
       "bbox": {
         "x": 638.4,
-        "y": 124,
+        "y": 260,
         "width": 145.6,
         "height": 36
       }
@@ -356,7 +379,7 @@
       "text": "View",
       "bbox": {
         "x": 832,
-        "y": 124,
+        "y": 260,
         "width": 96.4,
         "height": 36
       }
@@ -367,7 +390,7 @@
       "text": "Generate",
       "bbox": {
         "x": 936.4,
-        "y": 124,
+        "y": 260,
         "width": 145.6,
         "height": 36
       }
@@ -378,7 +401,7 @@
       "text": "View",
       "bbox": {
         "x": 236,
-        "y": 300,
+        "y": 436,
         "width": 96.4,
         "height": 36
       }
@@ -389,46 +412,32 @@
       "text": "Generate",
       "bbox": {
         "x": 340.4,
-        "y": 300,
+        "y": 436,
         "width": 145.6,
         "height": 36
       }
     },
     {
-      "tag": "a",
-      "kind": "link",
-      "text": "Zoom in",
+      "tag": "button",
+      "kind": "button",
+      "text": "View",
       "bbox": {
-        "x": 232,
-        "y": 380,
-        "width": 30,
-        "height": 31
-      },
-      "href": "#"
+        "x": 534,
+        "y": 436,
+        "width": 96.4,
+        "height": 36
+      }
     },
     {
-      "tag": "a",
-      "kind": "link",
-      "text": "Zoom out",
+      "tag": "button",
+      "kind": "button",
+      "text": "Generate",
       "bbox": {
-        "x": 232,
-        "y": 411,
-        "width": 30,
-        "height": 30
-      },
-      "href": "#"
-    },
-    {
-      "tag": "a",
-      "kind": "link",
-      "text": "Leaflet",
-      "bbox": {
-        "x": 1063.8,
-        "y": 884.2,
-        "width": 51.3,
-        "height": 14
-      },
-      "href": "https://leafletjs.com"
+        "x": 638.4,
+        "y": 436,
+        "width": 145.6,
+        "height": 36
+      }
     }
   ],
   "tables": [],

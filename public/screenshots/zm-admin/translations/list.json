@@ -1,10 +1,10 @@
 {
   "route": "translations/list",
-  "url": "http://localhost:4200/translations/list",
+  "url": "http://localhost:3000/translations/list",
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
-  "dashboardVersion": "5.14.0",
-  "capturedAt": "2026-09-25T01:18:11.530Z",
+  "dashboardVersion": "5.20.0",
+  "capturedAt": "2026-11-04T23:52:06.212Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -16,7 +16,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "homeHome",
+      "text": "Home",
       "bbox": {
         "x": 0,
         "y": 72,
@@ -28,7 +28,7 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "filter_dramaClimate",
+      "text": "Climate",
       "bbox": {
         "x": 0,
         "y": 120,
@@ -75,7 +75,7 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "spaCrop",
+      "text": "Crop",
       "bbox": {
         "x": 0,
         "y": 168,
@@ -122,7 +122,7 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "translateTranslations",
+      "text": "Translations",
       "bbox": {
         "x": 0,
         "y": 216,
@@ -157,7 +157,7 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "library_booksResources",
+      "text": "Resources",
       "bbox": {
         "x": 0,
         "y": 376,
@@ -216,7 +216,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "query_statsStatistics",
+      "text": "Statistics",
       "bbox": {
         "x": 0,
         "y": 519,
@@ -228,7 +228,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "appsDeployments",
+      "text": "Deployments",
       "bbox": {
         "x": 0,
         "y": 567,
@@ -240,7 +240,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "manage_accountsUser Permissions",
+      "text": "User Permissions",
       "bbox": {
         "x": 0,
         "y": 615,
@@ -252,7 +252,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "mapMap Boundaries",
+      "text": "Map Boundaries",
       "bbox": {
         "x": 0,
         "y": 663,
@@ -262,16 +262,48 @@
       "href": "/map-admin"
     },
     {
-      "tag": "input",
-      "kind": "input",
-      "text": "checkbox",
+      "tag": "button",
+      "kind": "button",
+      "text": "Download Template",
       "bbox": {
-        "x": 1162.7,
-        "y": 107.5,
-        "width": 40,
-        "height": 40
-      },
-      "label": "input:checkbox"
+        "x": 452,
+        "y": 44,
+        "width": 186.6,
+        "height": 36
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Total: 597",
+      "bbox": {
+        "x": 220,
+        "y": 112,
+        "width": 117.7,
+        "height": 32
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Translated: 550",
+      "bbox": {
+        "x": 345.7,
+        "y": 112,
+        "width": 156,
+        "height": 32
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Needs Translation: 47",
+      "bbox": {
+        "x": 509.7,
+        "y": 112,
+        "width": 199.1,
+        "height": 32
+      }
     },
     {
       "tag": "input",
@@ -279,7 +311,7 @@
       "text": "input",
       "bbox": {
         "x": 276,
-        "y": 171.5,
+        "y": 188,
         "width": 972,
         "height": 41
       },
@@ -291,9 +323,20 @@
       "text": "Tool",
       "bbox": {
         "x": 236,
-        "y": 258.5,
-        "width": 126.4,
-        "height": 22
+        "y": 274.5,
+        "width": 72.7,
+        "height": 24
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Filter by Tool",
+      "bbox": {
+        "x": 266.7,
+        "y": 274.5,
+        "width": 24,
+        "height": 24
       }
     },
     {
@@ -301,9 +344,9 @@
       "kind": "button",
       "text": "Context",
       "bbox": {
-        "x": 394.4,
-        "y": 258.5,
-        "width": 173.6,
+        "x": 340.7,
+        "y": 275.5,
+        "width": 73,
         "height": 22
       }
     },
@@ -312,9 +355,9 @@
       "kind": "button",
       "text": "English",
       "bbox": {
-        "x": 600,
-        "y": 258.5,
-        "width": 209.3,
+        "x": 445.8,
+        "y": 275.5,
+        "width": 302.9,
         "height": 22
       }
     },
@@ -323,9 +366,9 @@
       "kind": "button",
       "text": "Nyanja",
       "bbox": {
-        "x": 841.4,
-        "y": 258.5,
-        "width": 163.2,
+        "x": 780.7,
+        "y": 275.5,
+        "width": 357,
         "height": 22
       }
     },
@@ -334,10 +377,10 @@
       "kind": "button",
       "text": "Created At",
       "bbox": {
-        "x": 1036.6,
-        "y": 258.5,
-        "width": 211.4,
-        "height": 22
+        "x": 1169.7,
+        "y": 264.5,
+        "width": 78.3,
+        "height": 44
       }
     },
     {
@@ -346,7 +389,7 @@
       "text": "Previous page",
       "bbox": {
         "x": 1160,
-        "y": 822,
+        "y": 867,
         "width": 48,
         "height": 48
       }
@@ -357,20 +400,9 @@
       "text": "Next page",
       "bbox": {
         "x": 1208,
-        "y": 822,
+        "y": 867,
         "width": 48,
         "height": 48
-      }
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "Export JSON",
-      "bbox": {
-        "x": 220,
-        "y": 906,
-        "width": 200,
-        "height": 36
       }
     }
   ],
@@ -387,23 +419,23 @@
         [
           "budget",
           "",
-          "Create New",
-          "",
-          "Sep 22, 2026"
+          "Activities",
+          "Zinchito",
+          "Nov 4, 2026"
         ],
         [
           "budget",
           "",
-          "Import Code",
-          "",
-          "Sep 22, 2026"
+          "Add Card",
+          "Onjezani Khadi",
+          "Nov 4, 2026"
         ],
         [
           "budget",
           "",
-          "Length",
-          "",
-          "Sep 22, 2026"
+          "Add Female Member",
+          "Ikamponi membala wam'kazi",
+          "Nov 4, 2026"
         ]
       ],
       "rowCount": 10
@@ -411,7 +443,7 @@
   ],
   "nav": [
     {
-      "label": "homeHome",
+      "label": "Home",
       "href": "/home"
     },
     {
@@ -463,19 +495,19 @@
       "href": "/resources/farmer-videos"
     },
     {
-      "label": "query_statsStatistics",
+      "label": "Statistics",
       "href": "/stats"
     },
     {
-      "label": "appsDeployments",
+      "label": "Deployments",
       "href": "/deployment"
     },
     {
-      "label": "manage_accountsUser Permissions",
+      "label": "User Permissions",
       "href": "/deployment/permissions"
     },
     {
-      "label": "mapMap Boundaries",
+      "label": "Map Boundaries",
       "href": "/map-admin"
     }
   ],

@@ -1,10 +1,10 @@
 {
   "route": "home",
-  "url": "http://localhost:4200/home",
+  "url": "http://localhost:3000/home",
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
-  "dashboardVersion": "5.14.0",
-  "capturedAt": "2026-09-25T01:16:37.265Z",
+  "dashboardVersion": "5.20.0",
+  "capturedAt": "2026-11-04T23:50:25.403Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -29,7 +29,7 @@
       "text": "PICSA Dashboard",
       "bbox": {
         "x": 204,
-        "y": 246.5,
+        "y": 247,
         "width": 1076,
         "height": 32
       }
@@ -39,7 +39,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "homeHome",
+      "text": "Home",
       "bbox": {
         "x": 0,
         "y": 72,
@@ -51,7 +51,7 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "filter_dramaClimate",
+      "text": "Climate",
       "bbox": {
         "x": 0,
         "y": 120,
@@ -98,7 +98,7 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "spaCrop",
+      "text": "Crop",
       "bbox": {
         "x": 0,
         "y": 168,
@@ -145,7 +145,7 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "translateTranslations",
+      "text": "Translations",
       "bbox": {
         "x": 0,
         "y": 216,
@@ -180,7 +180,7 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "library_booksResources",
+      "text": "Resources",
       "bbox": {
         "x": 0,
         "y": 264,
@@ -239,7 +239,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "query_statsStatistics",
+      "text": "Statistics",
       "bbox": {
         "x": 0,
         "y": 519,
@@ -251,7 +251,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "appsDeployments",
+      "text": "Deployments",
       "bbox": {
         "x": 0,
         "y": 567,
@@ -263,7 +263,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "manage_accountsUser Permissions",
+      "text": "User Permissions",
       "bbox": {
         "x": 0,
         "y": 615,
@@ -275,7 +275,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "mapMap Boundaries",
+      "text": "Map Boundaries",
       "bbox": {
         "x": 0,
         "y": 663,
@@ -288,7 +288,7 @@
   "tables": [],
   "nav": [
     {
-      "label": "homeHome",
+      "label": "Home",
       "href": "/home"
     },
     {
@@ -340,19 +340,19 @@
       "href": "/resources/farmer-videos"
     },
     {
-      "label": "query_statsStatistics",
+      "label": "Statistics",
       "href": "/stats"
     },
     {
-      "label": "appsDeployments",
+      "label": "Deployments",
       "href": "/deployment"
     },
     {
-      "label": "manage_accountsUser Permissions",
+      "label": "User Permissions",
       "href": "/deployment/permissions"
     },
     {
-      "label": "mapMap Boundaries",
+      "label": "Map Boundaries",
       "href": "/map-admin"
     }
   ],

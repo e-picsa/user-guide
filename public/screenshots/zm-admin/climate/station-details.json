@@ -1,10 +1,10 @@
 {
   "route": "climate/station/chipata_met",
-  "url": "http://localhost:4200/climate/station/chipata_met",
+  "url": "http://localhost:3000/climate/station/chipata_met",
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
-  "dashboardVersion": "5.16.0",
-  "capturedAt": "2026-09-25T04:31:06.637Z",
+  "dashboardVersion": "5.20.0",
+  "capturedAt": "2026-11-04T23:50:41.871Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -31,7 +31,7 @@
       "text": "Home",
       "bbox": {
         "x": 0,
-        "y": 72,
+        "y": 10,
         "width": 203,
         "height": 48
       },
@@ -43,7 +43,7 @@
       "text": "Climate",
       "bbox": {
         "x": 0,
-        "y": 120,
+        "y": 58,
         "width": 203,
         "height": 64
       }
@@ -54,7 +54,7 @@
       "text": "Station Data",
       "bbox": {
         "x": 0,
-        "y": 184,
+        "y": 122,
         "width": 203,
         "height": 48
       },
@@ -66,7 +66,7 @@
       "text": "Forecasts",
       "bbox": {
         "x": 0,
-        "y": 232,
+        "y": 170,
         "width": 203,
         "height": 48
       },
@@ -78,7 +78,7 @@
       "text": "Admin",
       "bbox": {
         "x": 0,
-        "y": 280,
+        "y": 218,
         "width": 203,
         "height": 48
       },
@@ -90,7 +90,7 @@
       "text": "Crop",
       "bbox": {
         "x": 0,
-        "y": 328,
+        "y": 266,
         "width": 203,
         "height": 48
       }
@@ -101,7 +101,7 @@
       "text": "Variety",
       "bbox": {
         "x": 0,
-        "y": 376,
+        "y": 314,
         "width": 203,
         "height": 48
       },
@@ -113,7 +113,7 @@
       "text": "Probability",
       "bbox": {
         "x": 0,
-        "y": 424,
+        "y": 362,
         "width": 203,
         "height": 48
       },
@@ -125,7 +125,7 @@
       "text": "Admin",
       "bbox": {
         "x": 0,
-        "y": 472,
+        "y": 410,
         "width": 203,
         "height": 48
       },
@@ -137,7 +137,7 @@
       "text": "Translations",
       "bbox": {
         "x": 0,
-        "y": 376,
+        "y": 314,
         "width": 203,
         "height": 48
       }
@@ -148,7 +148,7 @@
       "text": "List",
       "bbox": {
         "x": 0,
-        "y": 424,
+        "y": 362,
         "width": 203,
         "height": 48
       },
@@ -160,7 +160,7 @@
       "text": "Import",
       "bbox": {
         "x": 0,
-        "y": 472,
+        "y": 410,
         "width": 203,
         "height": 48
       },
@@ -172,7 +172,7 @@
       "text": "Resources",
       "bbox": {
         "x": 0,
-        "y": 424,
+        "y": 362,
         "width": 203,
         "height": 48
       }
@@ -183,7 +183,7 @@
       "text": "Files",
       "bbox": {
         "x": 0,
-        "y": 472,
+        "y": 410,
         "width": 203,
         "height": 48
       },
@@ -195,7 +195,7 @@
       "text": "Links",
       "bbox": {
         "x": 0,
-        "y": 520,
+        "y": 458,
         "width": 203,
         "height": 48
       },
@@ -207,7 +207,7 @@
       "text": "Collections",
       "bbox": {
         "x": 0,
-        "y": 568,
+        "y": 506,
         "width": 203,
         "height": 48
       },
@@ -219,7 +219,7 @@
       "text": "Farmer Videos",
       "bbox": {
         "x": 0,
-        "y": 616,
+        "y": 554,
         "width": 203,
         "height": 48
       },

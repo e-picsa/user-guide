@@ -1,10 +1,10 @@
 {
   "route": "crop/probability",
-  "url": "http://localhost:4200/crop/probability",
+  "url": "http://localhost:3000/crop/probability",
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
-  "dashboardVersion": "5.16.0",
-  "capturedAt": "2026-09-25T01:17:17.877Z",
+  "dashboardVersion": "5.20.0",
+  "capturedAt": "2026-11-04T23:51:09.167Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -340,25 +340,25 @@
       ],
       "rows": [
         [
-          "Luapula",
-          "Chifunabuli",
-          "SAMFYA MET",
-          "0",
-          "0"
-        ],
-        [
-          "Southern",
-          "Chikankata",
-          "CHIPEPO MET",
-          "0",
-          "0"
-        ],
-        [
           "Eastern",
           "Chadiza",
           "CHIPATA MET",
           "7",
           "42"
+        ],
+        [
+          "Eastern",
+          "Chama",
+          "ISOKA MET",
+          "5",
+          "40"
+        ],
+        [
+          "Eastern",
+          "Chasefu",
+          "LUNDAZI MET",
+          "6",
+          "21"
         ]
       ],
       "rowCount": 116

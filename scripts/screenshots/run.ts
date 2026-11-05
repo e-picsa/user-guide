@@ -333,7 +333,10 @@ async function main(): Promise<void> {
   const allPages = pagesFor(config.deploymentId);
   const pages = only.length ? allPages.filter((p) => only.some((f) => p.route.includes(f))) : allPages;
   const outRoot = join(config.outDir, config.identifier);
-  const prev = force ? null : loadPrevManifest(outRoot);
+  // Always load the previous manifest as the merge base: `force` only disables
+  // capture reuse below, it must not discard other pages' history on a
+  // SHOTS_ONLY subset run (a truncated manifest would drop their entries).
+  const prev = loadPrevManifest(outRoot);
   const prevByRoute = new Map((prev?.results ?? []).map((r) => [r.route, r]));
   const results: Result[] = [];
   const landingRoute = '(logged-out) home';
