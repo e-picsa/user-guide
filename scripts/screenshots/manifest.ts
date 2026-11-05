@@ -141,8 +141,7 @@ export function pagesFor(deploymentId: string): PageEntry[] {
     p('profile'),
     p('stats'),
     p('deployment'),
-    // User rows load async after navigation — give them a moment before capture.
-    p('deployment/permissions', [{ wait: 2500 }]),
+    p('deployment/permissions'),
     p('map-admin'),
     p('privacy-policy'),
     p('terms-of-service'),
