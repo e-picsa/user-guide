@@ -4,12 +4,12 @@
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
   "dashboardVersion": "5.20.0",
-  "capturedAt": "2026-11-04T20:54:11.145Z",
+  "capturedAt": "2026-11-04T23:57:25.009Z",
   "viewport": {
     "width": 1280,
     "height": 720
   },
-  "scrollTop": 65,
+  "scrollTop": 66,
   "space": "viewport-relative CSS px at capture viewport (1:1 with png at deviceScaleFactor 1)",
   "headings": [
     {
@@ -18,7 +18,7 @@
       "text": "Create Resource",
       "bbox": {
         "x": 220,
-        "y": -33,
+        "y": -34,
         "width": 1044,
         "height": 32
       }
@@ -290,7 +290,7 @@
       "text": "Select existing file",
       "bbox": {
         "x": 220,
-        "y": 216.5,
+        "y": 216,
         "width": 193.2,
         "height": 36
       }
@@ -312,7 +312,7 @@
       "text": "Select existing file",
       "bbox": {
         "x": 536,
-        "y": 216.5,
+        "y": 216,
         "width": 193.2,
         "height": 36
       }
@@ -323,7 +323,7 @@
       "text": "input",
       "bbox": {
         "x": 240,
-        "y": 308.5,
+        "y": 308,
         "width": 564,
         "height": 41
       },
@@ -335,7 +335,7 @@
       "text": "Save Resource",
       "bbox": {
         "x": 220,
-        "y": 668,
+        "y": 669,
         "width": 172.5,
         "height": 36
       }

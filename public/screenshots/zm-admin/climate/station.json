@@ -4,7 +4,7 @@
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
   "dashboardVersion": "5.20.0",
-  "capturedAt": "2026-11-04T20:47:38.910Z",
+  "capturedAt": "2026-11-04T23:50:30.835Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -279,7 +279,7 @@
       "text": "Map",
       "bbox": {
         "x": 236,
-        "y": 127,
+        "y": 127.5,
         "width": 62.7,
         "height": 22
       }
@@ -290,7 +290,7 @@
       "text": "District",
       "bbox": {
         "x": 330.7,
-        "y": 127,
+        "y": 127.5,
         "width": 118.1,
         "height": 22
       }
@@ -301,7 +301,7 @@
       "text": "Station Name",
       "bbox": {
         "x": 480.8,
-        "y": 127,
+        "y": 127.5,
         "width": 237.2,
         "height": 22
       }

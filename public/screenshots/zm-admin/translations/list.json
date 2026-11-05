@@ -4,7 +4,7 @@
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
   "dashboardVersion": "5.20.0",
-  "capturedAt": "2026-11-04T20:49:11.223Z",
+  "capturedAt": "2026-11-04T23:52:06.212Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -267,7 +267,7 @@
       "text": "Download Template",
       "bbox": {
         "x": 452,
-        "y": 43.8,
+        "y": 44,
         "width": 186.6,
         "height": 36
       }
@@ -278,7 +278,7 @@
       "text": "Total: 597",
       "bbox": {
         "x": 220,
-        "y": 111.5,
+        "y": 112,
         "width": 117.7,
         "height": 32
       }
@@ -289,7 +289,7 @@
       "text": "Translated: 550",
       "bbox": {
         "x": 345.7,
-        "y": 111.5,
+        "y": 112,
         "width": 156,
         "height": 32
       }
@@ -300,7 +300,7 @@
       "text": "Needs Translation: 47",
       "bbox": {
         "x": 509.7,
-        "y": 111.5,
+        "y": 112,
         "width": 199.1,
         "height": 32
       }
@@ -311,7 +311,7 @@
       "text": "input",
       "bbox": {
         "x": 276,
-        "y": 187.5,
+        "y": 188,
         "width": 972,
         "height": 41
       },
@@ -323,7 +323,7 @@
       "text": "Tool",
       "bbox": {
         "x": 236,
-        "y": 273.5,
+        "y": 274.5,
         "width": 72.7,
         "height": 24
       }
@@ -334,7 +334,7 @@
       "text": "Filter by Tool",
       "bbox": {
         "x": 266.7,
-        "y": 273.5,
+        "y": 274.5,
         "width": 24,
         "height": 24
       }
@@ -345,7 +345,7 @@
       "text": "Context",
       "bbox": {
         "x": 340.7,
-        "y": 274.5,
+        "y": 275.5,
         "width": 73,
         "height": 22
       }
@@ -356,7 +356,7 @@
       "text": "English",
       "bbox": {
         "x": 445.8,
-        "y": 274.5,
+        "y": 275.5,
         "width": 302.9,
         "height": 22
       }
@@ -367,7 +367,7 @@
       "text": "Nyanja",
       "bbox": {
         "x": 780.7,
-        "y": 274.5,
+        "y": 275.5,
         "width": 357,
         "height": 22
       }
@@ -378,7 +378,7 @@
       "text": "Created At",
       "bbox": {
         "x": 1169.7,
-        "y": 263.5,
+        "y": 264.5,
         "width": 78.3,
         "height": 44
       }
@@ -389,7 +389,7 @@
       "text": "Previous page",
       "bbox": {
         "x": 1160,
-        "y": 866,
+        "y": 867,
         "width": 48,
         "height": 48
       }
@@ -400,7 +400,7 @@
       "text": "Next page",
       "bbox": {
         "x": 1208,
-        "y": 866,
+        "y": 867,
         "width": 48,
         "height": 48
       }

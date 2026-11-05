@@ -4,7 +4,7 @@
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
   "dashboardVersion": "5.20.0",
-  "capturedAt": "2026-09-25T01:18:07.044Z",
+  "capturedAt": "2026-11-04T23:52:01.650Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -314,7 +314,7 @@
       "bbox": {
         "x": 637.3,
         "y": 282.6,
-        "width": 69.4,
+        "width": 69.5,
         "height": 34
       }
     },
@@ -325,7 +325,7 @@
       "bbox": {
         "x": 761.3,
         "y": 934.4,
-        "width": 69.4,
+        "width": 69.5,
         "height": 34
       }
     },
@@ -336,7 +336,7 @@
       "bbox": {
         "x": 761.3,
         "y": 997.6,
-        "width": 69.4,
+        "width": 69.5,
         "height": 34
       }
     }

@@ -4,7 +4,7 @@
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
   "dashboardVersion": "5.20.0",
-  "capturedAt": "2026-11-04T20:54:38.066Z",
+  "capturedAt": "2026-11-04T23:57:51.906Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -314,7 +314,7 @@
       "bbox": {
         "x": 673.3,
         "y": 282.6,
-        "width": 69.4,
+        "width": 69.5,
         "height": 34
       }
     }

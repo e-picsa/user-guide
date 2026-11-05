@@ -4,7 +4,7 @@
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
   "dashboardVersion": "5.20.0",
-  "capturedAt": "2026-11-04T20:53:30.618Z",
+  "capturedAt": "2026-11-04T23:56:41.374Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -324,7 +324,7 @@
       "bbox": {
         "x": 363.8,
         "y": 106,
-        "width": 108,
+        "width": 108.1,
         "height": 28
       }
     },
@@ -333,7 +333,7 @@
       "kind": "button",
       "text": "QC Failed: 1",
       "bbox": {
-        "x": 481.8,
+        "x": 481.9,
         "y": 106,
         "width": 94,
         "height": 28
@@ -368,7 +368,7 @@
       "text": "Station",
       "bbox": {
         "x": 244,
-        "y": 322.5,
+        "y": 323,
         "width": 99,
         "height": 22
       }
@@ -379,7 +379,7 @@
       "text": "QC Status",
       "bbox": {
         "x": 375,
-        "y": 311.5,
+        "y": 312,
         "width": 62.5,
         "height": 44
       }
@@ -390,7 +390,7 @@
       "text": "Years Range",
       "bbox": {
         "x": 469.5,
-        "y": 311.5,
+        "y": 312,
         "width": 69.9,
         "height": 44
       }
@@ -401,7 +401,7 @@
       "text": "Total Years",
       "bbox": {
         "x": 571.4,
-        "y": 311.5,
+        "y": 312,
         "width": 56.1,
         "height": 44
       }
@@ -412,7 +412,7 @@
       "text": "Past 30 Years",
       "bbox": {
         "x": 659.5,
-        "y": 300.5,
+        "y": 301,
         "width": 56.1,
         "height": 66
       }
@@ -423,7 +423,7 @@
       "text": "Past 10 Years",
       "bbox": {
         "x": 747.6,
-        "y": 300.5,
+        "y": 301,
         "width": 56.1,
         "height": 66
       }
@@ -433,8 +433,8 @@
       "kind": "button",
       "text": "Warnings",
       "bbox": {
-        "x": 835.6,
-        "y": 322.5,
+        "x": 835.7,
+        "y": 323,
         "width": 84.6,
         "height": 22
       }
@@ -445,8 +445,8 @@
       "text": "Products 🌧 🌡 🌾",
       "bbox": {
         "x": 952.2,
-        "y": 311.5,
-        "width": 79.8,
+        "y": 312,
+        "width": 86.6,
         "height": 44
       }
     },
@@ -455,8 +455,8 @@
       "kind": "button",
       "text": "Monthly 🌧 🌡",
       "bbox": {
-        "x": 1064,
-        "y": 311.5,
+        "x": 1070.8,
+        "y": 312,
         "width": 76.6,
         "height": 44
       }
@@ -466,8 +466,8 @@
       "kind": "button",
       "text": "Data Generated",
       "bbox": {
-        "x": 1172.6,
-        "y": 311.5,
+        "x": 1179.4,
+        "y": 312,
         "width": 91.6,
         "height": 44
       }

@@ -4,7 +4,7 @@
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
   "dashboardVersion": "5.20.0",
-  "capturedAt": "2026-10-08T21:29:46.531Z",
+  "capturedAt": "2026-11-04T23:56:59.401Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -279,7 +279,7 @@
       "text": "Province",
       "bbox": {
         "x": 236,
-        "y": 127,
+        "y": 127.5,
         "width": 205.6,
         "height": 22
       }
@@ -290,7 +290,7 @@
       "text": "Location",
       "bbox": {
         "x": 473.6,
-        "y": 127,
+        "y": 127.5,
         "width": 115.9,
         "height": 22
       }
@@ -301,7 +301,7 @@
       "text": "Station",
       "bbox": {
         "x": 621.5,
-        "y": 127,
+        "y": 127.5,
         "width": 254.6,
         "height": 22
       }
@@ -312,7 +312,7 @@
       "text": "Total Crops",
       "bbox": {
         "x": 908.1,
-        "y": 127,
+        "y": 127.5,
         "width": 139,
         "height": 22
       }
@@ -323,7 +323,7 @@
       "text": "Total Varieties",
       "bbox": {
         "x": 1079.1,
-        "y": 127,
+        "y": 127.5,
         "width": 168.9,
         "height": 22
       }

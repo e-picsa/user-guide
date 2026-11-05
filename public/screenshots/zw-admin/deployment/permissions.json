@@ -4,7 +4,7 @@
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
   "dashboardVersion": "5.20.0",
-  "capturedAt": "2026-10-08T21:52:01.319Z",
+  "capturedAt": "2026-11-04T23:59:41.411Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -279,7 +279,7 @@
       "text": "input",
       "bbox": {
         "x": 276,
-        "y": 141.5,
+        "y": 142,
         "width": 972,
         "height": 41
       },
@@ -291,7 +291,7 @@
       "text": "User",
       "bbox": {
         "x": 222,
-        "y": 228.5,
+        "y": 229.5,
         "width": 84.7,
         "height": 22
       }
@@ -302,7 +302,7 @@
       "text": "Global Admin",
       "bbox": {
         "x": 310.7,
-        "y": 228.5,
+        "y": 229.5,
         "width": 185.9,
         "height": 22
       }
@@ -313,7 +313,7 @@
       "text": "Climate",
       "bbox": {
         "x": 500.5,
-        "y": 228.5,
+        "y": 229.5,
         "width": 120.4,
         "height": 22
       }
@@ -324,7 +324,7 @@
       "text": "Resources",
       "bbox": {
         "x": 624.9,
-        "y": 228.5,
+        "y": 229.5,
         "width": 147.9,
         "height": 22
       }
@@ -334,8 +334,8 @@
       "kind": "button",
       "text": "Crop",
       "bbox": {
-        "x": 776.9,
-        "y": 228.5,
+        "x": 776.8,
+        "y": 229.5,
         "width": 85.2,
         "height": 22
       }
@@ -346,7 +346,7 @@
       "text": "Translations",
       "bbox": {
         "x": 866.1,
-        "y": 228.5,
+        "y": 229.5,
         "width": 172.7,
         "height": 22
       }
@@ -357,7 +357,7 @@
       "text": "Deployments",
       "bbox": {
         "x": 1042.8,
-        "y": 228.5,
+        "y": 229.5,
         "width": 183.2,
         "height": 22
       }
@@ -368,7 +368,7 @@
       "text": "Add User",
       "bbox": {
         "x": 220,
-        "y": 284,
+        "y": 285,
         "width": 1044,
         "height": 36
       }

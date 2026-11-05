@@ -4,7 +4,7 @@
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
   "dashboardVersion": "5.20.0",
-  "capturedAt": "2026-09-25T01:18:20.459Z",
+  "capturedAt": "2026-11-04T23:52:10.712Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -29,7 +29,7 @@
       "text": "Permissions",
       "bbox": {
         "x": 220,
-        "y": 211.5,
+        "y": 212,
         "width": 1044,
         "height": 32
       }
@@ -40,7 +40,7 @@
       "text": "Profile Settings",
       "bbox": {
         "x": 220,
-        "y": 639.5,
+        "y": 641,
         "width": 1044,
         "height": 32
       }
@@ -51,7 +51,7 @@
       "text": "Account Management",
       "bbox": {
         "x": 220,
-        "y": 1287.5,
+        "y": 1291,
         "width": 1044,
         "height": 32
       }
@@ -312,7 +312,7 @@
       "text": "checkbox",
       "bbox": {
         "x": 428.5,
-        "y": 323.5,
+        "y": 325,
         "width": 40,
         "height": 40
       },
@@ -324,7 +324,7 @@
       "text": "checkbox",
       "bbox": {
         "x": 541.5,
-        "y": 323.5,
+        "y": 325,
         "width": 40,
         "height": 40
       },
@@ -336,7 +336,7 @@
       "text": "checkbox",
       "bbox": {
         "x": 428.5,
-        "y": 365.5,
+        "y": 367,
         "width": 40,
         "height": 40
       },
@@ -348,7 +348,7 @@
       "text": "checkbox",
       "bbox": {
         "x": 541.5,
-        "y": 365.5,
+        "y": 367,
         "width": 40,
         "height": 40
       },
@@ -360,7 +360,7 @@
       "text": "checkbox",
       "bbox": {
         "x": 541.5,
-        "y": 407.5,
+        "y": 409,
         "width": 40,
         "height": 40
       },
@@ -372,7 +372,7 @@
       "text": "checkbox",
       "bbox": {
         "x": 428.5,
-        "y": 449.5,
+        "y": 451,
         "width": 40,
         "height": 40
       },
@@ -384,7 +384,7 @@
       "text": "checkbox",
       "bbox": {
         "x": 541.5,
-        "y": 449.5,
+        "y": 451,
         "width": 40,
         "height": 40
       },
@@ -396,7 +396,7 @@
       "text": "checkbox",
       "bbox": {
         "x": 428.5,
-        "y": 491.5,
+        "y": 493,
         "width": 40,
         "height": 40
       },
@@ -408,7 +408,7 @@
       "text": "checkbox",
       "bbox": {
         "x": 541.5,
-        "y": 491.5,
+        "y": 493,
         "width": 40,
         "height": 40
       },
@@ -420,7 +420,7 @@
       "text": "checkbox",
       "bbox": {
         "x": 541.5,
-        "y": 533.5,
+        "y": 535,
         "width": 40,
         "height": 40
       },
@@ -432,7 +432,7 @@
       "text": "input",
       "bbox": {
         "x": 228,
-        "y": 767.5,
+        "y": 769,
         "width": 436,
         "height": 41
       },
@@ -444,7 +444,7 @@
       "text": "input",
       "bbox": {
         "x": 228,
-        "y": 1093,
+        "y": 1096,
         "width": 436,
         "height": 41
       },
@@ -456,7 +456,7 @@
       "text": "Save Profile",
       "bbox": {
         "x": 220,
-        "y": 1187.5,
+        "y": 1191,
         "width": 448,
         "height": 36
       }
@@ -467,7 +467,7 @@
       "text": "Request Data",
       "bbox": {
         "x": 1092.2,
-        "y": 1363.3,
+        "y": 1367,
         "width": 146.8,
         "height": 36
       },
@@ -479,7 +479,7 @@
       "text": "Delete Account",
       "bbox": {
         "x": 1078,
-        "y": 1437.8,
+        "y": 1442,
         "width": 161,
         "height": 36
       },

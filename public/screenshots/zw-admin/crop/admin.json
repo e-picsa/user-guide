@@ -4,7 +4,7 @@
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
   "dashboardVersion": "5.20.0",
-  "capturedAt": "2026-11-04T21:03:42.695Z",
+  "capturedAt": "2026-11-04T23:57:11.480Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -334,7 +334,7 @@
       "text": "Template",
       "bbox": {
         "x": 1115.9,
-        "y": 160.8,
+        "y": 161,
         "width": 132.1,
         "height": 36
       }
@@ -345,7 +345,7 @@
       "text": "Export App Data",
       "bbox": {
         "x": 1059.8,
-        "y": 230.3,
+        "y": 231,
         "width": 188.2,
         "height": 36
       }
@@ -356,7 +356,7 @@
       "text": "Upload File",
       "bbox": {
         "x": 236,
-        "y": 291,
+        "y": 292,
         "width": 136.5,
         "height": 48
       }
@@ -367,7 +367,7 @@
       "text": "Paste Text",
       "bbox": {
         "x": 372.5,
-        "y": 291,
+        "y": 292,
         "width": 128.5,
         "height": 48
       }
@@ -378,7 +378,7 @@
       "text": "Drop here or browse Accepts CSV or JSON Data",
       "bbox": {
         "x": 236,
-        "y": 339,
+        "y": 340,
         "width": 1012,
         "height": 192
       }

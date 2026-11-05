@@ -4,7 +4,7 @@
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
   "dashboardVersion": "5.20.0",
-  "capturedAt": "2026-10-08T21:49:31.351Z",
+  "capturedAt": "2026-11-04T23:57:16.026Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -290,7 +290,7 @@
       "text": "input",
       "bbox": {
         "x": 276,
-        "y": 113,
+        "y": 114,
         "width": 972,
         "height": 41
       },
@@ -302,7 +302,7 @@
       "text": "Type",
       "bbox": {
         "x": 236,
-        "y": 200,
+        "y": 201.5,
         "width": 50.9,
         "height": 22
       }
@@ -313,7 +313,7 @@
       "text": "Cover Image",
       "bbox": {
         "x": 318.9,
-        "y": 200,
+        "y": 201.5,
         "width": 165.3,
         "height": 22
       }
@@ -324,8 +324,8 @@
       "text": "Title",
       "bbox": {
         "x": 516.2,
-        "y": 200,
-        "width": 291.8,
+        "y": 201.5,
+        "width": 291.7,
         "height": 22
       }
     },
@@ -335,7 +335,7 @@
       "text": "Size",
       "bbox": {
         "x": 840,
-        "y": 200,
+        "y": 201.5,
         "width": 45.1,
         "height": 22
       }
@@ -345,8 +345,8 @@
       "kind": "button",
       "text": "Languages",
       "bbox": {
-        "x": 917.1,
-        "y": 200,
+        "x": 917,
+        "y": 201.5,
         "width": 94.2,
         "height": 22
       }
@@ -356,8 +356,8 @@
       "kind": "button",
       "text": "Collections",
       "bbox": {
-        "x": 1043.3,
-        "y": 200,
+        "x": 1043.2,
+        "y": 201.5,
         "width": 94.8,
         "height": 22
       }
@@ -368,7 +368,7 @@
       "text": "Updated",
       "bbox": {
         "x": 1170,
-        "y": 200,
+        "y": 201.5,
         "width": 78,
         "height": 22
       }

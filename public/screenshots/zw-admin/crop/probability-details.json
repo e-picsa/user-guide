@@ -4,7 +4,7 @@
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
   "dashboardVersion": "5.20.0",
-  "capturedAt": "2026-11-04T20:53:53.171Z",
+  "capturedAt": "2026-11-04T23:57:03.957Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -18,9 +18,9 @@
       "text": "Masvingo",
       "bbox": {
         "x": 220,
-        "y": -30.7,
+        "y": -30.5,
         "width": 90.3,
-        "height": 25.5
+        "height": 25
       }
     },
     {
@@ -40,7 +40,7 @@
       "text": "Crop Information Masvingo",
       "bbox": {
         "x": 245,
-        "y": 307,
+        "y": 307.5,
         "width": 465.7,
         "height": 64
       }
@@ -301,7 +301,7 @@
       "text": "Climate Data",
       "bbox": {
         "x": 930.6,
-        "y": 22.8,
+        "y": 23,
         "width": 149.5,
         "height": 36
       }
@@ -311,9 +311,9 @@
       "kind": "button",
       "text": "Change Station",
       "bbox": {
-        "x": 1096.1,
-        "y": 22.8,
-        "width": 167.9,
+        "x": 1096,
+        "y": 23,
+        "width": 168,
         "height": 36
       }
     },
@@ -323,7 +323,7 @@
       "text": "Copy To Clipboard",
       "bbox": {
         "x": 220,
-        "y": 1717,
+        "y": 1717.5,
         "width": 208,
         "height": 36
       }
@@ -334,7 +334,7 @@
       "text": "Export",
       "bbox": {
         "x": 1164.6,
-        "y": 1717,
+        "y": 1717.5,
         "width": 99.4,
         "height": 36
       }

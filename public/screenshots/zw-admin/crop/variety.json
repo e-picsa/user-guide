@@ -4,7 +4,7 @@
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
   "dashboardVersion": "5.20.0",
-  "capturedAt": "2026-10-08T21:49:04.413Z",
+  "capturedAt": "2026-11-04T23:56:45.935Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -290,7 +290,7 @@
       "text": "input",
       "bbox": {
         "x": 276,
-        "y": 113,
+        "y": 114,
         "width": 972,
         "height": 41
       },
@@ -302,8 +302,8 @@
       "text": "Crop",
       "bbox": {
         "x": 236,
-        "y": 200,
-        "width": 116.1,
+        "y": 201.5,
+        "width": 116.2,
         "height": 22
       }
     },
@@ -312,8 +312,8 @@
       "kind": "button",
       "text": "Variety",
       "bbox": {
-        "x": 384.1,
-        "y": 200,
+        "x": 384.2,
+        "y": 201.5,
         "width": 185.2,
         "height": 22
       }
@@ -324,7 +324,7 @@
       "text": "Maturity Period",
       "bbox": {
         "x": 601.4,
-        "y": 200,
+        "y": 201.5,
         "width": 141.9,
         "height": 22
       }
@@ -335,7 +335,7 @@
       "text": "Days Lower",
       "bbox": {
         "x": 775.3,
-        "y": 200,
+        "y": 201.5,
         "width": 109.2,
         "height": 22
       }
@@ -346,7 +346,7 @@
       "text": "Days Upper",
       "bbox": {
         "x": 916.5,
-        "y": 200,
+        "y": 201.5,
         "width": 109.3,
         "height": 22
       }
@@ -357,7 +357,7 @@
       "text": "Downscaled Locations",
       "bbox": {
         "x": 1057.8,
-        "y": 200,
+        "y": 201.5,
         "width": 190.2,
         "height": 22
       }
