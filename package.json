@@ -17,8 +17,10 @@
     "pdf:serve": "bun scripts/pdf/serve.ts",
     "cover-shot": "bun scripts/pdf/cover-shot.ts",
     "spellcheck": "cspell --no-progress --no-summary \"content/**/*.mdx\"",
-    "spellcheck:fix": "cspell lint --no-progress --no-summary --fix \"content/**/*.mdx\"",
     "spellcheck:staged": "bun scripts/spellcheck/staged.ts",
+    "lint:md": "markdownlint-cli2",
+    "lint:md:staged": "bun scripts/quality/markdownlint-staged.ts",
+    "links:check": "bun scripts/quality/links.ts",
     "prepare": "husky"
   },
   "dependencies": {
@@ -27,7 +29,7 @@
     "fumadocs-mdx": "15.3.0",
     "fumadocs-ui": "npm:@fumadocs/base-ui@16.14.5",
     "lucide-react": "^1.31.0",
-    "next": "16.3.0",
+    "next": "16.4.3",
     "pdf-lib": "^1.17.1",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
@@ -43,9 +45,10 @@
     "@types/react-dom": "^19.2.4",
     "cspell": "^10.3.4",
     "eslint": "^9.39.4",
-    "eslint-config-next": "16.3.0",
+    "eslint-config-next": "16.4.3",
     "husky": "^9.1.7",
     "jsdom": "^30.1.1",
+    "markdownlint-cli2": "0.24.0",
     "pixelmatch": "^7.2.0",
     "pngjs": "^7.0.0",
     "postcss": "^8.5.26",
