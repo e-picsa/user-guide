@@ -1,26 +1,26 @@
 {
   "route": "climate/admin",
-  "url": "http://localhost:4200/climate/admin",
+  "url": "http://localhost:3000/climate/admin",
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
-  "dashboardVersion": "5.16.0",
-  "capturedAt": "2026-10-08T21:29:23.094Z",
+  "dashboardVersion": "5.20.0",
+  "capturedAt": "2026-11-04T23:56:41.374Z",
   "viewport": {
     "width": 1280,
     "height": 720
   },
-  "scrollTop": 66,
+  "scrollTop": 78,
   "space": "viewport-relative CSS px at capture viewport (1:1 with png at deviceScaleFactor 1)",
   "headings": [
     {
-      "tag": "h2",
+      "tag": "h1",
       "kind": "heading",
-      "text": "Climate Data Admin",
+      "text": "Climate Administration",
       "bbox": {
-        "x": 220,
-        "y": -34,
-        "width": 1044,
-        "height": 32
+        "x": 228,
+        "y": -54,
+        "width": 687.5,
+        "height": 52
       }
     }
   ],
@@ -31,7 +31,7 @@
       "text": "Home",
       "bbox": {
         "x": 0,
-        "y": 72,
+        "y": 8,
         "width": 203,
         "height": 48
       },
@@ -43,7 +43,7 @@
       "text": "Climate",
       "bbox": {
         "x": 0,
-        "y": 120,
+        "y": 56,
         "width": 203,
         "height": 64
       }
@@ -54,7 +54,7 @@
       "text": "Station Data",
       "bbox": {
         "x": 0,
-        "y": 184,
+        "y": 120,
         "width": 203,
         "height": 48
       },
@@ -66,7 +66,7 @@
       "text": "Forecasts",
       "bbox": {
         "x": 0,
-        "y": 232,
+        "y": 168,
         "width": 203,
         "height": 48
       },
@@ -78,7 +78,7 @@
       "text": "Admin",
       "bbox": {
         "x": 0,
-        "y": 280,
+        "y": 216,
         "width": 203,
         "height": 48
       },
@@ -90,7 +90,7 @@
       "text": "Crop",
       "bbox": {
         "x": 0,
-        "y": 328,
+        "y": 264,
         "width": 203,
         "height": 48
       }
@@ -101,7 +101,7 @@
       "text": "Variety",
       "bbox": {
         "x": 0,
-        "y": 376,
+        "y": 312,
         "width": 203,
         "height": 48
       },
@@ -113,7 +113,7 @@
       "text": "Probability",
       "bbox": {
         "x": 0,
-        "y": 424,
+        "y": 360,
         "width": 203,
         "height": 48
       },
@@ -125,7 +125,7 @@
       "text": "Admin",
       "bbox": {
         "x": 0,
-        "y": 472,
+        "y": 408,
         "width": 203,
         "height": 48
       },
@@ -137,7 +137,7 @@
       "text": "Translations",
       "bbox": {
         "x": 0,
-        "y": 376,
+        "y": 312,
         "width": 203,
         "height": 48
       }
@@ -148,7 +148,7 @@
       "text": "List",
       "bbox": {
         "x": 0,
-        "y": 424,
+        "y": 360,
         "width": 203,
         "height": 48
       },
@@ -160,7 +160,7 @@
       "text": "Import",
       "bbox": {
         "x": 0,
-        "y": 472,
+        "y": 408,
         "width": 203,
         "height": 48
       },
@@ -172,7 +172,7 @@
       "text": "Resources",
       "bbox": {
         "x": 0,
-        "y": 424,
+        "y": 360,
         "width": 203,
         "height": 48
       }
@@ -183,7 +183,7 @@
       "text": "Files",
       "bbox": {
         "x": 0,
-        "y": 472,
+        "y": 408,
         "width": 203,
         "height": 48
       },
@@ -195,7 +195,7 @@
       "text": "Links",
       "bbox": {
         "x": 0,
-        "y": 520,
+        "y": 456,
         "width": 203,
         "height": 48
       },
@@ -207,7 +207,7 @@
       "text": "Collections",
       "bbox": {
         "x": 0,
-        "y": 568,
+        "y": 504,
         "width": 203,
         "height": 48
       },
@@ -219,7 +219,7 @@
       "text": "Farmer Videos",
       "bbox": {
         "x": 0,
-        "y": 616,
+        "y": 552,
         "width": 203,
         "height": 48
       },
@@ -278,9 +278,9 @@
       "kind": "tab",
       "text": "Data System",
       "bbox": {
-        "x": 220,
-        "y": 30,
-        "width": 328.7,
+        "x": 228,
+        "y": 38,
+        "width": 324.7,
         "height": 48
       }
     },
@@ -289,9 +289,9 @@
       "kind": "tab",
       "text": "App Data",
       "bbox": {
-        "x": 548.7,
-        "y": 30,
-        "width": 303,
+        "x": 552.7,
+        "y": 38,
+        "width": 299,
         "height": 48
       }
     },
@@ -301,20 +301,42 @@
       "text": "Data Comparison (Diff)",
       "bbox": {
         "x": 851.8,
-        "y": 30,
-        "width": 412.2,
+        "y": 38,
+        "width": 404.2,
         "height": 48
       }
     },
     {
       "tag": "button",
       "kind": "button",
-      "text": "Download All",
+      "text": "Total Stations: 17",
       "bbox": {
-        "x": 943.6,
-        "y": 94,
-        "width": 163.1,
-        "height": 36
+        "x": 225.5,
+        "y": 105.4,
+        "width": 130.8,
+        "height": 29.1
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "QC Passed: 16",
+      "bbox": {
+        "x": 363.8,
+        "y": 106,
+        "width": 108.1,
+        "height": 28
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "QC Failed: 1",
+      "bbox": {
+        "x": 481.9,
+        "y": 106,
+        "width": 94,
+        "height": 28
       }
     },
     {
@@ -322,8 +344,8 @@
       "kind": "button",
       "text": "Refresh All",
       "bbox": {
-        "x": 1118.7,
-        "y": 94,
+        "x": 1110.7,
+        "y": 154,
         "width": 145.3,
         "height": 36
       }
@@ -333,9 +355,9 @@
       "kind": "input",
       "text": "input",
       "bbox": {
-        "x": 276,
-        "y": 170,
-        "width": 972,
+        "x": 284,
+        "y": 230,
+        "width": 956,
         "height": 41
       },
       "label": "input:text"
@@ -343,149 +365,164 @@
     {
       "tag": "div",
       "kind": "button",
-      "text": "Name",
+      "text": "Station",
       "bbox": {
-        "x": 236,
-        "y": 262.5,
-        "width": 97.6,
+        "x": 244,
+        "y": 323,
+        "width": 99,
         "height": 22
       }
     },
     {
       "tag": "div",
       "kind": "button",
-      "text": "Updated At",
+      "text": "QC Status",
       "bbox": {
-        "x": 365.6,
-        "y": 251.5,
-        "width": 78,
+        "x": 375,
+        "y": 312,
+        "width": 62.5,
         "height": 44
       }
     },
     {
       "tag": "div",
       "kind": "button",
-      "text": "Rainfall Start Year",
+      "text": "Years Range",
       "bbox": {
-        "x": 475.6,
-        "y": 240.5,
-        "width": 71.6,
-        "height": 66
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "button",
-      "text": "Rainfall End Year",
-      "bbox": {
-        "x": 579.2,
-        "y": 240.5,
-        "width": 71.6,
-        "height": 66
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "button",
-      "text": "Rainfall Total Years",
-      "bbox": {
-        "x": 682.8,
-        "y": 240.5,
-        "width": 71.6,
-        "height": 66
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "button",
-      "text": "Rainfall Last Ten Years",
-      "bbox": {
-        "x": 786.3,
-        "y": 240.5,
-        "width": 71.6,
-        "height": 66
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "button",
-      "text": "Rainfall Issues",
-      "bbox": {
-        "x": 889.9,
-        "y": 251.5,
-        "width": 71.6,
+        "x": 469.5,
+        "y": 312,
+        "width": 69.9,
         "height": 44
       }
     },
     {
       "tag": "div",
       "kind": "button",
-      "text": "Products",
+      "text": "Total Years",
       "bbox": {
-        "x": 993.5,
-        "y": 262.5,
-        "width": 216,
+        "x": 571.4,
+        "y": 312,
+        "width": 56.1,
+        "height": 44
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "Past 30 Years",
+      "bbox": {
+        "x": 659.5,
+        "y": 301,
+        "width": 56.1,
+        "height": 66
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "Past 10 Years",
+      "bbox": {
+        "x": 747.6,
+        "y": 301,
+        "width": 56.1,
+        "height": 66
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "Warnings",
+      "bbox": {
+        "x": 835.7,
+        "y": 323,
+        "width": 84.6,
         "height": 22
       }
     },
     {
       "tag": "div",
       "kind": "button",
-      "text": "Rainfall Export Data",
+      "text": "Products 🌧 🌡 🌾",
       "bbox": {
-        "x": 1241.5,
-        "y": 240.5,
-        "width": 71.6,
-        "height": 66
+        "x": 952.2,
+        "y": 312,
+        "width": 86.6,
+        "height": 44
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "Monthly 🌧 🌡",
+      "bbox": {
+        "x": 1070.8,
+        "y": 312,
+        "width": 76.6,
+        "height": 44
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "Data Generated",
+      "bbox": {
+        "x": 1179.4,
+        "y": 312,
+        "width": 91.6,
+        "height": 44
       }
     }
   ],
   "tables": [
     {
       "headers": [
-        "Name",
-        "Updated At",
-        "Rainfall Start Year",
-        "Rainfall End Year",
-        "Rainfall Total Years",
-        "Rainfall Last Ten Years",
-        "Rainfall Issues",
-        "Products",
-        "Rainfall Export Data"
+        "Station",
+        "QC Status",
+        "Years Range",
+        "Total Years",
+        "Past 30 Years",
+        "Past 10 Years",
+        "Warnings",
+        "Products 🌧 🌡 🌾",
+        "Monthly 🌧 🌡",
+        "Data Generated"
       ],
       "rows": [
         [
           "BEITBRIDGE (MET)",
-          "Oct 8, 2026",
-          "1922",
-          "2026",
-          "45",
-          "3",
+          "",
+          "1922 – 2025",
+          "82",
+          "16",
+          "5",
+          "4 years with start but no end 36 years with end but no start",
           "",
           "",
-          ""
+          "Sep 23, 2026"
         ],
         [
           "BUFFALO RANGE (MET)",
-          "Oct 8, 2026",
-          "1965",
-          "2026",
-          "39",
-          "4",
+          "",
+          "1966 – 2025",
+          "50",
+          "23",
+          "5",
+          "4 years with start but no end 12 years with end but no start",
           "",
           "",
-          ""
+          "Sep 23, 2026"
         ],
         [
           "BUHERA (MET)",
-          "Oct 8, 2026",
-          "1951",
-          "2026",
-          "50",
-          "5",
+          "",
+          "1951 – 2025",
+          "69",
+          "26",
+          "7",
+          "2 years with start but no end 18 years with end but no start",
           "",
           "",
-          ""
+          "Sep 23, 2026"
         ]
       ],
       "rowCount": 17

@@ -35,7 +35,7 @@ function env(name: string, fallback: string): string {
 
 export function loadConfig(): ShotsConfig {
   return {
-    baseUrl: env('SHOTS_BASE_URL', 'http://localhost:4200'),
+    baseUrl: env('SHOTS_BASE_URL', 'http://localhost:3000'),
     email: env('SHOTS_EMAIL', 'admin@picsa.app'),
     password: env('SHOTS_PASSWORD', env('SHOTS_EMAIL', 'admin@picsa.app')),
     deploymentId: env('SHOTS_DEPLOYMENT', 'zm'),

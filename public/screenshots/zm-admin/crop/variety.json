@@ -1,10 +1,10 @@
 {
   "route": "crop/variety",
-  "url": "http://localhost:4200/crop/variety",
+  "url": "http://localhost:3000/crop/variety",
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
-  "dashboardVersion": "5.14.0",
-  "capturedAt": "2026-09-25T01:17:04.518Z",
+  "dashboardVersion": "5.20.0",
+  "capturedAt": "2026-11-04T23:50:55.712Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -28,10 +28,10 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "homeHome",
+      "text": "Home",
       "bbox": {
         "x": 0,
-        "y": 72,
+        "y": 8,
         "width": 203,
         "height": 48
       },
@@ -40,10 +40,10 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "filter_dramaClimate",
+      "text": "Climate",
       "bbox": {
         "x": 0,
-        "y": 120,
+        "y": 56,
         "width": 203,
         "height": 48
       }
@@ -54,7 +54,7 @@
       "text": "Station Data",
       "bbox": {
         "x": 0,
-        "y": 168,
+        "y": 104,
         "width": 203,
         "height": 48
       },
@@ -66,7 +66,7 @@
       "text": "Forecasts",
       "bbox": {
         "x": 0,
-        "y": 216,
+        "y": 152,
         "width": 203,
         "height": 48
       },
@@ -78,7 +78,7 @@
       "text": "Admin",
       "bbox": {
         "x": 0,
-        "y": 264,
+        "y": 200,
         "width": 203,
         "height": 48
       },
@@ -87,10 +87,10 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "spaCrop",
+      "text": "Crop",
       "bbox": {
         "x": 0,
-        "y": 168,
+        "y": 104,
         "width": 203,
         "height": 64
       }
@@ -101,7 +101,7 @@
       "text": "Variety",
       "bbox": {
         "x": 0,
-        "y": 232,
+        "y": 168,
         "width": 203,
         "height": 48
       },
@@ -113,7 +113,7 @@
       "text": "Probability",
       "bbox": {
         "x": 0,
-        "y": 280,
+        "y": 216,
         "width": 203,
         "height": 48
       },
@@ -125,7 +125,7 @@
       "text": "Admin",
       "bbox": {
         "x": 0,
-        "y": 328,
+        "y": 264,
         "width": 203,
         "height": 48
       },
@@ -134,10 +134,10 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "translateTranslations",
+      "text": "Translations",
       "bbox": {
         "x": 0,
-        "y": 376,
+        "y": 312,
         "width": 203,
         "height": 48
       }
@@ -148,7 +148,7 @@
       "text": "List",
       "bbox": {
         "x": 0,
-        "y": 424,
+        "y": 360,
         "width": 203,
         "height": 48
       },
@@ -160,7 +160,7 @@
       "text": "Import",
       "bbox": {
         "x": 0,
-        "y": 472,
+        "y": 408,
         "width": 203,
         "height": 48
       },
@@ -169,10 +169,10 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "library_booksResources",
+      "text": "Resources",
       "bbox": {
         "x": 0,
-        "y": 424,
+        "y": 360,
         "width": 203,
         "height": 48
       }
@@ -183,7 +183,7 @@
       "text": "Files",
       "bbox": {
         "x": 0,
-        "y": 472,
+        "y": 408,
         "width": 203,
         "height": 48
       },
@@ -195,7 +195,7 @@
       "text": "Links",
       "bbox": {
         "x": 0,
-        "y": 520,
+        "y": 456,
         "width": 203,
         "height": 48
       },
@@ -207,7 +207,7 @@
       "text": "Collections",
       "bbox": {
         "x": 0,
-        "y": 568,
+        "y": 504,
         "width": 203,
         "height": 48
       },
@@ -219,7 +219,7 @@
       "text": "Farmer Videos",
       "bbox": {
         "x": 0,
-        "y": 616,
+        "y": 552,
         "width": 203,
         "height": 48
       },
@@ -228,7 +228,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "query_statsStatistics",
+      "text": "Statistics",
       "bbox": {
         "x": 0,
         "y": 519,
@@ -240,7 +240,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "appsDeployments",
+      "text": "Deployments",
       "bbox": {
         "x": 0,
         "y": 567,
@@ -252,7 +252,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "manage_accountsUser Permissions",
+      "text": "User Permissions",
       "bbox": {
         "x": 0,
         "y": 615,
@@ -264,7 +264,7 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "mapMap Boundaries",
+      "text": "Map Boundaries",
       "bbox": {
         "x": 0,
         "y": 663,
@@ -276,7 +276,7 @@
     {
       "tag": "button",
       "kind": "button",
-      "text": "addAdd Variety",
+      "text": "Add Variety",
       "bbox": {
         "x": 1113.2,
         "y": -36,
@@ -290,7 +290,7 @@
       "text": "input",
       "bbox": {
         "x": 276,
-        "y": 113,
+        "y": 114,
         "width": 972,
         "height": 41
       },
@@ -302,7 +302,7 @@
       "text": "Crop",
       "bbox": {
         "x": 236,
-        "y": 200,
+        "y": 201.5,
         "width": 118.9,
         "height": 22
       }
@@ -313,7 +313,7 @@
       "text": "Variety",
       "bbox": {
         "x": 386.9,
-        "y": 200,
+        "y": 201.5,
         "width": 170.1,
         "height": 22
       }
@@ -324,7 +324,7 @@
       "text": "Maturity Period",
       "bbox": {
         "x": 589,
-        "y": 200,
+        "y": 201.5,
         "width": 145.1,
         "height": 22
       }
@@ -335,7 +335,7 @@
       "text": "Days Lower",
       "bbox": {
         "x": 766.1,
-        "y": 200,
+        "y": 201.5,
         "width": 111.8,
         "height": 22
       }
@@ -346,7 +346,7 @@
       "text": "Days Upper",
       "bbox": {
         "x": 909.9,
-        "y": 200,
+        "y": 201.5,
         "width": 111.8,
         "height": 22
       }
@@ -357,7 +357,7 @@
       "text": "Downscaled Locations",
       "bbox": {
         "x": 1053.7,
-        "y": 200,
+        "y": 201.5,
         "width": 194.3,
         "height": 22
       }
@@ -404,7 +404,7 @@
   ],
   "nav": [
     {
-      "label": "homeHome",
+      "label": "Home",
       "href": "/home"
     },
     {
@@ -456,19 +456,19 @@
       "href": "/resources/farmer-videos"
     },
     {
-      "label": "query_statsStatistics",
+      "label": "Statistics",
       "href": "/stats"
     },
     {
-      "label": "appsDeployments",
+      "label": "Deployments",
       "href": "/deployment"
     },
     {
-      "label": "manage_accountsUser Permissions",
+      "label": "User Permissions",
       "href": "/deployment/permissions"
     },
     {
-      "label": "mapMap Boundaries",
+      "label": "Map Boundaries",
       "href": "/map-admin"
     }
   ],

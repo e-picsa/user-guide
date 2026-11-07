@@ -1,8 +1,22 @@
 # Dashboard screenshots (720p)
 
-Captures `http://localhost:4200` (dashboard dev server, `yarn start:dashboard`
+Captures `http://localhost:3000` (dashboard dev server, `yarn start:dashboard`
 from `../picsa-apps`) into `public/screenshots/<identifier>/`, with output
 paths mirroring dashboard routes.
+
+## Prerequisites
+
+Two servers must be serving from `../picsa-apps`, not just the dashboard:
+
+- `yarn start:dashboard` — the dashboard dev server (`:3000`)
+- `yarn start:server:functions` — the Supabase edge-functions server (the
+  `supabase start` stack alone is not enough; without the function worker
+  Kong answers 503 "Worker failed to boot")
+
+Pages that render from edge functions (e.g. User Permissions) would otherwise
+capture empty. The runner watches `/functions/v1/*` responses and aborts with
+a remediation error before writing anything, rather than committing
+empty-state screenshots.
 
 ## Runs
 
@@ -109,8 +123,9 @@ round-trip offline (jsdom fixture, no dashboard server needed).
 ## Files
 
 - `config.ts` — env-based config + Chrome resolution. Viewport fixed at 1280x720.
-- `manifest.ts` — page list (`PAGES`), hardcoded `:id` exemplars, optional per-route
-  `actions` (ordered UI steps before capture). `routeToFile` maps route -> png path.
+- `manifest.ts` — per-deployment page lists (`pagesFor()`, exemplars in
+  `EXEMPLARS`), pinned `out` paths for param routes, optional per-route
+  `actions` (ordered UI steps before capture). `entryToFile` maps entry -> png path.
 - `run.ts` — login -> deployment select -> client-side navigate each page ->
   viewport screenshot. Writes `manifest.json` summary next to pngs.
 - `extract.ts` — browser-side metadata + content-HTML extraction (see above).

@@ -1,10 +1,10 @@
 {
   "route": "climate/forecast",
-  "url": "http://localhost:4200/climate/forecast",
+  "url": "http://localhost:3000/climate/forecast",
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
-  "dashboardVersion": "5.16.0",
-  "capturedAt": "2026-10-08T21:29:18.526Z",
+  "dashboardVersion": "5.20.0",
+  "capturedAt": "2026-11-04T23:56:36.831Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -276,11 +276,11 @@
     {
       "tag": "button",
       "kind": "button",
-      "text": "Oct 2026",
+      "text": "Nov 2026",
       "bbox": {
         "x": 334.6,
         "y": 30,
-        "width": 100.9,
+        "width": 104.2,
         "height": 36
       }
     },
@@ -333,9 +333,9 @@
       "kind": "tab",
       "text": "Daily",
       "bbox": {
-        "x": 1028,
+        "x": 1027.9,
         "y": 80,
-        "width": 236.1,
+        "width": 236,
         "height": 48
       }
     },
@@ -357,8 +357,8 @@
       "text": "Created At",
       "bbox": {
         "x": 236,
-        "y": 239,
-        "width": 248,
+        "y": 239.5,
+        "width": 234.8,
         "height": 22
       }
     },
@@ -367,9 +367,9 @@
       "kind": "button",
       "text": "Label",
       "bbox": {
-        "x": 516,
-        "y": 239,
-        "width": 165.7,
+        "x": 502.8,
+        "y": 239.5,
+        "width": 205.4,
         "height": 22
       }
     },
@@ -378,9 +378,9 @@
       "kind": "button",
       "text": "Language",
       "bbox": {
-        "x": 713.6,
-        "y": 239,
-        "width": 236.5,
+        "x": 740.2,
+        "y": 239.5,
+        "width": 223.9,
         "height": 22
       }
     },
@@ -389,9 +389,9 @@
       "kind": "button",
       "text": "Storage File",
       "bbox": {
-        "x": 982.1,
-        "y": 239,
-        "width": 265.9,
+        "x": 996.1,
+        "y": 239.5,
+        "width": 251.9,
         "height": 22
       }
     }
@@ -404,8 +404,15 @@
         "Language",
         "Storage File"
       ],
-      "rows": [],
-      "rowCount": 0
+      "rows": [
+        [
+          "Nov 4, 2026",
+          "2026 - 2027",
+          "English",
+          ""
+        ]
+      ],
+      "rowCount": 1
     }
   ],
   "nav": [

@@ -1,10 +1,10 @@
 {
   "route": "crop/admin",
-  "url": "http://localhost:4200/crop/admin",
+  "url": "http://localhost:3000/crop/admin",
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
-  "dashboardVersion": "5.16.0",
-  "capturedAt": "2026-10-08T21:49:26.833Z",
+  "dashboardVersion": "5.20.0",
+  "capturedAt": "2026-11-05T00:14:46.296Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -31,7 +31,7 @@
       "text": "Home",
       "bbox": {
         "x": 0,
-        "y": 72,
+        "y": 8,
         "width": 203,
         "height": 48
       },
@@ -43,7 +43,7 @@
       "text": "Climate",
       "bbox": {
         "x": 0,
-        "y": 120,
+        "y": 56,
         "width": 203,
         "height": 48
       }
@@ -54,7 +54,7 @@
       "text": "Station Data",
       "bbox": {
         "x": 0,
-        "y": 168,
+        "y": 104,
         "width": 203,
         "height": 48
       },
@@ -66,7 +66,7 @@
       "text": "Forecasts",
       "bbox": {
         "x": 0,
-        "y": 216,
+        "y": 152,
         "width": 203,
         "height": 48
       },
@@ -78,7 +78,7 @@
       "text": "Admin",
       "bbox": {
         "x": 0,
-        "y": 264,
+        "y": 200,
         "width": 203,
         "height": 48
       },
@@ -90,7 +90,7 @@
       "text": "Crop",
       "bbox": {
         "x": 0,
-        "y": 168,
+        "y": 104,
         "width": 203,
         "height": 64
       }
@@ -101,7 +101,7 @@
       "text": "Variety",
       "bbox": {
         "x": 0,
-        "y": 232,
+        "y": 168,
         "width": 203,
         "height": 48
       },
@@ -113,7 +113,7 @@
       "text": "Probability",
       "bbox": {
         "x": 0,
-        "y": 280,
+        "y": 216,
         "width": 203,
         "height": 48
       },
@@ -125,7 +125,7 @@
       "text": "Admin",
       "bbox": {
         "x": 0,
-        "y": 328,
+        "y": 264,
         "width": 203,
         "height": 48
       },
@@ -137,7 +137,7 @@
       "text": "Translations",
       "bbox": {
         "x": 0,
-        "y": 376,
+        "y": 312,
         "width": 203,
         "height": 48
       }
@@ -148,7 +148,7 @@
       "text": "List",
       "bbox": {
         "x": 0,
-        "y": 424,
+        "y": 360,
         "width": 203,
         "height": 48
       },
@@ -160,7 +160,7 @@
       "text": "Import",
       "bbox": {
         "x": 0,
-        "y": 472,
+        "y": 408,
         "width": 203,
         "height": 48
       },
@@ -172,7 +172,7 @@
       "text": "Resources",
       "bbox": {
         "x": 0,
-        "y": 424,
+        "y": 360,
         "width": 203,
         "height": 48
       }
@@ -183,7 +183,7 @@
       "text": "Files",
       "bbox": {
         "x": 0,
-        "y": 472,
+        "y": 408,
         "width": 203,
         "height": 48
       },
@@ -195,7 +195,7 @@
       "text": "Links",
       "bbox": {
         "x": 0,
-        "y": 520,
+        "y": 456,
         "width": 203,
         "height": 48
       },
@@ -207,7 +207,7 @@
       "text": "Collections",
       "bbox": {
         "x": 0,
-        "y": 568,
+        "y": 504,
         "width": 203,
         "height": 48
       },
@@ -219,7 +219,7 @@
       "text": "Farmer Videos",
       "bbox": {
         "x": 0,
-        "y": 616,
+        "y": 552,
         "width": 203,
         "height": 48
       },
@@ -276,22 +276,11 @@
     {
       "tag": "div",
       "kind": "tab",
-      "text": "App Diff",
+      "text": "Locations",
       "bbox": {
         "x": 220,
         "y": 22,
-        "width": 171.7,
-        "height": 48
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "tab",
-      "text": "Locations",
-      "bbox": {
-        "x": 391.7,
-        "y": 22,
-        "width": 183,
+        "width": 215.8,
         "height": 48
       }
     },
@@ -300,20 +289,20 @@
       "kind": "tab",
       "text": "Stations",
       "bbox": {
-        "x": 574.7,
+        "x": 435.8,
         "y": 22,
-        "width": 171.9,
+        "width": 204.7,
         "height": 48
       }
     },
     {
       "tag": "div",
       "kind": "tab",
-      "text": "Pairing",
+      "text": "App Diff",
       "bbox": {
-        "x": 746.6,
+        "x": 640.4,
         "y": 22,
-        "width": 163.9,
+        "width": 204.5,
         "height": 48
       }
     },
@@ -322,9 +311,9 @@
       "kind": "tab",
       "text": "Duplicates",
       "bbox": {
-        "x": 910.5,
+        "x": 844.9,
         "y": 22,
-        "width": 190.4,
+        "width": 223.2,
         "height": 48
       }
     },
@@ -333,9 +322,9 @@
       "kind": "tab",
       "text": "Upload",
       "bbox": {
-        "x": 1100.9,
+        "x": 1068.1,
         "y": 22,
-        "width": 163.1,
+        "width": 195.9,
         "height": 48
       }
     },
@@ -345,8 +334,8 @@
       "text": "input",
       "bbox": {
         "x": 292,
-        "y": 308,
-        "width": 806.8,
+        "y": 236,
+        "width": 794.8,
         "height": 41
       },
       "label": "input:text"
@@ -357,8 +346,8 @@
       "text": "Export CSV",
       "bbox": {
         "x": 1114.8,
-        "y": 313.3,
-        "width": 133.2,
+        "y": 241.5,
+        "width": 133.3,
         "height": 36
       }
     },
@@ -368,85 +357,74 @@
       "text": "Location",
       "bbox": {
         "x": 252,
-        "y": 395,
-        "width": 78.4,
+        "y": 323.5,
+        "width": 93,
         "height": 22
       }
     },
     {
       "tag": "div",
       "kind": "button",
-      "text": "Location ID",
+      "text": "Parent",
       "bbox": {
-        "x": 362.4,
-        "y": 384,
-        "width": 86,
-        "height": 44
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "button",
-      "text": "App vs DB Status",
-      "bbox": {
-        "x": 480.4,
-        "y": 384,
-        "width": 90.7,
-        "height": 44
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "button",
-      "text": "App Varieties",
-      "bbox": {
-        "x": 603.1,
-        "y": 384,
-        "width": 91.8,
-        "height": 44
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "button",
-      "text": "DB Varieties",
-      "bbox": {
-        "x": 726.9,
-        "y": 384,
-        "width": 88.8,
-        "height": 44
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "button",
-      "text": "App Station",
-      "bbox": {
-        "x": 847.7,
-        "y": 395,
-        "width": 130.3,
+        "x": 377,
+        "y": 323.5,
+        "width": 104.5,
         "height": 22
       }
     },
     {
       "tag": "div",
       "kind": "button",
-      "text": "DB Station",
+      "text": "Status",
       "bbox": {
-        "x": 1010,
-        "y": 395,
-        "width": 130.3,
+        "x": 513.5,
+        "y": 323.5,
+        "width": 62.5,
         "height": 22
       }
     },
     {
       "tag": "div",
       "kind": "button",
-      "text": "Detail",
+      "text": "Paired With",
       "bbox": {
-        "x": 1172.3,
-        "y": 395,
-        "width": 59.7,
+        "x": 607.9,
+        "y": 312.5,
+        "width": 70.7,
+        "height": 44
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "Linked Station",
+      "bbox": {
+        "x": 710.6,
+        "y": 312.5,
+        "width": 117.5,
+        "height": 44
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "Probabilities",
+      "bbox": {
+        "x": 860.1,
+        "y": 323.5,
+        "width": 106.1,
+        "height": 22
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "Crops Covered",
+      "bbox": {
+        "x": 998.2,
+        "y": 323.5,
+        "width": 233.8,
         "height": 22
       }
     },
@@ -456,7 +434,7 @@
       "text": "Previous page",
       "bbox": {
         "x": 1144,
-        "y": 698.5,
+        "y": 3023,
         "width": 48,
         "height": 48
       }
@@ -467,7 +445,7 @@
       "text": "Next page",
       "bbox": {
         "x": 1192,
-        "y": 698.5,
+        "y": 3023,
         "width": 48,
         "height": 48
       }
@@ -477,47 +455,43 @@
     {
       "headers": [
         "Location",
-        "Location ID",
-        "App vs DB Status",
-        "App Varieties",
-        "DB Varieties",
-        "App Station",
-        "DB Station",
-        "Detail"
+        "Parent",
+        "Status",
+        "Paired With",
+        "Linked Station",
+        "Probabilities",
+        "Crops Covered"
       ],
       "rows": [
         [
+          "Beitbridge",
+          "Matabeleland South",
+          "",
+          "",
+          "No linked station",
+          "",
+          ""
+        ],
+        [
+          "Bikita",
           "Masvingo",
-          "masvingo",
-          "In Sync",
-          "14",
-          "14",
-          "MASVINGO AIRPORT (MET)",
-          "MASVINGO AIRPORT (MET)",
+          "",
+          "",
+          "No linked station",
+          "",
           ""
         ],
         [
-          "Mangwe",
-          "mangwe",
-          "In Sync",
-          "13",
-          "13",
-          "PLUMTREE (MET)",
-          "PLUMTREE (MET)",
-          ""
-        ],
-        [
-          "Mwenezi",
-          "mwenezi",
-          "In Sync",
-          "17",
-          "17",
-          "BUFFALO RANGE (MET)",
-          "BUFFALO RANGE (MET)",
+          "Bindura",
+          "Mashonaland Central",
+          "",
+          "",
+          "No linked station",
+          "",
           ""
         ]
       ],
-      "rowCount": 5
+      "rowCount": 50
     }
   ],
   "nav": [

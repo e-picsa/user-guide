@@ -46,7 +46,7 @@ that same constant, so the site and the PDF exporter cannot drift.
 - Dashboard route definitions: `../picsa-apps/apps/picsa-apps/dashboard/src/app/app.routes.ts`
   with per-feature routes colocated at `modules/*/*.routes.ts` via `defineFeature`
   (`../picsa-apps/apps/picsa-apps/dashboard/src/app/utils/route-utils.ts`).
-- Dashboard runs locally on `http://localhost:4200`
+- Dashboard runs locally on `http://localhost:3000`
   (`yarn start:dashboard` from `../picsa-apps`). All screenshot tooling targets
   this instance exclusively; no prod (`https://dashboard.picsa.app`) captures.
 - Dashboard auth is Supabase email/password

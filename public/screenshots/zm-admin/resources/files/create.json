@@ -1,24 +1,24 @@
 {
   "route": "resources/files/create",
-  "url": "http://localhost:4200/resources/files/create",
+  "url": "http://localhost:3000/resources/files/create",
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
-  "dashboardVersion": "5.14.0",
-  "capturedAt": "2026-09-25T01:17:40.286Z",
+  "dashboardVersion": "5.20.0",
+  "capturedAt": "2026-11-04T23:51:34.721Z",
   "viewport": {
     "width": 1280,
     "height": 720
   },
-  "scrollTop": 65,
+  "scrollTop": 66,
   "space": "viewport-relative CSS px at capture viewport (1:1 with png at deviceScaleFactor 1)",
   "headings": [
     {
       "tag": "h2",
       "kind": "heading",
-      "text": "Edit Resource",
+      "text": "Create Resource",
       "bbox": {
         "x": 220,
-        "y": -33,
+        "y": -34,
         "width": 1044,
         "height": 32
       }
@@ -28,10 +28,10 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "homeHome",
+      "text": "Home",
       "bbox": {
         "x": 0,
-        "y": 72,
+        "y": 8,
         "width": 203,
         "height": 48
       },
@@ -40,10 +40,10 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "filter_dramaClimate",
+      "text": "Climate",
       "bbox": {
         "x": 0,
-        "y": 120,
+        "y": 56,
         "width": 203,
         "height": 48
       }
@@ -54,7 +54,7 @@
       "text": "Station Data",
       "bbox": {
         "x": 0,
-        "y": 168,
+        "y": 104,
         "width": 203,
         "height": 48
       },
@@ -66,7 +66,7 @@
       "text": "Forecasts",
       "bbox": {
         "x": 0,
-        "y": 216,
+        "y": 152,
         "width": 203,
         "height": 48
       },
@@ -78,7 +78,7 @@
       "text": "Admin",
       "bbox": {
         "x": 0,
-        "y": 264,
+        "y": 200,
         "width": 203,
         "height": 48
       },
@@ -87,10 +87,10 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "spaCrop",
+      "text": "Crop",
       "bbox": {
         "x": 0,
-        "y": 168,
+        "y": 104,
         "width": 203,
         "height": 48
       }
@@ -101,7 +101,7 @@
       "text": "Variety",
       "bbox": {
         "x": 0,
-        "y": 216,
+        "y": 152,
         "width": 203,
         "height": 48
       },
@@ -113,7 +113,7 @@
       "text": "Probability",
       "bbox": {
         "x": 0,
-        "y": 264,
+        "y": 200,
         "width": 203,
         "height": 48
       },
@@ -125,7 +125,7 @@
       "text": "Admin",
       "bbox": {
         "x": 0,
-        "y": 312,
+        "y": 248,
         "width": 203,
         "height": 48
       },
@@ -134,10 +134,10 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "translateTranslations",
+      "text": "Translations",
       "bbox": {
         "x": 0,
-        "y": 216,
+        "y": 152,
         "width": 203,
         "height": 48
       }
@@ -148,7 +148,7 @@
       "text": "List",
       "bbox": {
         "x": 0,
-        "y": 264,
+        "y": 200,
         "width": 203,
         "height": 48
       },
@@ -160,7 +160,7 @@
       "text": "Import",
       "bbox": {
         "x": 0,
-        "y": 312,
+        "y": 248,
         "width": 203,
         "height": 48
       },
@@ -169,10 +169,10 @@
     {
       "tag": "mat-expansion-panel-header",
       "kind": "button",
-      "text": "library_booksResources",
+      "text": "Resources",
       "bbox": {
         "x": 0,
-        "y": 264,
+        "y": 200,
         "width": 203,
         "height": 64
       }
@@ -183,7 +183,7 @@
       "text": "Files",
       "bbox": {
         "x": 0,
-        "y": 328,
+        "y": 264,
         "width": 203,
         "height": 48
       },
@@ -195,7 +195,7 @@
       "text": "Links",
       "bbox": {
         "x": 0,
-        "y": 376,
+        "y": 312,
         "width": 203,
         "height": 48
       },
@@ -207,7 +207,7 @@
       "text": "Collections",
       "bbox": {
         "x": 0,
-        "y": 424,
+        "y": 360,
         "width": 203,
         "height": 48
       },
@@ -219,7 +219,7 @@
       "text": "Farmer Videos",
       "bbox": {
         "x": 0,
-        "y": 472,
+        "y": 408,
         "width": 203,
         "height": 48
       },
@@ -228,10 +228,10 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "query_statsStatistics",
+      "text": "Statistics",
       "bbox": {
         "x": 0,
-        "y": 550,
+        "y": 519,
         "width": 203,
         "height": 48
       },
@@ -240,10 +240,10 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "appsDeployments",
+      "text": "Deployments",
       "bbox": {
         "x": 0,
-        "y": 598,
+        "y": 567,
         "width": 203,
         "height": 48
       },
@@ -252,10 +252,10 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "manage_accountsUser Permissions",
+      "text": "User Permissions",
       "bbox": {
         "x": 0,
-        "y": 646,
+        "y": 615,
         "width": 203,
         "height": 48
       },
@@ -264,10 +264,10 @@
     {
       "tag": "a",
       "kind": "link",
-      "text": "mapMap Boundaries",
+      "text": "Map Boundaries",
       "bbox": {
         "x": 0,
-        "y": 694,
+        "y": 663,
         "width": 203,
         "height": 48
       },
@@ -287,10 +287,10 @@
     {
       "tag": "button",
       "kind": "button",
-      "text": "perm_media Select existing file",
+      "text": "Select existing file",
       "bbox": {
         "x": 220,
-        "y": 216.5,
+        "y": 216,
         "width": 193.2,
         "height": 36
       }
@@ -309,10 +309,10 @@
     {
       "tag": "button",
       "kind": "button",
-      "text": "perm_media Select existing file",
+      "text": "Select existing file",
       "bbox": {
         "x": 536,
-        "y": 216.5,
+        "y": 216,
         "width": 193.2,
         "height": 36
       }
@@ -323,7 +323,7 @@
       "text": "input",
       "bbox": {
         "x": 240,
-        "y": 308.5,
+        "y": 308,
         "width": 564,
         "height": 41
       },
@@ -332,10 +332,10 @@
     {
       "tag": "button",
       "kind": "button",
-      "text": "done Save Resource",
+      "text": "Save Resource",
       "bbox": {
         "x": 220,
-        "y": 668,
+        "y": 669,
         "width": 172.5,
         "height": 36
       }
@@ -344,7 +344,7 @@
   "tables": [],
   "nav": [
     {
-      "label": "homeHome",
+      "label": "Home",
       "href": "/home"
     },
     {
@@ -396,19 +396,19 @@
       "href": "/resources/farmer-videos"
     },
     {
-      "label": "query_statsStatistics",
+      "label": "Statistics",
       "href": "/stats"
     },
     {
-      "label": "appsDeployments",
+      "label": "Deployments",
       "href": "/deployment"
     },
     {
-      "label": "manage_accountsUser Permissions",
+      "label": "User Permissions",
       "href": "/deployment/permissions"
     },
     {
-      "label": "mapMap Boundaries",
+      "label": "Map Boundaries",
       "href": "/map-admin"
     }
   ],
