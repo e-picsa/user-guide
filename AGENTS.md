@@ -174,7 +174,7 @@ pages in the index.
 
 ## Quality checks
 
-`.github/workflows/quality.yml` runs on every pull request. It is advisory for
+`.github/workflows/pr-checks.yml` runs on every pull request. It is advisory for
 now (`continue-on-error: true`) and does not affect `deploy.yml`, so a failure
 never stops a deployment. The pre-commit hook is a fast subset: spelling and markdownlint on staged doc pages. Everything else
 only runs in CI, or locally with these commands:
