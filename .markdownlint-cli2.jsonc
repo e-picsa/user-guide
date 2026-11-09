@@ -1,0 +1,13 @@
+{
+  // MDX pages only; developer markdown is out of scope, as for cspell.
+  "globs": ["content/docs/**/*.mdx"],
+  "config": {
+    "default": true,
+    // Prose is not wrapped.
+    "MD013": false,
+    // JSX components are expected in MDX.
+    "MD033": false,
+    // The page title comes from frontmatter, so the body has no top-level heading.
+    "MD041": false
+  }
+}
