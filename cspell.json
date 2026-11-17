@@ -12,15 +12,8 @@
   ],
   "ignoreRegExpList": ["Urls", "HexValues", "EmailAddresses"],
   "words": [
-    "CHAMBESHI",
-    "CHIPATA",
-    "Chadiza",
-    "Chipata",
-    "Nyanja",
     "PICSA",
     "Topo",
-    "Untick",
-    "resends",
     "upserted"
   ]
 }

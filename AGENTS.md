@@ -167,13 +167,29 @@ pages in the index.
   `upserted`) is added to `words` in `cspell.json`; a code/URL artefact means
   the config is wrong, so fix `ignoreRegExpList`/`ignorePaths` instead of
   adding the token. Never add a whole file to `ignorePaths` to make a run pass.
-- `spellcheck:fix` only applies cspell's own fixable cases (mostly dictionary
-  case variants) — it will not correct ordinary typos, so the manual pass is
-  still the real work.
 - Re-run `bun run spellcheck` after any bulk content edit, and expect a new
   word in `cspell.json` when a page starts naming a new station, district or
   external system. The hook only sees staged files, so an unstaged page's typo
   survives until it is committed.
+
+## Quality checks
+
+`.github/workflows/pr-checks.yml` runs on every pull request. A failed step
+fails the run (there is no `continue-on-error`); `main` is currently
+unprotected so checks do not gate merging, and `deploy.yml` (push to `main`)
+is a separate workflow that PR checks never trigger. The pre-commit hook is a
+fast subset: spelling and markdownlint on staged doc pages. The rest also run
+locally:
+
+- `bun run lint` — eslint.
+- `bun run lint:md` — markdownlint on `content/docs/**/*.mdx`. Config is
+  `.markdownlint-cli2.jsonc`.
+- `bun run shots:verify` — offline checks for the screenshot extractors.
+- `bun run build`, then `bun run types:check` and `bun run links:check` —
+  `links:check` validates internal links, anchors and images in `out/`, so it
+  needs the build first. It also checks each `<Screenshot name>` against every
+  country in `src/lib/countries.ts`, because the prerender only includes the
+  default country. Screenshot sidecar pages under `out/screenshots/` are skipped.
 
 ## PDF publishing
 
