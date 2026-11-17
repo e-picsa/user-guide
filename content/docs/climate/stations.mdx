@@ -24,7 +24,14 @@ description: Browse weather stations for your deployment and open a station for 
 - **Zoom the map** with the +/- controls to inspect station coverage.
 
 <Callout type="info">
-  The **Refresh** button in the top-right is only visible to `climate.admin`
-  users. It updates station records from the climate API and does not change
-  historical data — for that, see [Climate data admin](./data-admin).
+  The **Refresh** button in the top-right updates station records from the
+  climate API and does not change historical data — for that, see
+  [Climate data admin](./data-admin).
 </Callout>
+
+## Who can do what
+
+<AccessSummary>
+  <AccessRow roles="viewer">Search, sort and open any station — the table and map are available to every signed-in user.</AccessRow>
+  <AccessRow roles="admin">See the **Refresh** button and re-sync station records from the climate API (`climate.admin`).</AccessRow>
+</AccessSummary>
