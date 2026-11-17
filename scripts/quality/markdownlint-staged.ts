@@ -16,8 +16,8 @@ if (staged.error || staged.status !== 0) {
 const files = (staged.stdout ?? '').split('\0').filter((f) => /^content\/docs\/.*\.mdx$/.test(f));
 if (files.length === 0) process.exit(0);
 
-// `#` entries in the argument list drop the config's glob, so only these files run.
-const result = spawnSync('bunx', ['markdownlint-cli2', '#content/docs/**/*.mdx', ...files], {
+// `--no-globs` ignores the config's `globs`, so only these files run.
+const result = spawnSync('bunx', ['markdownlint-cli2', '--no-globs', ...files], {
   stdio: 'inherit',
 });
 process.exit(result.status ?? 1);
