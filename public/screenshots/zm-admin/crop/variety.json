@@ -3,8 +3,8 @@
   "url": "http://localhost:3000/crop/variety",
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
-  "dashboardVersion": "5.20.0",
-  "capturedAt": "2026-11-04T23:50:55.712Z",
+  "dashboardVersion": "5.23.1",
+  "capturedAt": "2026-11-16T22:30:45.715Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -228,6 +228,18 @@
     {
       "tag": "a",
       "kind": "link",
+      "text": "Admin",
+      "bbox": {
+        "x": 0,
+        "y": 600,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/admin"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
       "text": "Statistics",
       "bbox": {
         "x": 0,
@@ -290,7 +302,7 @@
       "text": "input",
       "bbox": {
         "x": 276,
-        "y": 114,
+        "y": 113,
         "width": 972,
         "height": 41
       },
@@ -302,7 +314,7 @@
       "text": "Crop",
       "bbox": {
         "x": 236,
-        "y": 201.5,
+        "y": 200,
         "width": 118.9,
         "height": 22
       }
@@ -313,7 +325,7 @@
       "text": "Variety",
       "bbox": {
         "x": 386.9,
-        "y": 201.5,
+        "y": 200,
         "width": 170.1,
         "height": 22
       }
@@ -324,7 +336,7 @@
       "text": "Maturity Period",
       "bbox": {
         "x": 589,
-        "y": 201.5,
+        "y": 200,
         "width": 145.1,
         "height": 22
       }
@@ -335,7 +347,7 @@
       "text": "Days Lower",
       "bbox": {
         "x": 766.1,
-        "y": 201.5,
+        "y": 200,
         "width": 111.8,
         "height": 22
       }
@@ -346,7 +358,7 @@
       "text": "Days Upper",
       "bbox": {
         "x": 909.9,
-        "y": 201.5,
+        "y": 200,
         "width": 111.8,
         "height": 22
       }
@@ -357,7 +369,7 @@
       "text": "Downscaled Locations",
       "bbox": {
         "x": 1053.7,
-        "y": 201.5,
+        "y": 200,
         "width": 194.3,
         "height": 22
       }
@@ -454,6 +466,10 @@
     {
       "label": "Farmer Videos",
       "href": "/resources/farmer-videos"
+    },
+    {
+      "label": "Admin",
+      "href": "/resources/admin"
     },
     {
       "label": "Statistics",

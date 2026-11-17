@@ -3,7 +3,7 @@
   "url": "http://localhost:3000/crop/probability/chadiza",
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
-  "dashboardVersion": "5.20.0",
+  "dashboardVersion": "5.23.1",
   "capturedAt": "2026-11-04T23:51:13.705Z",
   "viewport": {
     "width": 1280,
@@ -18,9 +18,9 @@
       "text": "Chadiza",
       "bbox": {
         "x": 220,
-        "y": -30.5,
+        "y": -30.7,
         "width": 73.5,
-        "height": 25
+        "height": 25.5
       }
     },
     {
@@ -40,7 +40,7 @@
       "text": "Crop Information Chadiza",
       "bbox": {
         "x": 245,
-        "y": 329,
+        "y": 328.5,
         "width": 449.9,
         "height": 64
       }
@@ -250,6 +250,18 @@
     {
       "tag": "a",
       "kind": "link",
+      "text": "Admin",
+      "bbox": {
+        "x": 0,
+        "y": 600,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/admin"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
       "text": "Statistics",
       "bbox": {
         "x": 0,
@@ -301,7 +313,7 @@
       "text": "Climate Data",
       "bbox": {
         "x": 930.6,
-        "y": 23,
+        "y": 22.8,
         "width": 149.5,
         "height": 36
       }
@@ -311,9 +323,9 @@
       "kind": "button",
       "text": "Change Station",
       "bbox": {
-        "x": 1096,
-        "y": 23,
-        "width": 168,
+        "x": 1096.1,
+        "y": 22.8,
+        "width": 167.9,
         "height": 36
       }
     },
@@ -323,7 +335,7 @@
       "text": "Copy To Clipboard",
       "bbox": {
         "x": 220,
-        "y": 2585.5,
+        "y": 2585,
         "width": 208,
         "height": 36
       }
@@ -334,7 +346,7 @@
       "text": "Export",
       "bbox": {
         "x": 1164.6,
-        "y": 2585.5,
+        "y": 2585,
         "width": 99.4,
         "height": 36
       }
@@ -441,6 +453,10 @@
     {
       "label": "Farmer Videos",
       "href": "/resources/farmer-videos"
+    },
+    {
+      "label": "Admin",
+      "href": "/resources/admin"
     },
     {
       "label": "Statistics",

@@ -3,8 +3,8 @@
   "url": "http://localhost:3000/climate/forecast",
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
-  "dashboardVersion": "5.20.0",
-  "capturedAt": "2026-11-04T23:56:36.831Z",
+  "dashboardVersion": "5.23.1",
+  "capturedAt": "2026-11-16T22:41:45.541Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -228,6 +228,18 @@
     {
       "tag": "a",
       "kind": "link",
+      "text": "Admin",
+      "bbox": {
+        "x": 0,
+        "y": 664,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/admin"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
       "text": "Statistics",
       "bbox": {
         "x": 0,
@@ -276,9 +288,20 @@
     {
       "tag": "button",
       "kind": "button",
-      "text": "Nov 2026",
+      "text": "Previous month",
       "bbox": {
         "x": 334.6,
+        "y": 24,
+        "width": 48,
+        "height": 48
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Nov 2026",
+      "bbox": {
+        "x": 382.6,
         "y": 30,
         "width": 104.2,
         "height": 36
@@ -287,56 +310,78 @@
     {
       "tag": "button",
       "kind": "button",
-      "text": "Add seasonal Forecast",
+      "text": "Next month",
       "bbox": {
-        "x": 979.6,
+        "x": 486.8,
+        "y": 24,
+        "width": 48,
+        "height": 48
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Add Forecast",
+      "bbox": {
+        "x": 1054.2,
         "y": 30,
-        "width": 236.4,
+        "width": 161.8,
         "height": 36
       }
     },
     {
-      "tag": "div",
-      "kind": "tab",
-      "text": "Seasonal",
+      "tag": "button",
+      "kind": "button",
+      "text": "All",
       "bbox": {
         "x": 220,
-        "y": 80,
-        "width": 266.2,
-        "height": 48
+        "y": 242,
+        "width": 68.9,
+        "height": 32
       }
     },
     {
-      "tag": "div",
-      "kind": "tab",
+      "tag": "button",
+      "kind": "button",
+      "text": "Seasonal",
+      "bbox": {
+        "x": 296.9,
+        "y": 242,
+        "width": 84.7,
+        "height": 32
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
       "text": "Downscaled",
       "bbox": {
-        "x": 486.2,
-        "y": 80,
-        "width": 289.8,
-        "height": 48
+        "x": 389.7,
+        "y": 242,
+        "width": 106,
+        "height": 32
       }
     },
     {
-      "tag": "div",
-      "kind": "tab",
+      "tag": "button",
+      "kind": "button",
       "text": "Weekly",
       "bbox": {
-        "x": 776,
-        "y": 80,
-        "width": 251.9,
-        "height": 48
+        "x": 503.6,
+        "y": 242,
+        "width": 72.3,
+        "height": 32
       }
     },
     {
-      "tag": "div",
-      "kind": "tab",
+      "tag": "button",
+      "kind": "button",
       "text": "Daily",
       "bbox": {
-        "x": 1027.9,
-        "y": 80,
-        "width": 236,
-        "height": 48
+        "x": 583.9,
+        "y": 242,
+        "width": 57.7,
+        "height": 32
       }
     },
     {
@@ -345,7 +390,7 @@
       "text": "input",
       "bbox": {
         "x": 276,
-        "y": 152,
+        "y": 310,
         "width": 972,
         "height": 41
       },
@@ -357,8 +402,19 @@
       "text": "Created At",
       "bbox": {
         "x": 236,
-        "y": 239.5,
-        "width": 234.8,
+        "y": 397.5,
+        "width": 232.7,
+        "height": 22
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "Forecast Type",
+      "bbox": {
+        "x": 500.7,
+        "y": 397.5,
+        "width": 278.8,
         "height": 22
       }
     },
@@ -367,20 +423,9 @@
       "kind": "button",
       "text": "Label",
       "bbox": {
-        "x": 502.8,
-        "y": 239.5,
-        "width": 205.4,
-        "height": 22
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "button",
-      "text": "Language",
-      "bbox": {
-        "x": 740.2,
-        "y": 239.5,
-        "width": 223.9,
+        "x": 811.5,
+        "y": 397.5,
+        "width": 154.9,
         "height": 22
       }
     },
@@ -389,9 +434,9 @@
       "kind": "button",
       "text": "Storage File",
       "bbox": {
-        "x": 996.1,
-        "y": 239.5,
-        "width": 251.9,
+        "x": 998.3,
+        "y": 397.5,
+        "width": 249.7,
         "height": 22
       }
     }
@@ -400,19 +445,12 @@
     {
       "headers": [
         "Created At",
+        "Forecast Type",
         "Label",
-        "Language",
         "Storage File"
       ],
-      "rows": [
-        [
-          "Nov 4, 2026",
-          "2026 - 2027",
-          "English",
-          ""
-        ]
-      ],
-      "rowCount": 1
+      "rows": [],
+      "rowCount": 0
     }
   ],
   "nav": [
@@ -467,6 +505,10 @@
     {
       "label": "Farmer Videos",
       "href": "/resources/farmer-videos"
+    },
+    {
+      "label": "Admin",
+      "href": "/resources/admin"
     },
     {
       "label": "Statistics",

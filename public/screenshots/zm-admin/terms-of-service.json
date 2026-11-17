@@ -3,8 +3,8 @@
   "url": "http://localhost:3000/terms-of-service",
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
-  "dashboardVersion": "5.20.0",
-  "capturedAt": "2026-11-04T23:55:31.714Z",
+  "dashboardVersion": "5.23.1",
+  "capturedAt": "2026-11-16T22:35:32.403Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -40,7 +40,7 @@
       "text": "2. Description of Service",
       "bbox": {
         "x": 224,
-        "y": 278,
+        "y": 276.5,
         "width": 832,
         "height": 28
       }
@@ -51,7 +51,7 @@
       "text": "3. User Accounts",
       "bbox": {
         "x": 224,
-        "y": 452,
+        "y": 449,
         "width": 832,
         "height": 28
       }
@@ -62,7 +62,7 @@
       "text": "4. Acceptable Use & Content Responsibility",
       "bbox": {
         "x": 224,
-        "y": 626,
+        "y": 621.5,
         "width": 832,
         "height": 28
       }
@@ -73,7 +73,7 @@
       "text": "5. Intellectual Property",
       "bbox": {
         "x": 224,
-        "y": 876,
+        "y": 869,
         "width": 832,
         "height": 28
       }
@@ -84,7 +84,7 @@
       "text": "6. Limitation of Liability",
       "bbox": {
         "x": 224,
-        "y": 1214,
+        "y": 1202.5,
         "width": 832,
         "height": 28
       }
@@ -95,7 +95,7 @@
       "text": "7. Contact Us",
       "bbox": {
         "x": 224,
-        "y": 1388,
+        "y": 1375,
         "width": 832,
         "height": 28
       }
@@ -108,9 +108,9 @@
       "text": "support@picsa.app",
       "bbox": {
         "x": 890.1,
-        "y": 1432,
+        "y": 1419,
         "width": 144.9,
-        "height": 22
+        "height": 21.5
       },
       "href": "mailto:support@picsa.app"
     }
