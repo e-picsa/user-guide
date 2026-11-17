@@ -9,16 +9,13 @@ description: Browse downloadable files shared with the field app for offline use
   name="resources/files.png"
   alt="File Resources list"
   markers={[
-    { x: 60, y: 19, label: 'Search — filter by title' },
-    { x: 50, y: 40, label: 'Resource table — type icon, cover, title, size, languages, collections; click a row to edit' },
+    { x: 92.2, y: 5, label: 'Add Resource — upload a new file' },
+    { x: 19.9, y: 21, label: 'All / In Collection / Unassigned — filter by collection membership' },
+    { x: 59.5, y: 32.2, label: 'Search Data — filter by title' },
+    { x: 49, y: 42.9, label: 'Resource table — type, cover, title, size, languages, collections; click a row to edit' },
   ]}
-  caption="File Resources, 25 files (Zambia)"
+  caption="File Resources, 5 files (Zambia)"
 />
-
-<Callout type="info">
-  **Add Resource** (`resources.editor`) sits at the top of the page above the
-  visible area — scroll up to upload a new file.
-</Callout>
 
 ## Understanding the columns
 
@@ -31,4 +28,12 @@ description: Browse downloadable files shared with the field app for offline use
 | Collections | Groupings this file belongs to — click a cover to open the collection |
 | Updated | Last modification date |
 
-Click any row to open it — editors can change the file's metadata, replace the upload or delete it — see [Managing files](./files-manage).
+Click any row to open it — see [Managing files](./files-manage) for what you can change.
+
+## Who can do what
+
+<AccessSummary>
+  <AccessRow roles="viewer">Browse the list and open any file — without an editing role the form opens read-only as **View Resource**.</AccessRow>
+  <AccessRow roles="editor">See **Add Resource** and upload new files; edit or delete owned files (`resources.editor`) — see [Managing files](./files-manage).</AccessRow>
+  <AccessRow roles="admin">Edit or delete any file, and audit field-app data in [Resources data admin](./data-admin) (`resources.admin`).</AccessRow>
+</AccessSummary>

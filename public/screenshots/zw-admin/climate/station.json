@@ -3,7 +3,7 @@
   "url": "http://localhost:3000/climate/station",
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
-  "dashboardVersion": "5.20.0",
+  "dashboardVersion": "5.23.1",
   "capturedAt": "2026-11-04T23:56:21.258Z",
   "viewport": {
     "width": 1280,
@@ -212,6 +212,18 @@
         "height": 48
       },
       "href": "/resources/farmer-videos"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Admin",
+      "bbox": {
+        "x": 0,
+        "y": 664,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/admin"
     },
     {
       "tag": "a",
@@ -573,6 +585,10 @@
     {
       "label": "Farmer Videos",
       "href": "/resources/farmer-videos"
+    },
+    {
+      "label": "Admin",
+      "href": "/resources/admin"
     },
     {
       "label": "Statistics",

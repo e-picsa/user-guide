@@ -9,11 +9,11 @@ description: Curate external websites, apps and social media links for the field
   name="resources/links.png"
   alt="Resource Links list"
   markers={[
-    { x: 60, y: 19, label: 'Search — filter by title' },
-    { x: 50, y: 40, label: 'Link table — type icon, cover, title, description and URL; click a row to edit' },
-    { x: 86, y: 36, label: 'URL buttons open the destination in a new tab' },
+    { x: 59.5, y: 24.7, label: 'Search Data — filter by title' },
+    { x: 41.4, y: 35.4, label: 'Link table — type, cover, title and description; click a row to edit' },
+    { x: 86.2, y: 35.4, label: 'URL buttons open the destination in a new tab' },
   ]}
-  caption="Resource Links, 20 links (Zambia)"
+  caption="Resource Links, 14 links (Zambia)"
 />
 
 <Callout type="info">
@@ -28,22 +28,31 @@ The type icon tells farmers what to expect: social (groups and pages), web (site
 ## Adding or editing a link
 
 **Add Link** (or click a row) opens the link editor (`resources/links/create`
-for new links, `resources/links/:id` when editing an existing row), which
-currently asks only for the **URL** (validated as a web address) alongside the
-country. Creating links requires `resources.editor`; editing is limited to
-`resources.admin` users and the link's owner (anyone else gets a read-only
-view). Save to publish it to the list.
+for new links, `resources/links/:id` when editing an existing row). The form
+asks for a **Cover Image**, **Title**, **URL** (validated as a web address),
+**Type** and **Description**, plus which **Collections** the link belongs to.
+Save to publish it to the list.
 
 <Screenshot
   name="resources/links/create.png"
-  alt="Link editor with URL field"
+  alt="Link editor with cover, title and URL fields"
   markers={[
-    { x: 25.8, y: 17.3, label: 'URL — the destination address (validated as a web address)' },
+    { x: 33.7, y: 10.7, label: 'Cover image — thumbnail shown in lists' },
+    { x: 39.8, y: 37.2, label: 'Title* — display name in the field app' },
+    { x: 39.8, y: 52.6, label: 'URL* — the destination address (validated as a web address)' },
   ]}
-  caption="Link editor"
+  caption="Link editor (Zambia)"
 />
 
 <Callout type="info">
   Links point outward — unlike files, they need connectivity to open. Prefer
   file resources for content farmers must reach offline.
 </Callout>
+
+## Who can do what
+
+<AccessSummary>
+  <AccessRow roles="viewer">Browse the list and open any link — without an editing role the editor opens read-only as **View Resource Link**.</AccessRow>
+  <AccessRow roles="editor">See **Add Link** and register new links; edit or delete owned links, while links owned by someone else stay read-only (`resources.editor`).</AccessRow>
+  <AccessRow roles="admin">Edit or delete any link, and audit field-app data in [Resources data admin](./data-admin) (`resources.admin`).</AccessRow>
+</AccessSummary>

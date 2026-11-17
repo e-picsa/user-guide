@@ -9,24 +9,19 @@ description: Group files and links into nested collections for the field app.
   name="resources/collections.png"
   alt="Resource Collections list"
   markers={[
-    { x: 60, y: 19, label: 'Search — filter by title' },
-    { x: 50, y: 40, label: 'Collection table — cover, title, description and modified date; click a row to open it' },
-    { x: 79, y: 30, label: 'Parent Collection shows where a collection nests in the hierarchy' },
+    { x: 92, y: 5, label: 'Add Collection — create a new named set' },
+    { x: 59.5, y: 21.4, label: 'Search — filter by title' },
+    { x: 80, y: 32.2, label: 'Files and Links counts — click a row to open the collection' },
   ]}
-  caption="Resource Collections, 11 collections (Zambia)"
+  caption="Resource Collections, 3 collections (Zambia)"
 />
 
-Root-level collections sort first, then the rest by modification date. Clicking a collection cover elsewhere (for example in the Files list) jumps here.
+The table shows each collection's cover, title and description, how many files and links it holds, and when it was last modified. Clicking a collection cover elsewhere (for example in the Files list) jumps here.
 
-<Callout type="warning">
-  The **Add Collection** button (top of the page, `resources.editor`) is
-  currently **disabled** while collection management is rebuilt, and opening
-  it shows a placeholder page. Collections themselves still display normally in
-  the field app.
-</Callout>
+## Who can do what
 
-<Screenshot
-  name="resources/collections/create.png"
-  alt="Collections editor placeholder"
-  caption="Collection editor placeholder — admin management UI coming soon"
-/>
+<AccessSummary>
+  <AccessRow roles="viewer">Browse the list and open any collection — without an editing role the editor opens read-only as **View Collection**.</AccessRow>
+  <AccessRow roles="editor">See **Add Collection** and create collections or edit any existing one (`resources.editor`) — see [Managing collections](./collections-manage).</AccessRow>
+  <AccessRow roles="admin">Additionally delete any collection, and audit field-app data in [Resources data admin](./data-admin) (`resources.admin`).</AccessRow>
+</AccessSummary>

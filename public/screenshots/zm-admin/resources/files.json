@@ -3,13 +3,13 @@
   "url": "http://localhost:3000/resources/files",
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
-  "dashboardVersion": "5.20.0",
-  "capturedAt": "2026-11-04T23:51:25.784Z",
+  "dashboardVersion": "5.23.1",
+  "capturedAt": "2026-11-16T22:31:12.810Z",
   "viewport": {
     "width": 1280,
     "height": 720
   },
-  "scrollTop": 66,
+  "scrollTop": 0,
   "space": "viewport-relative CSS px at capture viewport (1:1 with png at deviceScaleFactor 1)",
   "headings": [
     {
@@ -18,7 +18,7 @@
       "text": "File Resources",
       "bbox": {
         "x": 220,
-        "y": -34,
+        "y": 20,
         "width": 159.9,
         "height": 32
       }
@@ -31,7 +31,7 @@
       "text": "Home",
       "bbox": {
         "x": 0,
-        "y": 8,
+        "y": 72,
         "width": 203,
         "height": 48
       },
@@ -43,7 +43,7 @@
       "text": "Climate",
       "bbox": {
         "x": 0,
-        "y": 56,
+        "y": 120,
         "width": 203,
         "height": 48
       }
@@ -54,7 +54,7 @@
       "text": "Station Data",
       "bbox": {
         "x": 0,
-        "y": 104,
+        "y": 168,
         "width": 203,
         "height": 48
       },
@@ -66,7 +66,7 @@
       "text": "Forecasts",
       "bbox": {
         "x": 0,
-        "y": 152,
+        "y": 216,
         "width": 203,
         "height": 48
       },
@@ -78,7 +78,7 @@
       "text": "Admin",
       "bbox": {
         "x": 0,
-        "y": 200,
+        "y": 264,
         "width": 203,
         "height": 48
       },
@@ -90,7 +90,7 @@
       "text": "Crop",
       "bbox": {
         "x": 0,
-        "y": 104,
+        "y": 168,
         "width": 203,
         "height": 48
       }
@@ -101,7 +101,7 @@
       "text": "Variety",
       "bbox": {
         "x": 0,
-        "y": 152,
+        "y": 216,
         "width": 203,
         "height": 48
       },
@@ -113,7 +113,7 @@
       "text": "Probability",
       "bbox": {
         "x": 0,
-        "y": 200,
+        "y": 264,
         "width": 203,
         "height": 48
       },
@@ -125,7 +125,7 @@
       "text": "Admin",
       "bbox": {
         "x": 0,
-        "y": 248,
+        "y": 312,
         "width": 203,
         "height": 48
       },
@@ -137,7 +137,7 @@
       "text": "Translations",
       "bbox": {
         "x": 0,
-        "y": 152,
+        "y": 216,
         "width": 203,
         "height": 48
       }
@@ -148,7 +148,7 @@
       "text": "List",
       "bbox": {
         "x": 0,
-        "y": 200,
+        "y": 264,
         "width": 203,
         "height": 48
       },
@@ -160,7 +160,7 @@
       "text": "Import",
       "bbox": {
         "x": 0,
-        "y": 248,
+        "y": 312,
         "width": 203,
         "height": 48
       },
@@ -172,7 +172,7 @@
       "text": "Resources",
       "bbox": {
         "x": 0,
-        "y": 200,
+        "y": 264,
         "width": 203,
         "height": 64
       }
@@ -183,7 +183,7 @@
       "text": "Files",
       "bbox": {
         "x": 0,
-        "y": 264,
+        "y": 328,
         "width": 203,
         "height": 48
       },
@@ -195,7 +195,7 @@
       "text": "Links",
       "bbox": {
         "x": 0,
-        "y": 312,
+        "y": 376,
         "width": 203,
         "height": 48
       },
@@ -207,7 +207,7 @@
       "text": "Collections",
       "bbox": {
         "x": 0,
-        "y": 360,
+        "y": 424,
         "width": 203,
         "height": 48
       },
@@ -219,7 +219,7 @@
       "text": "Farmer Videos",
       "bbox": {
         "x": 0,
-        "y": 408,
+        "y": 472,
         "width": 203,
         "height": 48
       },
@@ -228,10 +228,22 @@
     {
       "tag": "a",
       "kind": "link",
+      "text": "Admin",
+      "bbox": {
+        "x": 0,
+        "y": 520,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/admin"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
       "text": "Statistics",
       "bbox": {
         "x": 0,
-        "y": 519,
+        "y": 598,
         "width": 203,
         "height": 48
       },
@@ -243,7 +255,7 @@
       "text": "Deployments",
       "bbox": {
         "x": 0,
-        "y": 567,
+        "y": 646,
         "width": 203,
         "height": 48
       },
@@ -255,7 +267,7 @@
       "text": "User Permissions",
       "bbox": {
         "x": 0,
-        "y": 615,
+        "y": 694,
         "width": 203,
         "height": 48
       },
@@ -267,7 +279,7 @@
       "text": "Map Boundaries",
       "bbox": {
         "x": 0,
-        "y": 663,
+        "y": 742,
         "width": 203,
         "height": 48
       },
@@ -279,9 +291,42 @@
       "text": "Add Resource",
       "bbox": {
         "x": 1097.3,
-        "y": -28,
+        "y": 18,
         "width": 166.7,
         "height": 36
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "All",
+      "bbox": {
+        "x": 220,
+        "y": 135,
+        "width": 68.9,
+        "height": 32
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "In Collection",
+      "bbox": {
+        "x": 296.9,
+        "y": 135,
+        "width": 109.2,
+        "height": 32
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Unassigned",
+      "bbox": {
+        "x": 414.2,
+        "y": 135,
+        "width": 104,
+        "height": 32
       }
     },
     {
@@ -290,7 +335,7 @@
       "text": "input",
       "bbox": {
         "x": 276,
-        "y": 114,
+        "y": 211,
         "width": 972,
         "height": 41
       },
@@ -302,7 +347,7 @@
       "text": "Type",
       "bbox": {
         "x": 236,
-        "y": 201.5,
+        "y": 298,
         "width": 50.9,
         "height": 22
       }
@@ -313,9 +358,9 @@
       "text": "Cover Image",
       "bbox": {
         "x": 318.9,
-        "y": 201.5,
-        "width": 163.8,
-        "height": 22
+        "y": 287,
+        "width": 104,
+        "height": 44
       }
     },
     {
@@ -323,9 +368,9 @@
       "kind": "button",
       "text": "Title",
       "bbox": {
-        "x": 514.7,
-        "y": 201.5,
-        "width": 288.9,
+        "x": 454.9,
+        "y": 298,
+        "width": 343.3,
         "height": 22
       }
     },
@@ -334,8 +379,8 @@
       "kind": "button",
       "text": "Size",
       "bbox": {
-        "x": 835.6,
-        "y": 201.5,
+        "x": 830.2,
+        "y": 298,
         "width": 45.1,
         "height": 22
       }
@@ -345,8 +390,8 @@
       "kind": "button",
       "text": "Languages",
       "bbox": {
-        "x": 912.7,
-        "y": 201.5,
+        "x": 907.3,
+        "y": 298,
         "width": 94.2,
         "height": 22
       }
@@ -356,8 +401,8 @@
       "kind": "button",
       "text": "Collections",
       "bbox": {
-        "x": 1038.8,
-        "y": 201.5,
+        "x": 1033.5,
+        "y": 298,
         "width": 94.8,
         "height": 22
       }
@@ -367,9 +412,9 @@
       "kind": "button",
       "text": "Updated",
       "bbox": {
-        "x": 1165.6,
-        "y": 201.5,
-        "width": 82.4,
+        "x": 1160.3,
+        "y": 298,
+        "width": 87.8,
         "height": 22
       }
     }
@@ -389,15 +434,6 @@
         [
           "",
           "",
-          "Lusaka ZMD Weather Raymond Testing",
-          "0.4MB",
-          "English",
-          "",
-          "Aug 12, 2024"
-        ],
-        [
-          "",
-          "",
           "Crop Rotation",
           "0.1MB",
           "English",
@@ -412,9 +448,18 @@
           "English",
           "",
           "Aug 12, 2024"
+        ],
+        [
+          "",
+          "",
+          "Plant Pests & Diseases Acts",
+          "0.6MB",
+          "English",
+          "",
+          "Aug 12, 2024"
         ]
       ],
-      "rowCount": 25
+      "rowCount": 5
     }
   ],
   "nav": [
@@ -469,6 +514,10 @@
     {
       "label": "Farmer Videos",
       "href": "/resources/farmer-videos"
+    },
+    {
+      "label": "Admin",
+      "href": "/resources/admin"
     },
     {
       "label": "Statistics",
