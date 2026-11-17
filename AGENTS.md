@@ -174,15 +174,20 @@ pages in the index.
 
 ## Quality checks
 
-`.github/workflows/pr-checks.yml` runs on every pull request. It is advisory for
-now (`continue-on-error: true`) and does not affect `deploy.yml`, so a failure
-never stops a deployment. The pre-commit hook is a fast subset: spelling and markdownlint on staged doc pages. Everything else
-only runs in CI, or locally with these commands:
+`.github/workflows/pr-checks.yml` runs on every pull request. A failed step
+fails the run (there is no `continue-on-error`); `main` is currently
+unprotected so checks do not gate merging, and `deploy.yml` (push to `main`)
+is a separate workflow that PR checks never trigger. The pre-commit hook is a
+fast subset: spelling and markdownlint on staged doc pages. The rest also run
+locally:
 
+- `bun run lint` — eslint.
 - `bun run lint:md` — markdownlint on `content/docs/**/*.mdx`. Config is
   `.markdownlint-cli2.jsonc`.
-- `bun run links:check` — internal links, anchors and images in `out/`, so run
-  `bun run build` first. Also checks each `<Screenshot name>` against every
+- `bun run shots:verify` — offline checks for the screenshot extractors.
+- `bun run build`, then `bun run types:check` and `bun run links:check` —
+  `links:check` validates internal links, anchors and images in `out/`, so it
+  needs the build first. It also checks each `<Screenshot name>` against every
   country in `src/lib/countries.ts`, because the prerender only includes the
   default country. Screenshot sidecar pages under `out/screenshots/` are skipped.
 
