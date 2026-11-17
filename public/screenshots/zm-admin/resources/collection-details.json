@@ -1,0 +1,555 @@
+{
+  "route": "resources/collections/cropResources_zm",
+  "url": "http://localhost:3000/resources/collections/cropResources_zm",
+  "title": "PICSA Dashboard",
+  "identifier": "zm-admin",
+  "dashboardVersion": "5.23.1",
+  "capturedAt": "2026-11-16T22:31:44.313Z",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "scrollTop": 26.5,
+  "space": "viewport-relative CSS px at capture viewport (1:1 with png at deviceScaleFactor 1)",
+  "headings": [
+    {
+      "tag": "h2",
+      "kind": "heading",
+      "text": "Edit Collection",
+      "bbox": {
+        "x": 220,
+        "y": -8.5,
+        "width": 160.5,
+        "height": 32
+      }
+    },
+    {
+      "tag": "h3",
+      "kind": "heading",
+      "text": "Collection Details",
+      "bbox": {
+        "x": 241,
+        "y": 70.5,
+        "width": 468,
+        "height": 25.5
+      }
+    },
+    {
+      "tag": "h3",
+      "kind": "heading",
+      "text": "Collection Contents",
+      "bbox": {
+        "x": 775,
+        "y": 70.5,
+        "width": 182.9,
+        "height": 25.5
+      }
+    }
+  ],
+  "interactive": [
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Home",
+      "bbox": {
+        "x": 0,
+        "y": 45.5,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/home"
+    },
+    {
+      "tag": "mat-expansion-panel-header",
+      "kind": "button",
+      "text": "Climate",
+      "bbox": {
+        "x": 0,
+        "y": 93.5,
+        "width": 203,
+        "height": 48
+      }
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Station Data",
+      "bbox": {
+        "x": 0,
+        "y": 141.5,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/climate/station"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Forecasts",
+      "bbox": {
+        "x": 0,
+        "y": 189.5,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/climate/forecast"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Admin",
+      "bbox": {
+        "x": 0,
+        "y": 237.5,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/climate/admin"
+    },
+    {
+      "tag": "mat-expansion-panel-header",
+      "kind": "button",
+      "text": "Crop",
+      "bbox": {
+        "x": 0,
+        "y": 141.5,
+        "width": 203,
+        "height": 48
+      }
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Variety",
+      "bbox": {
+        "x": 0,
+        "y": 189.5,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/crop/variety"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Probability",
+      "bbox": {
+        "x": 0,
+        "y": 237.5,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/crop/probability"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Admin",
+      "bbox": {
+        "x": 0,
+        "y": 285.5,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/crop/admin"
+    },
+    {
+      "tag": "mat-expansion-panel-header",
+      "kind": "button",
+      "text": "Translations",
+      "bbox": {
+        "x": 0,
+        "y": 189.5,
+        "width": 203,
+        "height": 48
+      }
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "List",
+      "bbox": {
+        "x": 0,
+        "y": 237.5,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/translations/list"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Import",
+      "bbox": {
+        "x": 0,
+        "y": 285.5,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/translations/import"
+    },
+    {
+      "tag": "mat-expansion-panel-header",
+      "kind": "button",
+      "text": "Resources",
+      "bbox": {
+        "x": 0,
+        "y": 237.5,
+        "width": 203,
+        "height": 64
+      }
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Files",
+      "bbox": {
+        "x": 0,
+        "y": 301.5,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/files"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Links",
+      "bbox": {
+        "x": 0,
+        "y": 349.5,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/links"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Collections",
+      "bbox": {
+        "x": 0,
+        "y": 397.5,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/collections"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Farmer Videos",
+      "bbox": {
+        "x": 0,
+        "y": 445.5,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/farmer-videos"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Admin",
+      "bbox": {
+        "x": 0,
+        "y": 493.5,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/admin"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Statistics",
+      "bbox": {
+        "x": 0,
+        "y": 571.5,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/stats"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Deployments",
+      "bbox": {
+        "x": 0,
+        "y": 619.5,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/deployment"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "User Permissions",
+      "bbox": {
+        "x": 0,
+        "y": 667.5,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/deployment/permissions"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Map Boundaries",
+      "bbox": {
+        "x": 0,
+        "y": 715.5,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/map-admin"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Back to Collections",
+      "bbox": {
+        "x": 1060,
+        "y": -10.5,
+        "width": 204,
+        "height": 36
+      },
+      "href": "/resources/collections"
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "crops.svg",
+      "bbox": {
+        "x": 241,
+        "y": 140,
+        "width": 124.4,
+        "height": 57.2
+      }
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "e.g. Weather Resources, Crop Care...",
+      "bbox": {
+        "x": 261,
+        "y": 411.2,
+        "width": 432,
+        "height": 41
+      },
+      "label": "input:text (e.g. Weather Resources, Crop Care...)"
+    },
+    {
+      "tag": "div",
+      "kind": "tab",
+      "text": "Files (1 / 5)",
+      "bbox": {
+        "x": 775,
+        "y": 108,
+        "width": 226.9,
+        "height": 48
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "tab",
+      "text": "Links (3 / 14)",
+      "bbox": {
+        "x": 1001.9,
+        "y": 108,
+        "width": 241.1,
+        "height": 48
+      }
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "Search files by title, filename, language...",
+      "bbox": {
+        "x": 831,
+        "y": 188,
+        "width": 204.7,
+        "height": 41
+      },
+      "label": "input:text (Search files by title, filename, language...)"
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "All",
+      "bbox": {
+        "x": 1063.7,
+        "y": 192.5,
+        "width": 68.9,
+        "height": 32
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Selected (1)",
+      "bbox": {
+        "x": 1140.6,
+        "y": 192.5,
+        "width": 102.4,
+        "height": 32
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Cassava Diseases Cassava-Brown-Streak-Disease-Evidence-Note-2022.pdf • zm_en • 1.1 MB",
+      "bbox": {
+        "x": 775,
+        "y": 257,
+        "width": 468,
+        "height": 60
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "IMPACT OF MINIMUM TILLAGE AND CROP ROTATION Impact of Minimum Tillage and Crop Rotation as Climate Change.pdf • zm_en • …",
+      "bbox": {
+        "x": 775,
+        "y": 325,
+        "width": 468,
+        "height": 60
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Plant Pests & Diseases Acts Plant Pests and Diseases Act.pdf • zm_en • 0.6 MB",
+      "bbox": {
+        "x": 775,
+        "y": 393,
+        "width": 468,
+        "height": 60
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Soya Beans Production in Zambia Soya_Beans_Production_in_Zambia_Opportunities_and_.pdf • zm_en • 0.1 MB",
+      "bbox": {
+        "x": 775,
+        "y": 461,
+        "width": 468,
+        "height": 60
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Crop Rotation document.pdf • zm_en • 0.1 MB",
+      "bbox": {
+        "x": 775,
+        "y": 529,
+        "width": 468,
+        "height": 60
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Save Collection",
+      "bbox": {
+        "x": 220,
+        "y": 668.2,
+        "width": 179.9,
+        "height": 36
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Delete Collection",
+      "bbox": {
+        "x": 1081.3,
+        "y": 668.2,
+        "width": 182.7,
+        "height": 36
+      }
+    }
+  ],
+  "tables": [],
+  "nav": [
+    {
+      "label": "Home",
+      "href": "/home"
+    },
+    {
+      "label": "Station Data",
+      "href": "/climate/station"
+    },
+    {
+      "label": "Forecasts",
+      "href": "/climate/forecast"
+    },
+    {
+      "label": "Admin",
+      "href": "/climate/admin"
+    },
+    {
+      "label": "Variety",
+      "href": "/crop/variety"
+    },
+    {
+      "label": "Probability",
+      "href": "/crop/probability"
+    },
+    {
+      "label": "Admin",
+      "href": "/crop/admin"
+    },
+    {
+      "label": "List",
+      "href": "/translations/list"
+    },
+    {
+      "label": "Import",
+      "href": "/translations/import"
+    },
+    {
+      "label": "Files",
+      "href": "/resources/files"
+    },
+    {
+      "label": "Links",
+      "href": "/resources/links"
+    },
+    {
+      "label": "Collections",
+      "href": "/resources/collections"
+    },
+    {
+      "label": "Farmer Videos",
+      "href": "/resources/farmer-videos"
+    },
+    {
+      "label": "Admin",
+      "href": "/resources/admin"
+    },
+    {
+      "label": "Statistics",
+      "href": "/stats"
+    },
+    {
+      "label": "Deployments",
+      "href": "/deployment"
+    },
+    {
+      "label": "User Permissions",
+      "href": "/deployment/permissions"
+    },
+    {
+      "label": "Map Boundaries",
+      "href": "/map-admin"
+    }
+  ],
+  "dialogs": []
+}

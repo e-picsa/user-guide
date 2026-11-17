@@ -1,0 +1,48 @@
+---
+title: Resources data admin
+description: Compare dashboard resource records against the data bundled in the field app (admin).
+---
+
+**Resources → Admin** (requires `resources.admin`) compares the dashboard's live resource records — files, links and collections — against the resource bundle shipped inside the field app, so you can see what farmers actually have versus what has changed since.
+
+<Screenshot
+  name="resources/admin.png"
+  alt="Resources Admin sync status table"
+  markers={[
+    { x: 22.6, y: 8, label: 'Total Resources — click to clear the status filter' },
+    { x: 51.9, y: 8.1, label: 'Status chips — filter the table; click again to clear' },
+    { x: 59.5, y: 19, label: 'Search Data — filter rows by title' },
+    { x: 45, y: 38, label: 'Rows — one per file, link or collection; click a row to preview' },
+  ]}
+  caption="Resources Admin, all 22 resources In Sync (Zambia)"
+/>
+
+## Sync statuses
+
+The chips at the top summarise every resource at a glance — click one to filter the table to that status, click again to clear:
+
+| Status | Meaning |
+| ------ | ------- |
+| In Sync | Dashboard and bundled app agree. Nothing to do. |
+| Differs | The record exists in both places but something changed — title, description, cover, URL, storage file, language, type or collection membership. Edit the dashboard record or rebuild the bundle to resolve it. |
+| Missing in App | A dashboard record that is not in the app bundle yet — it will reach farmers in the next release. |
+| Orphaned in App | A bundled copy with no matching dashboard record — it was removed from the dashboard but is still shipped in the app. |
+
+The **Total Resources** chip clears any filter.
+
+## Understanding the table
+
+Each row is one file, link or collection: its **Type**, its title (**Resource / Collection**) and its **Sync Status**. Click a row to open a read-only preview showing what the farmer sees — videos play inline, PDFs render in place, links show their destination with an **Open Website** button, and collections list their member files and links. Rows marked *Bundled copy only* have no live database record behind them.
+
+<Callout type="info">
+  This page answers *is the app up to date?* — not *what should change?*.
+  Make the change in Files, Links or Collections first, then cut a new app
+  release to move rows back to In Sync.
+</Callout>
+
+## Who can do what
+
+<AccessSummary>
+  <AccessRow roles="editor">Keep working in [Files](./files-manage), [Links](./links) and [Collections](./collections-manage) — edits made there surface here as differences until the next app release (`resources.editor`).</AccessRow>
+  <AccessRow roles="admin">Filter by sync status and preview any row to see what the field app shows. The page is read-only — fixes happen by editing the underlying file, link or collection (`resources.admin`, required to access this page).</AccessRow>
+</AccessSummary>
