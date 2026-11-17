@@ -4,6 +4,8 @@ import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
 import { Children, type ReactNode } from 'react';
 import { Screenshot } from './screenshot';
+import { RoleBadge } from './role-badge';
+import { AccessRow, AccessSummary } from './access-summary';
 
 /**
  * Enabled by starting the server with `PDF_PRINT=1` (see `bun run pdf`).
@@ -51,6 +53,9 @@ export function getMDXComponents(components?: MDXComponents) {
     Tabs: isPrinting ? PrintingTabs : Tabs,
     Tab: isPrinting ? PrintingTab : Tab,
     Screenshot,
+    RoleBadge,
+    AccessSummary,
+    AccessRow,
     ...components,
   } satisfies MDXComponents;
 }
