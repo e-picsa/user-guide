@@ -1,10 +1,10 @@
 {
   "route": "resources/links/zmdWhatsapp",
-  "url": "http://localhost:3000/resources/links/zmdWhatsapp",
+  "url": "http://localhost:3000/resources/links",
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
-  "dashboardVersion": "5.20.0",
-  "capturedAt": "2026-11-04T23:57:33.970Z",
+  "dashboardVersion": "5.23.1",
+  "capturedAt": "2026-11-16T22:42:39.490Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -15,11 +15,11 @@
     {
       "tag": "h2",
       "kind": "heading",
-      "text": "Edit Resource",
+      "text": "Resource Links",
       "bbox": {
         "x": 220,
-        "y": 32,
-        "width": 1044,
+        "y": 20,
+        "width": 168,
         "height": 32
       }
     }
@@ -228,10 +228,22 @@
     {
       "tag": "a",
       "kind": "link",
+      "text": "Admin",
+      "bbox": {
+        "x": 0,
+        "y": 520,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/admin"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
       "text": "Statistics",
       "bbox": {
         "x": 0,
-        "y": 550,
+        "y": 598,
         "width": 203,
         "height": 48
       },
@@ -243,7 +255,7 @@
       "text": "Deployments",
       "bbox": {
         "x": 0,
-        "y": 598,
+        "y": 646,
         "width": 203,
         "height": 48
       },
@@ -255,7 +267,7 @@
       "text": "User Permissions",
       "bbox": {
         "x": 0,
-        "y": 646,
+        "y": 694,
         "width": 203,
         "height": 48
       },
@@ -267,26 +279,189 @@
       "text": "Map Boundaries",
       "bbox": {
         "x": 0,
-        "y": 694,
+        "y": 742,
         "width": 203,
         "height": 48
       },
       "href": "/map-admin"
     },
     {
+      "tag": "button",
+      "kind": "button",
+      "text": "Add Link",
+      "bbox": {
+        "x": 1135.9,
+        "y": 18,
+        "width": 128.1,
+        "height": 36
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "All",
+      "bbox": {
+        "x": 220,
+        "y": 136,
+        "width": 68.9,
+        "height": 32
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "In Collection",
+      "bbox": {
+        "x": 296.9,
+        "y": 136,
+        "width": 109.2,
+        "height": 32
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Unassigned",
+      "bbox": {
+        "x": 414.2,
+        "y": 136,
+        "width": 104,
+        "height": 32
+      }
+    },
+    {
       "tag": "input",
       "kind": "input",
-      "text": "https://...",
+      "text": "input",
       "bbox": {
-        "x": 240,
-        "y": 104,
-        "width": 180,
+        "x": 276,
+        "y": 212,
+        "width": 972,
         "height": 41
       },
-      "label": "input:text (https://...)"
+      "label": "input:text"
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "Type",
+      "bbox": {
+        "x": 236,
+        "y": 299.5,
+        "width": 50.9,
+        "height": 22
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "Cover Image",
+      "bbox": {
+        "x": 318.9,
+        "y": 288.5,
+        "width": 83.4,
+        "height": 44
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "Title",
+      "bbox": {
+        "x": 434.3,
+        "y": 299.5,
+        "width": 184.9,
+        "height": 22
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "Description",
+      "bbox": {
+        "x": 651.2,
+        "y": 299.5,
+        "width": 269,
+        "height": 22
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "Collections",
+      "bbox": {
+        "x": 952.2,
+        "y": 299.5,
+        "width": 94.8,
+        "height": 22
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "Url",
+      "bbox": {
+        "x": 1079,
+        "y": 299.5,
+        "width": 48,
+        "height": 22
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "Modified At",
+      "bbox": {
+        "x": 1159,
+        "y": 288.5,
+        "width": 89,
+        "height": 44
+      }
     }
   ],
-  "tables": [],
+  "tables": [
+    {
+      "headers": [
+        "Type",
+        "Cover Image",
+        "Title",
+        "Description",
+        "Collections",
+        "Url",
+        "Modified At"
+      ],
+      "rows": [
+        [
+          "",
+          "",
+          "MSD Website",
+          "The website link",
+          "",
+          "",
+          "Nov 9, 2026"
+        ],
+        [
+          "",
+          "",
+          "Women in Extension",
+          "Access Agriculture Video",
+          "",
+          "",
+          "Nov 7, 2026"
+        ],
+        [
+          "",
+          "",
+          "GRAFS - New Extensionist Learning Kit NELK",
+          "Online learning modules",
+          "",
+          "",
+          "Nov 7, 2026"
+        ]
+      ],
+      "rowCount": 6
+    }
+  ],
   "nav": [
     {
       "label": "Home",
@@ -339,6 +514,10 @@
     {
       "label": "Farmer Videos",
       "href": "/resources/farmer-videos"
+    },
+    {
+      "label": "Admin",
+      "href": "/resources/admin"
     },
     {
       "label": "Statistics",

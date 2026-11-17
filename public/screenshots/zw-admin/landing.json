@@ -3,7 +3,7 @@
   "url": "http://localhost:3000/home",
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
-  "dashboardVersion": "5.20.0",
+  "dashboardVersion": "5.23.1",
   "capturedAt": "2026-11-05T03:15:25.133Z",
   "viewport": {
     "width": 1280,

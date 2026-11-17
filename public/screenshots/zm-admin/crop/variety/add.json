@@ -3,7 +3,7 @@
   "url": "http://localhost:3000/crop/variety/add",
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
-  "dashboardVersion": "5.20.0",
+  "dashboardVersion": "5.23.1",
   "capturedAt": "2026-11-04T23:51:04.671Z",
   "viewport": {
     "width": 1280,
@@ -216,6 +216,18 @@
     {
       "tag": "a",
       "kind": "link",
+      "text": "Admin",
+      "bbox": {
+        "x": 0,
+        "y": 664,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/admin"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
       "text": "Statistics",
       "bbox": {
         "x": 0,
@@ -290,7 +302,7 @@
       "text": "number",
       "bbox": {
         "x": 576,
-        "y": 191,
+        "y": 190.5,
         "width": 336,
         "height": 41
       },
@@ -302,7 +314,7 @@
       "text": "number",
       "bbox": {
         "x": 924,
-        "y": 191,
+        "y": 190.5,
         "width": 336,
         "height": 41
       },
@@ -314,7 +326,7 @@
       "text": "Submit",
       "bbox": {
         "x": 220,
-        "y": 372,
+        "y": 370.5,
         "width": 87.1,
         "height": 36
       }
@@ -373,6 +385,10 @@
     {
       "label": "Farmer Videos",
       "href": "/resources/farmer-videos"
+    },
+    {
+      "label": "Admin",
+      "href": "/resources/admin"
     },
     {
       "label": "Statistics",

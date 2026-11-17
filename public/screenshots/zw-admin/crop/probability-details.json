@@ -3,7 +3,7 @@
   "url": "http://localhost:3000/crop/probability/masvingo",
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
-  "dashboardVersion": "5.20.0",
+  "dashboardVersion": "5.23.1",
   "capturedAt": "2026-11-04T23:57:03.957Z",
   "viewport": {
     "width": 1280,
@@ -250,6 +250,18 @@
     {
       "tag": "a",
       "kind": "link",
+      "text": "Admin",
+      "bbox": {
+        "x": 0,
+        "y": 600,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/admin"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
       "text": "Statistics",
       "bbox": {
         "x": 0,
@@ -445,6 +457,10 @@
     {
       "label": "Farmer Videos",
       "href": "/resources/farmer-videos"
+    },
+    {
+      "label": "Admin",
+      "href": "/resources/admin"
     },
     {
       "label": "Statistics",
