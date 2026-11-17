@@ -16,11 +16,6 @@ description: Browse the master list of crop varieties and their downscaling cove
   caption="Crop Variety list, 255 varieties (Zambia)"
 />
 
-## What you can do
-
-- **Search and sort** to find a variety.
-- **Open a variety** by clicking its row — see [Variety details](./variety-details).
-
 <Callout type="info">
   **Add Variety** (`crop/variety/add`, `crop.editor`) sits at the top of the
   page above the visible area — scroll up to create a new base record, then add
@@ -39,3 +34,10 @@ description: Browse the master list of crop varieties and their downscaling cove
 />
 
 Each variety records its crop, maturity period (early/medium/late) and days-to-maturity range, which feed the [probability tables](./probability-tables).
+
+## Who can do what
+
+<AccessSummary>
+  <AccessRow roles="viewer">Search, sort and open any variety — see [Variety details](./variety-details).</AccessRow>
+  <AccessRow roles="editor">Create base records with **Add Variety** (`crop.editor`) — crop and variety names lock after creation because they form the record's ID.</AccessRow>
+</AccessSummary>
