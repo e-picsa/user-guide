@@ -1,0 +1,49 @@
+---
+title: Managing collections
+description: Create and edit resource collections, choosing which files and links they group (editor).
+---
+
+**Resources → Collections → Add Collection**, or clicking any row in the list, opens the collection editor — the form that decides a collection's title, cover and which files and links belong to it.
+
+<Screenshot
+  name="resources/collection-details.png"
+  alt="Edit Collection form for Crop, Pest and Disease"
+  markers={[
+    { x: 23.7, y: 23.4, label: 'Cover image — thumbnail shown in lists and the field app' },
+    { x: 37.3, y: 60, label: 'Title* and Description — how the collection appears' },
+    { x: 69.4, y: 18.3, label: 'Files / Links tabs — counts show selected of total' },
+    { x: 72.9, y: 29, label: 'Search and All / Selected filter — narrow the pick lists' },
+    { x: 78.8, y: 68.2, label: 'Tick rows to add files and links — blue rows are selected' },
+  ]}
+  caption="Editing the Crop, Pest & Disease collection (Zambia)"
+/>
+
+## Steps
+
+1. Enter a **Title** (required) and an optional **Description** explaining what the collection groups.
+2. Add an optional **Cover Image** (jpg, png, svg or webp) so the collection is recognisable in lists and in the field app.
+3. Pick the contents in **Collection Contents**: the **Files** tab lists every file in the deployment, the **Links** tab every link. Use search or the **All / Selected** filter to narrow the list, then tick rows to include them — the header counts selected files and links as you go.
+4. **Save Collection**. The collection is upserted and appears in the list and in the field app data immediately.
+
+## Editing and deleting
+
+Opening an existing collection shows the same form with its current contents pre-selected. Saving writes the new membership list — unticking a file or link removes it from the collection without deleting the underlying resource. **Delete Collection** removes the collection itself; the files and links it grouped are unaffected.
+
+<Screenshot
+  name="resources/collections/create.png"
+  alt="Create Collection form, starting empty"
+  caption="New collection form — same fields, starting empty (Zambia)"
+/>
+
+<Callout type="warning">
+  Deleting a collection removes it from the dashboard and from future app data
+  releases. Already-downloaded copies on devices are unaffected.
+</Callout>
+
+## Who can do what
+
+<AccessSummary>
+  <AccessRow roles="viewer">Open any collection, but the form is read-only **View Collection** — save and delete stay hidden.</AccessRow>
+  <AccessRow roles="editor">Create new collections and edit any existing one — ownership does not restrict editing, unlike files and links (`resources.editor`). Delete only owned collections.</AccessRow>
+  <AccessRow roles="admin">Do everything editors can, and additionally delete any collection (`resources.admin`).</AccessRow>
+</AccessSummary>

@@ -27,3 +27,9 @@ The chips summarise coverage at a glance: districts tracked, locations still mis
 - **App Diff** compares the app's bundled probability tables against freshly regenerated ones — reload after syncing or importing to confirm the app is up to date.
 - **Duplicates** flags repeated crop and variety definitions.
 - **Upload** bulk-imports water requirements from CSV: **Template** downloads a sheet with one row per location, crop and variety; fill in the water-requirement column and **Upload File** (or paste the text) to preview changes. **Rows** shows values to be upserted, **Duplicates** flags repeated lines and **Errors** lists invalid rows; **Import** writes the valid rows (rounded to the nearest 5 mm). **Export App Data** generates the per-location probability tables as JSON and downloads them as a zip — the artefact bundled into the field app release.
+
+## Who can do what
+
+<AccessSummary>
+  <AccessRow roles="admin">Review location coverage, pairing and app sync; bulk-import water requirements from CSV and export the app bundle (`crop.admin`, required to access this page).</AccessRow>
+</AccessSummary>

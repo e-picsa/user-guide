@@ -3,8 +3,8 @@
   "url": "http://localhost:3000/resources/collections/create",
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
-  "dashboardVersion": "5.20.0",
-  "capturedAt": "2026-11-04T23:57:47.412Z",
+  "dashboardVersion": "5.23.1",
+  "capturedAt": "2026-11-16T22:42:57.435Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -15,12 +15,34 @@
     {
       "tag": "h2",
       "kind": "heading",
-      "text": "🚧 Under Construction",
+      "text": "Create Collection",
       "bbox": {
         "x": 220,
-        "y": 32,
-        "width": 1044,
+        "y": 18,
+        "width": 191.4,
         "height": 32
+      }
+    },
+    {
+      "tag": "h3",
+      "kind": "heading",
+      "text": "Collection Details",
+      "bbox": {
+        "x": 241,
+        "y": 97,
+        "width": 468,
+        "height": 25
+      }
+    },
+    {
+      "tag": "h3",
+      "kind": "heading",
+      "text": "Collection Contents",
+      "bbox": {
+        "x": 775,
+        "y": 97,
+        "width": 182.8,
+        "height": 25
       }
     }
   ],
@@ -228,10 +250,22 @@
     {
       "tag": "a",
       "kind": "link",
+      "text": "Admin",
+      "bbox": {
+        "x": 0,
+        "y": 520,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/admin"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
       "text": "Statistics",
       "bbox": {
         "x": 0,
-        "y": 550,
+        "y": 598,
         "width": 203,
         "height": 48
       },
@@ -243,7 +277,7 @@
       "text": "Deployments",
       "bbox": {
         "x": 0,
-        "y": 598,
+        "y": 646,
         "width": 203,
         "height": 48
       },
@@ -255,7 +289,7 @@
       "text": "User Permissions",
       "bbox": {
         "x": 0,
-        "y": 646,
+        "y": 694,
         "width": 203,
         "height": 48
       },
@@ -267,11 +301,168 @@
       "text": "Map Boundaries",
       "bbox": {
         "x": 0,
-        "y": 694,
+        "y": 742,
         "width": 203,
         "height": 48
       },
       "href": "/map-admin"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Back to Collections",
+      "bbox": {
+        "x": 1060,
+        "y": 16,
+        "width": 204,
+        "height": 36
+      },
+      "href": "/resources/collections"
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "browse files",
+      "bbox": {
+        "x": 405.4,
+        "y": 193,
+        "width": 93.3,
+        "height": 17
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Select existing file",
+      "bbox": {
+        "x": 241,
+        "y": 306,
+        "width": 193.2,
+        "height": 36
+      }
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "e.g. Weather Resources, Crop Care...",
+      "bbox": {
+        "x": 261,
+        "y": 382,
+        "width": 432,
+        "height": 41
+      },
+      "label": "input:text (e.g. Weather Resources, Crop Care...)"
+    },
+    {
+      "tag": "div",
+      "kind": "tab",
+      "text": "Files (0 / 4)",
+      "bbox": {
+        "x": 775,
+        "y": 134,
+        "width": 231.5,
+        "height": 48
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "tab",
+      "text": "Links (0 / 6)",
+      "bbox": {
+        "x": 1006.5,
+        "y": 134,
+        "width": 236.5,
+        "height": 48
+      }
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "Search files by title, filename, language...",
+      "bbox": {
+        "x": 831,
+        "y": 214,
+        "width": 204.7,
+        "height": 41
+      },
+      "label": "input:text (Search files by title, filename, language...)"
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "All",
+      "bbox": {
+        "x": 1063.7,
+        "y": 218.5,
+        "width": 68.9,
+        "height": 32
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Selected (0)",
+      "bbox": {
+        "x": 1140.6,
+        "y": 218.5,
+        "width": 102.4,
+        "height": 32
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "General Beef Cattle Farmer Advisory Calendars General Beef Cattle Farmer Advisory Calendars.pdf • zw_en • 0.4 MB",
+      "bbox": {
+        "x": 775,
+        "y": 283,
+        "width": 468,
+        "height": 60
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Adopting the SHEP Approach for Smallholder Farmer Marketing STAFF ESSENTIAL 1 - ADOPTING THE SHEP APPROACH FOR SMALLHOLD…",
+      "bbox": {
+        "x": 775,
+        "y": 351,
+        "width": 468,
+        "height": 60
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Forecast Terminology Forecast Terminology_Draft.pdf • zw_en • 0.6 MB",
+      "bbox": {
+        "x": 775,
+        "y": 419,
+        "width": 468,
+        "height": 60
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Dashboard Responsibilities-MSD Dashboard responsibilities-MSD.pdf • zw_en • 0 MB",
+      "bbox": {
+        "x": 775,
+        "y": 487,
+        "width": 468,
+        "height": 60
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Save Collection",
+      "bbox": {
+        "x": 220,
+        "y": 640,
+        "width": 179.9,
+        "height": 36
+      }
     }
   ],
   "tables": [],
@@ -327,6 +518,10 @@
     {
       "label": "Farmer Videos",
       "href": "/resources/farmer-videos"
+    },
+    {
+      "label": "Admin",
+      "href": "/resources/admin"
     },
     {
       "label": "Statistics",

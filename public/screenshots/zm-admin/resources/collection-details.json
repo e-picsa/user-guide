@@ -1,26 +1,48 @@
 {
-  "route": "resources/files/dff5c161-3541-44a4-8326-0affafd26812",
-  "url": "http://localhost:3000/resources/files/dff5c161-3541-44a4-8326-0affafd26812",
+  "route": "resources/collections/cropResources_zm",
+  "url": "http://localhost:3000/resources/collections/cropResources_zm",
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
-  "dashboardVersion": "5.20.0",
-  "capturedAt": "2026-11-04T23:51:30.253Z",
+  "dashboardVersion": "5.23.1",
+  "capturedAt": "2026-11-16T22:31:44.313Z",
   "viewport": {
     "width": 1280,
     "height": 720
   },
-  "scrollTop": 66,
+  "scrollTop": 26.5,
   "space": "viewport-relative CSS px at capture viewport (1:1 with png at deviceScaleFactor 1)",
   "headings": [
     {
       "tag": "h2",
       "kind": "heading",
-      "text": "Edit Resource",
+      "text": "Edit Collection",
       "bbox": {
         "x": 220,
-        "y": -34,
-        "width": 1044,
+        "y": -8.5,
+        "width": 160.5,
         "height": 32
+      }
+    },
+    {
+      "tag": "h3",
+      "kind": "heading",
+      "text": "Collection Details",
+      "bbox": {
+        "x": 241,
+        "y": 70.5,
+        "width": 468,
+        "height": 25.5
+      }
+    },
+    {
+      "tag": "h3",
+      "kind": "heading",
+      "text": "Collection Contents",
+      "bbox": {
+        "x": 775,
+        "y": 70.5,
+        "width": 182.9,
+        "height": 25.5
       }
     }
   ],
@@ -31,7 +53,7 @@
       "text": "Home",
       "bbox": {
         "x": 0,
-        "y": 8,
+        "y": 45.5,
         "width": 203,
         "height": 48
       },
@@ -43,7 +65,7 @@
       "text": "Climate",
       "bbox": {
         "x": 0,
-        "y": 56,
+        "y": 93.5,
         "width": 203,
         "height": 48
       }
@@ -54,7 +76,7 @@
       "text": "Station Data",
       "bbox": {
         "x": 0,
-        "y": 104,
+        "y": 141.5,
         "width": 203,
         "height": 48
       },
@@ -66,7 +88,7 @@
       "text": "Forecasts",
       "bbox": {
         "x": 0,
-        "y": 152,
+        "y": 189.5,
         "width": 203,
         "height": 48
       },
@@ -78,7 +100,7 @@
       "text": "Admin",
       "bbox": {
         "x": 0,
-        "y": 200,
+        "y": 237.5,
         "width": 203,
         "height": 48
       },
@@ -90,7 +112,7 @@
       "text": "Crop",
       "bbox": {
         "x": 0,
-        "y": 104,
+        "y": 141.5,
         "width": 203,
         "height": 48
       }
@@ -101,7 +123,7 @@
       "text": "Variety",
       "bbox": {
         "x": 0,
-        "y": 152,
+        "y": 189.5,
         "width": 203,
         "height": 48
       },
@@ -113,7 +135,7 @@
       "text": "Probability",
       "bbox": {
         "x": 0,
-        "y": 200,
+        "y": 237.5,
         "width": 203,
         "height": 48
       },
@@ -125,7 +147,7 @@
       "text": "Admin",
       "bbox": {
         "x": 0,
-        "y": 248,
+        "y": 285.5,
         "width": 203,
         "height": 48
       },
@@ -137,7 +159,7 @@
       "text": "Translations",
       "bbox": {
         "x": 0,
-        "y": 152,
+        "y": 189.5,
         "width": 203,
         "height": 48
       }
@@ -148,7 +170,7 @@
       "text": "List",
       "bbox": {
         "x": 0,
-        "y": 200,
+        "y": 237.5,
         "width": 203,
         "height": 48
       },
@@ -160,7 +182,7 @@
       "text": "Import",
       "bbox": {
         "x": 0,
-        "y": 248,
+        "y": 285.5,
         "width": 203,
         "height": 48
       },
@@ -172,7 +194,7 @@
       "text": "Resources",
       "bbox": {
         "x": 0,
-        "y": 200,
+        "y": 237.5,
         "width": 203,
         "height": 64
       }
@@ -183,7 +205,7 @@
       "text": "Files",
       "bbox": {
         "x": 0,
-        "y": 264,
+        "y": 301.5,
         "width": 203,
         "height": 48
       },
@@ -195,7 +217,7 @@
       "text": "Links",
       "bbox": {
         "x": 0,
-        "y": 312,
+        "y": 349.5,
         "width": 203,
         "height": 48
       },
@@ -207,7 +229,7 @@
       "text": "Collections",
       "bbox": {
         "x": 0,
-        "y": 360,
+        "y": 397.5,
         "width": 203,
         "height": 48
       },
@@ -219,7 +241,7 @@
       "text": "Farmer Videos",
       "bbox": {
         "x": 0,
-        "y": 408,
+        "y": 445.5,
         "width": 203,
         "height": 48
       },
@@ -228,10 +250,22 @@
     {
       "tag": "a",
       "kind": "link",
+      "text": "Admin",
+      "bbox": {
+        "x": 0,
+        "y": 493.5,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/admin"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
       "text": "Statistics",
       "bbox": {
         "x": 0,
-        "y": 519,
+        "y": 571.5,
         "width": 203,
         "height": 48
       },
@@ -243,7 +277,7 @@
       "text": "Deployments",
       "bbox": {
         "x": 0,
-        "y": 567,
+        "y": 619.5,
         "width": 203,
         "height": 48
       },
@@ -255,7 +289,7 @@
       "text": "User Permissions",
       "bbox": {
         "x": 0,
-        "y": 615,
+        "y": 667.5,
         "width": 203,
         "height": 48
       },
@@ -267,65 +301,177 @@
       "text": "Map Boundaries",
       "bbox": {
         "x": 0,
-        "y": 663,
+        "y": 715.5,
         "width": 203,
         "height": 48
       },
       "href": "/map-admin"
     },
     {
+      "tag": "a",
+      "kind": "link",
+      "text": "Back to Collections",
+      "bbox": {
+        "x": 1060,
+        "y": -10.5,
+        "width": 204,
+        "height": 36
+      },
+      "href": "/resources/collections"
+    },
+    {
       "tag": "button",
       "kind": "button",
-      "text": "browse files",
+      "text": "crops.svg",
       "bbox": {
-        "x": 384.4,
-        "y": 111,
-        "width": 93.3,
-        "height": 17
+        "x": 241,
+        "y": 140,
+        "width": 124.4,
+        "height": 57.2
+      }
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "e.g. Weather Resources, Crop Care...",
+      "bbox": {
+        "x": 261,
+        "y": 411.2,
+        "width": 432,
+        "height": 41
+      },
+      "label": "input:text (e.g. Weather Resources, Crop Care...)"
+    },
+    {
+      "tag": "div",
+      "kind": "tab",
+      "text": "Files (1 / 5)",
+      "bbox": {
+        "x": 775,
+        "y": 108,
+        "width": 226.9,
+        "height": 48
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "tab",
+      "text": "Links (3 / 14)",
+      "bbox": {
+        "x": 1001.9,
+        "y": 108,
+        "width": 241.1,
+        "height": 48
+      }
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "Search files by title, filename, language...",
+      "bbox": {
+        "x": 831,
+        "y": 188,
+        "width": 204.7,
+        "height": 41
+      },
+      "label": "input:text (Search files by title, filename, language...)"
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "All",
+      "bbox": {
+        "x": 1063.7,
+        "y": 192.5,
+        "width": 68.9,
+        "height": 32
       }
     },
     {
       "tag": "button",
       "kind": "button",
-      "text": "Select existing file",
+      "text": "Selected (1)",
+      "bbox": {
+        "x": 1140.6,
+        "y": 192.5,
+        "width": 102.4,
+        "height": 32
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Cassava Diseases Cassava-Brown-Streak-Disease-Evidence-Note-2022.pdf • zm_en • 1.1 MB",
+      "bbox": {
+        "x": 775,
+        "y": 257,
+        "width": 468,
+        "height": 60
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "IMPACT OF MINIMUM TILLAGE AND CROP ROTATION Impact of Minimum Tillage and Crop Rotation as Climate Change.pdf • zm_en • …",
+      "bbox": {
+        "x": 775,
+        "y": 325,
+        "width": 468,
+        "height": 60
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Plant Pests & Diseases Acts Plant Pests and Diseases Act.pdf • zm_en • 0.6 MB",
+      "bbox": {
+        "x": 775,
+        "y": 393,
+        "width": 468,
+        "height": 60
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Soya Beans Production in Zambia Soya_Beans_Production_in_Zambia_Opportunities_and_.pdf • zm_en • 0.1 MB",
+      "bbox": {
+        "x": 775,
+        "y": 461,
+        "width": 468,
+        "height": 60
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Crop Rotation document.pdf • zm_en • 0.1 MB",
+      "bbox": {
+        "x": 775,
+        "y": 529,
+        "width": 468,
+        "height": 60
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Save Collection",
       "bbox": {
         "x": 220,
-        "y": 216,
-        "width": 193.2,
+        "y": 668.2,
+        "width": 179.9,
         "height": 36
       }
     },
     {
       "tag": "button",
       "kind": "button",
-      "text": "placeholder.svg",
+      "text": "Delete Collection",
       "bbox": {
-        "x": 536,
-        "y": 93.2,
-        "width": 172.3,
-        "height": 37
-      }
-    },
-    {
-      "tag": "input",
-      "kind": "input",
-      "text": "input",
-      "bbox": {
-        "x": 240,
-        "y": 405.2,
-        "width": 564,
-        "height": 41
-      },
-      "label": "input:text"
-    },
-    {
-      "tag": "button",
-      "kind": "button",
-      "text": "Save Resource",
-      "bbox": {
-        "x": 220,
-        "y": 766.2,
-        "width": 172.5,
+        "x": 1081.3,
+        "y": 668.2,
+        "width": 182.7,
         "height": 36
       }
     }
@@ -383,6 +529,10 @@
     {
       "label": "Farmer Videos",
       "href": "/resources/farmer-videos"
+    },
+    {
+      "label": "Admin",
+      "href": "/resources/admin"
     },
     {
       "label": "Statistics",

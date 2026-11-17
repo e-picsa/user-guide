@@ -3,7 +3,7 @@
   "url": "http://localhost:3000/crop/admin",
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
-  "dashboardVersion": "5.20.0",
+  "dashboardVersion": "5.23.1",
   "capturedAt": "2026-11-05T00:14:15.350Z",
   "viewport": {
     "width": 1280,
@@ -228,6 +228,18 @@
     {
       "tag": "a",
       "kind": "link",
+      "text": "Admin",
+      "bbox": {
+        "x": 0,
+        "y": 600,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/admin"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
       "text": "Statistics",
       "bbox": {
         "x": 0,
@@ -280,7 +292,7 @@
       "bbox": {
         "x": 220,
         "y": 22,
-        "width": 209.8,
+        "width": 209.7,
         "height": 48
       }
     },
@@ -289,9 +301,9 @@
       "kind": "tab",
       "text": "Stations",
       "bbox": {
-        "x": 429.8,
+        "x": 429.7,
         "y": 22,
-        "width": 198.7,
+        "width": 198.6,
         "height": 48
       }
     },
@@ -322,7 +334,7 @@
       "kind": "tab",
       "text": "Upload",
       "bbox": {
-        "x": 1074.2,
+        "x": 1074.1,
         "y": 22,
         "width": 189.9,
         "height": 48
@@ -346,8 +358,8 @@
       "text": "Export CSV",
       "bbox": {
         "x": 1114.8,
-        "y": 241.5,
-        "width": 133.3,
+        "y": 241.3,
+        "width": 133.2,
         "height": 36
       }
     },
@@ -357,7 +369,7 @@
       "text": "Location",
       "bbox": {
         "x": 252,
-        "y": 323.5,
+        "y": 323,
         "width": 100.5,
         "height": 22
       }
@@ -368,7 +380,7 @@
       "text": "Parent",
       "bbox": {
         "x": 384.5,
-        "y": 323.5,
+        "y": 323,
         "width": 83.1,
         "height": 22
       }
@@ -379,7 +391,7 @@
       "text": "Status",
       "bbox": {
         "x": 499.5,
-        "y": 323.5,
+        "y": 323,
         "width": 62.5,
         "height": 22
       }
@@ -390,7 +402,7 @@
       "text": "Paired With",
       "bbox": {
         "x": 594,
-        "y": 312.5,
+        "y": 312,
         "width": 73.2,
         "height": 44
       }
@@ -401,7 +413,7 @@
       "text": "Linked Station",
       "bbox": {
         "x": 699.2,
-        "y": 312.5,
+        "y": 312,
         "width": 113.8,
         "height": 44
       }
@@ -412,7 +424,7 @@
       "text": "Probabilities",
       "bbox": {
         "x": 845,
-        "y": 323.5,
+        "y": 323,
         "width": 106.1,
         "height": 22
       }
@@ -423,7 +435,7 @@
       "text": "Crops Covered",
       "bbox": {
         "x": 983.1,
-        "y": 323.5,
+        "y": 323,
         "width": 248.9,
         "height": 22
       }
@@ -434,7 +446,7 @@
       "text": "Previous page",
       "bbox": {
         "x": 1144,
-        "y": 3119,
+        "y": 3118.5,
         "width": 48,
         "height": 48
       }
@@ -445,7 +457,7 @@
       "text": "Next page",
       "bbox": {
         "x": 1192,
-        "y": 3119,
+        "y": 3118.5,
         "width": 48,
         "height": 48
       }
@@ -546,6 +558,10 @@
     {
       "label": "Farmer Videos",
       "href": "/resources/farmer-videos"
+    },
+    {
+      "label": "Admin",
+      "href": "/resources/admin"
     },
     {
       "label": "Statistics",

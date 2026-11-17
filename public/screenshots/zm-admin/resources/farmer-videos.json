@@ -3,8 +3,8 @@
   "url": "http://localhost:3000/resources/farmer-videos",
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
-  "dashboardVersion": "5.20.0",
-  "capturedAt": "2026-11-04T23:52:01.650Z",
+  "dashboardVersion": "5.23.1",
+  "capturedAt": "2026-11-16T22:31:57.804Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -228,10 +228,22 @@
     {
       "tag": "a",
       "kind": "link",
+      "text": "Admin",
+      "bbox": {
+        "x": 0,
+        "y": 462,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/admin"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
       "text": "Statistics",
       "bbox": {
         "x": 0,
-        "y": 519,
+        "y": 540,
         "width": 203,
         "height": 48
       },
@@ -243,7 +255,7 @@
       "text": "Deployments",
       "bbox": {
         "x": 0,
-        "y": 567,
+        "y": 588,
         "width": 203,
         "height": 48
       },
@@ -255,7 +267,7 @@
       "text": "User Permissions",
       "bbox": {
         "x": 0,
-        "y": 615,
+        "y": 636,
         "width": 203,
         "height": 48
       },
@@ -267,7 +279,7 @@
       "text": "Map Boundaries",
       "bbox": {
         "x": 0,
-        "y": 663,
+        "y": 684,
         "width": 203,
         "height": 48
       },
@@ -314,7 +326,7 @@
       "bbox": {
         "x": 637.3,
         "y": 282.6,
-        "width": 69.5,
+        "width": 69.4,
         "height": 34
       }
     },
@@ -325,7 +337,7 @@
       "bbox": {
         "x": 761.3,
         "y": 934.4,
-        "width": 69.5,
+        "width": 69.4,
         "height": 34
       }
     },
@@ -336,7 +348,7 @@
       "bbox": {
         "x": 761.3,
         "y": 997.6,
-        "width": 69.5,
+        "width": 69.4,
         "height": 34
       }
     }
@@ -456,6 +468,10 @@
     {
       "label": "Farmer Videos",
       "href": "/resources/farmer-videos"
+    },
+    {
+      "label": "Admin",
+      "href": "/resources/admin"
     },
     {
       "label": "Statistics",

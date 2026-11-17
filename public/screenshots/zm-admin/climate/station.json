@@ -3,7 +3,7 @@
   "url": "http://localhost:3000/climate/station",
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
-  "dashboardVersion": "5.20.0",
+  "dashboardVersion": "5.23.1",
   "capturedAt": "2026-11-04T23:50:30.835Z",
   "viewport": {
     "width": 1280,
@@ -216,6 +216,18 @@
     {
       "tag": "a",
       "kind": "link",
+      "text": "Admin",
+      "bbox": {
+        "x": 0,
+        "y": 664,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/admin"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
       "text": "Statistics",
       "bbox": {
         "x": 0,
@@ -279,7 +291,7 @@
       "text": "Map",
       "bbox": {
         "x": 236,
-        "y": 127.5,
+        "y": 127,
         "width": 62.7,
         "height": 22
       }
@@ -290,7 +302,7 @@
       "text": "District",
       "bbox": {
         "x": 330.7,
-        "y": 127.5,
+        "y": 127,
         "width": 118.1,
         "height": 22
       }
@@ -301,7 +313,7 @@
       "text": "Station Name",
       "bbox": {
         "x": 480.8,
-        "y": 127.5,
+        "y": 127,
         "width": 237.2,
         "height": 22
       }
@@ -936,6 +948,10 @@
     {
       "label": "Farmer Videos",
       "href": "/resources/farmer-videos"
+    },
+    {
+      "label": "Admin",
+      "href": "/resources/admin"
     },
     {
       "label": "Statistics",

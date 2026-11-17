@@ -3,7 +3,7 @@
   "url": "http://localhost:3000/translations/list",
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
-  "dashboardVersion": "5.20.0",
+  "dashboardVersion": "5.23.1",
   "capturedAt": "2026-11-04T23:57:56.467Z",
   "viewport": {
     "width": 1280,
@@ -216,6 +216,18 @@
     {
       "tag": "a",
       "kind": "link",
+      "text": "Admin",
+      "bbox": {
+        "x": 0,
+        "y": 616,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/admin"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
       "text": "Statistics",
       "bbox": {
         "x": 0,
@@ -275,7 +287,7 @@
     {
       "tag": "button",
       "kind": "button",
-      "text": "Total: 598",
+      "text": "Total: 614",
       "bbox": {
         "x": 220,
         "y": 112,
@@ -286,20 +298,20 @@
     {
       "tag": "button",
       "kind": "button",
-      "text": "Translated: 0",
+      "text": "Translated: 111",
       "bbox": {
         "x": 345.7,
         "y": 112,
-        "width": 139.5,
+        "width": 156,
         "height": 32
       }
     },
     {
       "tag": "button",
       "kind": "button",
-      "text": "Needs Translation: 598",
+      "text": "Needs Translation: 503",
       "bbox": {
-        "x": 493.2,
+        "x": 509.7,
         "y": 112,
         "width": 207.4,
         "height": 32
@@ -357,7 +369,7 @@
       "bbox": {
         "x": 445.8,
         "y": 275.5,
-        "width": 591.6,
+        "width": 514.8,
         "height": 22
       }
     },
@@ -366,9 +378,9 @@
       "kind": "button",
       "text": "Shona",
       "bbox": {
-        "x": 1069.4,
+        "x": 992.6,
         "y": 275.5,
-        "width": 61.2,
+        "width": 139.9,
         "height": 22
       }
     },
@@ -377,9 +389,9 @@
       "kind": "button",
       "text": "Created At",
       "bbox": {
-        "x": 1162.6,
+        "x": 1164.5,
         "y": 264.5,
-        "width": 85.4,
+        "width": 83.5,
         "height": 44
       }
     },
@@ -420,22 +432,22 @@
           "budget",
           "",
           "Activities",
-          "",
-          "Nov 4, 2026"
+          "Mabasa",
+          "Jun 4, 2025"
         ],
         [
           "budget",
           "",
           "Add Card",
           "",
-          "Nov 4, 2026"
+          "May 22, 2024"
         ],
         [
           "budget",
           "",
           "Add Female Member",
           "",
-          "Nov 4, 2026"
+          "May 22, 2024"
         ]
       ],
       "rowCount": 10
@@ -493,6 +505,10 @@
     {
       "label": "Farmer Videos",
       "href": "/resources/farmer-videos"
+    },
+    {
+      "label": "Admin",
+      "href": "/resources/admin"
     },
     {
       "label": "Statistics",

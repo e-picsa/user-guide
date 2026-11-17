@@ -74,12 +74,14 @@ export interface DeploymentExemplars {
   station: string;
   variety: string;
   probabilityLocation: string;
+  collection: string;
+  file: string;
 }
 
 export const EXEMPLARS: Record<string, DeploymentExemplars> = {
-  zm: { station: 'chipata_met', variety: 'zm/beans/CHAMBESHI', probabilityLocation: 'chadiza' },
-  zw: { station: 'masvingo_airport_met', variety: 'zw/maize/SC-555', probabilityLocation: 'masvingo' },
-  mw: { station: 'kasungu', variety: 'mw/beans/BUNDA-93', probabilityLocation: 'kasungu' },
+  zm: { station: 'chipata_met', variety: 'zm/beans/CHAMBESHI', probabilityLocation: 'chadiza', collection: 'cropResources_zm', file: 'fb48f321-09ba-4205-9e6a-f52de5a55c3d' },
+  zw: { station: 'masvingo_airport_met', variety: 'zw/maize/SC-555', probabilityLocation: 'masvingo', collection: 'cropResources_zw', file: 'f61cb6af-9be7-46be-86bc-0dde16fa87ca' },
+  mw: { station: 'kasungu', variety: 'mw/beans/BUNDA-93', probabilityLocation: 'kasungu', collection: 'cropResources_mw', file: 'gap' },
 };
 
 /** URL-encode a composite variety id (`zw/maize/SC-555`) to match `:id`. */
@@ -126,14 +128,15 @@ export function pagesFor(deploymentId: string): PageEntry[] {
     p(`crop/probability/${ex.probabilityLocation}`, undefined, undefined, undefined, 'crop/probability-details.png'),
     p('crop/admin'),
     p('resources/files'),
-    p('resources/files/dff5c161-3541-44a4-8326-0affafd26812'),
+    p(`resources/files/${ex.file}`, undefined, undefined, undefined, 'resources/file-details.png'),
     p('resources/files/create'),
     p('resources/links'),
     p('resources/links/zmdWhatsapp'),
     p('resources/links/create'),
     p('resources/collections'),
-    // NOTE: no `resources/collections/:id` exemplar, zm deployment has no collections rows
+    p(`resources/collections/${ex.collection}`, undefined, undefined, undefined, 'resources/collection-details.png'),
     p('resources/collections/create'),
+    p('resources/admin'),
     p('resources/farmer-videos'),
     p('translations/list'),
     p('translations/import'),

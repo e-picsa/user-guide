@@ -3,7 +3,7 @@
   "url": "http://localhost:3000/privacy-policy",
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
-  "dashboardVersion": "5.20.0",
+  "dashboardVersion": "5.23.1",
   "capturedAt": "2026-11-05T00:00:48.352Z",
   "viewport": {
     "width": 1280,

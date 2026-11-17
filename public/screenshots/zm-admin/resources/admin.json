@@ -1,25 +1,25 @@
 {
-  "route": "resources/files/dff5c161-3541-44a4-8326-0affafd26812",
-  "url": "http://localhost:3000/resources/files/dff5c161-3541-44a4-8326-0affafd26812",
+  "route": "resources/admin",
+  "url": "http://localhost:3000/resources/admin",
   "title": "PICSA Dashboard",
-  "identifier": "zw-admin",
-  "dashboardVersion": "5.20.0",
-  "capturedAt": "2026-11-04T23:57:20.519Z",
+  "identifier": "zm-admin",
+  "dashboardVersion": "5.23.1",
+  "capturedAt": "2026-11-16T22:31:53.276Z",
   "viewport": {
     "width": 1280,
     "height": 720
   },
-  "scrollTop": 66,
+  "scrollTop": 50,
   "space": "viewport-relative CSS px at capture viewport (1:1 with png at deviceScaleFactor 1)",
   "headings": [
     {
       "tag": "h2",
       "kind": "heading",
-      "text": "Edit Resource",
+      "text": "Resources Admin",
       "bbox": {
         "x": 220,
         "y": -34,
-        "width": 1044,
+        "width": 195.1,
         "height": 32
       }
     }
@@ -31,7 +31,7 @@
       "text": "Home",
       "bbox": {
         "x": 0,
-        "y": 8,
+        "y": 22,
         "width": 203,
         "height": 48
       },
@@ -43,7 +43,7 @@
       "text": "Climate",
       "bbox": {
         "x": 0,
-        "y": 56,
+        "y": 70,
         "width": 203,
         "height": 48
       }
@@ -54,7 +54,7 @@
       "text": "Station Data",
       "bbox": {
         "x": 0,
-        "y": 104,
+        "y": 118,
         "width": 203,
         "height": 48
       },
@@ -66,7 +66,7 @@
       "text": "Forecasts",
       "bbox": {
         "x": 0,
-        "y": 152,
+        "y": 166,
         "width": 203,
         "height": 48
       },
@@ -78,7 +78,7 @@
       "text": "Admin",
       "bbox": {
         "x": 0,
-        "y": 200,
+        "y": 214,
         "width": 203,
         "height": 48
       },
@@ -90,7 +90,7 @@
       "text": "Crop",
       "bbox": {
         "x": 0,
-        "y": 104,
+        "y": 118,
         "width": 203,
         "height": 48
       }
@@ -101,7 +101,7 @@
       "text": "Variety",
       "bbox": {
         "x": 0,
-        "y": 152,
+        "y": 166,
         "width": 203,
         "height": 48
       },
@@ -113,7 +113,7 @@
       "text": "Probability",
       "bbox": {
         "x": 0,
-        "y": 200,
+        "y": 214,
         "width": 203,
         "height": 48
       },
@@ -125,7 +125,7 @@
       "text": "Admin",
       "bbox": {
         "x": 0,
-        "y": 248,
+        "y": 262,
         "width": 203,
         "height": 48
       },
@@ -137,7 +137,7 @@
       "text": "Translations",
       "bbox": {
         "x": 0,
-        "y": 152,
+        "y": 166,
         "width": 203,
         "height": 48
       }
@@ -148,7 +148,7 @@
       "text": "List",
       "bbox": {
         "x": 0,
-        "y": 200,
+        "y": 214,
         "width": 203,
         "height": 48
       },
@@ -160,7 +160,7 @@
       "text": "Import",
       "bbox": {
         "x": 0,
-        "y": 248,
+        "y": 262,
         "width": 203,
         "height": 48
       },
@@ -172,7 +172,7 @@
       "text": "Resources",
       "bbox": {
         "x": 0,
-        "y": 200,
+        "y": 214,
         "width": 203,
         "height": 64
       }
@@ -183,7 +183,7 @@
       "text": "Files",
       "bbox": {
         "x": 0,
-        "y": 264,
+        "y": 278,
         "width": 203,
         "height": 48
       },
@@ -195,7 +195,7 @@
       "text": "Links",
       "bbox": {
         "x": 0,
-        "y": 312,
+        "y": 326,
         "width": 203,
         "height": 48
       },
@@ -207,7 +207,7 @@
       "text": "Collections",
       "bbox": {
         "x": 0,
-        "y": 360,
+        "y": 374,
         "width": 203,
         "height": 48
       },
@@ -219,7 +219,7 @@
       "text": "Farmer Videos",
       "bbox": {
         "x": 0,
-        "y": 408,
+        "y": 422,
         "width": 203,
         "height": 48
       },
@@ -228,10 +228,22 @@
     {
       "tag": "a",
       "kind": "link",
+      "text": "Admin",
+      "bbox": {
+        "x": 0,
+        "y": 470,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/admin"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
       "text": "Statistics",
       "bbox": {
         "x": 0,
-        "y": 519,
+        "y": 548,
         "width": 203,
         "height": 48
       },
@@ -243,7 +255,7 @@
       "text": "Deployments",
       "bbox": {
         "x": 0,
-        "y": 567,
+        "y": 596,
         "width": 203,
         "height": 48
       },
@@ -255,7 +267,7 @@
       "text": "User Permissions",
       "bbox": {
         "x": 0,
-        "y": 615,
+        "y": 644,
         "width": 203,
         "height": 48
       },
@@ -267,7 +279,7 @@
       "text": "Map Boundaries",
       "bbox": {
         "x": 0,
-        "y": 663,
+        "y": 692,
         "width": 203,
         "height": 48
       },
@@ -276,34 +288,56 @@
     {
       "tag": "button",
       "kind": "button",
-      "text": "browse files",
+      "text": "Total Resources: 22",
       "bbox": {
-        "x": 384.4,
-        "y": 111,
-        "width": 93.3,
-        "height": 17
+        "x": 217.2,
+        "y": 43.4,
+        "width": 145.4,
+        "height": 29.1
       }
     },
     {
       "tag": "button",
       "kind": "button",
-      "text": "Select existing file",
+      "text": "In Sync: 22",
       "bbox": {
-        "x": 220,
-        "y": 216,
-        "width": 193.2,
-        "height": 36
+        "x": 369.8,
+        "y": 44,
+        "width": 108.7,
+        "height": 28
       }
     },
     {
       "tag": "button",
       "kind": "button",
-      "text": "placeholder.svg",
+      "text": "Differs: 0",
       "bbox": {
-        "x": 536,
-        "y": 93.2,
-        "width": 172.3,
-        "height": 37
+        "x": 488.5,
+        "y": 44,
+        "width": 96.5,
+        "height": 28
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Missing in App: 0",
+      "bbox": {
+        "x": 595,
+        "y": 44,
+        "width": 139.4,
+        "height": 28
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Orphaned in App: 0",
+      "bbox": {
+        "x": 744.4,
+        "y": 44,
+        "width": 152.1,
+        "height": 28
       }
     },
     {
@@ -311,26 +345,85 @@
       "kind": "input",
       "text": "input",
       "bbox": {
-        "x": 240,
-        "y": 405.2,
-        "width": 564,
+        "x": 276,
+        "y": 116,
+        "width": 972,
         "height": 41
       },
       "label": "input:text"
     },
     {
+      "tag": "div",
+      "kind": "button",
+      "text": "Type",
+      "bbox": {
+        "x": 236,
+        "y": 202,
+        "width": 167.3,
+        "height": 24
+      }
+    },
+    {
       "tag": "button",
       "kind": "button",
-      "text": "Save Resource",
+      "text": "Filter by Type",
       "bbox": {
-        "x": 220,
-        "y": 766.2,
-        "width": 172.5,
-        "height": 36
+        "x": 270.9,
+        "y": 202,
+        "width": 24,
+        "height": 24
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "Resource / Collection",
+      "bbox": {
+        "x": 435.3,
+        "y": 203,
+        "width": 601.4,
+        "height": 22
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "button",
+      "text": "Sync Status",
+      "bbox": {
+        "x": 1068.8,
+        "y": 203,
+        "width": 179.2,
+        "height": 22
       }
     }
   ],
-  "tables": [],
+  "tables": [
+    {
+      "headers": [
+        "Type",
+        "Resource / Collection",
+        "Sync Status"
+      ],
+      "rows": [
+        [
+          "Collection",
+          "Crop, Pest & Disease",
+          "In Sync"
+        ],
+        [
+          "Collection",
+          "Weather Resources",
+          "In Sync"
+        ],
+        [
+          "Collection",
+          "Gender",
+          "In Sync"
+        ]
+      ],
+      "rowCount": 22
+    }
+  ],
   "nav": [
     {
       "label": "Home",
@@ -383,6 +476,10 @@
     {
       "label": "Farmer Videos",
       "href": "/resources/farmer-videos"
+    },
+    {
+      "label": "Admin",
+      "href": "/resources/admin"
     },
     {
       "label": "Statistics",

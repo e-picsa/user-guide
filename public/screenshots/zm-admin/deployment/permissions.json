@@ -3,7 +3,7 @@
   "url": "http://localhost:3000/deployment/permissions",
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
-  "dashboardVersion": "5.20.0",
+  "dashboardVersion": "5.23.1",
   "capturedAt": "2026-11-05T03:14:51.096Z",
   "viewport": {
     "width": 1280,
@@ -224,6 +224,18 @@
         "height": 48
       },
       "href": "/resources/farmer-videos"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Admin",
+      "bbox": {
+        "x": 0,
+        "y": 504,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/admin"
     },
     {
       "tag": "a",
@@ -463,6 +475,10 @@
     {
       "label": "Farmer Videos",
       "href": "/resources/farmer-videos"
+    },
+    {
+      "label": "Admin",
+      "href": "/resources/admin"
     },
     {
       "label": "Statistics",
