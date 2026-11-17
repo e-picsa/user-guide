@@ -28,3 +28,10 @@ description: Switch deployments, review permissions and manage your account.
   New to a second country? Once an admin adds you to that deployment it
   appears in section 1 — no new account needed.
 </Callout>
+
+## Who can do what
+
+<AccessSummary>
+  <AccessRow roles="viewer">Switch deployments, review the read-only permissions matrix, edit name, country and organisation, verify email, change password, and request a data export or account deletion.</AccessRow>
+  <AccessRow roles={['editor', 'admin']}>Manage your own account here the same way — granting roles to other people needs `deployments.admin` in [User Permissions](../managing/user-permissions).</AccessRow>
+</AccessSummary>
