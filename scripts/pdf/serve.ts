@@ -6,7 +6,7 @@
  * (`out/climate/stations.html`), never extensionless files. This resolves
  * `/a/b` -> `a/b`, `a/b.html`, `a/b/index.html`.
  *
- * Env: PDF_SERVE_DIR (default `out`), PDF_SERVE_PORT (default `3000`),
+ * Env: PDF_SERVE_DIR (default `out`), PDF_SERVE_PORT (default `3100`),
  * PDF_SERVE_HOST (default `127.0.0.1`).
  *
  * Exits immediately if the directory holds no `index.html`, so a wrong
@@ -69,7 +69,7 @@ function existingFile(path: string): string | null {
 
 function main(): void {
   const root = resolve(process.cwd(), process.env.PDF_SERVE_DIR ?? 'out');
-  const port = Number(process.env.PDF_SERVE_PORT ?? 3000);
+  const port = Number(process.env.PDF_SERVE_PORT ?? 3100);
   const host = process.env.PDF_SERVE_HOST ?? '127.0.0.1';
 
   // Fail loudly instead of accepting connections that 404 everything: the
