@@ -1,13 +1,13 @@
 {
   "identifier": "zm-admin",
   "dashboardVersion": "5.23.1",
-  "generatedAt": "2026-11-16T22:40:25.931Z",
+  "generatedAt": "2026-11-18T01:14:01.746Z",
   "results": [
     {
       "route": "(logged-out) home",
       "file": "public/screenshots/zm-admin/landing.png",
-      "status": "reused",
-      "detail": "up to date at v5.23.1 (hash f6e3eebd)",
+      "status": "unchanged",
+      "detail": "matches previous (0.00% changed)",
       "version": "5.23.1",
       "hash": "f6e3eebd",
       "capturedAt": "2026-11-04T21:34:14.877Z"
@@ -114,11 +114,11 @@
     {
       "route": "crop/admin",
       "file": "public/screenshots/zm-admin/crop/admin.png",
-      "status": "reused",
-      "detail": "up to date at v5.23.1 (hash f5d1754c)",
+      "status": "unchanged",
+      "detail": "matches previous (0.00% changed), scrollTop=66",
       "version": "5.23.1",
       "hash": "f5d1754c",
-      "capturedAt": "2026-11-05T00:14:15.350Z"
+      "capturedAt": "2026-11-18T01:06:21.251Z"
     },
     {
       "route": "resources/files",
@@ -290,6 +290,42 @@
       "version": "5.23.1",
       "hash": "63fc5c07",
       "capturedAt": "2026-11-16T22:40:25.793Z"
+    },
+    {
+      "route": "crop/admin/stations",
+      "file": "public/screenshots/zm-admin/crop/admin-stations.png",
+      "status": "unchanged",
+      "detail": "matches previous (0.00% changed), scrollTop=0",
+      "version": "5.23.1",
+      "hash": "e1cf8278",
+      "capturedAt": "2026-11-18T01:06:32.248Z"
+    },
+    {
+      "route": "crop/admin/crops",
+      "file": "public/screenshots/zm-admin/crop/admin-crops.png",
+      "status": "unchanged",
+      "detail": "matches previous (0.00% changed), scrollTop=66",
+      "version": "5.23.1",
+      "hash": "b3734576",
+      "capturedAt": "2026-11-18T01:06:43.221Z"
+    },
+    {
+      "route": "crop/admin/app-diff",
+      "file": "public/screenshots/zm-admin/crop/admin-app-diff.png",
+      "status": "unchanged",
+      "detail": "matches previous (0.00% changed), scrollTop=66",
+      "version": "5.23.1",
+      "hash": "8400ce53",
+      "capturedAt": "2026-11-18T01:06:51.683Z"
+    },
+    {
+      "route": "crop/admin/upload",
+      "file": "public/screenshots/zm-admin/crop/admin-upload.png",
+      "status": "unchanged",
+      "detail": "matches previous (0.00% changed), scrollTop=0",
+      "version": "5.23.1",
+      "hash": "4e256b2b",
+      "capturedAt": "2026-11-18T01:06:58.648Z"
     }
   ]
 }

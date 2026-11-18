@@ -1,15 +1,15 @@
 ---
 title: Crop data admin
-description: Review location coverage, pairing and app sync for water requirements.
+description: Review location coverage, station bounds, variety QC and app sync for water requirements.
 ---
 
-**Crop → Admin** (requires `crop.admin`) oversees the per-location water requirements behind every probability table: which districts are covered, which climate station each location is paired with, and whether the field app is in sync.
+In the E-PICSA Dashboard, **Crop → Admin** (requires `crop.admin`) oversees the per-location water requirements behind every probability table: which districts are covered, whether each station's lookup tables are consistent, which varieties fall outside supported ranges, and whether the field app is in sync.
 
 <Screenshot
   name="crop/admin.png"
-  alt="Crop Admin Locations tab with coverage chips and location table"
+  alt="E-PICSA Dashboard Crop Admin Locations tab with coverage chips and location table"
   markers={[
-    { x: 57, y: 6, label: 'Tabs — Locations coverage (shown); Stations, App Diff, Duplicates and Upload hold the other workflows' },
+    { x: 57, y: 6, label: 'Tabs — Locations coverage (shown); Stations, Crops, App Diff and Upload hold the other workflows' },
     { x: 54, y: 36, label: 'Search — filter the table by location' },
     { x: 92, y: 36, label: 'Export CSV — download the location coverage table' },
     { x: 47, y: 47, label: 'Location table — status, pairing, linked station and probabilities; click a row to view or change its station' },
@@ -21,12 +21,61 @@ description: Review location coverage, pairing and app sync for water requiremen
 
 The chips summarise coverage at a glance: districts tracked, locations still missing requirements, paired and unique water-requirement definitions, and how many locations have probability data available. Each table row maps a location to its parent region, its requirement status, and the climate station it is paired with. Selecting a row lets you view or change the linked station, which decides the rainfall data behind that location's probability tables.
 
-## Other tabs
+## Stations consistency
 
-- **Stations** lists stations missing crop information.
-- **App Diff** compares the app's bundled probability tables against freshly regenerated ones — reload after syncing or importing to confirm the app is up to date.
-- **Duplicates** flags repeated crop and variety definitions.
-- **Upload** bulk-imports water requirements from CSV: **Template** downloads a sheet with one row per location, crop and variety; fill in the water-requirement column and **Upload File** (or paste the text) to preview changes. **Rows** shows values to be upserted, **Duplicates** flags repeated lines and **Errors** lists invalid rows; **Import** writes the valid rows (rounded to the nearest 5 mm). **Export App Data** generates the per-location probability tables as JSON and downloads them as a zip — the artefact bundled into the field app release.
+<Screenshot
+  name="crop/admin-stations.png"
+  alt="E-PICSA Dashboard Crop Admin Stations tab filtered to inconsistent lookup bounds"
+  markers={[
+    { x: 41, y: 16, label: 'Tabs — Stations consistency (shown); the highlighted tab tracks lookup-table bounds per station' },
+    { x: 49, y: 34, label: 'Inconsistent Bounds chip — filter to stations whose lookup bounds differ from the country majority' },
+    { x: 54, y: 45, label: 'Search — filter the table by station or district' },
+    { x: 65, y: 56, label: 'Probability Bounds — consistency status; hover the icon for crop length, water and planting-date bounds' },
+  ]}
+  caption="Crop Admin Stations tab (Zambia) — filtered to inconsistent bounds"
+/>
+
+The Stations tab tracks whether probability lookup tables are consistently generated across stations. The **Probability Bounds** column compares each station's crop length (days), water requirement (mm) and planting date ranges and steps against the country majority — hover any status icon for the exact bounds and which dimension differs. The chips summarise the fleet: total stations, stations with no probabilities, and stations with inconsistent bounds. Filter to **Inconsistent Bounds** to isolate the outliers: an inconsistent station was generated with different ranges or steps (for example a wider day range but a narrower water range than the majority), so edge varieties may be included there but excluded everywhere else, or vice versa. Share inconsistent stations with the data team so future table calculations use consistent bounds.
+
+## Crops quality control
+
+<Screenshot
+  name="crop/admin-crops.png"
+  alt="E-PICSA Dashboard Crop Admin Crops tab filtered to warnings and exclusions"
+  markers={[
+    { x: 57, y: 6, label: 'Tabs — Crops quality control (shown); per-variety checks across downscaled locations' },
+    { x: 36, y: 22, label: 'Warnings and Exclusions chip — filter to varieties with exclusions or warnings' },
+    { x: 46, y: 44, label: 'Days — red values fall outside station lookup bounds and are excluded from generated tables' },
+    { x: 90, y: 44, label: 'QC Status — All Excluded, Partial Exclusion or Missing Definition; click a row for affected locations' },
+  ]}
+  caption="Crop Admin Crops tab (Zambia) — filtered to warnings and exclusions"
+/>
+
+The Crops tab checks every variety's day and water requirements against the lookup bounds of each location's linked station. Day or water values outside the supported range exclude that variety from the generated table; season-length issues (over the local maximum season or the 360-day model limit) raise warnings instead, since the data system is expected to correct such probabilities rather than extrapolate. Red or amber values mark missed thresholds — click any row to inspect the affected locations and the exact threshold missed.
+
+The chips summarise the catalogue: total varieties, varieties with warnings or exclusions, and duplicate variety definitions (the **Duplicates** filter, which replaces the old standalone tab). Filter to **Warnings & Exclusions** to review the affected varieties — day-range exclusions where a variety's length falls outside the station lookup bounds, plus any missing crop-data definitions — then click a row to see the exact locations and thresholds involved. Excluded varieties are omitted when tables are next regenerated; already bundled app tables are unchanged until re-exported.
+
+## App diff
+
+<Screenshot
+  name="crop/admin-app-diff.png"
+  alt="E-PICSA Dashboard Crop Admin App Diff tab showing changed locations"
+  markers={[
+    { x: 75, y: 6, label: 'Tabs — App Diff (shown); compares bundled app tables against regenerated data-system tables' },
+    { x: 49, y: 29, label: 'New Exclusions chip — locations where QC bounds would remove varieties from the app tables' },
+    { x: 79, y: 56, label: 'Excluded — varieties removed by QC bounds at each location' },
+    { x: 91, y: 56, label: 'Delta Probabilities — share of changed probability cells versus the bundled tables; click a row for detail' },
+  ]}
+  caption="Crop Admin App Diff tab (Zambia)"
+/>
+
+App Diff compares the probability tables bundled in the field app against tables regenerated from live data-system records, with the **Apply QC Bounds** toggle applied. Each row is one location: app versus database variety counts, the excluded-variety count, and the share of changed probability cells. Statuses cover **New Exclusions**, **Differs**, **Missing in App**, **Orphaned in App**, **No Source Data** and **In Sync** — click any row to inspect the excluded varieties, the station bounds summary and the changed probability cells.
+
+Locations showing 0% probability change differ by exclusions only — the underlying probability values are unchanged. A large percentage means the rainfall data behind the table differs (for example the location's linked station has changed), so inspect the row detail before re-exporting. Re-run this check after syncing or importing to confirm the app bundle is up to date.
+
+## Upload and export
+
+The **Upload** tab bulk-imports water requirements from CSV: **Template** downloads a sheet with one row per location, crop and variety; fill in the water-requirement column and **Upload File** (or paste the text) to preview changes. **Rows** shows values to be upserted, **Duplicates** flags repeated lines and **Errors** lists invalid rows; **Import** writes the valid rows (rounded to the nearest 5 mm). **Export App Data** generates the per-location probability tables as JSON and downloads them as a zip — the artefact bundled into the field app release.
 
 ## Who can do what
 
