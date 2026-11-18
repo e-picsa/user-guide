@@ -236,6 +236,9 @@ locally:
   `v<package.json version>`. Bump the version to publish a new release; an
   existing tag's asset is refreshed. Release assets download without sign-in,
   Actions artifacts don't — never switch the site link to an artifact URL.
+- Version bumps ship in dedicated `docs/release-*` PRs as standalone
+  `chore: bump version` commits; content PRs leave `package.json` untouched,
+  so merging only refreshes the current release's PDF asset.
 - `PDF_PRINT` is build-time only (`src/components/mdx.tsx`), so the PDF needs
   its own build: `PDF_PRINT=1 bun run build`, served by `scripts/pdf/serve.ts`
   (the static export uses clean URLs, so `next start` and plain file servers
