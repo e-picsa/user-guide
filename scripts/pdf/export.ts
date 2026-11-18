@@ -14,7 +14,7 @@
  * combine step (see combine.ts), not a deliverable, so they live in their own
  * directory away from the published guide.
  *
- * Env: PDF_BASE_URL (default `http://localhost:3000`),
+ * Env: PDF_BASE_URL (default `http://localhost:3100`),
  * PDF_PAGES_DIR (default `pdfs/pages`), PDF_ONLY (comma filter on route
  * prefixes, e.g. `PDF_ONLY=climate,getting-started/signing-in`),
  * PDF_CONCURRENCY (pages captured in parallel, default 3),
@@ -68,7 +68,7 @@ function clearStalePages(dir: string): number {
 }
 
 async function main(): Promise<void> {
-  const baseUrl = env('PDF_BASE_URL', 'http://localhost:3000');
+  const baseUrl = env('PDF_BASE_URL', 'http://localhost:3100');
   const pagesDir = resolve(process.cwd(), env('PDF_PAGES_DIR', 'pdfs/pages'));
   const all = discoverPages();
   // Match on whole route segments, not raw substrings: routes sit at the site

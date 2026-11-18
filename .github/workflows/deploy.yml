@@ -90,7 +90,7 @@ jobs:
           SERVER_PID=$!
           trap 'kill $SERVER_PID 2>/dev/null || true' EXIT
           # The server log is where a start-up failure lands; never swallow it.
-          PDF_BASE_URL=http://127.0.0.1:3000 bun run pdf || {
+          PDF_BASE_URL=http://127.0.0.1:3100 bun run pdf || {
             echo "::group::PDF capture failed; /tmp/serve.log follows"
             cat /tmp/serve.log
             echo "::endgroup::"

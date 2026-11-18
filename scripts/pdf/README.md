@@ -18,7 +18,7 @@ PDF_PRINT=1 bun run build
 
 # 2. serve `out/` and capture it
 bun run pdf:serve &
-PDF_BASE_URL=http://127.0.0.1:3000 bun run pdf
+PDF_BASE_URL=http://127.0.0.1:3100 bun run pdf
 ```
 
 Both the print build and the normal site build export to `out/`, so build them
@@ -96,7 +96,7 @@ to a text-only cover.
 `serve.ts` exists because `output: 'export'` cannot be served by `next start`,
 and the export uses clean URLs (`out/climate/stations.html`) that a plain
 file server 404s. Env: `PDF_SERVE_DIR` (default `out`), `PDF_SERVE_PORT`
-(default `3000`), `PDF_SERVE_HOST` (default `127.0.0.1`). It exits immediately
+(default `3100`), `PDF_SERVE_HOST` (default `127.0.0.1`). It exits immediately
 if that directory has no `index.html`, and answers a missing file with the
 export's `404.html` (or a plain 404) rather than crashing — either way the
 capture sees it immediately instead of timing out.
@@ -134,7 +134,7 @@ to within PDF metadata noise.
 
 ## Config
 
-- `PDF_BASE_URL` (default `http://localhost:3000`), `PDF_PAGES_DIR` (default
+- `PDF_BASE_URL` (default `http://localhost:3100`), `PDF_PAGES_DIR` (default
   `pdfs/pages`; the per-page exports, read by both `export.ts` and
   `combine.ts`), `PDF_ONLY` (comma filter on route prefixes, matched on whole
   segments — e.g. `PDF_ONLY=climate` or
