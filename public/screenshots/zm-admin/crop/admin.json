@@ -4,7 +4,7 @@
   "title": "PICSA Dashboard",
   "identifier": "zm-admin",
   "dashboardVersion": "5.23.1",
-  "capturedAt": "2026-11-05T00:14:15.350Z",
+  "capturedAt": "2026-11-18T01:06:21.251Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -292,7 +292,7 @@
       "bbox": {
         "x": 220,
         "y": 22,
-        "width": 209.7,
+        "width": 209.8,
         "height": 48
       }
     },
@@ -301,31 +301,31 @@
       "kind": "tab",
       "text": "Stations",
       "bbox": {
-        "x": 429.7,
+        "x": 429.8,
         "y": 22,
-        "width": 198.6,
+        "width": 198.7,
         "height": 48
       }
     },
     {
       "tag": "div",
       "kind": "tab",
-      "text": "App Diff 1",
+      "text": "Crops 8",
       "bbox": {
-        "x": 628.4,
+        "x": 628.5,
         "y": 22,
-        "width": 228.6,
+        "width": 209.2,
         "height": 48
       }
     },
     {
       "tag": "div",
       "kind": "tab",
-      "text": "Duplicates",
+      "text": "App Diff 23",
       "bbox": {
-        "x": 857,
+        "x": 837.8,
         "y": 22,
-        "width": 217.2,
+        "width": 236.3,
         "height": 48
       }
     },
@@ -334,7 +334,7 @@
       "kind": "tab",
       "text": "Upload",
       "bbox": {
-        "x": 1074.1,
+        "x": 1074,
         "y": 22,
         "width": 189.9,
         "height": 48

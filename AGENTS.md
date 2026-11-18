@@ -143,6 +143,34 @@ apply — misalignment always comes from bad coordinates, so follow this process
   `bun run pdf:serve` + `PDF_ONLY=<route> bun run pdf` flow (see
   `scripts/pdf/README.md`) before changing badge styling.
 
+## Country-agnostic copy
+
+Only screenshots vary per country. `<Screenshot name>` resolves to
+`/screenshots/{countryShotsId}/{name}` (`src/components/screenshot.tsx`), so
+each deployment sees its own captures — but the MDX body is shared
+boilerplate with no text-token or page-overwrite mechanism
+(`src/lib/countries.ts` notes those as "later"). Nothing rewrites prose per
+country, so body copy must stay true for every deployment:
+
+- Never put deployment-specific live data in body prose: location/station/
+  district/variety counts, named stations/districts/varieties, lookup bounds
+  or percentages tied to one deployment's data (e.g. "In Zambia, 51 stations
+  are tracked", "8 have warnings or exclusions"). A reader on another
+  deployment sees the same sentence next to different numbers — there is no
+  per-country correction.
+- Describe workflows generically ("filter to Inconsistent Bounds to isolate
+  the outliers") instead of narrating one deployment's values. If a concrete
+  illustration cannot hold for all deployments, cut it rather than labelling
+  it "In Zambia" — the label does not help a Zimbabwe reader.
+- `(Zambia)` captions on `<Screenshot>` are the existing convention (see
+  `varieties.mdx`, `stations.mdx`): captions may name the exemplar
+  deployment, body prose may not.
+- Self-check before committing new copy: "would this sentence still be true
+  for a reader on another deployment looking at their own screenshots?" If
+  not, generalise it. No automated check covers this — the violation shapes
+  are too varied for a regex without false-positives, so it rests on review
+  against this section.
+
 ## Spelling
 
 cspell guards the guide copy. `bun run spellcheck` checks the whole
@@ -163,8 +191,9 @@ pages in the index.
   (`climate.admin`), role names (`picsa_roles`) and JSX props are not treated
   as prose.
 - **Route every finding, don't silence the run.** A real typo gets fixed in the
-  `.mdx`; a legitimate proper noun or domain term (station names, `PICSA`,
-  `upserted`) is added to `words` in `cspell.json`; a code/URL artefact means
+  `.mdx`; a legitimate domain term (`PICSA`, `upserted`) is added to `words`
+  in `cspell.json` — not station/district names, which per Country-agnostic
+  copy do not belong in prose; a code/URL artefact means
   the config is wrong, so fix `ignoreRegExpList`/`ignorePaths` instead of
   adding the token. Never add a whole file to `ignorePaths` to make a run pass.
 - Re-run `bun run spellcheck` after any bulk content edit, and expect a new

@@ -4,7 +4,7 @@
   "title": "PICSA Dashboard",
   "identifier": "zw-admin",
   "dashboardVersion": "5.23.1",
-  "capturedAt": "2026-11-05T00:14:46.296Z",
+  "capturedAt": "2026-11-18T01:04:42.307Z",
   "viewport": {
     "width": 1280,
     "height": 720
@@ -292,7 +292,7 @@
       "bbox": {
         "x": 220,
         "y": 22,
-        "width": 215.8,
+        "width": 223.4,
         "height": 48
       }
     },
@@ -301,9 +301,20 @@
       "kind": "tab",
       "text": "Stations",
       "bbox": {
-        "x": 435.8,
+        "x": 443.4,
         "y": 22,
-        "width": 204.7,
+        "width": 212.3,
+        "height": 48
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "tab",
+      "text": "Crops",
+      "bbox": {
+        "x": 655.7,
+        "y": 22,
+        "width": 192.7,
         "height": 48
       }
     },
@@ -312,20 +323,9 @@
       "kind": "tab",
       "text": "App Diff",
       "bbox": {
-        "x": 640.4,
+        "x": 848.4,
         "y": 22,
-        "width": 204.5,
-        "height": 48
-      }
-    },
-    {
-      "tag": "div",
-      "kind": "tab",
-      "text": "Duplicates",
-      "bbox": {
-        "x": 844.9,
-        "y": 22,
-        "width": 223.2,
+        "width": 212.1,
         "height": 48
       }
     },
@@ -334,9 +334,9 @@
       "kind": "tab",
       "text": "Upload",
       "bbox": {
-        "x": 1068.1,
+        "x": 1060.5,
         "y": 22,
-        "width": 195.9,
+        "width": 203.5,
         "height": 48
       }
     },
@@ -358,8 +358,8 @@
       "text": "Export CSV",
       "bbox": {
         "x": 1114.8,
-        "y": 241.5,
-        "width": 133.3,
+        "y": 241.3,
+        "width": 133.2,
         "height": 36
       }
     },
@@ -369,7 +369,7 @@
       "text": "Location",
       "bbox": {
         "x": 252,
-        "y": 323.5,
+        "y": 323,
         "width": 93,
         "height": 22
       }
@@ -380,7 +380,7 @@
       "text": "Parent",
       "bbox": {
         "x": 377,
-        "y": 323.5,
+        "y": 323,
         "width": 104.5,
         "height": 22
       }
@@ -391,7 +391,7 @@
       "text": "Status",
       "bbox": {
         "x": 513.5,
-        "y": 323.5,
+        "y": 323,
         "width": 62.5,
         "height": 22
       }
@@ -401,8 +401,8 @@
       "kind": "button",
       "text": "Paired With",
       "bbox": {
-        "x": 607.9,
-        "y": 312.5,
+        "x": 608,
+        "y": 312,
         "width": 70.7,
         "height": 44
       }
@@ -413,7 +413,7 @@
       "text": "Linked Station",
       "bbox": {
         "x": 710.6,
-        "y": 312.5,
+        "y": 312,
         "width": 117.5,
         "height": 44
       }
@@ -424,7 +424,7 @@
       "text": "Probabilities",
       "bbox": {
         "x": 860.1,
-        "y": 323.5,
+        "y": 323,
         "width": 106.1,
         "height": 22
       }
@@ -435,7 +435,7 @@
       "text": "Crops Covered",
       "bbox": {
         "x": 998.2,
-        "y": 323.5,
+        "y": 323,
         "width": 233.8,
         "height": 22
       }
@@ -446,7 +446,7 @@
       "text": "Previous page",
       "bbox": {
         "x": 1144,
-        "y": 3023,
+        "y": 3022.5,
         "width": 48,
         "height": 48
       }
@@ -457,7 +457,7 @@
       "text": "Next page",
       "bbox": {
         "x": 1192,
-        "y": 3023,
+        "y": 3022.5,
         "width": 48,
         "height": 48
       }
