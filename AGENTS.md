@@ -239,6 +239,14 @@ locally:
 - Version bumps ship in dedicated `docs/release-*` PRs as standalone
   `chore: bump version` commits; content PRs leave `package.json` untouched,
   so merging only refreshes the current release's PDF asset.
+- Pick the bump by scope. **Patch** (`1.2.0` -> `1.2.1`) for a single
+  addition or fix where only the affected pages are recaptured (a
+  `SHOTS_ONLY` subset run, no full regen of all pages). **Minor**
+  (`1.2.0` -> `1.3.0`) for a full regen of all pages (e.g. a new dashboard
+  version across the board), a new country deployment, or a structural
+  change such as a new top-level section. The release tag is
+  `v<package.json version>`, so the bump is what publishes a new release —
+  never bump just to refresh the current release's PDF asset.
 - `PDF_PRINT` is build-time only (`src/components/mdx.tsx`), so the PDF needs
   its own build: `PDF_PRINT=1 bun run build`, served by `scripts/pdf/serve.ts`
   (the static export uses clean URLs, so `next start` and plain file servers

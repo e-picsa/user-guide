@@ -1,7 +1,7 @@
 {
   "identifier": "zw-admin",
   "dashboardVersion": "5.23.1",
-  "generatedAt": "2026-11-18T01:05:19.745Z",
+  "generatedAt": "2026-11-20T21:02:42.955Z",
   "results": [
     {
       "route": "(logged-out) home",
@@ -326,6 +326,15 @@
       "version": "5.23.1",
       "hash": "4e256b2b",
       "capturedAt": "2026-11-18T01:05:19.647Z"
+    },
+    {
+      "route": "crop/admin/print",
+      "file": "public/screenshots/zw-admin/crop/admin-print.png",
+      "status": "captured",
+      "detail": "scrollTop=0",
+      "version": "5.23.1",
+      "hash": "e7486a95",
+      "capturedAt": "2026-11-20T21:02:42.844Z"
     }
   ]
 }

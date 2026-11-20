@@ -1,9 +1,9 @@
 ---
 title: Crop data admin
-description: Review location coverage, station bounds, variety QC and app sync for water requirements.
+description: Review location coverage, station bounds, variety QC, app sync and print versions for water requirements.
 ---
 
-In the E-PICSA Dashboard, **Crop → Admin** (requires `crop.admin`) oversees the per-location water requirements behind every probability table: which districts are covered, whether each station's lookup tables are consistent, which varieties fall outside supported ranges, and whether the field app is in sync.
+In the E-PICSA Dashboard, **Crop → Admin** (requires `crop.admin`) oversees the per-location water requirements behind every probability table: which districts are covered, whether each station's lookup tables are consistent, which varieties fall outside supported ranges, whether the field app is in sync, and which printable per-district versions are ready to share.
 
 <Screenshot
   name="crop/admin.png"
@@ -72,6 +72,27 @@ The chips summarise the catalogue: total varieties, varieties with warnings or e
 App Diff compares the probability tables bundled in the field app against tables regenerated from live data-system records, with the **Apply QC Bounds** toggle applied. Each row is one location: app versus database variety counts, the excluded-variety count, and the share of changed probability cells. Statuses cover **New Exclusions**, **Differs**, **Missing in App**, **Orphaned in App**, **No Source Data** and **In Sync** — click any row to inspect the excluded varieties, the station bounds summary and the changed probability cells.
 
 Locations showing 0% probability change differ by exclusions only — the underlying probability values are unchanged. A large percentage means the rainfall data behind the table differs (for example the location's linked station has changed), so inspect the row detail before re-exporting. Re-run this check after syncing or importing to confirm the app bundle is up to date.
+
+## Print versions
+
+<Screenshot
+  name="crop/admin-print.png"
+  alt="E-PICSA Dashboard Crop Admin Print Versions tab with language selector, district and crop checklists, and export buttons"
+  markers={[
+    { x: 78, y: 16, label: 'Tabs — Print Versions (shown); printable per-district probability tables as Word documents with matching PDFs' },
+    { x: 57, y: 26, label: 'Languages — English selected by default; each extra language produces a separate file per district' },
+    { x: 47, y: 40, label: 'Districts — tick districts grouped by province; All and None set the whole list; rows with no exportable data stay disabled' },
+    { x: 61, y: 49, label: 'Crops — tick crop families to include, each with its variety count; All and None set the whole list; exports need at least one crop' },
+    { x: 26, y: 91, label: 'Export Word Docs and Export PDFs — bulk-export the ticked districts; a single file downloads directly, several arrive as a zip' },
+  ]}
+  caption="Crop Admin Print Versions tab (Zambia)"
+/>
+
+The Print Versions tab builds one printable probability table per district: a Word document first, with the PDF converted from that rendered Word output so both formats share the same portrait A4 layout. Each document holds the district's localised table — title and district name, season-start dates with probabilities, per-variety days to maturity, water requirement and chance scores, plus the data-source footnote, the linked station and the generation date.
+
+Tick the districts to include, grouped by province with running selected and available counts — **All** and **None** set the whole list at once. A row marked `(no data)` stays disabled: the district has no linked station, no water requirements, or its station has no usable probability or rainfall records. Tick the crop families to include alongside — each row shows how many varieties it holds, **All** and **None** again set the whole list, and everything is selected by default. Only the ticked families appear in the generated tables, and districts left with none of the ticked crops are skipped.
+
+The icons at the end of each district row export that district immediately as Word or PDF using the current crop selection; the bulk buttons export every ticked district instead, staying disabled until at least one district and one crop are ticked. One file downloads directly, while several files arrive as a zip (with a subfolder per language when several languages are selected). English files keep the plain district name, while other languages append the language label. A progress bar tracks loading, generation, conversion and zipping; any failures are listed without blocking the remaining files, and the result line reports exported, skipped and failed counts.
 
 ## Upload and export
 

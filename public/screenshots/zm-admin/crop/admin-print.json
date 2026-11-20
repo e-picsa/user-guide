@@ -1,0 +1,2153 @@
+{
+  "route": "crop/admin/print",
+  "url": "http://localhost:3000/crop/admin",
+  "title": "PICSA Dashboard",
+  "identifier": "zm-admin",
+  "dashboardVersion": "5.23.1",
+  "capturedAt": "2026-11-20T21:02:19.796Z",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "scrollTop": 0,
+  "space": "viewport-relative CSS px at capture viewport (1:1 with png at deviceScaleFactor 1)",
+  "headings": [
+    {
+      "tag": "h2",
+      "kind": "heading",
+      "text": "Crop Admin",
+      "bbox": {
+        "x": 220,
+        "y": 32,
+        "width": 1044,
+        "height": 32
+      }
+    }
+  ],
+  "interactive": [
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Home",
+      "bbox": {
+        "x": 0,
+        "y": 72,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/home"
+    },
+    {
+      "tag": "mat-expansion-panel-header",
+      "kind": "button",
+      "text": "Climate",
+      "bbox": {
+        "x": 0,
+        "y": 120,
+        "width": 203,
+        "height": 48
+      }
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Station Data",
+      "bbox": {
+        "x": 0,
+        "y": 168,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/climate/station"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Forecasts",
+      "bbox": {
+        "x": 0,
+        "y": 216,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/climate/forecast"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Admin",
+      "bbox": {
+        "x": 0,
+        "y": 264,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/climate/admin"
+    },
+    {
+      "tag": "mat-expansion-panel-header",
+      "kind": "button",
+      "text": "Crop",
+      "bbox": {
+        "x": 0,
+        "y": 168,
+        "width": 203,
+        "height": 64
+      }
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Variety",
+      "bbox": {
+        "x": 0,
+        "y": 232,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/crop/variety"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Probability",
+      "bbox": {
+        "x": 0,
+        "y": 280,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/crop/probability"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Admin",
+      "bbox": {
+        "x": 0,
+        "y": 328,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/crop/admin"
+    },
+    {
+      "tag": "mat-expansion-panel-header",
+      "kind": "button",
+      "text": "Translations",
+      "bbox": {
+        "x": 0,
+        "y": 376,
+        "width": 203,
+        "height": 48
+      }
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "List",
+      "bbox": {
+        "x": 0,
+        "y": 424,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/translations/list"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Import",
+      "bbox": {
+        "x": 0,
+        "y": 472,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/translations/import"
+    },
+    {
+      "tag": "mat-expansion-panel-header",
+      "kind": "button",
+      "text": "Resources",
+      "bbox": {
+        "x": 0,
+        "y": 424,
+        "width": 203,
+        "height": 48
+      }
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Files",
+      "bbox": {
+        "x": 0,
+        "y": 472,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/files"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Links",
+      "bbox": {
+        "x": 0,
+        "y": 520,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/links"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Collections",
+      "bbox": {
+        "x": 0,
+        "y": 568,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/collections"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Farmer Videos",
+      "bbox": {
+        "x": 0,
+        "y": 616,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/farmer-videos"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Admin",
+      "bbox": {
+        "x": 0,
+        "y": 664,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/resources/admin"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Statistics",
+      "bbox": {
+        "x": 0,
+        "y": 519,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/stats"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Deployments",
+      "bbox": {
+        "x": 0,
+        "y": 567,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/deployment"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "User Permissions",
+      "bbox": {
+        "x": 0,
+        "y": 615,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/deployment/permissions"
+    },
+    {
+      "tag": "a",
+      "kind": "link",
+      "text": "Map Boundaries",
+      "bbox": {
+        "x": 0,
+        "y": 663,
+        "width": 203,
+        "height": 48
+      },
+      "href": "/map-admin"
+    },
+    {
+      "tag": "div",
+      "kind": "tab",
+      "text": "Locations",
+      "bbox": {
+        "x": 220,
+        "y": 88,
+        "width": 169,
+        "height": 48
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "tab",
+      "text": "Stations",
+      "bbox": {
+        "x": 389,
+        "y": 88,
+        "width": 157.9,
+        "height": 48
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "tab",
+      "text": "Crops 8",
+      "bbox": {
+        "x": 546.9,
+        "y": 88,
+        "width": 168.4,
+        "height": 48
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "tab",
+      "text": "App Diff 23",
+      "bbox": {
+        "x": 715.3,
+        "y": 88,
+        "width": 195.5,
+        "height": 48
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "tab",
+      "text": "Print Versions",
+      "bbox": {
+        "x": 910.7,
+        "y": 88,
+        "width": 204.2,
+        "height": 48
+      }
+    },
+    {
+      "tag": "div",
+      "kind": "tab",
+      "text": "Upload",
+      "bbox": {
+        "x": 1114.9,
+        "y": 88,
+        "width": 149.1,
+        "height": 48
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "All",
+      "bbox": {
+        "x": 572.8,
+        "y": 268,
+        "width": 64,
+        "height": 36
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "None",
+      "bbox": {
+        "x": 644.8,
+        "y": 268,
+        "width": 73.2,
+        "height": 36
+      }
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 252,
+        "y": 330,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 378,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 430,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 482,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 534,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 586,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 638,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 690,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 742,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 794,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 846,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 898,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 252,
+        "y": 958,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 1006,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 1058,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 1110,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 1162,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 1214,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 1266,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 1318,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 1370,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 1422,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 1474,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 252,
+        "y": 1534,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 1582,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 1634,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 1686,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 1738,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 1790,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 1842,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 1894,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 1946,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 1998,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 2050,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 2102,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 2154,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 2206,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 2258,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 2310,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 252,
+        "y": 2370,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 2418,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 2470,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 2522,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 2574,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 2626,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 2678,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 2730,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 2782,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 2834,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 2886,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 2938,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 2990,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 252,
+        "y": 3050,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 3098,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 3150,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 3202,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 3254,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 3306,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 3358,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 252,
+        "y": 3418,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 3466,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 3518,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 3570,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 3622,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 3674,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 3726,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 3778,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 3830,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 252,
+        "y": 3890,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 3938,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 3990,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 4042,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 4094,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 4146,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 4198,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 4250,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 4302,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 4354,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 4406,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 4458,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 252,
+        "y": 4518,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 4566,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 4618,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 4670,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 4722,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 4774,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 4826,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 4878,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 4930,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 4982,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 5034,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 5086,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 5138,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 252,
+        "y": 5198,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 5246,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 5298,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 5350,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 5402,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 5454,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 5506,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 5558,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 5610,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 5662,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 5714,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 5766,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 5818,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 5870,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 5922,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 5974,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 252,
+        "y": 6034,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 6082,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 6134,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 6186,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 6238,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 6290,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 6342,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 6394,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 6446,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 6498,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 6550,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 6602,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 6654,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 6706,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 6758,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 6810,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 276,
+        "y": 6862,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "All",
+      "bbox": {
+        "x": 1086.8,
+        "y": 268,
+        "width": 64,
+        "height": 36
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "None",
+      "bbox": {
+        "x": 1158.8,
+        "y": 268,
+        "width": 73.2,
+        "height": 36
+      }
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 766,
+        "y": 330,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 766,
+        "y": 374,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 766,
+        "y": 418,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 766,
+        "y": 462,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 766,
+        "y": 506,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 766,
+        "y": 550,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 766,
+        "y": 594,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 766,
+        "y": 638,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 766,
+        "y": 682,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 766,
+        "y": 726,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 766,
+        "y": 770,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "input",
+      "kind": "input",
+      "text": "checkbox",
+      "bbox": {
+        "x": 766,
+        "y": 814,
+        "width": 40,
+        "height": 40
+      },
+      "label": "input:checkbox"
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Export Word Docs",
+      "bbox": {
+        "x": 236,
+        "y": 635.6,
+        "width": 199.4,
+        "height": 36
+      }
+    },
+    {
+      "tag": "button",
+      "kind": "button",
+      "text": "Export PDFs",
+      "bbox": {
+        "x": 451.4,
+        "y": 635.6,
+        "width": 154.3,
+        "height": 36
+      }
+    }
+  ],
+  "tables": [],
+  "nav": [
+    {
+      "label": "Home",
+      "href": "/home"
+    },
+    {
+      "label": "Station Data",
+      "href": "/climate/station"
+    },
+    {
+      "label": "Forecasts",
+      "href": "/climate/forecast"
+    },
+    {
+      "label": "Admin",
+      "href": "/climate/admin"
+    },
+    {
+      "label": "Variety",
+      "href": "/crop/variety"
+    },
+    {
+      "label": "Probability",
+      "href": "/crop/probability"
+    },
+    {
+      "label": "Admin",
+      "href": "/crop/admin"
+    },
+    {
+      "label": "List",
+      "href": "/translations/list"
+    },
+    {
+      "label": "Import",
+      "href": "/translations/import"
+    },
+    {
+      "label": "Files",
+      "href": "/resources/files"
+    },
+    {
+      "label": "Links",
+      "href": "/resources/links"
+    },
+    {
+      "label": "Collections",
+      "href": "/resources/collections"
+    },
+    {
+      "label": "Farmer Videos",
+      "href": "/resources/farmer-videos"
+    },
+    {
+      "label": "Admin",
+      "href": "/resources/admin"
+    },
+    {
+      "label": "Statistics",
+      "href": "/stats"
+    },
+    {
+      "label": "Deployments",
+      "href": "/deployment"
+    },
+    {
+      "label": "User Permissions",
+      "href": "/deployment/permissions"
+    },
+    {
+      "label": "Map Boundaries",
+      "href": "/map-admin"
+    }
+  ],
+  "dialogs": []
+}
