@@ -161,6 +161,13 @@ export function pagesFor(deploymentId: string): PageEntry[] {
       'crop/admin-app-diff.png',
     ),
     p(
+      'crop/admin/print',
+      [{ waitFor: '[role="tab"]' }, { clickText: 'Print Versions' }, { wait: 2500 }],
+      'crop/admin',
+      undefined,
+      'crop/admin-print.png',
+    ),
+    p(
       'crop/admin/upload',
       [{ waitFor: '[role="tab"]' }, { clickText: 'Upload' }, { wait: 1500 }],
       'crop/admin',
